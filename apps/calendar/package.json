@@ -59,8 +59,10 @@
     "isomorphic-dompurify": "^0.20.0",
     "preact": "^10.10.0",
     "preact-render-to-string": "^5.2.1",
+    "ts-essentials": "^9.3.0",
     "tui-date-picker": "^4.0.1",
-    "tui-time-picker": "^2.0.1"
+    "tui-time-picker": "^2.0.1",
+    "vite": "^3.1.7"
   },
   "devDependencies": {
     "@storybook/addons": "^6.5.9",
