@@ -1,6 +1,6 @@
 /*!
  * TOAST UI Calendar 2nd Edition
- * @version 2.1.3 | Wed Oct 12 2022
+ * @version 2.1.3 | Thu Oct 13 2022
  * @author NHN Cloud FE Development Lab <dl_javascript@nhn.com>
  * @license MIT
  */
@@ -3111,6 +3111,35 @@ module.exports = function (it) {
 
 /***/ }),
 
+/***/ 6596:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var global = __webpack_require__(9859);
+var fails = __webpack_require__(4229);
+var uncurryThis = __webpack_require__(5968);
+var toString = __webpack_require__(3326);
+var trim = (__webpack_require__(1017).trim);
+var whitespaces = __webpack_require__(1647);
+
+var $parseInt = global.parseInt;
+var Symbol = global.Symbol;
+var ITERATOR = Symbol && Symbol.iterator;
+var hex = /^[+-]?0x/i;
+var exec = uncurryThis(hex.exec);
+var FORCED = $parseInt(whitespaces + '08') !== 8 || $parseInt(whitespaces + '0x16') !== 22
+  // MS Edge 18- broken with boxed symbols
+  || (ITERATOR && !fails(function () { $parseInt(Object(ITERATOR)); }));
+
+// `parseInt` method
+// https://tc39.es/ecma262/#sec-parseint-string-radix
+module.exports = FORCED ? function parseInt(string, radix) {
+  var S = trim(toString(string));
+  return $parseInt(S, (radix >>> 0) || (exec(hex, S) ? 16 : 10));
+} : $parseInt;
+
+
+/***/ }),
+
 /***/ 47:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
@@ -5909,6 +5938,22 @@ if (isForced(NUMBER, !NativeNumber(' 0o1') || !NativeNumber('0b1') || NativeNumb
   NumberPrototype.constructor = NumberWrapper;
   defineBuiltIn(global, NUMBER, NumberWrapper, { constructor: true });
 }
+
+
+/***/ }),
+
+/***/ 7208:
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+var $ = __webpack_require__(3103);
+var parseInt = __webpack_require__(6596);
+
+// `Number.parseInt` method
+// https://tc39.es/ecma262/#sec-number.parseint
+// eslint-disable-next-line es-x/no-number-parseint -- required for testing
+$({ target: 'Number', stat: true, forced: Number.parseInt != parseInt }, {
+  parseInt: parseInt
+});
 
 
 /***/ }),
@@ -11127,7 +11172,7 @@ var WEEK_EVENT_HEIGHT = 24;
 var WEEK_EVENT_MARGIN_TOP = 2;
 var WEEK_EVENT_MARGIN_LEFT = 8;
 var WEEK_EVENT_MARGIN_RIGHT = 8;
-var DEFAULT_PANEL_HEIGHT = 72; // default color values for events
+var DEFAULT_PANEL_HEIGHT = 52; // default color values for events
 
 var DEFAULT_EVENT_COLORS = {
   color: '#000',
@@ -14942,7 +14987,7 @@ var initialEventFilter = function initialEventFilter(event) {
 
 // eslint-disable-next-line complexity
 function createOptionsSlice() {
-  var _options$defaultView, _options$useFormPopup, _options$useDetailPop, _options$isReadOnly, _options$usageStatist, _options$eventFilter;
+  var _options$defaultView, _options$useFormPopup, _options$useDetailPop, _options$isReadOnly, _options$usageStatist, _options$eventFilter, _options$onClickTimeG;
 
   var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   return {
@@ -14956,7 +15001,10 @@ function createOptionsSlice() {
       gridSelection: initializeGridSelectionOptions(options.gridSelection),
       usageStatistics: (_options$usageStatist = options.usageStatistics) !== null && _options$usageStatist !== void 0 ? _options$usageStatist : true,
       eventFilter: (_options$eventFilter = options.eventFilter) !== null && _options$eventFilter !== void 0 ? _options$eventFilter : initialEventFilter,
-      timezone: initializeTimezoneOptions(options.timezone)
+      timezone: initializeTimezoneOptions(options.timezone),
+      onClickTimeGrid: (_options$onClickTimeG = options.onClickTimeGrid) !== null && _options$onClickTimeG !== void 0 ? _options$onClickTimeG : function () {
+        return null;
+      }
     }
   };
 }
@@ -16394,8 +16442,10 @@ function GridHeader(_ref) {
       key: "dayNames-".concat(dayName.day),
       dayName: dayName,
       style: {
-        width: toPercent(rowStyleInfo[index].width),
-        left: toPercent(rowStyleInfo[index].left),
+        width: index === 0 ? "calc(".concat(toPercent(rowStyleInfo[index].width), " + 1px)") // border align
+        : toPercent(rowStyleInfo[index].width),
+        left: index === 0 ? "calc(".concat(toPercent(rowStyleInfo[index].left), " - 1px)") // border align
+        : toPercent(rowStyleInfo[index].left),
         borderLeft: borderLeft
       },
       theme: theme
@@ -17233,7 +17283,7 @@ function grid_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) 
 
 
 
-var EVENT_HEIGHT = 22;
+var EVENT_HEIGHT = 24;
 var TOTAL_WIDTH = 100;
 
 function forEachMatrix3d(matrices, iteratee) {
@@ -17472,7 +17522,7 @@ function createDateMatrixOfMonth(renderTargetDate, _ref4) {
       _ref4$startDayOfWeek = _ref4.startDayOfWeek,
       startDayOfWeek = _ref4$startDayOfWeek === void 0 ? 0 : _ref4$startDayOfWeek,
       _ref4$isAlways6Weeks = _ref4.isAlways6Weeks,
-      isAlways6Weeks = _ref4$isAlways6Weeks === void 0 ? true : _ref4$isAlways6Weeks;
+      isAlways6Weeks = _ref4$isAlways6Weeks === void 0 ? false : _ref4$isAlways6Weeks;
   var targetDate = new date_TZDate(renderTargetDate);
   var shouldApplyVisibleWeeksCount = visibleWeeksCount > 0;
   var baseDate = shouldApplyVisibleWeeksCount ? targetDate : toStartOfMonth(targetDate);
@@ -21789,6 +21839,8 @@ var Panel = R(function Panel(_ref2, ref) {
     height: resizerHeight
   }) : null);
 });
+// EXTERNAL MODULE: ../../node_modules/core-js/modules/es.number.parse-int.js
+var es_number_parse_int = __webpack_require__(7208);
 ;// CONCATENATED MODULE: ./src/components/timeGrid/index.ts
 var className = 'timegrid';
 var addTimeGridPrefix = function addTimeGridPrefix(selector) {
@@ -23202,7 +23254,6 @@ function HourRows(_ref) {
 var TimeColumn = compat_module_g(function TimeColumn(_ref3) {
   var timeGridRows = _ref3.timeGridRows,
       nowIndicatorState = _ref3.nowIndicatorState;
-  var showNowIndicator = useStore(showNowIndicatorOptionSelector);
   var timezones = useStore(timezonesSelector);
   var timezonesCollapsed = useStore(timezonesCollapsedOptionSelector);
   var tzConverter = useTZConverter();
@@ -23219,21 +23270,13 @@ var TimeColumn = compat_module_g(function TimeColumn(_ref3) {
   var hourRowsPropsMapper = hooks_module_T(function (row, index, diffFromPrimaryTimezone) {
     var _cls;
 
-    var shouldHideRow = function shouldHideRow(_ref4) {
-      var rowTop = _ref4.top,
-          rowHeight = _ref4.height;
-
-      if (!showNowIndicator || type_isNil(nowIndicatorState)) {
-        return false;
-      }
-
-      var indicatorTop = nowIndicatorState.top;
-      return rowTop - rowHeight <= indicatorTop && indicatorTop <= rowTop + rowHeight;
+    var shouldHideRow = function shouldHideRow() {
+      return false;
     };
 
     var isFirst = index === 0;
     var isLast = index === rowsByHour.length - 1;
-    var className = cls(timeColumn_classNames.time, (_cls = {}, timeColumn_defineProperty(_cls, timeColumn_classNames.first, isFirst), timeColumn_defineProperty(_cls, timeColumn_classNames.last, isLast), timeColumn_defineProperty(_cls, timeColumn_classNames.hidden, shouldHideRow(row)), _cls));
+    var className = cls(timeColumn_classNames.time, (_cls = {}, timeColumn_defineProperty(_cls, timeColumn_classNames.first, isFirst), timeColumn_defineProperty(_cls, timeColumn_classNames.last, isLast), timeColumn_defineProperty(_cls, timeColumn_classNames.hidden, shouldHideRow()), _cls));
     var date = setTimeStrToDate(new date_TZDate(), isLast ? row.endTime : row.startTime);
 
     if (isPresent(diffFromPrimaryTimezone)) {
@@ -23246,7 +23289,7 @@ var TimeColumn = compat_module_g(function TimeColumn(_ref3) {
       className: className,
       diffFromPrimaryTimezone: diffFromPrimaryTimezone
     };
-  }, [rowsByHour, nowIndicatorState, showNowIndicator]);
+  }, [rowsByHour]);
 
   var _timezones = _toArray(timezones),
       primaryTimezone = _timezones[0],
@@ -23784,6 +23827,9 @@ function useIsMounted() {
 
 
 
+
+
+
 function timeGrid_slicedToArray(arr, i) { return timeGrid_arrayWithHoles(arr) || timeGrid_iterableToArrayLimit(arr, i) || timeGrid_unsupportedIterableToArray(arr, i) || timeGrid_nonIterableRest(); }
 
 function timeGrid_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -23795,6 +23841,7 @@ function timeGrid_arrayLikeToArray(arr, len) { if (len == null || len > arr.leng
 function timeGrid_iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function timeGrid_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -23836,7 +23883,8 @@ function TimeGrid(_ref) {
       _useStore$week = _useStore.week,
       narrowWeekend = _useStore$week.narrowWeekend,
       startDayOfWeek = _useStore$week.startDayOfWeek,
-      collapseDuplicateEvents = _useStore$week.collapseDuplicateEvents;
+      collapseDuplicateEvents = _useStore$week.collapseDuplicateEvents,
+      onClickTimeGrid = _useStore.onClickTimeGrid;
 
   var showNowIndicator = useStore(showNowIndicatorOptionSelector);
   var selectedDuplicateEventCid = useStore(function (state) {
@@ -23939,6 +23987,17 @@ function TimeGrid(_ref) {
   }, [currentDateData, isMounted, updateTimeGridIndicator]); // Set interval to update timeIndicatorTop
 
   useInterval(updateTimeGridIndicator, isPresent(currentDateData) ? MS_PER_MINUTES : null);
+  var handleClick = hooks_module_T(function (e) {
+    var gridPosition = gridPositionFinder(e);
+
+    if (gridPosition) {
+      var col = columns[gridPosition.columnIndex];
+      var row = rows[gridPosition.rowIndex];
+      var date = new date_TZDate(col.date);
+      date.addHours(Number.parseInt(row.startTime.split(':')[0], 10));
+      onClickTimeGrid(date);
+    }
+  }, [columns, gridPositionFinder, onClickTimeGrid, rows]);
   return h("div", {
     className: timeGrid_classNames.timegrid
   }, h("div", {
@@ -23947,6 +24006,7 @@ function TimeGrid(_ref) {
     timeGridRows: rows,
     nowIndicatorState: nowIndicatorState
   }), h("div", {
+    onClick: handleClick,
     className: cls('columns'),
     style: {
       left: timeGridLeftWidth
@@ -24602,36 +24662,15 @@ function AccumulatedGridSelection(_ref) {
 
 
 
-
 function MoreEventsButton(_ref) {
   var type = _ref.type,
       number = _ref.number,
-      onClickButton = _ref.onClickButton,
-      className = _ref.className;
-
-  var _useDispatch = useDispatch('dnd'),
-      reset = _useDispatch.reset; // prevent unexpected grid selection when clicking on the button
-
-
-  var handleMouseDown = function handleMouseDown(e) {
-    e.stopPropagation();
-  };
-
-  var handleClick = function handleClick() {
-    reset();
-    onClickButton();
-  };
-
+      date = _ref.date;
   var exceedButtonTemplate = "monthGrid".concat(type === CellBarType.header ? 'Header' : 'Footer', "Exceed");
-  return h("button", {
-    type: "button",
-    onMouseDown: handleMouseDown,
-    onClick: handleClick,
-    className: className
-  }, h(Template, {
+  return h(Template, {
     template: exceedButtonTemplate,
-    param: number
-  }));
+    param: [number, date]
+  });
 }
 ;// CONCATENATED MODULE: ./src/components/dayGridMonth/cellHeader.tsx
 
@@ -24726,8 +24765,7 @@ function CellHeader(_ref2) {
       type = _ref2$type === void 0 ? CellBarType.header : _ref2$type,
       _ref2$exceedCount = _ref2.exceedCount,
       exceedCount = _ref2$exceedCount === void 0 ? 0 : _ref2$exceedCount,
-      date = _ref2.date,
-      onClickExceedCount = _ref2.onClickExceedCount;
+      date = _ref2.date;
 
   var _useStore = useStore(viewSelector),
       renderDate = _useStore.renderDate;
@@ -24776,9 +24814,9 @@ function CellHeader(_ref2) {
     template: monthGridTemplate,
     param: templateParam
   })), exceedCount ? h(MoreEventsButton, {
+    date: date,
     type: type,
     number: exceedCount,
-    onClickButton: onClickExceedCount,
     className: cls('grid-cell-more-events')
   }) : null);
 }

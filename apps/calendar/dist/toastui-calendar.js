@@ -1,6 +1,6 @@
 /*!
  * TOAST UI Calendar 2nd Edition
- * @version 2.1.3 | Wed Oct 12 2022
+ * @version 2.1.3 | Thu Oct 13 2022
  * @author NHN Cloud FE Development Lab <dl_javascript@nhn.com>
  * @license MIT
  */
@@ -6040,7 +6040,7 @@ const WEEK_EVENT_HEIGHT = 24;
 const WEEK_EVENT_MARGIN_TOP = 2;
 const WEEK_EVENT_MARGIN_LEFT = 8;
 const WEEK_EVENT_MARGIN_RIGHT = 8;
-const DEFAULT_PANEL_HEIGHT = 72; // default color values for events
+const DEFAULT_PANEL_HEIGHT = 52; // default color values for events
 
 const DEFAULT_EVENT_COLORS = {
   color: '#000',
@@ -9188,7 +9188,7 @@ const initialEventFilter = event => !!event.isVisible; // TODO: some of options 
 
 // eslint-disable-next-line complexity
 function createOptionsSlice() {
-  var _options$defaultView, _options$useFormPopup, _options$useDetailPop, _options$isReadOnly, _options$usageStatist, _options$eventFilter;
+  var _options$defaultView, _options$useFormPopup, _options$useDetailPop, _options$isReadOnly, _options$usageStatist, _options$eventFilter, _options$onClickTimeG;
 
   let options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   return {
@@ -9202,7 +9202,10 @@ function createOptionsSlice() {
       gridSelection: initializeGridSelectionOptions(options.gridSelection),
       usageStatistics: (_options$usageStatist = options.usageStatistics) !== null && _options$usageStatist !== void 0 ? _options$usageStatist : true,
       eventFilter: (_options$eventFilter = options.eventFilter) !== null && _options$eventFilter !== void 0 ? _options$eventFilter : initialEventFilter,
-      timezone: initializeTimezoneOptions(options.timezone)
+      timezone: initializeTimezoneOptions(options.timezone),
+      onClickTimeGrid: (_options$onClickTimeG = options.onClickTimeGrid) !== null && _options$onClickTimeG !== void 0 ? _options$onClickTimeG : function () {
+        return null;
+      }
     }
   };
 }
@@ -10548,8 +10551,10 @@ function GridHeader(_ref) {
     key: "dayNames-".concat(dayName.day),
     dayName: dayName,
     style: {
-      width: toPercent(rowStyleInfo[index].width),
-      left: toPercent(rowStyleInfo[index].left),
+      width: index === 0 ? "calc(".concat(toPercent(rowStyleInfo[index].width), " + 1px)") // border align
+      : toPercent(rowStyleInfo[index].width),
+      left: index === 0 ? "calc(".concat(toPercent(rowStyleInfo[index].left), " - 1px)") // border align
+      : toPercent(rowStyleInfo[index].left),
       borderLeft
     },
     theme: theme
@@ -11238,7 +11243,7 @@ function isBetween(value, min, max) {
 
 
 
-const EVENT_HEIGHT = 22;
+const EVENT_HEIGHT = 24;
 const TOTAL_WIDTH = 100;
 
 function forEachMatrix3d(matrices, iteratee) {
@@ -11457,7 +11462,7 @@ function createDateMatrixOfMonth(renderTargetDate, _ref4) {
     workweek = false,
     visibleWeeksCount = 0,
     startDayOfWeek = 0,
-    isAlways6Weeks = true
+    isAlways6Weeks = false
   } = _ref4;
   const targetDate = new date_TZDate(renderTargetDate);
   const shouldApplyVisibleWeeksCount = visibleWeeksCount > 0;
@@ -16250,7 +16255,6 @@ const TimeColumn = compat_module_g(function TimeColumn(_ref3) {
     timeGridRows,
     nowIndicatorState
   } = _ref3;
-  const showNowIndicator = useStore(showNowIndicatorOptionSelector);
   const timezones = useStore(timezonesSelector);
   const timezonesCollapsed = useStore(timezonesCollapsedOptionSelector);
   const tzConverter = useTZConverter();
@@ -16260,26 +16264,14 @@ const TimeColumn = compat_module_g(function TimeColumn(_ref3) {
   } = useTheme(weekTimeGridLeftSelector);
   const rowsByHour = F(() => timeGridRows.filter((_, index) => index % 2 === 0 || index === timeGridRows.length - 1), [timeGridRows]);
   const hourRowsPropsMapper = hooks_module_T((row, index, diffFromPrimaryTimezone) => {
-    const shouldHideRow = _ref4 => {
-      let {
-        top: rowTop,
-        height: rowHeight
-      } = _ref4;
-
-      if (!showNowIndicator || type_isNil(nowIndicatorState)) {
-        return false;
-      }
-
-      const indicatorTop = nowIndicatorState.top;
-      return rowTop - rowHeight <= indicatorTop && indicatorTop <= rowTop + rowHeight;
-    };
+    const shouldHideRow = () => false;
 
     const isFirst = index === 0;
     const isLast = index === rowsByHour.length - 1;
     const className = cls(timeColumn_classNames.time, {
       [timeColumn_classNames.first]: isFirst,
       [timeColumn_classNames.last]: isLast,
-      [timeColumn_classNames.hidden]: shouldHideRow(row)
+      [timeColumn_classNames.hidden]: shouldHideRow()
     });
     let date = setTimeStrToDate(new date_TZDate(), isLast ? row.endTime : row.startTime);
 
@@ -16293,7 +16285,7 @@ const TimeColumn = compat_module_g(function TimeColumn(_ref3) {
       className,
       diffFromPrimaryTimezone
     };
-  }, [rowsByHour, nowIndicatorState, showNowIndicator]);
+  }, [rowsByHour]);
   const [primaryTimezone, ...otherTimezones] = timezones;
   const hourRowsWidth = otherTimezones.length > 0 ? 100 / (otherTimezones.length + 1) : 100;
   const primaryTimezoneHourRowsProps = rowsByHour.map((row, index) => hourRowsPropsMapper(row, index));
@@ -16800,6 +16792,7 @@ function useIsMounted() {
 
 
 
+
 const timeGrid_classNames = {
   timegrid: cls(className),
   scrollArea: cls(addTimeGridPrefix('scroll-area'))
@@ -16815,7 +16808,8 @@ function TimeGrid(_ref) {
       narrowWeekend,
       startDayOfWeek,
       collapseDuplicateEvents
-    }
+    },
+    onClickTimeGrid
   } = useStore(optionsSelector);
   const showNowIndicator = useStore(showNowIndicatorOptionSelector);
   const selectedDuplicateEventCid = useStore(state => state.weekViewLayout.selectedDuplicateEventCid);
@@ -16898,6 +16892,17 @@ function TimeGrid(_ref) {
   }, [currentDateData, isMounted, updateTimeGridIndicator]); // Set interval to update timeIndicatorTop
 
   useInterval(updateTimeGridIndicator, isPresent(currentDateData) ? MS_PER_MINUTES : null);
+  const handleClick = hooks_module_T(e => {
+    const gridPosition = gridPositionFinder(e);
+
+    if (gridPosition) {
+      const col = columns[gridPosition.columnIndex];
+      const row = rows[gridPosition.rowIndex];
+      const date = new date_TZDate(col.date);
+      date.addHours(Number.parseInt(row.startTime.split(':')[0], 10));
+      onClickTimeGrid(date);
+    }
+  }, [columns, gridPositionFinder, onClickTimeGrid, rows]);
   return h("div", {
     className: timeGrid_classNames.timegrid
   }, h("div", {
@@ -16906,6 +16911,7 @@ function TimeGrid(_ref) {
     timeGridRows: rows,
     nowIndicatorState: nowIndicatorState
   }), h("div", {
+    onClick: handleClick,
     className: cls('columns'),
     style: {
       left: timeGridLeftWidth
@@ -17409,37 +17415,17 @@ function AccumulatedGridSelection(_ref) {
 
 
 
-
 function MoreEventsButton(_ref) {
   let {
     type,
     number,
-    onClickButton,
-    className
+    date
   } = _ref;
-  const {
-    reset
-  } = useDispatch('dnd'); // prevent unexpected grid selection when clicking on the button
-
-  const handleMouseDown = e => {
-    e.stopPropagation();
-  };
-
-  const handleClick = () => {
-    reset();
-    onClickButton();
-  };
-
   const exceedButtonTemplate = "monthGrid".concat(type === CellBarType.header ? 'Header' : 'Footer', "Exceed");
-  return h("button", {
-    type: "button",
-    onMouseDown: handleMouseDown,
-    onClick: handleClick,
-    className: className
-  }, h(Template, {
+  return h(Template, {
     template: exceedButtonTemplate,
-    param: number
-  }));
+    param: [number, date]
+  });
 }
 ;// CONCATENATED MODULE: ./src/components/dayGridMonth/cellHeader.tsx
 
@@ -17512,8 +17498,7 @@ function CellHeader(_ref2) {
   let {
     type = CellBarType.header,
     exceedCount = 0,
-    date,
-    onClickExceedCount
+    date
   } = _ref2;
   const {
     renderDate
@@ -17559,9 +17544,9 @@ function CellHeader(_ref2) {
     template: monthGridTemplate,
     param: templateParam
   })), exceedCount ? h(MoreEventsButton, {
+    date: date,
     type: type,
     number: exceedCount,
-    onClickButton: onClickExceedCount,
     className: cls('grid-cell-more-events')
   }) : null);
 }

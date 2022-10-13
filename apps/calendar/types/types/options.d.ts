@@ -3,6 +3,7 @@ import type { DeepPartial } from 'ts-essentials';
 import type { EventObject, EventObjectWithDefaultValues } from "./events";
 import type { TemplateConfig } from "./template";
 import type { ThemeState } from "./theme";
+import type { TZDate } from '..';
 export declare type EventView = 'allday' | 'time';
 export declare type TaskView = 'milestone' | 'task';
 export interface CollapseDuplicateEventsOptions {
@@ -70,6 +71,7 @@ export interface Options {
     usageStatistics?: boolean;
     eventFilter?: (event: EventObject) => boolean;
     timezone?: TimezoneOptions;
+    onClickTimeGrid?: (date: TZDate) => void;
 }
 export interface ViewInfoUserInput {
     component: ComponentType<any>;

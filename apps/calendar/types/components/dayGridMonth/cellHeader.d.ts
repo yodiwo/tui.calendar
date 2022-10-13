@@ -7,5 +7,5 @@ interface Props {
     date: TZDate;
     onClickExceedCount: () => void;
 }
-export declare function CellHeader({ type, exceedCount, date, onClickExceedCount, }: Props): h.JSX.Element | null;
+export declare function CellHeader({ type, exceedCount, date }: Props): h.JSX.Element | null;
 export {};

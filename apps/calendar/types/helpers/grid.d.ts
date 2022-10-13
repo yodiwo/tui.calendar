@@ -4,7 +4,7 @@ import { Day } from "../time/datetime";
 import type { CalendarData, EventModelMap } from "../types/events";
 import type { CommonGridColumn, GridPositionFinder, TimeGridData } from "../types/grid";
 import type { MonthOptions, WeekOptions } from "../types/options";
-export declare const EVENT_HEIGHT = 22;
+export declare const EVENT_HEIGHT = 24;
 export declare const TOTAL_WIDTH = 100;
 export declare function isWithinHeight(containerHeight: number, eventHeight: number): ({ top }: EventUIModel) => boolean;
 export declare function isExceededHeight(containerHeight: number, eventHeight: number): ({ top }: EventUIModel) => boolean;
