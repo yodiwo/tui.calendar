@@ -6,6 +6,8 @@ import type { EventObject, EventObjectWithDefaultValues } from '@t/events';
 import type { TemplateConfig } from '@t/template';
 import type { ThemeState } from '@t/theme';
 
+import type { TZDate } from '..';
+
 export type EventView = 'allday' | 'time';
 export type TaskView = 'milestone' | 'task';
 
@@ -86,6 +88,7 @@ export interface Options {
   usageStatistics?: boolean;
   eventFilter?: (event: EventObject) => boolean;
   timezone?: TimezoneOptions;
+  onClickTimeGrid?: (date: TZDate) => void;
 }
 
 export interface ViewInfoUserInput {

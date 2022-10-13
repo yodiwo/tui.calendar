@@ -95,8 +95,14 @@ export function GridHeader({
             key={`dayNames-${dayName.day}`}
             dayName={dayName}
             style={{
-              width: toPercent(rowStyleInfo[index].width),
-              left: toPercent(rowStyleInfo[index].left),
+              width:
+                index === 0
+                  ? `calc(${toPercent(rowStyleInfo[index].width)} + 1px)` // border align
+                  : toPercent(rowStyleInfo[index].width),
+              left:
+                index === 0
+                  ? `calc(${toPercent(rowStyleInfo[index].left)} - 1px)` // border align
+                  : toPercent(rowStyleInfo[index].left),
               borderLeft,
             }}
             theme={theme}

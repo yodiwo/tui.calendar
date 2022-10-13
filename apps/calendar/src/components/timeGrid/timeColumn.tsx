@@ -17,7 +17,7 @@ import { weekTimeGridLeftSelector } from '@src/selectors/theme';
 import { timezonesSelector } from '@src/selectors/timezone';
 import TZDate from '@src/time/date';
 import { addMinutes, setTimeStrToDate } from '@src/time/datetime';
-import { isNil, isPresent } from '@src/utils/type';
+import { isPresent } from '@src/utils/type';
 
 import type { TimeGridRow } from '@t/grid';
 import type { ThemeState } from '@t/theme';
@@ -119,7 +119,6 @@ interface Props {
 }
 
 export const TimeColumn = memo(function TimeColumn({ timeGridRows, nowIndicatorState }: Props) {
-  const showNowIndicator = useStore(showNowIndicatorOptionSelector);
   const timezones = useStore(timezonesSelector);
   const timezonesCollapsed = useStore(timezonesCollapsedOptionSelector);
 
@@ -132,22 +131,14 @@ export const TimeColumn = memo(function TimeColumn({ timeGridRows, nowIndicatorS
   );
   const hourRowsPropsMapper = useCallback(
     (row: TimeGridRow, index: number, diffFromPrimaryTimezone?: number) => {
-      const shouldHideRow = ({ top: rowTop, height: rowHeight }: TimeGridRow) => {
-        if (!showNowIndicator || isNil(nowIndicatorState)) {
-          return false;
-        }
-
-        const indicatorTop = nowIndicatorState.top;
-
-        return rowTop - rowHeight <= indicatorTop && indicatorTop <= rowTop + rowHeight;
-      };
+      const shouldHideRow = () => false;
 
       const isFirst = index === 0;
       const isLast = index === rowsByHour.length - 1;
       const className = cls(classNames.time, {
         [classNames.first]: isFirst,
         [classNames.last]: isLast,
-        [classNames.hidden]: shouldHideRow(row),
+        [classNames.hidden]: shouldHideRow(),
       });
       let date = setTimeStrToDate(new TZDate(), isLast ? row.endTime : row.startTime);
       if (isPresent(diffFromPrimaryTimezone)) {
@@ -161,7 +152,7 @@ export const TimeColumn = memo(function TimeColumn({ timeGridRows, nowIndicatorS
         diffFromPrimaryTimezone,
       };
     },
-    [rowsByHour, nowIndicatorState, showNowIndicator]
+    [rowsByHour]
   );
 
   const [primaryTimezone, ...otherTimezones] = timezones;

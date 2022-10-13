@@ -34,7 +34,7 @@ import type { MonthOptions, WeekOptions } from '@t/options';
 import type { Panel } from '@t/panel';
 import type { FormattedTimeString } from '@t/time/datetime';
 
-export const EVENT_HEIGHT = 22;
+export const EVENT_HEIGHT = 24;
 export const TOTAL_WIDTH = 100;
 
 function forEachMatrix3d<T>(matrices: Matrix3d<T>, iteratee: (target: T, index?: number) => void) {
@@ -319,7 +319,7 @@ export function createDateMatrixOfMonth(
     workweek = false,
     visibleWeeksCount = 0,
     startDayOfWeek = 0,
-    isAlways6Weeks = true,
+    isAlways6Weeks = false,
   }: MonthOptions
 ) {
   const targetDate = new TZDate(renderTargetDate);

@@ -70,12 +70,7 @@ function useCellHeaderTheme() {
   return useMemo(() => ({ common, month }), [common, month]);
 }
 
-export function CellHeader({
-  type = CellBarType.header,
-  exceedCount = 0,
-  date,
-  onClickExceedCount,
-}: Props) {
+export function CellHeader({ type = CellBarType.header, exceedCount = 0, date }: Props) {
   const { renderDate } = useStore(viewSelector);
 
   const [, getNow] = usePrimaryTimezone();
@@ -108,9 +103,9 @@ export function CellHeader({
       </span>
       {exceedCount ? (
         <MoreEventsButton
+          date={date}
           type={type}
           number={exceedCount}
-          onClickButton={onClickExceedCount}
           className={cls('grid-cell-more-events')}
         />
       ) : null}

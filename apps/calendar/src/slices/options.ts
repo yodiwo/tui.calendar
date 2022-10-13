@@ -145,6 +145,11 @@ export function createOptionsSlice(options: Options = {}): OptionsSlice {
       usageStatistics: options.usageStatistics ?? true,
       eventFilter: options.eventFilter ?? initialEventFilter,
       timezone: initializeTimezoneOptions(options.timezone),
+      onClickTimeGrid:
+        options.onClickTimeGrid ??
+        function () {
+          return null;
+        },
     },
   };
 }

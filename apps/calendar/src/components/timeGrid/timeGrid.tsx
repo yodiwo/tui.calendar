@@ -23,7 +23,7 @@ import type EventUIModel from '@src/model/eventUIModel';
 import { optionsSelector } from '@src/selectors';
 import { showNowIndicatorOptionSelector } from '@src/selectors/options';
 import { weekTimeGridLeftSelector } from '@src/selectors/theme';
-import type TZDate from '@src/time/date';
+import TZDate from '@src/time/date';
 import {
   isSameDate,
   MS_PER_MINUTES,
@@ -52,6 +52,7 @@ export function TimeGrid({ timeGridData, events }: Props) {
   const {
     isReadOnly,
     week: { narrowWeekend, startDayOfWeek, collapseDuplicateEvents },
+    onClickTimeGrid,
   } = useStore(optionsSelector);
   const showNowIndicator = useStore(showNowIndicatorOptionSelector);
   const selectedDuplicateEventCid = useStore(
@@ -162,11 +163,27 @@ export function TimeGrid({ timeGridData, events }: Props) {
   // Set interval to update timeIndicatorTop
   useInterval(updateTimeGridIndicator, isPresent(currentDateData) ? MS_PER_MINUTES : null);
 
+  const handleClick = useCallback(
+    (e: MouseEvent) => {
+      const gridPosition = gridPositionFinder(e);
+      if (gridPosition) {
+        const col = columns[gridPosition.columnIndex];
+        const row = rows[gridPosition.rowIndex];
+        const date = new TZDate(col.date);
+
+        date.addHours(Number.parseInt(row.startTime.split(':')[0], 10));
+        onClickTimeGrid(date);
+      }
+    },
+    [columns, gridPositionFinder, onClickTimeGrid, rows]
+  );
+
   return (
     <div className={classNames.timegrid}>
       <div className={classNames.scrollArea}>
         <TimeColumn timeGridRows={rows} nowIndicatorState={nowIndicatorState} />
         <div
+          onClick={handleClick}
           className={cls('columns')}
           style={{ left: timeGridLeftWidth }}
           ref={setColumnsContainer}
