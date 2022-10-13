@@ -44,7 +44,6 @@ Desktop.ini
 
 # build
 storybook-static/
-apps/calendar/types/
 tmpdoc/
 
 # etc
