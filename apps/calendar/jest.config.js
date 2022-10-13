@@ -10,6 +10,6 @@ module.exports = {
   },
   globals: { 'ts-jest': { tsconfig: '<rootDir>/tsconfig.test.json' } },
   watchPathIgnorePatterns: ['<rootDir>/.storybook', '<rootDir>/.stories', '/node_modules/'],
-  testPathIgnorePatterns: ['/node_modules/', '/dist/', '/playwright/'],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/', '/playwright/', '/src/'],
   setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts', '<rootDir>/src/test/matchers.ts'],
 };
