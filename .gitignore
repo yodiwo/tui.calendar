@@ -43,9 +43,7 @@ Desktop.ini
 .metadata
 
 # build
-build/
 storybook-static/
-dist/
 apps/calendar/types/
 tmpdoc/
 
