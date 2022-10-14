@@ -1,11 +1,10 @@
 import { h } from 'preact';
 import { CellBarType } from "../../constants/grid";
-import type TZDate from "../../time/date";
+import type { TemplateMonthGrid } from "../../types/template";
 interface Props {
     type?: CellBarType;
-    number: number;
     className: string;
-    date: TZDate;
+    param: TemplateMonthGrid;
 }
-export declare function MoreEventsButton({ type, number, date }: Props): h.JSX.Element;
+export declare function MoreEventsButton({ type, param }: Props): h.JSX.Element;
 export {};

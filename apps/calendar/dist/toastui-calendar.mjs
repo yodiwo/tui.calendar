@@ -23,7 +23,7 @@ var B = (e, t, n) => (sr(e, typeof t != "symbol" ? t + "" : t, n), n);
 import Il from "tui-date-picker";
 /*!
  * TOAST UI Calendar 2nd Edition
- * @version 2.1.3 | Thu Oct 13 2022
+ * @version 2.1.3 | Fri Oct 14 2022
  * @author NHN Cloud FE Development Lab <dl_javascript@nhn.com>
  * @license MIT
  */
@@ -2394,7 +2394,7 @@ const zt = 60, Dd = {
     const t = v("weekday-grid-more-events");
     return /* @__PURE__ */ d("span", {
       className: t
-    }, e, " more");
+    }, e.hiddenEventCount, " more");
   },
   monthGridFooter(e) {
     return "";
@@ -7152,11 +7152,11 @@ function Zm({ rowIndex: e, weekDates: t, narrowWeekend: n }) {
     }) : null
   ));
 }
-function Jm({ type: e, number: t, date: n }) {
-  const o = `monthGrid${e === Rn.header ? "Header" : "Footer"}Exceed`;
+function Jm({ type: e, param: t }) {
+  const n = `monthGrid${e === Rn.header ? "Header" : "Footer"}Exceed`;
   return /* @__PURE__ */ d(ne, {
-    template: o,
-    param: [t, n]
+    template: n,
+    param: t
   });
 }
 function Qm({
@@ -7195,9 +7195,8 @@ function Zs({ type: e = Rn.header, exceedCount: t = 0, date: n }) {
     template: p,
     param: c
   })), t ? /* @__PURE__ */ d(Jm, {
-    date: n,
+    param: c,
     type: e,
-    number: t,
     className: v("grid-cell-more-events")
   }) : null);
 }

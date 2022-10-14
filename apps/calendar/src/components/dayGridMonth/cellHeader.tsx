@@ -103,9 +103,8 @@ export function CellHeader({ type = CellBarType.header, exceedCount = 0, date }:
       </span>
       {exceedCount ? (
         <MoreEventsButton
-          date={date}
+          param={templateParam}
           type={type}
-          number={exceedCount}
           className={cls('grid-cell-more-events')}
         />
       ) : null}

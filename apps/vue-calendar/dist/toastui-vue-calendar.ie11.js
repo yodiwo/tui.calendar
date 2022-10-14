@@ -5070,7 +5070,7 @@
   }
   /*!
    * TOAST UI Calendar 2nd Edition
-   * @version 2.1.3 | Wed Oct 12 2022
+   * @version 2.1.3 | Fri Oct 14 2022
    * @author NHN Cloud FE Development Lab <dl_javascript@nhn.com>
    * @license MIT
    */
@@ -7257,6 +7257,26 @@
               return it;
             };
           },
+          6596: function(module3, __unused_webpack_exports, __webpack_require__2) {
+            var global2 = __webpack_require__2(9859);
+            var fails = __webpack_require__2(4229);
+            var uncurryThis = __webpack_require__2(5968);
+            var toString = __webpack_require__2(3326);
+            var trim = __webpack_require__2(1017).trim;
+            var whitespaces = __webpack_require__2(1647);
+            var $parseInt = global2.parseInt;
+            var Symbol2 = global2.Symbol;
+            var ITERATOR = Symbol2 && Symbol2.iterator;
+            var hex = /^[+-]?0x/i;
+            var exec = uncurryThis(hex.exec);
+            var FORCED = $parseInt(whitespaces + "08") !== 8 || $parseInt(whitespaces + "0x16") !== 22 || ITERATOR && !fails(function() {
+              $parseInt(Object(ITERATOR));
+            });
+            module3.exports = FORCED ? function parseInt2(string, radix) {
+              var S = trim(toString(string));
+              return $parseInt(S, radix >>> 0 || (exec(hex, S) ? 16 : 10));
+            } : $parseInt;
+          },
           47: function(module3, __unused_webpack_exports, __webpack_require__2) {
             var DESCRIPTORS = __webpack_require__2(7400);
             var uncurryThis = __webpack_require__2(5968);
@@ -9211,6 +9231,13 @@
               NumberPrototype.constructor = NumberWrapper;
               defineBuiltIn(global2, NUMBER, NumberWrapper, { constructor: true });
             }
+          },
+          7208: function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__2) {
+            var $ = __webpack_require__2(3103);
+            var parseInt2 = __webpack_require__2(6596);
+            $({ target: "Number", stat: true, forced: Number.parseInt != parseInt2 }, {
+              parseInt: parseInt2
+            });
           },
           3105: function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__2) {
             var $ = __webpack_require__2(3103);
@@ -13128,7 +13155,7 @@
           var WEEK_DAY_NAME_HEIGHT = 42;
           var WEEK_DAY_NAME_BORDER = 1;
           var WEEK_EVENT_MARGIN_TOP = 2;
-          var DEFAULT_PANEL_HEIGHT = 72;
+          var DEFAULT_PANEL_HEIGHT = 52;
           var DEFAULT_EVENT_COLORS = {
             color: "#000",
             backgroundColor: "#a1b56c",
@@ -15853,7 +15880,7 @@
             return !!event.isVisible;
           };
           function createOptionsSlice() {
-            var _options$defaultView, _options$useFormPopup, _options$useDetailPop, _options$isReadOnly, _options$usageStatist, _options$eventFilter;
+            var _options$defaultView, _options$useFormPopup, _options$useDetailPop, _options$isReadOnly, _options$usageStatist, _options$eventFilter, _options$onClickTimeG;
             var options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
             return {
               options: {
@@ -15866,7 +15893,10 @@
                 gridSelection: initializeGridSelectionOptions(options.gridSelection),
                 usageStatistics: (_options$usageStatist = options.usageStatistics) !== null && _options$usageStatist !== void 0 ? _options$usageStatist : true,
                 eventFilter: (_options$eventFilter = options.eventFilter) !== null && _options$eventFilter !== void 0 ? _options$eventFilter : initialEventFilter,
-                timezone: initializeTimezoneOptions(options.timezone)
+                timezone: initializeTimezoneOptions(options.timezone),
+                onClickTimeGrid: (_options$onClickTimeG = options.onClickTimeGrid) !== null && _options$onClickTimeG !== void 0 ? _options$onClickTimeG : function() {
+                  return null;
+                }
               }
             };
           }
@@ -16071,11 +16101,11 @@
                 className: classNames2
               }, date2);
             },
-            monthGridHeaderExceed: function monthGridHeaderExceed(hiddenEvents) {
+            monthGridHeaderExceed: function monthGridHeaderExceed(model) {
               var className2 = cls("weekday-grid-more-events");
               return h("span", {
                 className: className2
-              }, hiddenEvents, " more");
+              }, model.hiddenEventCount, " more");
             },
             monthGridFooter: function monthGridFooter(_model) {
               return "";
@@ -17093,8 +17123,8 @@
                 key: "dayNames-".concat(dayName.day),
                 dayName,
                 style: {
-                  width: toPercent(rowStyleInfo[index].width),
-                  left: toPercent(rowStyleInfo[index].left),
+                  width: index === 0 ? "calc(".concat(toPercent(rowStyleInfo[index].width), " + 1px)") : toPercent(rowStyleInfo[index].width),
+                  left: index === 0 ? "calc(".concat(toPercent(rowStyleInfo[index].left), " - 1px)") : toPercent(rowStyleInfo[index].left),
                   borderLeft
                 },
                 theme
@@ -17729,7 +17759,7 @@
             }
             return arr2;
           }
-          var EVENT_HEIGHT = 22;
+          var EVENT_HEIGHT = 24;
           var TOTAL_WIDTH = 100;
           function forEachMatrix3d(matrices, iteratee) {
             matrices.forEach(function(matrix) {
@@ -17927,7 +17957,7 @@
             });
           };
           function createDateMatrixOfMonth(renderTargetDate, _ref4) {
-            var _ref4$workweek = _ref4.workweek, workweek = _ref4$workweek === void 0 ? false : _ref4$workweek, _ref4$visibleWeeksCou = _ref4.visibleWeeksCount, visibleWeeksCount = _ref4$visibleWeeksCou === void 0 ? 0 : _ref4$visibleWeeksCou, _ref4$startDayOfWeek = _ref4.startDayOfWeek, startDayOfWeek = _ref4$startDayOfWeek === void 0 ? 0 : _ref4$startDayOfWeek, _ref4$isAlways6Weeks = _ref4.isAlways6Weeks, isAlways6Weeks = _ref4$isAlways6Weeks === void 0 ? true : _ref4$isAlways6Weeks;
+            var _ref4$workweek = _ref4.workweek, workweek = _ref4$workweek === void 0 ? false : _ref4$workweek, _ref4$visibleWeeksCou = _ref4.visibleWeeksCount, visibleWeeksCount = _ref4$visibleWeeksCou === void 0 ? 0 : _ref4$visibleWeeksCou, _ref4$startDayOfWeek = _ref4.startDayOfWeek, startDayOfWeek = _ref4$startDayOfWeek === void 0 ? 0 : _ref4$startDayOfWeek, _ref4$isAlways6Weeks = _ref4.isAlways6Weeks, isAlways6Weeks = _ref4$isAlways6Weeks === void 0 ? false : _ref4$isAlways6Weeks;
             var targetDate = new date_TZDate(renderTargetDate);
             var shouldApplyVisibleWeeksCount = visibleWeeksCount > 0;
             var baseDate = shouldApplyVisibleWeeksCount ? targetDate : toStartOfMonth(targetDate);
@@ -21893,6 +21923,7 @@
               height: resizerHeight
             }) : null);
           });
+          __webpack_require__(7208);
           var className = "timegrid";
           var addTimeGridPrefix = function addTimeGridPrefix2(selector) {
             return "".concat(className, "-").concat(selector);
@@ -23064,7 +23095,6 @@
           }
           var TimeColumn = compat_module_g(function TimeColumn2(_ref3) {
             var timeGridRows = _ref3.timeGridRows, nowIndicatorState = _ref3.nowIndicatorState;
-            var showNowIndicator = useStore(showNowIndicatorOptionSelector);
             var timezones = useStore(timezonesSelector);
             var timezonesCollapsed = useStore(timezonesCollapsedOptionSelector);
             var tzConverter = useTZConverter();
@@ -23076,17 +23106,12 @@
             }, [timeGridRows]);
             var hourRowsPropsMapper = hooks_module_T(function(row, index, diffFromPrimaryTimezone) {
               var _cls;
-              var shouldHideRow = function shouldHideRow2(_ref4) {
-                var rowTop = _ref4.top, rowHeight = _ref4.height;
-                if (!showNowIndicator || type_isNil(nowIndicatorState)) {
-                  return false;
-                }
-                var indicatorTop = nowIndicatorState.top;
-                return rowTop - rowHeight <= indicatorTop && indicatorTop <= rowTop + rowHeight;
+              var shouldHideRow = function shouldHideRow2() {
+                return false;
               };
               var isFirst = index === 0;
               var isLast = index === rowsByHour.length - 1;
-              var className2 = cls(timeColumn_classNames.time, (_cls = {}, timeColumn_defineProperty(_cls, timeColumn_classNames.first, isFirst), timeColumn_defineProperty(_cls, timeColumn_classNames.last, isLast), timeColumn_defineProperty(_cls, timeColumn_classNames.hidden, shouldHideRow(row)), _cls));
+              var className2 = cls(timeColumn_classNames.time, (_cls = {}, timeColumn_defineProperty(_cls, timeColumn_classNames.first, isFirst), timeColumn_defineProperty(_cls, timeColumn_classNames.last, isLast), timeColumn_defineProperty(_cls, timeColumn_classNames.hidden, shouldHideRow()), _cls));
               var date2 = setTimeStrToDate(new date_TZDate(), isLast ? row.endTime : row.startTime);
               if (isPresent(diffFromPrimaryTimezone)) {
                 date2 = addMinutes(date2, diffFromPrimaryTimezone);
@@ -23097,7 +23122,7 @@
                 className: className2,
                 diffFromPrimaryTimezone
               };
-            }, [rowsByHour, nowIndicatorState, showNowIndicator]);
+            }, [rowsByHour]);
             var _timezones = _toArray(timezones), primaryTimezone = _timezones[0], otherTimezones = _timezones.slice(1);
             var hourRowsWidth = otherTimezones.length > 0 ? 100 / (otherTimezones.length + 1) : 100;
             var primaryTimezoneHourRowsProps = rowsByHour.map(function(row, index) {
@@ -23481,7 +23506,7 @@
           };
           function TimeGrid(_ref) {
             var timeGridData = _ref.timeGridData, events = _ref.events;
-            var _useStore = useStore(optionsSelector), isReadOnly = _useStore.isReadOnly, _useStore$week = _useStore.week, narrowWeekend = _useStore$week.narrowWeekend, startDayOfWeek = _useStore$week.startDayOfWeek, collapseDuplicateEvents = _useStore$week.collapseDuplicateEvents;
+            var _useStore = useStore(optionsSelector), isReadOnly = _useStore.isReadOnly, _useStore$week = _useStore.week, narrowWeekend = _useStore$week.narrowWeekend, startDayOfWeek = _useStore$week.startDayOfWeek, collapseDuplicateEvents = _useStore$week.collapseDuplicateEvents, onClickTimeGrid = _useStore.onClickTimeGrid;
             var showNowIndicator = useStore(showNowIndicatorOptionSelector);
             var selectedDuplicateEventCid = useStore(function(state) {
               return state.weekViewLayout.selectedDuplicateEventCid;
@@ -23558,6 +23583,16 @@
               }
             }, [currentDateData, isMounted, updateTimeGridIndicator]);
             useInterval(updateTimeGridIndicator, isPresent(currentDateData) ? MS_PER_MINUTES : null);
+            var handleClick = hooks_module_T(function(e2) {
+              var gridPosition = gridPositionFinder(e2);
+              if (gridPosition) {
+                var col = columns[gridPosition.columnIndex];
+                var row = rows[gridPosition.rowIndex];
+                var date2 = new date_TZDate(col.date);
+                date2.addHours(Number.parseInt(row.startTime.split(":")[0], 10));
+                onClickTimeGrid(date2);
+              }
+            }, [columns, gridPositionFinder, onClickTimeGrid, rows]);
             return h("div", {
               className: timeGrid_classNames.timegrid
             }, h("div", {
@@ -23566,6 +23601,7 @@
               timeGridRows: rows,
               nowIndicatorState
             }), h("div", {
+              onClick: handleClick,
               className: cls("columns"),
               style: {
                 left: timeGridLeftWidth
@@ -24150,25 +24186,12 @@
             }));
           }
           function MoreEventsButton(_ref) {
-            var type = _ref.type, number = _ref.number, onClickButton = _ref.onClickButton, className2 = _ref.className;
-            var _useDispatch = useDispatch("dnd"), reset = _useDispatch.reset;
-            var handleMouseDown = function handleMouseDown2(e2) {
-              e2.stopPropagation();
-            };
-            var handleClick = function handleClick2() {
-              reset();
-              onClickButton();
-            };
+            var type = _ref.type, param = _ref.param;
             var exceedButtonTemplate = "monthGrid".concat(type === CellBarType.header ? "Header" : "Footer", "Exceed");
-            return h("button", {
-              type: "button",
-              onMouseDown: handleMouseDown,
-              onClick: handleClick,
-              className: className2
-            }, h(Template, {
+            return h(Template, {
               template: exceedButtonTemplate,
-              param: number
-            }));
+              param
+            });
           }
           function cellHeader_slicedToArray(arr, i) {
             return cellHeader_arrayWithHoles(arr) || cellHeader_iterableToArrayLimit(arr, i) || cellHeader_unsupportedIterableToArray(arr, i) || cellHeader_nonIterableRest();
@@ -24260,7 +24283,7 @@
             }, [common, month]);
           }
           function CellHeader(_ref2) {
-            var _ref2$type = _ref2.type, type = _ref2$type === void 0 ? CellBarType.header : _ref2$type, _ref2$exceedCount = _ref2.exceedCount, exceedCount = _ref2$exceedCount === void 0 ? 0 : _ref2$exceedCount, date2 = _ref2.date, onClickExceedCount = _ref2.onClickExceedCount;
+            var _ref2$type = _ref2.type, type = _ref2$type === void 0 ? CellBarType.header : _ref2$type, _ref2$exceedCount = _ref2.exceedCount, exceedCount = _ref2$exceedCount === void 0 ? 0 : _ref2$exceedCount, date2 = _ref2.date;
             var _useStore = useStore(viewSelector), renderDate = _useStore.renderDate;
             var _usePrimaryTimezone = usePrimaryTimezone(), _usePrimaryTimezone2 = cellHeader_slicedToArray(_usePrimaryTimezone, 2), getNow = _usePrimaryTimezone2[1];
             var theme = useCellHeaderTheme();
@@ -24301,9 +24324,8 @@
               template: monthGridTemplate,
               param: templateParam
             })), exceedCount ? h(MoreEventsButton, {
+              param: templateParam,
               type,
-              number: exceedCount,
-              onClickButton: onClickExceedCount,
               className: cls("grid-cell-more-events")
             }) : null);
           }

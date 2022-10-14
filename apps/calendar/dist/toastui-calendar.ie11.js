@@ -1,6 +1,6 @@
 /*!
  * TOAST UI Calendar 2nd Edition
- * @version 2.1.3 | Thu Oct 13 2022
+ * @version 2.1.3 | Fri Oct 14 2022
  * @author NHN Cloud FE Development Lab <dl_javascript@nhn.com>
  * @license MIT
  */
@@ -15300,11 +15300,11 @@ var templates = {
       className: classNames
     }, date);
   },
-  monthGridHeaderExceed: function monthGridHeaderExceed(hiddenEvents) {
+  monthGridHeaderExceed: function monthGridHeaderExceed(model) {
     var className = cls('weekday-grid-more-events');
     return h("span", {
       className: className
-    }, hiddenEvents, " more");
+    }, model.hiddenEventCount, " more");
   },
   monthGridFooter: function monthGridFooter(_model) {
     return '';
@@ -24664,12 +24664,11 @@ function AccumulatedGridSelection(_ref) {
 
 function MoreEventsButton(_ref) {
   var type = _ref.type,
-      number = _ref.number,
-      date = _ref.date;
+      param = _ref.param;
   var exceedButtonTemplate = "monthGrid".concat(type === CellBarType.header ? 'Header' : 'Footer', "Exceed");
   return h(Template, {
     template: exceedButtonTemplate,
-    param: [number, date]
+    param: param
   });
 }
 ;// CONCATENATED MODULE: ./src/components/dayGridMonth/cellHeader.tsx
@@ -24814,9 +24813,8 @@ function CellHeader(_ref2) {
     template: monthGridTemplate,
     param: templateParam
   })), exceedCount ? h(MoreEventsButton, {
-    date: date,
+    param: templateParam,
     type: type,
-    number: exceedCount,
     className: cls('grid-cell-more-events')
   }) : null);
 }

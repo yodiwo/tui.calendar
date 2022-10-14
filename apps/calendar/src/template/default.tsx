@@ -114,10 +114,10 @@ export const templates: Template = {
     return <span className={classNames}>{date}</span>;
   },
 
-  monthGridHeaderExceed(hiddenEvents: number) {
+  monthGridHeaderExceed(model: TemplateMonthGrid) {
     const className = cls('weekday-grid-more-events');
 
-    return <span className={className}>{hiddenEvents} more</span>;
+    return <span className={className}>{model.hiddenEventCount} more</span>;
   },
 
   monthGridFooter(_model: TemplateMonthGrid) {

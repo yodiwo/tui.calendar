@@ -64,7 +64,7 @@ export interface Template {
     monthMoreTitleDate: (moreTitle: TemplateMoreTitleDate) => TemplateReturnType;
     monthMoreClose: () => TemplateReturnType;
     monthGridHeader: (cellData: TemplateMonthGrid) => TemplateReturnType;
-    monthGridHeaderExceed: (hiddenEventsCount: number, date: TZDate) => TemplateReturnType;
+    monthGridHeaderExceed: (cellData: TemplateMonthGrid) => TemplateReturnType;
     monthGridFooter: (cellData: TemplateMonthGrid) => TemplateReturnType;
     monthGridFooterExceed: (hiddenEventsCount: number) => TemplateReturnType;
     monthDayName: (monthDayNameData: TemplateMonthDayName) => TemplateReturnType;
