@@ -5077,7 +5077,7 @@
   var B = (e, t, n) => (sr(e, typeof t != "symbol" ? t + "" : t, n), n);
   /*!
    * TOAST UI Calendar 2nd Edition
-   * @version 2.1.3 | Fri Oct 14 2022
+   * @version 2.1.3 | Thu Oct 20 2022
    * @author NHN Cloud FE Development Lab <dl_javascript@nhn.com>
    * @license MIT
    */
@@ -5848,7 +5848,7 @@
     return o;
   }
   var gt = Jl;
-  const Ql = "0", Zt = 24, Mo = 2, Qr = 3, Ao = 27, fr = 5, eu = 280, co = 44, Nr = 12, tu = 12, nu = "12px 17px 0", Da = 42, Sa = 1, Ta = 2, Jt = 52, ws = {
+  const Ql = "0", Zt = 24, Mo = 2, Qr = 3, Ao = 27, fr = 5, eu = 280, co = 44, Nr = 12, tu = 12, nu = "12px 17px 0", Da = 42, Sa = 1, Ta = 2, Jt = 60, ws = {
     color: "#000",
     backgroundColor: "#a1b56c",
     dragBackgroundColor: "#a1b56c",

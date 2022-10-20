@@ -21,7 +21,7 @@ export declare const WEEK_EVENT_HEIGHT = 24;
 export declare const WEEK_EVENT_MARGIN_TOP = 2;
 export declare const WEEK_EVENT_MARGIN_LEFT = 8;
 export declare const WEEK_EVENT_MARGIN_RIGHT = 8;
-export declare const DEFAULT_PANEL_HEIGHT = 52;
+export declare const DEFAULT_PANEL_HEIGHT = 60;
 export declare const DEFAULT_EVENT_COLORS: {
     color: string;
     backgroundColor: string;

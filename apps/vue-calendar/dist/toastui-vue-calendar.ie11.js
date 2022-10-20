@@ -5070,7 +5070,7 @@
   }
   /*!
    * TOAST UI Calendar 2nd Edition
-   * @version 2.1.3 | Fri Oct 14 2022
+   * @version 2.1.3 | Thu Oct 20 2022
    * @author NHN Cloud FE Development Lab <dl_javascript@nhn.com>
    * @license MIT
    */
@@ -13155,7 +13155,7 @@
           var WEEK_DAY_NAME_HEIGHT = 42;
           var WEEK_DAY_NAME_BORDER = 1;
           var WEEK_EVENT_MARGIN_TOP = 2;
-          var DEFAULT_PANEL_HEIGHT = 52;
+          var DEFAULT_PANEL_HEIGHT = 60;
           var DEFAULT_EVENT_COLORS = {
             color: "#000",
             backgroundColor: "#a1b56c",
