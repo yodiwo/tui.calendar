@@ -15,5 +15,5 @@ interface CollapseButtonProps {
     isClickedIndex: boolean;
     onClickCollapseButton: () => void;
 }
-export declare function GridCell({ width, left, index, exceedCount, isClicked, onClickExceedCount, isClickedIndex, onClickCollapseButton, isLastCell, }: Props): h.JSX.Element;
+export declare function GridCell({ width, left, index, exceedCount, isClicked, onClickExceedCount, isLastCell, }: Props): h.JSX.Element;
 export {};

@@ -36,14 +36,6 @@ function ExceedCount({ index, exceedCount, isClicked, onClickExceedCount }: Exce
   ) : null;
 }
 
-function CollapseButton({ isClicked, isClickedIndex, onClickCollapseButton }: CollapseButtonProps) {
-  return isClicked && isClickedIndex ? (
-    <span className={cls('weekday-exceed-in-week')} onClick={onClickCollapseButton}>
-      <Template template="collapseBtnTitle" />
-    </span>
-  ) : null;
-}
-
 export function GridCell({
   width,
   left,
@@ -51,8 +43,6 @@ export function GridCell({
   exceedCount,
   isClicked,
   onClickExceedCount,
-  isClickedIndex,
-  onClickCollapseButton,
   isLastCell,
 }: Props) {
   const { borderRight, backgroundColor } = useTheme(useCallback((theme) => theme.week.dayGrid, []));
@@ -70,11 +60,6 @@ export function GridCell({
         exceedCount={exceedCount}
         isClicked={isClicked}
         onClickExceedCount={onClickExceedCount}
-      />
-      <CollapseButton
-        isClickedIndex={isClickedIndex}
-        isClicked={isClicked}
-        onClickCollapseButton={onClickCollapseButton}
       />
     </div>
   );

@@ -11859,21 +11859,7 @@ function ExceedCount(_ref) {
   })) : null;
 }
 
-function CollapseButton(_ref2) {
-  let {
-    isClicked,
-    isClickedIndex,
-    onClickCollapseButton
-  } = _ref2;
-  return isClicked && isClickedIndex ? h("span", {
-    className: cls('weekday-exceed-in-week'),
-    onClick: onClickCollapseButton
-  }, h(Template, {
-    template: "collapseBtnTitle"
-  })) : null;
-}
-
-function GridCell(_ref3) {
+function GridCell(_ref2) {
   let {
     width,
     left,
@@ -11881,10 +11867,8 @@ function GridCell(_ref3) {
     exceedCount,
     isClicked,
     onClickExceedCount,
-    isClickedIndex,
-    onClickCollapseButton,
     isLastCell
-  } = _ref3;
+  } = _ref2;
   const {
     borderRight,
     backgroundColor
@@ -11903,10 +11887,6 @@ function GridCell(_ref3) {
     exceedCount: exceedCount,
     isClicked: isClicked,
     onClickExceedCount: onClickExceedCount
-  }), h(CollapseButton, {
-    isClickedIndex: isClickedIndex,
-    isClicked: isClicked,
-    onClickCollapseButton: onClickCollapseButton
   }));
 }
 ;// CONCATENATED MODULE: ./src/components/dayGridWeek/gridCells.tsx

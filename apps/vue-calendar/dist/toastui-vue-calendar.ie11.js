@@ -18452,17 +18452,8 @@
               param: exceedCount
             })) : null;
           }
-          function CollapseButton(_ref2) {
-            var isClicked = _ref2.isClicked, isClickedIndex = _ref2.isClickedIndex, onClickCollapseButton = _ref2.onClickCollapseButton;
-            return isClicked && isClickedIndex ? h("span", {
-              className: cls("weekday-exceed-in-week"),
-              onClick: onClickCollapseButton
-            }, h(Template, {
-              template: "collapseBtnTitle"
-            })) : null;
-          }
-          function GridCell(_ref3) {
-            var width = _ref3.width, left = _ref3.left, index = _ref3.index, exceedCount = _ref3.exceedCount, isClicked = _ref3.isClicked, onClickExceedCount = _ref3.onClickExceedCount, isClickedIndex = _ref3.isClickedIndex, onClickCollapseButton = _ref3.onClickCollapseButton, isLastCell = _ref3.isLastCell;
+          function GridCell(_ref2) {
+            var width = _ref2.width, left = _ref2.left, index = _ref2.index, exceedCount = _ref2.exceedCount, isClicked = _ref2.isClicked, onClickExceedCount = _ref2.onClickExceedCount, isLastCell = _ref2.isLastCell;
             var _useTheme = useTheme(hooks_module_T(function(theme) {
               return theme.week.dayGrid;
             }, [])), borderRight = _useTheme.borderRight, backgroundColor = _useTheme.backgroundColor;
@@ -18480,10 +18471,6 @@
               exceedCount,
               isClicked,
               onClickExceedCount
-            }), h(CollapseButton, {
-              isClickedIndex,
-              isClicked,
-              onClickCollapseButton
             }));
           }
           var GridCells = compat_module_g(function GridCells2(_ref) {

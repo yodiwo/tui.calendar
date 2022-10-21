@@ -19,7 +19,7 @@ var jn = (e, t) => {
       t.indexOf(o) < 0 && es.call(e, o) && (n[o] = e[o]);
   return n;
 };
-var B = (e, t, n) => (sr(e, typeof t != "symbol" ? t + "" : t, n), n);
+var G = (e, t, n) => (sr(e, typeof t != "symbol" ? t + "" : t, n), n);
 import Il from "tui-date-picker";
 /*!
  * TOAST UI Calendar 2nd Edition
@@ -529,7 +529,7 @@ function cr(e, t) {
   t && (Ze("Patches"), e.u = [], e.s = [], e.v = t);
 }
 function vo(e) {
-  Tr(e), e.p.forEach(Bl), e.p = null;
+  Tr(e), e.p.forEach(Gl), e.p = null;
 }
 function Tr(e) {
   e === qt && (qt = e.l);
@@ -537,7 +537,7 @@ function Tr(e) {
 function ps(e) {
   return qt = { p: [], l: qt, h: e, m: !0, _: 0 };
 }
-function Bl(e) {
+function Gl(e) {
   var t = e[He];
   t.i === 0 || t.i === 1 ? t.j() : t.O = !0;
 }
@@ -611,7 +611,7 @@ function Cr(e, t, n) {
   }(t, n) : Ze("ES5").J(t, n);
   return (n ? n.A : fs()).p.push(o), o;
 }
-function Gl(e) {
+function Bl(e) {
   return Kt(e) || De(22, e), function t(n) {
     if (!bt(n))
       return n;
@@ -766,7 +766,7 @@ var jl = function() {
   }
   var t = e.prototype;
   return t.createDraft = function(n) {
-    bt(n) || De(8), Kt(n) && (n = Gl(n));
+    bt(n) || De(8), Kt(n) && (n = Bl(n));
     var o = ps(this), r = Cr(this, n, void 0);
     return r[He].C = !0, Tr(o), r;
   }, t.finishDraft = function(n, o) {
@@ -805,7 +805,7 @@ var Kl = typeof globalThis != "undefined" ? globalThis : typeof window != "undef
 function ql(e) {
   return e === void 0;
 }
-var Be = ql, Zl = Be;
+var Ge = ql, Zl = Ge;
 function Jl(e, t, n) {
   var o = [], r;
   for (Zl(t) && (t = e || 0, e = 0), n = n || 1, r = n < 0 ? -1 : 1, t *= r; e * r < t; e += n)
@@ -836,7 +836,7 @@ function su(e) {
 }
 var Ce = su;
 function U(e) {
-  return Be(e) || e === null;
+  return Ge(e) || e === null;
 }
 function L(e) {
   return !U(e);
@@ -1095,8 +1095,8 @@ function mr(e) {
 }
 class O {
   constructor(...t) {
-    B(this, "tzOffset", null);
-    B(this, "d");
+    G(this, "tzOffset", null);
+    G(this, "d");
     t[0] instanceof O ? this.d = Ss(t[0].getTime()) : this.d = Ss(...t);
   }
   toString() {
@@ -1241,28 +1241,28 @@ const Au = [
 ];
 class Ct {
   constructor(t) {
-    B(this, "model");
-    B(this, "top", 0);
-    B(this, "left", 0);
-    B(this, "width", 0);
-    B(this, "height", 0);
-    B(this, "renderStarts");
-    B(this, "renderEnds");
-    B(this, "exceedLeft", !1);
-    B(this, "exceedRight", !1);
-    B(this, "croppedStart", !1);
-    B(this, "croppedEnd", !1);
-    B(this, "goingDurationHeight", 0);
-    B(this, "modelDurationHeight", 100);
-    B(this, "comingDurationHeight", 0);
-    B(this, "duplicateEvents", []);
-    B(this, "duplicateEventIndex", -1);
-    B(this, "duplicateStarts");
-    B(this, "duplicateEnds");
-    B(this, "duplicateLeft", "");
-    B(this, "duplicateWidth", "");
-    B(this, "collapse", !1);
-    B(this, "isMain", !1);
+    G(this, "model");
+    G(this, "top", 0);
+    G(this, "left", 0);
+    G(this, "width", 0);
+    G(this, "height", 0);
+    G(this, "renderStarts");
+    G(this, "renderEnds");
+    G(this, "exceedLeft", !1);
+    G(this, "exceedRight", !1);
+    G(this, "croppedStart", !1);
+    G(this, "croppedEnd", !1);
+    G(this, "goingDurationHeight", 0);
+    G(this, "modelDurationHeight", 100);
+    G(this, "comingDurationHeight", 0);
+    G(this, "duplicateEvents", []);
+    G(this, "duplicateEventIndex", -1);
+    G(this, "duplicateStarts");
+    G(this, "duplicateEnds");
+    G(this, "duplicateLeft", "");
+    G(this, "duplicateWidth", "");
+    G(this, "collapse", !1);
+    G(this, "isMain", !1);
     this.model = t;
   }
   getUIProps() {
@@ -1383,7 +1383,7 @@ var rn = /* @__PURE__ */ ((e) => (e[e.SUN = 0] = "SUN", e[e.MON = 1] = "MON", e[
 const Ke = 7, Hu = /^(\d{4}[-|/]*\d{2}[-|/]*\d{2})\s?(\d{2}:\d{2}:\d{2})?$/, $u = {
   millisecondsTo: {},
   millisecondsFrom: {}
-}, Bu = [24, 60, 60, 1e3];
+}, Gu = [24, 60, 60, 1e3];
 function Me(e, t) {
   let n = "", o = 0;
   if (String(e).length > t)
@@ -1396,7 +1396,7 @@ function Cs(e) {
   let t = e.getHours();
   return t === 0 && (t = 12), t > 12 && (t = t % 12), t;
 }
-const Gu = {
+const Bu = {
   YYYYMMDD(e) {
     return [
       e.getFullYear(),
@@ -1431,7 +1431,7 @@ const Gu = {
 }, at = 864e5, ni = 6e4, Xn = 20 * ni, ka = 30 * 60 * 1e3;
 function me(e, t) {
   let n = t;
-  return Object.entries(Gu).forEach(([o, r]) => {
+  return Object.entries(Bu).forEach(([o, r]) => {
     n = n.replace(o, r(e));
   }), n;
 }
@@ -1442,7 +1442,7 @@ function Fu(e, t, n) {
     minute: 2,
     second: 3
   };
-  return !(e in o) || isNaN(t) ? 0 : [t].concat(Bu.slice(o[e])).reduce(n);
+  return !(e in o) || isNaN(t) ? 0 : [t].concat(Gu.slice(o[e])).reduce(n);
 }
 function Kn(e, t) {
   const n = $u.millisecondsFrom, o = e + t;
@@ -1623,33 +1623,33 @@ function Ns(e) {
 }
 class ci {
   constructor(t = {}) {
-    B(this, "id", "");
-    B(this, "calendarId", "");
-    B(this, "title", "");
-    B(this, "body", "");
-    B(this, "isAllday", !1);
-    B(this, "start", new O());
-    B(this, "end", new O());
-    B(this, "goingDuration", 0);
-    B(this, "comingDuration", 0);
-    B(this, "location", "");
-    B(this, "attendees", []);
-    B(this, "category", "time");
-    B(this, "dueDateClass", "");
-    B(this, "recurrenceRule", "");
-    B(this, "state", "Busy");
-    B(this, "isVisible", !0);
-    B(this, "isPending", !1);
-    B(this, "isFocused", !1);
-    B(this, "isReadOnly", !1);
-    B(this, "isPrivate", !1);
-    B(this, "color");
-    B(this, "backgroundColor");
-    B(this, "dragBackgroundColor");
-    B(this, "borderColor");
-    B(this, "customStyle", {});
-    B(this, "raw", null);
-    B(this, "hasMultiDates", !1);
+    G(this, "id", "");
+    G(this, "calendarId", "");
+    G(this, "title", "");
+    G(this, "body", "");
+    G(this, "isAllday", !1);
+    G(this, "start", new O());
+    G(this, "end", new O());
+    G(this, "goingDuration", 0);
+    G(this, "comingDuration", 0);
+    G(this, "location", "");
+    G(this, "attendees", []);
+    G(this, "category", "time");
+    G(this, "dueDateClass", "");
+    G(this, "recurrenceRule", "");
+    G(this, "state", "Busy");
+    G(this, "isVisible", !0);
+    G(this, "isPending", !1);
+    G(this, "isFocused", !1);
+    G(this, "isReadOnly", !1);
+    G(this, "isPrivate", !1);
+    G(this, "color");
+    G(this, "backgroundColor");
+    G(this, "dragBackgroundColor");
+    G(this, "borderColor");
+    G(this, "customStyle", {});
+    G(this, "raw", null);
+    G(this, "hasMultiDates", !1);
     Ns(this), this.init(t);
   }
   init({
@@ -1762,7 +1762,7 @@ class ci {
     };
   }
 }
-B(ci, "schema", {
+G(ci, "schema", {
   required: ["title"],
   dateRange: ["start", "end"]
 });
@@ -1772,7 +1772,7 @@ function Zu({ model: e }) {
 }
 class Je {
   constructor(t) {
-    B(this, "internalMap", /* @__PURE__ */ new Map());
+    G(this, "internalMap", /* @__PURE__ */ new Map());
     Cn(t) && (this.getItemID = t);
   }
   static and(...t) {
@@ -2310,7 +2310,7 @@ function Is(e, t) {
 function Ms(e) {
   return Ce(e) ? wd.test(e) : e === null;
 }
-function Ba(e) {
+function Ga(e) {
   const t = Is(e, "width"), n = Is(e, "height");
   if ((Ms(t) || Ms(n)) && e.getBoundingClientRect) {
     const { width: o, height: r } = e.getBoundingClientRect();
@@ -2534,8 +2534,8 @@ function Cd(e) {
     )
   };
 }
-const kd = Be(window) || !window.navigator, As = kd ? re : ht;
-function Ga() {
+const kd = Ge(window) || !window.navigator, As = kd ? re : ht;
+function Ba() {
   const e = Io(null);
   function t({
     children: r,
@@ -2550,7 +2550,7 @@ function Ga() {
       if (U(s))
         throw new Error("StoreProvider is not found");
       const [, a] = Wr((w) => w + 1, 0), l = s.getState(), u = ne(l), c = ne(r), f = ne(i), p = ne(!1), h = ne();
-      Be(h.current) && (h.current = r(l));
+      Ge(h.current) && (h.current = r(l));
       let m, _ = !1;
       (u.current !== l || c.current !== r || f.current !== i || p.current) && (m = r(l), _ = !i(h.current, m)), As(() => {
         _ && (h.current = m), u.current = l, c.current = r, f.current = i, p.current = !1;
@@ -2615,7 +2615,7 @@ const Nd = (e) => (t) => ce(x(x(x(x(x(x(x(x({}, gd(e)), Sd(e.template)), _d()), 
     gridSelection: ld(t),
     template: Td(t)
   }
-}), Id = (e = {}) => Fa(Nd(e)), { StoreProvider: Md, useStore: W, useInternalStore: Ua } = Ga();
+}), Id = (e = {}) => Fa(Nd(e)), { StoreProvider: Md, useStore: W, useInternalStore: Ua } = Ba();
 function Te(e) {
   return W(
     ee(
@@ -2789,15 +2789,15 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         };
         if (A.version = "2.3.8", A.removed = [], !M || !M.document || M.document.nodeType !== 9)
           return A.isSupported = !1, A;
-        var Y = M.document, Z = M.document, fe = M.DocumentFragment, Lt = M.HTMLTemplateElement, dt = M.Node, ft = M.Element, mn = M.NodeFilter, hn = M.NamedNodeMap, rl = hn === void 0 ? M.NamedNodeMap || M.MozNamedAttrMap : hn, il = M.HTMLFormElement, sl = M.DOMParser, al = M.trustedTypes, Bn = ft.prototype, cl = Oe(Bn, "cloneNode"), ll = Oe(Bn, "nextSibling"), ul = Oe(Bn, "childNodes"), zo = Oe(Bn, "parentNode");
+        var Y = M.document, Z = M.document, fe = M.DocumentFragment, Lt = M.HTMLTemplateElement, dt = M.Node, ft = M.Element, mn = M.NodeFilter, hn = M.NamedNodeMap, rl = hn === void 0 ? M.NamedNodeMap || M.MozNamedAttrMap : hn, il = M.HTMLFormElement, sl = M.DOMParser, al = M.trustedTypes, Gn = ft.prototype, cl = Oe(Gn, "cloneNode"), ll = Oe(Gn, "nextSibling"), ul = Oe(Gn, "childNodes"), zo = Oe(Gn, "parentNode");
         if (typeof Lt == "function") {
           var Wo = Z.createElement("template");
           Wo.content && Wo.content.ownerDocument && (Z = Wo.content.ownerDocument);
         }
-        var pt = nl(al, Y), Mi = pt ? pt.createHTML("") : "", Gn = Z, Yo = Gn.implementation, dl = Gn.createNodeIterator, fl = Gn.createDocumentFragment, pl = Gn.getElementsByTagName, ml = Y.importNode, Ai = {};
+        var pt = nl(al, Y), Mi = pt ? pt.createHTML("") : "", Bn = Z, Yo = Bn.implementation, dl = Bn.createNodeIterator, fl = Bn.createDocumentFragment, pl = Bn.getElementsByTagName, ml = Y.importNode, Ai = {};
         try {
           Ai = de(Z).documentMode ? Z.documentMode : {};
-        } catch (G) {
+        } catch (B) {
         }
         var Xe = {};
         A.isSupported = typeof zo == "function" && Yo && typeof Yo.createHTMLDocument != "undefined" && Ai !== 9;
@@ -2820,12 +2820,12 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             enumerable: !0,
             value: !1
           }
-        })), gn = null, Ko = null, Pi = !0, qo = !0, Li = !1, Ht = !1, Dt = !1, Zo = !1, Jo = !1, $t = !1, Fn = !1, Un = !1, Hi = !0, Qo = !0, vn = !1, Bt = {}, Gt = null, $i = j({}, ["annotation-xml", "audio", "colgroup", "desc", "foreignobject", "head", "iframe", "math", "mi", "mn", "mo", "ms", "mtext", "noembed", "noframes", "noscript", "plaintext", "script", "style", "svg", "template", "thead", "title", "video", "xmp"]), Bi = null, Gi = j({}, ["audio", "video", "img", "source", "image", "track"]), er = null, Fi = j({}, ["alt", "class", "for", "id", "label", "name", "pattern", "placeholder", "role", "summary", "title", "value", "style", "xmlns"]), tr = "http://www.w3.org/1998/Math/MathML", nr = "http://www.w3.org/2000/svg", mt = "http://www.w3.org/1999/xhtml", zn = mt, or = !1, Ft, _l = ["application/xhtml+xml", "text/html"], yl = "text/html", St, Ut = null, wl = Z.createElement("form"), Ui = function(g) {
+        })), gn = null, Ko = null, Pi = !0, qo = !0, Li = !1, Ht = !1, Dt = !1, Zo = !1, Jo = !1, $t = !1, Fn = !1, Un = !1, Hi = !0, Qo = !0, vn = !1, Gt = {}, Bt = null, $i = j({}, ["annotation-xml", "audio", "colgroup", "desc", "foreignobject", "head", "iframe", "math", "mi", "mn", "mo", "ms", "mtext", "noembed", "noframes", "noscript", "plaintext", "script", "style", "svg", "template", "thead", "title", "video", "xmp"]), Gi = null, Bi = j({}, ["audio", "video", "img", "source", "image", "track"]), er = null, Fi = j({}, ["alt", "class", "for", "id", "label", "name", "pattern", "placeholder", "role", "summary", "title", "value", "style", "xmlns"]), tr = "http://www.w3.org/1998/Math/MathML", nr = "http://www.w3.org/2000/svg", mt = "http://www.w3.org/1999/xhtml", zn = mt, or = !1, Ft, _l = ["application/xhtml+xml", "text/html"], yl = "text/html", St, Ut = null, wl = Z.createElement("form"), Ui = function(g) {
           return g instanceof RegExp || g instanceof Function;
         }, rr = function(g) {
-          Ut && Ut === g || ((!g || n(g) !== "object") && (g = {}), g = de(g), ve = "ALLOWED_TAGS" in g ? j({}, g.ALLOWED_TAGS) : Ri, we = "ALLOWED_ATTR" in g ? j({}, g.ALLOWED_ATTR) : Oi, er = "ADD_URI_SAFE_ATTR" in g ? j(de(Fi), g.ADD_URI_SAFE_ATTR) : Fi, Bi = "ADD_DATA_URI_TAGS" in g ? j(de(Gi), g.ADD_DATA_URI_TAGS) : Gi, Gt = "FORBID_CONTENTS" in g ? j({}, g.FORBID_CONTENTS) : $i, gn = "FORBID_TAGS" in g ? j({}, g.FORBID_TAGS) : {}, Ko = "FORBID_ATTR" in g ? j({}, g.FORBID_ATTR) : {}, Bt = "USE_PROFILES" in g ? g.USE_PROFILES : !1, Pi = g.ALLOW_ARIA_ATTR !== !1, qo = g.ALLOW_DATA_ATTR !== !1, Li = g.ALLOW_UNKNOWN_PROTOCOLS || !1, Ht = g.SAFE_FOR_TEMPLATES || !1, Dt = g.WHOLE_DOCUMENT || !1, $t = g.RETURN_DOM || !1, Fn = g.RETURN_DOM_FRAGMENT || !1, Un = g.RETURN_TRUSTED_TYPE || !1, Jo = g.FORCE_BODY || !1, Hi = g.SANITIZE_DOM !== !1, Qo = g.KEEP_CONTENT !== !1, vn = g.IN_PLACE || !1, Xo = g.ALLOWED_URI_REGEXP || Xo, zn = g.NAMESPACE || mt, g.CUSTOM_ELEMENT_HANDLING && Ui(g.CUSTOM_ELEMENT_HANDLING.tagNameCheck) && (pe.tagNameCheck = g.CUSTOM_ELEMENT_HANDLING.tagNameCheck), g.CUSTOM_ELEMENT_HANDLING && Ui(g.CUSTOM_ELEMENT_HANDLING.attributeNameCheck) && (pe.attributeNameCheck = g.CUSTOM_ELEMENT_HANDLING.attributeNameCheck), g.CUSTOM_ELEMENT_HANDLING && typeof g.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements == "boolean" && (pe.allowCustomizedBuiltInElements = g.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements), Ft = _l.indexOf(g.PARSER_MEDIA_TYPE) === -1 ? Ft = yl : Ft = g.PARSER_MEDIA_TYPE, St = Ft === "application/xhtml+xml" ? function(C) {
+          Ut && Ut === g || ((!g || n(g) !== "object") && (g = {}), g = de(g), ve = "ALLOWED_TAGS" in g ? j({}, g.ALLOWED_TAGS) : Ri, we = "ALLOWED_ATTR" in g ? j({}, g.ALLOWED_ATTR) : Oi, er = "ADD_URI_SAFE_ATTR" in g ? j(de(Fi), g.ADD_URI_SAFE_ATTR) : Fi, Gi = "ADD_DATA_URI_TAGS" in g ? j(de(Bi), g.ADD_DATA_URI_TAGS) : Bi, Bt = "FORBID_CONTENTS" in g ? j({}, g.FORBID_CONTENTS) : $i, gn = "FORBID_TAGS" in g ? j({}, g.FORBID_TAGS) : {}, Ko = "FORBID_ATTR" in g ? j({}, g.FORBID_ATTR) : {}, Gt = "USE_PROFILES" in g ? g.USE_PROFILES : !1, Pi = g.ALLOW_ARIA_ATTR !== !1, qo = g.ALLOW_DATA_ATTR !== !1, Li = g.ALLOW_UNKNOWN_PROTOCOLS || !1, Ht = g.SAFE_FOR_TEMPLATES || !1, Dt = g.WHOLE_DOCUMENT || !1, $t = g.RETURN_DOM || !1, Fn = g.RETURN_DOM_FRAGMENT || !1, Un = g.RETURN_TRUSTED_TYPE || !1, Jo = g.FORCE_BODY || !1, Hi = g.SANITIZE_DOM !== !1, Qo = g.KEEP_CONTENT !== !1, vn = g.IN_PLACE || !1, Xo = g.ALLOWED_URI_REGEXP || Xo, zn = g.NAMESPACE || mt, g.CUSTOM_ELEMENT_HANDLING && Ui(g.CUSTOM_ELEMENT_HANDLING.tagNameCheck) && (pe.tagNameCheck = g.CUSTOM_ELEMENT_HANDLING.tagNameCheck), g.CUSTOM_ELEMENT_HANDLING && Ui(g.CUSTOM_ELEMENT_HANDLING.attributeNameCheck) && (pe.attributeNameCheck = g.CUSTOM_ELEMENT_HANDLING.attributeNameCheck), g.CUSTOM_ELEMENT_HANDLING && typeof g.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements == "boolean" && (pe.allowCustomizedBuiltInElements = g.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements), Ft = _l.indexOf(g.PARSER_MEDIA_TYPE) === -1 ? Ft = yl : Ft = g.PARSER_MEDIA_TYPE, St = Ft === "application/xhtml+xml" ? function(C) {
             return C;
-          } : $, Ht && (qo = !1), Fn && ($t = !0), Bt && (ve = j({}, s(Rt)), we = [], Bt.html === !0 && (j(ve, Et), j(we, Ot)), Bt.svg === !0 && (j(ve, ue), j(we, ut), j(we, $n)), Bt.svgFilters === !0 && (j(ve, Ue), j(we, ut), j(we, $n)), Bt.mathMl === !0 && (j(ve, lt), j(we, Pt), j(we, $n))), g.ADD_TAGS && (ve === Ri && (ve = de(ve)), j(ve, g.ADD_TAGS)), g.ADD_ATTR && (we === Oi && (we = de(we)), j(we, g.ADD_ATTR)), g.ADD_URI_SAFE_ATTR && j(er, g.ADD_URI_SAFE_ATTR), g.FORBID_CONTENTS && (Gt === $i && (Gt = de(Gt)), j(Gt, g.FORBID_CONTENTS)), Qo && (ve["#text"] = !0), Dt && j(ve, ["html", "head", "body"]), ve.table && (j(ve, ["tbody"]), delete gn.tbody), E && E(g), Ut = g);
+          } : $, Ht && (qo = !1), Fn && ($t = !0), Gt && (ve = j({}, s(Rt)), we = [], Gt.html === !0 && (j(ve, Et), j(we, Ot)), Gt.svg === !0 && (j(ve, ue), j(we, ut), j(we, $n)), Gt.svgFilters === !0 && (j(ve, Ue), j(we, ut), j(we, $n)), Gt.mathMl === !0 && (j(ve, lt), j(we, Pt), j(we, $n))), g.ADD_TAGS && (ve === Ri && (ve = de(ve)), j(ve, g.ADD_TAGS)), g.ADD_ATTR && (we === Oi && (we = de(we)), j(we, g.ADD_ATTR)), g.ADD_URI_SAFE_ATTR && j(er, g.ADD_URI_SAFE_ATTR), g.FORBID_CONTENTS && (Bt === $i && (Bt = de(Bt)), j(Bt, g.FORBID_CONTENTS)), Qo && (ve["#text"] = !0), Dt && j(ve, ["html", "head", "body"]), ve.table && (j(ve, ["tbody"]), delete gn.tbody), E && E(g), Ut = g);
         }, zi = j({}, ["mi", "mo", "mn", "ms", "mtext"]), Wi = j({}, ["foreignobject", "desc", "title", "annotation-xml"]), El = j({}, ["title", "style", "font", "a", "script"]), Wn = j({}, ue);
         j(Wn, Ue), j(Wn, Pe);
         var ir = j({}, lt);
@@ -2927,7 +2927,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
           if (!ve[P] || gn[P]) {
             if (!gn[P] && qi(P) && (pe.tagNameCheck instanceof RegExp && D(pe.tagNameCheck, P) || pe.tagNameCheck instanceof Function && pe.tagNameCheck(P)))
               return !1;
-            if (Qo && !Gt[P]) {
+            if (Qo && !Bt[P]) {
               var ie = zo(g) || g.parentNode, Ie = ul(g) || g.childNodes;
               if (Ie && ie)
                 for (var be = Ie.length, Ee = be - 1; Ee >= 0; --Ee)
@@ -2948,7 +2948,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                   return !1;
               } else if (!er[C]) {
                 if (!D(Xo, q(P, xi, ""))) {
-                  if (!((C === "src" || C === "xlink:href" || C === "href") && g !== "script" && te(P, "data:") === 0 && Bi[g])) {
+                  if (!((C === "src" || C === "xlink:href" || C === "href") && g !== "script" && te(P, "data:") === 0 && Gi[g])) {
                     if (!(Li && !D(vl, q(P, xi, "")))) {
                       if (P)
                         return !1;
@@ -2985,54 +2985,54 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 if (!!Ki(bl, ie, P))
                   try {
                     Ji ? g.setAttributeNS(Ji, ke, P) : g.setAttribute(ke, P), X(A.removed);
-                  } catch (ag) {
+                  } catch (sg) {
                   }
               }
             }
             tt("afterSanitizeAttributes", g, null);
           }
-        }, Tl = function G(g) {
+        }, Tl = function B(g) {
           var C, P = ji(g);
           for (tt("beforeSanitizeShadowDOM", g, null); C = P.nextNode(); )
-            tt("uponSanitizeShadowNode", C, null), !Xi(C) && (C.content instanceof fe && G(C.content), Zi(C));
+            tt("uponSanitizeShadowNode", C, null), !Xi(C) && (C.content instanceof fe && B(C.content), Zi(C));
           tt("afterSanitizeShadowDOM", g, null);
         };
-        return A.sanitize = function(G, g) {
+        return A.sanitize = function(B, g) {
           var C, P, ie, Ie, be;
-          if (or = !G, or && (G = "<!-->"), typeof G != "string" && !_n(G)) {
-            if (typeof G.toString != "function")
+          if (or = !B, or && (B = "<!-->"), typeof B != "string" && !_n(B)) {
+            if (typeof B.toString != "function")
               throw V("toString is not a function");
-            if (G = G.toString(), typeof G != "string")
+            if (B = B.toString(), typeof B != "string")
               throw V("dirty is not a string, aborting");
           }
           if (!A.isSupported) {
             if (n(M.toStaticHTML) === "object" || typeof M.toStaticHTML == "function") {
-              if (typeof G == "string")
-                return M.toStaticHTML(G);
-              if (_n(G))
-                return M.toStaticHTML(G.outerHTML);
+              if (typeof B == "string")
+                return M.toStaticHTML(B);
+              if (_n(B))
+                return M.toStaticHTML(B.outerHTML);
             }
-            return G;
+            return B;
           }
-          if (Zo || rr(g), A.removed = [], typeof G == "string" && (vn = !1), vn) {
-            if (G.nodeName) {
-              var Ee = St(G.nodeName);
+          if (Zo || rr(g), A.removed = [], typeof B == "string" && (vn = !1), vn) {
+            if (B.nodeName) {
+              var Ee = St(B.nodeName);
               if (!ve[Ee] || gn[Ee])
                 throw V("root node is forbidden and cannot be sanitized in-place");
             }
-          } else if (G instanceof dt)
-            C = Vi("<!---->"), P = C.ownerDocument.importNode(G, !0), P.nodeType === 1 && P.nodeName === "BODY" || P.nodeName === "HTML" ? C = P : C.appendChild(P);
+          } else if (B instanceof dt)
+            C = Vi("<!---->"), P = C.ownerDocument.importNode(B, !0), P.nodeType === 1 && P.nodeName === "BODY" || P.nodeName === "HTML" ? C = P : C.appendChild(P);
           else {
-            if (!$t && !Ht && !Dt && G.indexOf("<") === -1)
-              return pt && Un ? pt.createHTML(G) : G;
-            if (C = Vi(G), !C)
+            if (!$t && !Ht && !Dt && B.indexOf("<") === -1)
+              return pt && Un ? pt.createHTML(B) : B;
+            if (C = Vi(B), !C)
               return $t ? null : Un ? Mi : "";
           }
           C && Jo && et(C.firstChild);
-          for (var Yn = ji(vn ? G : C); ie = Yn.nextNode(); )
+          for (var Yn = ji(vn ? B : C); ie = Yn.nextNode(); )
             ie.nodeType === 3 && ie === Ie || Xi(ie) || (ie.content instanceof fe && Tl(ie.content), Zi(ie), Ie = ie);
           if (Ie = null, vn)
-            return G;
+            return B;
           if ($t) {
             if (Fn)
               for (be = fl.call(C.ownerDocument); C.firstChild; )
@@ -3044,21 +3044,21 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
           var ke = Dt ? C.outerHTML : C.innerHTML;
           return Dt && ve["!doctype"] && C.ownerDocument && C.ownerDocument.doctype && C.ownerDocument.doctype.name && D(el, C.ownerDocument.doctype.name) && (ke = "<!DOCTYPE " + C.ownerDocument.doctype.name + `>
 ` + ke), Ht && (ke = q(ke, Vo, " "), ke = q(ke, jo, " ")), pt && Un ? pt.createHTML(ke) : ke;
-        }, A.setConfig = function(G) {
-          rr(G), Zo = !0;
+        }, A.setConfig = function(B) {
+          rr(B), Zo = !0;
         }, A.clearConfig = function() {
           Ut = null, Zo = !1;
-        }, A.isValidAttribute = function(G, g, C) {
+        }, A.isValidAttribute = function(B, g, C) {
           Ut || rr({});
-          var P = St(G), ie = St(g);
+          var P = St(B), ie = St(g);
           return Ki(P, ie, C);
-        }, A.addHook = function(G, g) {
-          typeof g == "function" && (Xe[G] = Xe[G] || [], I(Xe[G], g));
-        }, A.removeHook = function(G) {
-          if (Xe[G])
-            return X(Xe[G]);
-        }, A.removeHooks = function(G) {
-          Xe[G] && (Xe[G] = []);
+        }, A.addHook = function(B, g) {
+          typeof g == "function" && (Xe[B] = Xe[B] || [], I(Xe[B], g));
+        }, A.removeHook = function(B) {
+          if (Xe[B])
+            return X(Xe[B]);
+        }, A.removeHooks = function(B) {
+          Xe[B] && (Xe[B] = []);
         }, A.removeAllHooks = function() {
           Xe = {};
         }, A;
@@ -3127,7 +3127,7 @@ function $o() {
     [e, t]
   );
 }
-function Bo() {
+function Go() {
   const e = W(Ho), t = $o(), n = ee(
     () => t(e),
     [e, t]
@@ -3153,8 +3153,8 @@ function $d({
   const { day: n } = e;
   return ri(n) ? t.common.holiday.color : ii(n) ? t.common.saturday.color : t.common.dayName.color;
 }
-function Bd({ dayName: e, style: t, type: n, theme: o }) {
-  const r = Ne(), [, i] = Bo(), s = i(), { day: a } = e, l = n === "week" ? Hd({ dayName: e, theme: o, today: s }) : $d({ dayName: e, theme: o }), u = `${n}DayName`, c = () => {
+function Gd({ dayName: e, style: t, type: n, theme: o }) {
+  const r = Ne(), [, i] = Go(), s = i(), { day: a } = e, l = n === "week" ? Hd({ dayName: e, theme: o, today: s }) : $d({ dayName: e, theme: o }), u = `${n}DayName`, c = () => {
     Ld(n) && r.fire("clickDayName", { date: me(e.dateInstance, "YYYY-MM-DD") });
   };
   return /* @__PURE__ */ d("div", {
@@ -3170,7 +3170,7 @@ function Bd({ dayName: e, style: t, type: n, theme: o }) {
     param: e
   })));
 }
-const ja = yt("common"), Gd = yt("month"), Xa = (e) => e.week.dayGridLeft, li = (e) => e.week.timeGridLeft, Fd = (e) => e.month.moreView, Ka = (e) => e.month.gridCell, Ud = {
+const ja = yt("common"), Bd = yt("month"), Xa = (e) => e.week.dayGridLeft, li = (e) => e.week.timeGridLeft, Fd = (e) => e.month.moreView, Ka = (e) => e.month.gridCell, Ud = {
   border: "1px solid #e5e5e5",
   backgroundColor: "white",
   holiday: {
@@ -3339,14 +3339,14 @@ const Kd = (e = {}) => (t) => ce(x(x(x({}, Yd(e == null ? void 0 : e.common)), X
   dispatch: x({}, Vd(t))
 }), qd = (e = {}) => Fa(Kd(e)), {
   StoreProvider: Zd,
-  useInternalStore: ug,
+  useInternalStore: lg,
   useStore: se
-} = Ga();
+} = Ba();
 function Jd() {
   return se(ja);
 }
 function qa() {
-  return se(Gd);
+  return se(Bd);
 }
 function Qd(e) {
   return {
@@ -3395,7 +3395,7 @@ function ui({
   }, /* @__PURE__ */ d("div", {
     className: v("day-name-container"),
     style: { marginLeft: t }
-  }, e.map((h, m) => /* @__PURE__ */ d(Bd, {
+  }, e.map((h, m) => /* @__PURE__ */ d(Gd, {
     type: o,
     key: `dayNames-${h.day}`,
     dayName: h,
@@ -3409,7 +3409,7 @@ function ui({
 }
 const tf = 6;
 var Rn = /* @__PURE__ */ ((e) => (e.header = "header", e.footer = "footer", e))(Rn || {});
-function Go(e, t = !0) {
+function Bo(e, t = !0) {
   const n = [];
   let o;
   return e.length && (n[0] = [e[0].cid()], e.slice(1).forEach((r, i) => {
@@ -3423,7 +3423,7 @@ function Go(e, t = !0) {
 function nf(e, t) {
   let { length: n } = e;
   for (; n > 0; )
-    if (n -= 1, !Be(e[n][t]))
+    if (n -= 1, !Ge(e[n][t]))
       return n;
   return -1;
 }
@@ -3435,7 +3435,7 @@ function Fo(e, t, n = !0) {
       const a = e.get(s);
       let l = 0, u = !1, c, f;
       for (; !u; )
-        f = nf(i, l), f === -1 ? (i[0].push(a), u = !0) : a.collidesWith(i[f][l], n) || (c = f + 1, Be(i[c]) && (i[c] = []), i[c][l] = a, u = !0), l += 1;
+        f = nf(i, l), f === -1 ? (i[0].push(a), u = !0) : a.collidesWith(i[f][l], n) || (c = f + 1, Ge(i[c]) && (i[c] = []), i[c][l] = a, u = !0), l += 1;
     }), o.push(i);
   }), o;
 }
@@ -3503,7 +3503,7 @@ function af(e, t) {
   o.forEach((i) => {
     const s = me(i.getStarts(), "YYYYMMDD");
     let a = r[s];
-    Be(a) && (a = r[s] = sf(
+    Ge(a) && (a = r[s] = sf(
       e,
       s,
       n
@@ -3515,7 +3515,7 @@ function cf(e, t) {
   o.forEach((i) => {
     const s = me(i.getStarts(), "YYYYMMDD");
     let a = r[s];
-    if (Be(a) && (a = r[s] = [], e[s].forEach((l) => {
+    if (Ge(a) && (a = r[s] = [], e[s].forEach((l) => {
       n.doWhenHas(l, (u) => {
         a.push(u.top);
       });
@@ -3536,7 +3536,7 @@ function lf(e) {
 function uf(e, t) {
   const { start: n, end: o, andFilters: r = [], alldayFirstMode: i = !1 } = t, { events: s, idsOfDay: a } = e, l = Je.and(...[Za(n, o)].concat(r)), u = s.filter(l), c = ec(u);
   lf(c), rf(n, o, c);
-  const f = c.sort(kt.compare.event.asc), p = !1, h = Go(f, p), m = Fo(c, h, p);
+  const f = c.sort(kt.compare.event.asc), p = !1, h = Bo(f, p), m = Fo(c, h, p);
   return Ja(n, o, m, of), i ? af(a, c) : cf(a, c), m;
 }
 function df(e, t) {
@@ -3562,7 +3562,7 @@ function pf(e, t, n, o) {
 function mf(e, t) {
   const { start: n, end: o, uiModelTimeColl: r, hourStart: i, hourEnd: s } = t, a = pf(e, n, o, r), l = {}, u = ff(i, s), c = !0;
   return Object.entries(a).forEach(([f, p]) => {
-    const h = u(p), m = Go(h, c), _ = Fo(p, m, c);
+    const h = u(p), m = Bo(h, c), _ = Fo(p, m, c);
     l[f] = _;
   }), l;
 }
@@ -3576,7 +3576,7 @@ function gf(e, t, n) {
   if (!n || !n.size)
     return [];
   hf(n), Qa(e, t, n);
-  const o = n.sort(kt.compare.event.asc), r = !0, i = Go(o, r), s = Fo(n, i, r);
+  const o = n.sort(kt.compare.event.asc), r = !0, i = Bo(o, r), s = Fo(n, i, r);
   return Ja(e, t, s), s;
 }
 function vf(e, t) {
@@ -4109,7 +4109,7 @@ function $f(e) {
     return e.context;
   }, e.children;
 }
-function Bf(e) {
+function Gf(e) {
   var t = this, n = e.i;
   t.componentWillUnmount = function() {
     go(null, t.l), t.l = null, t.i = null;
@@ -4122,7 +4122,7 @@ function Bf(e) {
   } }), go(d($f, { context: t.context }, e.__v), t.l)) : t.l && t.componentWillUnmount();
 }
 function _i(e, t) {
-  var n = d(Bf, { __v: e, i: t });
+  var n = d(Gf, { __v: e, i: t });
   return n.containerInfo = t, n;
 }
 (Qn.prototype = new rt()).__a = function(e) {
@@ -4146,7 +4146,7 @@ function _i(e, t) {
     $s(e, n, t);
   });
 };
-var Gf = typeof Symbol != "undefined" && Symbol.for && Symbol.for("react.element") || 60103, Ff = /^(?:accent|alignment|arabic|baseline|cap|clip(?!PathU)|color|dominant|fill|flood|font|glyph(?!R)|horiz|marker(?!H|W|U)|overline|paint|shape|stop|strikethrough|stroke|text(?!L)|underline|unicode|units|v|vector|vert|word|writing|x(?!C))[A-Z]/, Uf = typeof document != "undefined", zf = function(e) {
+var Bf = typeof Symbol != "undefined" && Symbol.for && Symbol.for("react.element") || 60103, Ff = /^(?:accent|alignment|arabic|baseline|cap|clip(?!PathU)|color|dominant|fill|flood|font|glyph(?!R)|horiz|marker(?!H|W|U)|overline|paint|shape|stop|strikethrough|stroke|text(?!L)|underline|unicode|units|v|vector|vert|word|writing|x(?!C))[A-Z]/, Uf = typeof document != "undefined", zf = function(e) {
   return (typeof Symbol != "undefined" && typeof Symbol() == "symbol" ? /fil|che|rad/i : /fil|che|ra/i).test(e);
 };
 rt.prototype.isReactComponent = {}, ["componentWillMount", "componentWillReceiveProps", "componentWillUpdate"].forEach(function(e) {
@@ -4156,7 +4156,7 @@ rt.prototype.isReactComponent = {}, ["componentWillMount", "componentWillReceive
     Object.defineProperty(this, e, { configurable: !0, writable: !0, value: t });
   } });
 });
-var Bs = H.event;
+var Gs = H.event;
 function Wf() {
 }
 function Yf() {
@@ -4166,9 +4166,9 @@ function Vf() {
   return this.defaultPrevented;
 }
 H.event = function(e) {
-  return Bs && (e = Bs(e)), e.persist = Wf, e.isPropagationStopped = Yf, e.isDefaultPrevented = Vf, e.nativeEvent = e;
+  return Gs && (e = Gs(e)), e.persist = Wf, e.isPropagationStopped = Yf, e.isDefaultPrevented = Vf, e.nativeEvent = e;
 };
-var Gs = { configurable: !0, get: function() {
+var Bs = { configurable: !0, get: function() {
   return this.class;
 } }, Fs = H.vnode;
 H.vnode = function(e) {
@@ -4183,9 +4183,9 @@ H.vnode = function(e) {
       a.props.selected = o.value.indexOf(a.props.value) != -1;
     })), t == "select" && o.defaultValue != null && (o.value = Nn(n.children).forEach(function(a) {
       a.props.selected = o.multiple ? o.defaultValue.indexOf(a.props.value) != -1 : o.defaultValue == a.props.value;
-    })), e.props = o, n.class != n.className && (Gs.enumerable = "className" in n, n.className != null && (o.class = n.className), Object.defineProperty(o, "className", Gs));
+    })), e.props = o, n.class != n.className && (Bs.enumerable = "className" in n, n.className != null && (o.class = n.className), Object.defineProperty(o, "className", Bs));
   }
-  e.$$typeof = Gf, Fs && Fs(e);
+  e.$$typeof = Bf, Fs && Fs(e);
 };
 var Us = H.__r;
 H.__r = function(e) {
@@ -4205,43 +4205,29 @@ function Xf({ index: e, exceedCount: t, isClicked: n, onClickExceedCount: o }) {
     param: t
   })) : null;
 }
-function Kf({ isClicked: e, isClickedIndex: t, onClickCollapseButton: n }) {
-  return e && t ? /* @__PURE__ */ d("span", {
-    className: v("weekday-exceed-in-week"),
-    onClick: n
-  }, /* @__PURE__ */ d(oe, {
-    template: "collapseBtnTitle"
-  })) : null;
-}
-function qf({
+function Kf({
   width: e,
   left: t,
   index: n,
   exceedCount: o,
   isClicked: r,
   onClickExceedCount: i,
-  isClickedIndex: s,
-  onClickCollapseButton: a,
-  isLastCell: l
+  isLastCell: s
 }) {
-  const { borderRight: u, backgroundColor: c } = se(ee((p) => p.week.dayGrid, [])), f = {
+  const { borderRight: a, backgroundColor: l } = se(ee((c) => c.week.dayGrid, [])), u = {
     width: e,
     left: t,
-    borderRight: l ? "none" : u,
-    backgroundColor: c
+    borderRight: s ? "none" : a,
+    backgroundColor: l
   };
   return /* @__PURE__ */ d("div", {
     className: v("panel-grid"),
-    style: f
+    style: u
   }, /* @__PURE__ */ d(Xf, {
     index: n,
     exceedCount: o,
     isClicked: r,
     onClickExceedCount: i
-  }), /* @__PURE__ */ d(Kf, {
-    isClickedIndex: s,
-    isClicked: r,
-    onClickCollapseButton: a
   }));
 }
 const hc = ln(function({
@@ -4261,7 +4247,7 @@ const hc = ln(function({
   ), p = n.length - 1;
   return /* @__PURE__ */ d(xe, null, n.map((h, m) => {
     const _ = K(c[m]), y = K(f[m]), E = t.filter(wf(h)), w = ic(E, r, Qe + 2), S = m === i, k = m === p;
-    return /* @__PURE__ */ d(qf, {
+    return /* @__PURE__ */ d(Kf, {
       key: `panel-grid-${h.getDate()}`,
       width: _,
       left: y,
@@ -4275,7 +4261,7 @@ const hc = ln(function({
     });
   }));
 });
-function Zf({ onMouseDown: e }) {
+function qf({ onMouseDown: e }) {
   return /* @__PURE__ */ d("span", {
     className: `${v("weekday-resize-handle")} ${v("handle-y")}`,
     onMouseDown: e,
@@ -4284,12 +4270,12 @@ function Zf({ onMouseDown: e }) {
     className: `${v("icon")} ${v("ic-handle-y")}`
   }));
 }
-const gc = Io(null), Jf = gc.Provider, xt = () => {
+const gc = Io(null), Zf = gc.Provider, xt = () => {
   const e = Mn(gc);
-  if (Be(e))
+  if (Ge(e))
     throw new Error("LayoutContainerProvider is not found");
   return e;
-}, Qf = {
+}, Jf = {
   panelResizer: "panelResizer"
 }, On = {
   resizeEvent: (e, t) => `event/${e}/resize/${t}`,
@@ -4318,7 +4304,7 @@ function yi(e) {
   );
 }
 var _c = /* @__PURE__ */ ((e) => (e.ESCAPE = "Escape", e))(_c || {});
-const ep = {
+const Qf = {
   Escape: 27
 }, zs = 3;
 function _t(e, t) {
@@ -4333,13 +4319,13 @@ function _t(e, t) {
     [e, n]
   );
 }
-function tp(e, t) {
-  return e.key ? e.key === t : e.keyCode === ep[t];
+function ep(e, t) {
+  return e.key ? e.key === t : e.keyCode === Qf[t];
 }
-function np(e) {
+function tp(e) {
   return e === 0;
 }
-function op(e, t, n, o) {
+function np(e, t, n, o) {
   return Math.abs(e - n) >= zs || Math.abs(t - o) >= zs;
 }
 function en(e, { onInit: t, onDragStart: n, onDrag: o, onMouseUp: r, onPressESCKey: i } = {}) {
@@ -4349,7 +4335,7 @@ function en(e, { onInit: t, onDragStart: n, onDrag: o, onMouseUp: r, onPressESCK
   });
   const [p, h] = ae(!1), m = ne(null), _ = ne(null), y = ne(null), E = ee(
     (T) => {
-      !np(T.button) || (T.currentTarget && (T.currentTarget.ondragstart = function() {
+      !tp(T.button) || (T.currentTarget && (T.currentTarget.ondragstart = function() {
         return !1;
       }), T.preventDefault(), h(!0), s({
         draggingItemType: e,
@@ -4370,7 +4356,7 @@ function en(e, { onInit: t, onDragStart: n, onDrag: o, onMouseUp: r, onPressESCK
         h(!1), u();
         return;
       }
-      if (!(L(N) && L(F) && !op(N, F, T.clientX, T.clientY))) {
+      if (!(L(N) && L(F) && !np(N, F, T.clientX, T.clientY))) {
         if (X <= Ve.INIT) {
           a({ x: T.clientX, y: T.clientY }), n == null || n(T, f.current);
           return;
@@ -4386,7 +4372,7 @@ function en(e, { onInit: t, onDragStart: n, onDrag: o, onMouseUp: r, onPressESCK
     [p, r, u]
   ), k = ee(
     (T) => {
-      tp(T, _c.ESCAPE) && (h(!1), l(), i == null || i(T, f.current));
+      ep(T, _c.ESCAPE) && (h(!1), l(), i == null || i(T, f.current));
     },
     [i, l]
   );
@@ -4417,11 +4403,11 @@ function yc(e) {
     horizontal: 8
   };
 }
-function rp(e, t) {
+function op(e, t) {
   const n = e ? 0 : "2px", o = t ? 0 : "2px";
   return `${n} ${o} ${o} ${n}`;
 }
-function ip({
+function rp({
   uiModel: e,
   flat: t,
   eventHeight: n,
@@ -4435,7 +4421,7 @@ function ip({
     color: a,
     backgroundColor: o ? u : l,
     borderLeft: i ? "none" : `3px solid ${c}`,
-    borderRadius: rp(i, s),
+    borderRadius: op(i, s),
     overflow: "hidden",
     height: n,
     lineHeight: Eo(n),
@@ -4448,7 +4434,7 @@ function ip({
     marginRight: s ? 0 : p.horizontal
   }, f);
 }
-function sp({
+function ip({
   flat: e,
   uiModel: t,
   resizingWidth: n,
@@ -4464,7 +4450,7 @@ function sp({
   };
   return Object.assign(f, u.customStyle);
 }
-function ap({ model: e }) {
+function sp({ model: e }) {
   const t = e.calendarId ? `${e.calendarId}-` : "", n = e.id ? `${e.id}-` : "";
   return `${t}${n}${e.title}`;
 }
@@ -4517,14 +4503,14 @@ function wt({
     D.stopPropagation(), k && F(D);
   }, $ = (D) => {
     D.stopPropagation(), X(D);
-  }, R = !m && s === "month" && t.model.category === "time" && Nt(t.model.start, t.model.end), q = !k || e || m || t.exceedRight, te = sp({
+  }, R = !m && s === "month" && t.model.category === "time" && Nt(t.model.start, t.model.end), q = !k || e || m || t.exceedRight, te = ip({
     uiModel: t,
     eventHeight: n,
     headerHeight: o,
     flat: e,
     movingLeft: i,
     resizingWidth: r
-  }), b = ip({
+  }), b = rp({
     uiModel: t,
     flat: e,
     eventHeight: n,
@@ -4537,7 +4523,7 @@ function wt({
       "weekday-exceed-right": t.exceedRight
     }),
     style: te,
-    "data-testid": wi(k, ap(t)),
+    "data-testid": wi(k, sp(t)),
     "data-calendar-id": S,
     "data-event-id": w,
     ref: y
@@ -4556,7 +4542,7 @@ function wt({
   }, /* @__PURE__ */ d(oe, {
     template: t.model.category,
     param: t.model
-  })), q ? null : /* @__PURE__ */ d(Zf, {
+  })), q ? null : /* @__PURE__ */ d(qf, {
     onMouseDown: I
   })));
 }
@@ -4582,7 +4568,7 @@ function dn(e) {
   const o = ee(() => n(null), []);
   return [t, o];
 }
-const cp = (e, t, n) => {
+const ap = (e, t, n) => {
   function o(r) {
     return new RegExp(`^event/${t}/${n}/\\d+$`).test(r);
   }
@@ -4591,7 +4577,7 @@ const cp = (e, t, n) => {
 function fn(e, t) {
   const [n, o] = ae(!1), [r, i] = ae(!1), [s, a] = ae(null);
   return _t(At, ({ draggingItemType: u, draggingEventUIModel: c, draggingState: f }) => {
-    const p = cp(u, e, t), h = Number(p) === (c == null ? void 0 : c.cid()), m = f === Ve.IDLE, _ = f === Ve.CANCELED;
+    const p = ap(u, e, t), h = Number(p) === (c == null ? void 0 : c.cid()), m = f === Ve.IDLE, _ = f === Ve.CANCELED;
     U(s) && h && a(c), L(s) && (m || _) && (o(!0), i(_));
   }), {
     isDraggingEnd: n,
@@ -4602,7 +4588,7 @@ function fn(e, t) {
     }
   };
 }
-function lp({ rowStyleInfo: e, gridPositionFinder: t }) {
+function cp({ rowStyleInfo: e, gridPositionFinder: t }) {
   const n = Ne(), {
     isDraggingEnd: o,
     isDraggingCanceled: r,
@@ -4639,11 +4625,11 @@ function lp({ rowStyleInfo: e, gridPositionFinder: t }) {
     [p, i]
   );
 }
-function up({
+function lp({
   rowStyleInfo: e,
   gridPositionFinder: t
 }) {
-  const { movingEvent: n, movingLeft: o } = lp({
+  const { movingEvent: n, movingLeft: o } = cp({
     rowStyleInfo: e,
     gridPositionFinder: t
   });
@@ -4654,11 +4640,11 @@ function up({
     movingLeft: o
   });
 }
-function dp(e, t) {
+function up(e, t) {
   const n = Co(e.getStarts(), t), o = Co(e.getEnds(), t);
   return { start: n, end: o };
 }
-function fp({
+function dp({
   weekDates: e,
   gridColWidthMap: t,
   gridPositionFinder: n
@@ -4668,7 +4654,7 @@ function fp({
     isDraggingCanceled: i,
     draggingEvent: s,
     clearDraggingEvent: a
-  } = fn("dayGrid", "resize"), [l, u] = dn(n), { columnIndex: c } = l != null ? l : {}, f = z(() => s ? dp(s, e) : { start: -1, end: -1 }, [e, s]), p = z(() => f.start > -1 && L(c) ? t[f.start][c] : null, [c, t, f.start]);
+  } = fn("dayGrid", "resize"), [l, u] = dn(n), { columnIndex: c } = l != null ? l : {}, f = z(() => s ? up(s, e) : { start: -1, end: -1 }, [e, s]), p = z(() => f.start > -1 && L(c) ? t[f.start][c] : null, [c, t, f.start]);
   return un(() => {
     if (!i && L(s) && L(c) && f.start <= c && f.end !== c) {
       const m = e[c];
@@ -4686,8 +4672,8 @@ function fp({
     [p, s]
   );
 }
-function pp({ weekDates: e, gridColWidthMap: t, gridPositionFinder: n }) {
-  const { resizingEvent: o, resizingWidth: r } = fp({
+function fp({ weekDates: e, gridColWidthMap: t, gridPositionFinder: n }) {
+  const { resizingEvent: o, resizingWidth: r } = dp({
     weekDates: e,
     gridColWidthMap: t,
     gridPositionFinder: n
@@ -4699,7 +4685,7 @@ function pp({ weekDates: e, gridColWidthMap: t, gridPositionFinder: n }) {
     resizingWidth: r
   });
 }
-function Ge() {
+function Be() {
   const [e, t] = ae(null), n = ee((o) => {
     o && t(o);
   }, []);
@@ -4727,7 +4713,7 @@ function wc(e, t) {
     onClickCollapseButton: l
   };
 }
-function mp(e, t, n) {
+function pp(e, t, n) {
   let o;
   const r = (s) => {
     if (o || (o = s), s - o >= t) {
@@ -4739,7 +4725,7 @@ function mp(e, t, n) {
   }, i = requestAnimationFrame(r);
   n(() => cancelAnimationFrame(i));
 }
-function hp({
+function mp({
   onClick: e,
   onDblClick: t,
   delay: n = 300
@@ -4750,17 +4736,17 @@ function hp({
     o.current();
   };
   return re(() => i, []), [(l) => {
-    i(), mp(e.bind(null, l), n, r);
+    i(), pp(e.bind(null, l), n, r);
   }, (l) => {
     i(), t(l);
   }];
 }
-const gp = {
+const hp = {
   dayGridMonth: "month",
   dayGridWeek: "allday",
   timeGrid: "time"
 };
-function vp(e, t) {
+function gp(e, t) {
   return e < t ? [e, t] : [t, e];
 }
 function Ei({
@@ -4782,7 +4768,7 @@ function Ei({
   const N = On.gridSelection(e), F = (b) => {
     const D = r(b);
     L(w) && L(D) && u(e, t(w, D));
-  }, [X, I] = hp({
+  }, [X, I] = mp({
     onClick: (b) => {
       l && R(b, !0);
     },
@@ -4802,7 +4788,7 @@ function Ei({
   }, R = (b, D) => {
     var V;
     if (D && F(b), L(T.current)) {
-      const [J, ge] = vp(
+      const [J, ge] = gp(
         ...n(o, T.current)
       );
       if (i && L(y)) {
@@ -4822,7 +4808,7 @@ function Ei({
           close: f
         });
       }
-      const j = `.${v(gp[e])}.${v(
+      const j = `.${v(hp[e])}.${v(
         "grid-selection"
       )}`, de = Array.from(
         (V = _ == null ? void 0 : _.querySelectorAll(j)) != null ? V : []
@@ -4861,7 +4847,7 @@ function Ei({
   });
   return re(() => q, [q]), te;
 }
-const _p = "alldayTitle";
+const vp = "alldayTitle";
 function Ec({
   events: e,
   weekDates: t,
@@ -4871,7 +4857,7 @@ function Ec({
   gridColWidthMap: i,
   overrideAllDayExceed: s
 }) {
-  const { isReadOnly: a } = W(je), l = se(Xa), [u, c] = Ge(), { narrowWeekend: f = !1, startDayOfWeek: p = rn.SUN } = o, h = z(() => Math.max(0, ...e.map(({ top: N }) => N)), [e]), m = z(
+  const { isReadOnly: a } = W(je), l = se(Xa), [u, c] = Be(), { narrowWeekend: f = !1, startDayOfWeek: p = rn.SUN } = o, h = z(() => Math.max(0, ...e.map(({ top: N }) => N)), [e]), m = z(
     () => hi({
       container: u,
       rowsCount: 1,
@@ -4902,7 +4888,7 @@ function Ec({
     className: v("panel-title"),
     style: l
   }, /* @__PURE__ */ d(oe, {
-    template: _p,
+    template: vp,
     param: "alldayTitle"
   })), /* @__PURE__ */ d("div", {
     className: v("allday-panel"),
@@ -4921,11 +4907,11 @@ function Ec({
     onClickCollapseButton: E
   })), /* @__PURE__ */ d("div", {
     className: v("panel-allday-events")
-  }, S), /* @__PURE__ */ d(pp, {
+  }, S), /* @__PURE__ */ d(fp, {
     weekDates: t,
     gridPositionFinder: m,
     gridColWidthMap: i
-  }), /* @__PURE__ */ d(up, {
+  }), /* @__PURE__ */ d(lp, {
     rowStyleInfo: r,
     gridPositionFinder: m
   }), /* @__PURE__ */ d(Pf, {
@@ -4984,7 +4970,7 @@ const _e = {
   stateIcon: v("icon", "ic-state-b"),
   calendarDotIcon: v("icon", "calendar-dot")
 };
-function yp({ event: e }) {
+function _p({ event: e }) {
   var l, u;
   const { location: t, recurrenceRule: n, attendees: o, state: r, calendarId: i, body: s } = e, a = vc(i);
   return /* @__PURE__ */ d("div", {
@@ -5053,7 +5039,7 @@ const _r = {
   content: v("content"),
   eventTitle: v("event-title")
 };
-function wp({ event: e }) {
+function yp({ event: e }) {
   return /* @__PURE__ */ d("div", {
     className: _r.sectionHeader
   }, /* @__PURE__ */ d("div", {
@@ -5070,7 +5056,7 @@ function wp({ event: e }) {
     as: "span"
   })));
 }
-const Ep = v("see-more-popup-slot"), Dp = v("event-form-popup-slot"), Sp = v("event-detail-popup-slot"), $r = 8, Tp = [
+const wp = v("see-more-popup-slot"), Ep = v("event-form-popup-slot"), Dp = v("event-detail-popup-slot"), $r = 8, Sp = [
   "isPrivate",
   "isAllday",
   "isPending",
@@ -5080,8 +5066,8 @@ const Ep = v("see-more-popup-slot"), Dp = v("event-form-popup-slot"), Sp = v("ev
 ];
 var Yt = /* @__PURE__ */ ((e) => (e.right = "right", e.left = "left", e))(Yt || {}), Vt = /* @__PURE__ */ ((e) => (e.top = "top", e.bottom = "bottom", e))(Vt || {});
 const Sc = Io(null);
-function bp({ children: e }) {
-  const [t, n] = Ge(), [o, r] = Ge(), [i, s] = Ge(), [a, l] = Ge(), u = {
+function Tp({ children: e }) {
+  const [t, n] = Be(), [o, r] = Be(), [i, s] = Be(), [a, l] = Be(), u = {
     container: t,
     seeMorePopupSlot: o,
     formPopupSlot: i,
@@ -5094,19 +5080,19 @@ function bp({ children: e }) {
     className: v("floating-layer")
   }, /* @__PURE__ */ d("div", {
     ref: r,
-    className: Ep
+    className: wp
   }), /* @__PURE__ */ d("div", {
     ref: s,
-    className: Dp
+    className: Ep
   }), /* @__PURE__ */ d("div", {
     ref: l,
-    className: Sp
+    className: Dp
   })));
 }
 const Di = (e) => {
   var n;
   const t = Mn(Sc);
-  if (Be(t))
+  if (Ge(t))
     throw new Error("FloatingLayerProvider is not found");
   return (n = t == null ? void 0 : t[e]) != null ? n : null;
 };
@@ -5116,7 +5102,7 @@ function Tc(e, t, n) {
 function bc(e, t, n) {
   return e + n.width > t.left + t.width;
 }
-const Cp = (e) => e.popup[Po.Form], kp = (e) => e.popup[Po.Detail], Np = (e) => e.popup[Po.SeeMore], Le = {
+const bp = (e) => e.popup[Po.Form], Cp = (e) => e.popup[Po.Detail], kp = (e) => e.popup[Po.SeeMore], Le = {
   popupContainer: v("popup-container"),
   detailContainer: v("detail-container"),
   topLine: v("popup-top-line"),
@@ -5130,19 +5116,19 @@ const Cp = (e) => e.popup[Po.Form], kp = (e) => e.popup[Po.Detail], Np = (e) => 
   deleteButton: v("delete-button"),
   verticalLine: v("vertical-line")
 };
-function Ip(e, t, n) {
+function Np(e, t, n) {
   let o = e.top + e.height / 2 - n.height / 2, r = e.left + e.width;
   return Tc(o, t, n) && (o = t.top + t.height - n.height), bc(r, t, n) && (r = e.left - n.width), [
     Math.max(o, t.top) + window.scrollY,
     Math.max(r, t.left) + window.scrollX
   ];
 }
-function Mp(e, t, n) {
+function Ip(e, t, n) {
   const o = e.top + e.height / 2 + window.scrollY, s = e.left + e.width + n.width > t.left + t.width ? Yt.right : Yt.left;
   return { top: o, direction: s };
 }
-function Ap() {
-  const { useFormPopup: e } = W(je), t = W(kp), { event: n, eventRect: o } = t != null ? t : {}, { showFormPopup: r, hideDetailPopup: i } = Te("popup"), s = yi(n), a = xt(), l = Di("detailPopupSlot"), u = Ne(), c = ne(null), [f, p] = ae({}), [h, m] = ae(0), [_, y] = ae(
+function Mp() {
+  const { useFormPopup: e } = W(je), t = W(Cp), { event: n, eventRect: o } = t != null ? t : {}, { showFormPopup: r, hideDetailPopup: i } = Te("popup"), s = yi(n), a = xt(), l = Di("detailPopupSlot"), u = Ne(), c = ne(null), [f, p] = ae({}), [h, m] = ae(0), [_, y] = ae(
     Yt.left
   ), E = z(() => {
     const te = _ === Yt.right, b = _ === Yt.left;
@@ -5150,7 +5136,7 @@ function Ap() {
   }, [_]);
   if (ht(() => {
     if (c.current && o && a) {
-      const te = a.getBoundingClientRect(), b = c.current.getBoundingClientRect(), [D, V] = Ip(o, te, b), { top: J, direction: ge } = Mp(
+      const te = a.getBoundingClientRect(), b = c.current.getBoundingClientRect(), [D, V] = Np(o, te, b), { top: J, direction: ge } = Ip(
         o,
         te,
         b
@@ -5195,9 +5181,9 @@ function Ap() {
       style: f
     }, /* @__PURE__ */ d("div", {
       className: Le.detailContainer
-    }, /* @__PURE__ */ d(wp, {
+    }, /* @__PURE__ */ d(yp, {
       event: n
-    }), /* @__PURE__ */ d(yp, {
+    }), /* @__PURE__ */ d(_p, {
       event: n
     }), !X && /* @__PURE__ */ d("div", {
       className: Le.sectionButton
@@ -5245,7 +5231,7 @@ const fo = {
   dotIcon: v("icon", "dot"),
   content: v("content")
 };
-function xp({ index: e, name: t, backgroundColor: n, onClick: o }) {
+function Ap({ index: e, name: t, backgroundColor: n, onClick: o }) {
   return /* @__PURE__ */ d("li", {
     className: fo.dropdownMenuItem,
     onClick: (r) => o(r, e)
@@ -5256,13 +5242,13 @@ function xp({ index: e, name: t, backgroundColor: n, onClick: o }) {
     className: fo.content
   }, t));
 }
-function Rp({ calendars: e, setOpened: t, onChangeIndex: n }) {
+function xp({ calendars: e, setOpened: t, onChangeIndex: n }) {
   const o = (r, i) => {
     r.stopPropagation(), t(!1), n(i);
   };
   return /* @__PURE__ */ d("ul", {
     className: fo.dropdownMenu
-  }, e.map(({ name: r, backgroundColor: i = "000" }, s) => /* @__PURE__ */ d(xp, {
+  }, e.map(({ name: r, backgroundColor: i = "000" }, s) => /* @__PURE__ */ d(Ap, {
     key: `dropdown-${r}-${s}`,
     index: s,
     name: r,
@@ -5285,17 +5271,17 @@ function Cc() {
   return { isOpened: e, setOpened: t, toggleDropdown: () => t((o) => !o) };
 }
 var ct = /* @__PURE__ */ ((e) => (e.init = "init", e.setCalendarId = "setCalendarId", e.setTitle = "setTitle", e.setLocation = "setLocation", e.setPrivate = "setPrivate", e.setAllday = "setAllday", e.setState = "setState", e.reset = "reset", e))(ct || {});
-const Br = {
+const Gr = {
   title: "",
   location: "",
   isAllday: !1,
   isPrivate: !1,
   state: "Busy"
 };
-function Op(e, t) {
+function Rp(e, t) {
   switch (t.type) {
     case "init":
-      return x(x({}, Br), t.event);
+      return x(x({}, Gr), t.event);
     case "setCalendarId":
       return ce(x({}, e), { calendarId: t.calendarId });
     case "setTitle":
@@ -5309,13 +5295,13 @@ function Op(e, t) {
     case "setState":
       return ce(x({}, e), { state: t.state });
     case "reset":
-      return x(x({}, e), Br);
+      return x(x({}, e), Gr);
     default:
       return e;
   }
 }
-function Pp(e) {
-  return Wr(Op, x({ calendarId: e }, Br));
+function Op(e) {
+  return Wr(Rp, x({ calendarId: e }, Gr));
 }
 const eo = {
   popupSection: ["dropdown-section", "calendar-section"],
@@ -5323,7 +5309,7 @@ const eo = {
   dotIcon: v("icon", "dot"),
   content: v("content", "event-calendar")
 };
-function Lp({ calendars: e, selectedCalendarId: t, formStateDispatch: n }) {
+function Pp({ calendars: e, selectedCalendarId: t, formStateDispatch: n }) {
   const { isOpened: o, setOpened: r, toggleDropdown: i } = Cc(), s = e.find((c) => c.id === t), { backgroundColor: a = "", name: l = "" } = s != null ? s : {}, u = (c) => n({ type: ct.setCalendarId, calendarId: e[c].id });
   return /* @__PURE__ */ d(Mt, {
     onClick: i,
@@ -5338,7 +5324,7 @@ function Lp({ calendars: e, selectedCalendarId: t, formStateDispatch: n }) {
     className: eo.content
   }, l), /* @__PURE__ */ d("span", {
     className: v("icon", "ic-dropdown-arrow", { open: o })
-  })), o && /* @__PURE__ */ d(Rp, {
+  })), o && /* @__PURE__ */ d(xp, {
     calendars: e,
     setOpened: r,
     onChangeIndex: u
@@ -5362,13 +5348,13 @@ function kc({ type: e, close: t }) {
     className: Ws.closeIcon
   }));
 }
-const Hp = {
+const Lp = {
   confirmButton: v("popup-button", "popup-confirm")
 };
-function $p({ children: e }) {
+function Hp({ children: e }) {
   return /* @__PURE__ */ d("button", {
     type: "submit",
-    className: Hp.confirmButton
+    className: Lp.confirmButton
   }, /* @__PURE__ */ d("span", null, e));
 }
 function No({
@@ -5389,7 +5375,7 @@ const ze = {
   dateIcon: v("icon", "ic-date"),
   dateDash: v("popup-date-dash"),
   content: v("content")
-}, Bp = pc(function({ start: t, end: n, isAllday: o = !1, formStateDispatch: r }, i) {
+}, $p = pc(function({ start: t, end: n, isAllday: o = !1, formStateDispatch: r }, i) {
   const { usageStatistics: s } = W(je), a = ne(null), l = ne(null), u = ne(null), c = ne(null), f = No({
     template: "startDatePlaceholder",
     defaultValue: "Start Date"
@@ -5470,7 +5456,7 @@ const ze = {
   icon: v("icon"),
   content: v("content")
 };
-function Fp({ setOpened: e, setEventState: t }) {
+function Bp({ setOpened: e, setEventState: t }) {
   const n = (o, r) => {
     o.stopPropagation(), e(!1), t(r);
   };
@@ -5497,7 +5483,7 @@ const wn = {
   arrowIcon: v("icon", "ic-dropdown-arrow"),
   content: v("content", "event-state")
 };
-function Up({ eventState: e = "Busy", formStateDispatch: t }) {
+function Fp({ eventState: e = "Busy", formStateDispatch: t }) {
   const { isOpened: n, setOpened: o, toggleDropdown: r } = Cc(), i = (s) => t({ type: ct.setState, state: s });
   return /* @__PURE__ */ d(Mt, {
     onClick: r,
@@ -5515,7 +5501,7 @@ function Up({ eventState: e = "Busy", formStateDispatch: t }) {
     template: "popupStateFree"
   })), /* @__PURE__ */ d("span", {
     className: wn.arrowIcon
-  })), n && /* @__PURE__ */ d(Fp, {
+  })), n && /* @__PURE__ */ d(Bp, {
     setOpened: o,
     setEventState: i
   }));
@@ -5525,7 +5511,7 @@ const yr = {
   locationIcon: v("icon", "ic-location"),
   content: v("content")
 };
-function zp({ location: e, formStateDispatch: t }) {
+function Up({ location: e, formStateDispatch: t }) {
   const n = No({
     template: "locationPlaceholder",
     defaultValue: "Location"
@@ -5550,7 +5536,7 @@ const no = {
   titleIcon: v("icon", "ic-title"),
   content: v("content")
 };
-function Wp({ title: e, isPrivate: t = !1, formStateDispatch: n }) {
+function zp({ title: e, isPrivate: t = !1, formStateDispatch: n }) {
   const o = No({
     template: "titlePlaceholder",
     defaultValue: "Subject"
@@ -5588,7 +5574,7 @@ const oo = {
   popupArrowBorder: v("popup-arrow-border"),
   popupArrowFill: v("popup-arrow-fill")
 };
-function Yp(e, t, n) {
+function Wp(e, t, n) {
   let o = e.top - n.height - $r, r = e.left - n.width / 2, i = Vt.bottom;
   return o < t.top && (i = Vt.top, o = e.top + $r), Tc(o, t, n) && (o = t.top + t.height - n.height), bc(r, t, n) && (r = t.left + t.width - n.width), {
     top: o + window.scrollY,
@@ -5596,18 +5582,18 @@ function Yp(e, t, n) {
     direction: i
   };
 }
-function Vp(e) {
-  return Tp.indexOf(e) !== -1;
+function Yp(e) {
+  return Sp.indexOf(e) !== -1;
 }
-function jp(e, t) {
+function Vp(e, t) {
   return Object.entries(t).reduce((n, [o, r]) => {
     const i = o;
     return e[i] instanceof O ? vt(e[i], r) !== 0 && (n[i] = r) : e[i] !== r && (n[i] = r), n;
   }, {});
 }
-function Xp() {
+function jp() {
   var X;
-  const { calendars: e } = W(Lo), { hideAllPopup: t } = Te("popup"), n = W(Cp), { start: o, end: r, popupArrowPointPosition: i, close: s, isCreationPopup: a, event: l } = n != null ? n : {}, u = Ne(), c = Di("formPopupSlot"), [f, p] = Pp((X = e[0]) == null ? void 0 : X.id), h = ne(null), m = ne(null), [_, y] = ae({}), [E, w] = ae(0), [S, k] = ae(
+  const { calendars: e } = W(Lo), { hideAllPopup: t } = Te("popup"), n = W(bp), { start: o, end: r, popupArrowPointPosition: i, close: s, isCreationPopup: a, event: l } = n != null ? n : {}, u = Ne(), c = Di("formPopupSlot"), [f, p] = Op((X = e[0]) == null ? void 0 : X.id), h = ne(null), m = ne(null), [_, y] = ae({}), [E, w] = ae(0), [S, k] = ae(
     Vt.bottom
   ), T = xt(), N = z(() => {
     const I = S === Vt.top, $ = S === Vt.bottom;
@@ -5615,7 +5601,7 @@ function Xp() {
   }, [S]);
   if (ht(() => {
     if (m.current && i && T) {
-      const I = T.getBoundingClientRect(), $ = m.current.getBoundingClientRect(), { top: R, left: q, direction: te } = Yp(
+      const I = T.getBoundingClientRect(), $ = m.current.getBoundingClientRect(), { top: R, left: q, direction: te } = Wp(
         i,
         I,
         $
@@ -5643,11 +5629,11 @@ function Xp() {
     I.preventDefault();
     const $ = new FormData(I.target), R = x({}, f);
     if ($.forEach((b, D) => {
-      R[D] = Vp(D) ? b === "true" : b;
+      R[D] = Yp(D) ? b === "true" : b;
     }), R.start = new O((q = h.current) == null ? void 0 : q.getStartDate()), R.end = new O((te = h.current) == null ? void 0 : te.getEndDate()), a)
       u.fire("beforeCreateEvent", R);
     else if (l) {
-      const b = jp(l, R);
+      const b = Vp(l, R);
       u.fire("beforeUpdateEvent", { event: l.toEventObject(), changes: b });
     }
     t();
@@ -5662,30 +5648,30 @@ function Xp() {
       onSubmit: F
     }, /* @__PURE__ */ d("div", {
       className: oo.formContainer
-    }, e != null && e.length ? /* @__PURE__ */ d(Lp, {
+    }, e != null && e.length ? /* @__PURE__ */ d(Pp, {
       selectedCalendarId: f.calendarId,
       calendars: e,
       formStateDispatch: p
-    }) : /* @__PURE__ */ d(Mt, null), /* @__PURE__ */ d(Wp, {
+    }) : /* @__PURE__ */ d(Mt, null), /* @__PURE__ */ d(zp, {
       title: f.title,
       isPrivate: f.isPrivate,
       formStateDispatch: p
-    }), /* @__PURE__ */ d(zp, {
+    }), /* @__PURE__ */ d(Up, {
       location: f.location,
       formStateDispatch: p
-    }), /* @__PURE__ */ d(Bp, {
+    }), /* @__PURE__ */ d($p, {
       start: o,
       end: r,
       isAllday: f.isAllday,
       formStateDispatch: p,
       ref: h
-    }), /* @__PURE__ */ d(Up, {
+    }), /* @__PURE__ */ d(Fp, {
       eventState: f.state,
       formStateDispatch: p
     }), /* @__PURE__ */ d(kc, {
       type: "form",
       close: s
-    }), /* @__PURE__ */ d(Mt, null, /* @__PURE__ */ d($p, null, a ? /* @__PURE__ */ d(oe, {
+    }), /* @__PURE__ */ d(Mt, null, /* @__PURE__ */ d(Hp, null, a ? /* @__PURE__ */ d(oe, {
       template: "popupSave"
     }) : /* @__PURE__ */ d(oe, {
       template: "popupUpdate"
@@ -5700,11 +5686,11 @@ function Xp() {
     c
   );
 }
-function Kp(e) {
+function Xp(e) {
   return Object.values(e.popup).find((t) => L(t));
 }
-function qp() {
-  const e = W(Kp), { hideAllPopup: t } = Te("popup"), n = L(e), o = (r) => {
+function Kp() {
+  const e = W(Xp), { hideAllPopup: t } = Te("popup"), n = L(e), o = (r) => {
     var i;
     r.stopPropagation(), (i = e == null ? void 0 : e.close) == null || i.call(e), t();
   };
@@ -5720,8 +5706,8 @@ const ro = {
   header: v("see-more-header"),
   list: v("month-more-list")
 };
-function Zp() {
-  const e = W(Np), { date: t, events: n = [], popupPosition: o } = e != null ? e : {}, { moreView: r, moreViewTitle: i } = qa(), s = Di("seeMorePopupSlot"), a = Ne(), l = ne(null), u = U(t) || U(o) || U(s);
+function qp() {
+  const e = W(kp), { date: t, events: n = [], popupPosition: o } = e != null ? e : {}, { moreView: r, moreViewTitle: i } = qa(), s = Di("seeMorePopupSlot"), a = Ne(), l = ne(null), u = U(t) || U(o) || U(s);
   if (re(() => {
     !u && l.current && a.fire("clickMoreEventsBtn", {
       date: t.toDate(),
@@ -5771,7 +5757,7 @@ function Zp() {
     s
   );
 }
-function Jp(e, t) {
+function Zp(e, t) {
   const n = { height: K(100) };
   return e && (n.width = e), t && (n.height = t), n;
 }
@@ -5782,7 +5768,7 @@ function Si({
   className: o = "",
   autoAdjustPanels: r = !1
 }) {
-  const { backgroundColor: i } = se(ja), [s, a] = Ge(), { setLastPanelType: l, updateLayoutHeight: u } = Te("weekViewLayout"), c = z(() => `${v("layout")} ${o}`, [o]);
+  const { backgroundColor: i } = se(ja), [s, a] = Be(), { setLastPanelType: l, updateLayoutHeight: u } = Te("weekViewLayout"), c = z(() => `${v("layout")} ${o}`, [o]);
   return ht(() => {
     if (s) {
       const f = () => u(s.offsetHeight);
@@ -5794,15 +5780,15 @@ function Si({
       const f = Nn(e), p = f[f.length - 1];
       !Ce(p) && !lo(p) && !U(p) && l(p.props.name);
     }
-  }, [e, l, r, s]), /* @__PURE__ */ d(Jf, {
+  }, [e, l, r, s]), /* @__PURE__ */ d(Zf, {
     value: s
   }, /* @__PURE__ */ d("div", {
     ref: a,
     className: c,
-    style: ce(x({}, Jp(t, n)), { backgroundColor: i })
-  }, s ? e : null), /* @__PURE__ */ d(Xp, null), /* @__PURE__ */ d(Ap, null), /* @__PURE__ */ d(Zp, null), /* @__PURE__ */ d(qp, null));
+    style: ce(x({}, Zp(t, n)), { backgroundColor: i })
+  }, s ? e : null), /* @__PURE__ */ d(jp, null), /* @__PURE__ */ d(Mp, null), /* @__PURE__ */ d(qp, null), /* @__PURE__ */ d(Kp, null));
 }
-function Qp(e, t) {
+function Jp(e, t) {
   return {
     height: e,
     width: "100%",
@@ -5811,12 +5797,12 @@ function Qp(e, t) {
     borderBottom: t
   };
 }
-function em({ name: e, height: t }) {
-  const n = se(ee((c) => c.week.panelResizer.border, [])), o = Qp(t, n), r = ce(x({}, o), {
+function Qp({ name: e, height: t }) {
+  const n = se(ee((c) => c.week.panelResizer.border, [])), o = Jp(t, n), r = ce(x({}, o), {
     display: "none",
     border: "none",
     backgroundColor: "#999"
-  }), [i, s] = ae(r), a = ne(null), { updateDayGridRowHeightByDiff: l } = Te("weekViewLayout"), u = en(Qf.panelResizer, {
+  }), [i, s] = ae(r), a = ne(null), { updateDayGridRowHeightByDiff: l } = Te("weekViewLayout"), u = en(Jf.panelResizer, {
     onDragStart: (c) => {
       a.current = { left: c.pageX, top: c.pageY };
     },
@@ -5847,7 +5833,7 @@ function em({ name: e, height: t }) {
 function Ys(e, t) {
   return t ? Math.min(t, e) : e;
 }
-function tm({
+function em({
   initialHeight: e,
   initialWidth: t,
   overflowX: n,
@@ -5888,7 +5874,7 @@ const jt = pc(function({
   ht(() => {
     E({ rowName: t, height: o });
   }, [o, t, E]);
-  const k = tm({
+  const k = em({
     initialWidth: n,
     initialHeight: S,
     overflowX: r,
@@ -5904,12 +5890,12 @@ const jt = pc(function({
     className: v("panel", t),
     style: k,
     ref: y
-  }, _), T ? /* @__PURE__ */ d(em, {
+  }, _), T ? /* @__PURE__ */ d(Qp, {
     name: t,
     width: p,
     height: h
   }) : null);
-}), Nc = "timegrid", Se = (e) => `${Nc}-${e}`, nm = {
+}), Nc = "timegrid", Se = (e) => `${Nc}-${e}`, tm = {
   second: "HH:mm:ss",
   minute: "HH:mm",
   hour: "HH:mm",
@@ -5924,14 +5910,14 @@ const jt = pc(function({
   moveEvent: v("dragging--move-event"),
   resizeEvent: v("dragging--resize-vertical-event")
 };
-function om(e) {
+function nm(e) {
   const { percent: t, px: n } = Ir(`${e}`);
   return e > 0 || t > 0 || n > 0 ? wo : 0;
 }
-function rm(e, t) {
+function om(e, t) {
   return Ce(e) ? e : e >= 0 ? `calc(${K(e)} - ${t}px)` : "";
 }
-function im({
+function rm({
   uiModel: e,
   isDraggingTarget: t,
   hasNextStartTime: n,
@@ -5950,11 +5936,11 @@ function im({
     comingDurationHeight: h,
     croppedStart: m,
     croppedEnd: _
-  } = e, y = "white", E = 2, w = 2, S = om(s), { color: k, backgroundColor: T, borderColor: N, dragBackgroundColor: F } = ba(
+  } = e, y = "white", E = 2, w = 2, S = nm(s), { color: k, backgroundColor: T, borderColor: N, dragBackgroundColor: F } = ba(
     e,
     o
   ), X = {
-    width: rm(c || l, S),
+    width: om(c || l, S),
     height: `calc(${K(Math.max(a, r))} - ${w}px)`,
     top: K(i),
     left: u || K(s),
@@ -5981,7 +5967,7 @@ function im({
     comingDurationStyle: R
   };
 }
-function sm({
+function im({
   uiModel: e,
   isReadOnlyCalendar: t,
   isDraggingTarget: n,
@@ -6000,7 +5986,7 @@ function Ti({
     useDetailPopup: r,
     isReadOnly: i,
     week: s
-  } = W(je), a = yi(e.model), { collapseDuplicateEvents: l } = s, u = xt(), { showDetailPopup: c } = Te("popup"), { setDraggingEventUIModel: f } = Te("dnd"), { setSelectedDuplicateEventCid: p } = Te("weekViewLayout"), h = Ne(), m = ne(null), [_, y] = ae(!1), { model: E, goingDurationHeight: w, modelDurationHeight: S, comingDurationHeight: k, croppedEnd: T } = e, { id: N, calendarId: F, customStyle: X } = E, I = L(t), { containerStyle: $, goingDurationStyle: R, modelDurationStyle: q, comingDurationStyle: te } = im(
+  } = W(je), a = yi(e.model), { collapseDuplicateEvents: l } = s, u = xt(), { showDetailPopup: c } = Te("popup"), { setDraggingEventUIModel: f } = Te("dnd"), { setSelectedDuplicateEventCid: p } = Te("weekViewLayout"), h = Ne(), m = ne(null), [_, y] = ae(!1), { model: E, goingDurationHeight: w, modelDurationHeight: S, comingDurationHeight: k, croppedEnd: T } = e, { id: N, calendarId: F, customStyle: X } = E, I = L(t), { containerStyle: $, goingDurationStyle: R, modelDurationStyle: q, comingDurationStyle: te } = rm(
     { uiModel: e, isDraggingTarget: _, hasNextStartTime: I, calendarColor: a, minHeight: o }
   ), b = I || n;
   _t(At, ({ draggingEventUIModel: ue, draggingState: Ue }) => {
@@ -6043,7 +6029,7 @@ function Ti({
     }
   ), de = (ue) => {
     ue.stopPropagation(), j(ue);
-  }, Oe = sm({
+  }, Oe = im({
     uiModel: e,
     isReadOnlyCalendar: i,
     isDraggingTarget: _,
@@ -6082,7 +6068,7 @@ function Ti({
     onMouseDown: de
   }) : null);
 }
-function am({ top: e, height: t, text: n }) {
+function sm({ top: e, height: t, text: n }) {
   const { backgroundColor: o, border: r } = se(
     ee((a) => a.common.gridSelection, [])
   ), i = se(ee((a) => a.week.gridSelection.color, [])), s = {
@@ -6100,7 +6086,7 @@ function am({ top: e, height: t, text: n }) {
     style: { color: i }
   }, n) : null);
 }
-function cm({ columnIndex: e, timeGridRows: t }) {
+function am({ columnIndex: e, timeGridRows: t }) {
   const n = W(
     ee(
       (r) => Pr.calculateSelection(
@@ -6125,9 +6111,9 @@ function cm({ columnIndex: e, timeGridRows: t }) {
       text: m
     };
   }, [n, t]);
-  return U(o) ? null : /* @__PURE__ */ d(am, x({}, o));
+  return U(o) ? null : /* @__PURE__ */ d(sm, x({}, o));
 }
-function lm({
+function cm({
   gridPositionFinder: e,
   totalUIModels: t,
   columnIndex: n,
@@ -6233,13 +6219,13 @@ function lm({
     h();
   }, i), f;
 }
-function um({
+function lm({
   gridPositionFinder: e,
   totalUIModels: t,
   columnIndex: n,
   timeGridData: o
 }) {
-  const r = lm({
+  const r = cm({
     gridPositionFinder: e,
     totalUIModels: t,
     columnIndex: n,
@@ -6255,7 +6241,7 @@ const Ic = {
   backgrounds: v("background-events"),
   events: v("events")
 };
-function dm({
+function um({
   eventUIModels: e,
   minEventHeight: t
 }) {
@@ -6269,14 +6255,14 @@ function dm({
     minHeight: t
   })));
 }
-function fm(e) {
+function dm(e) {
   return {
     defaultBackgroundColor: e.week.dayGrid.backgroundColor,
     todayBackgroundColor: e.week.today.backgroundColor,
     weekendBackgroundColor: e.week.weekend.backgroundColor
   };
 }
-function pm({
+function fm({
   today: e,
   columnDate: t,
   defaultBackgroundColor: n,
@@ -6286,7 +6272,7 @@ function pm({
   const i = Nt(e, t), s = Fe(t.getDay());
   return i ? o : s ? r : n;
 }
-const mm = ln(function({
+const pm = ln(function({
   columnDate: t,
   columnWidth: n,
   columnIndex: o,
@@ -6295,7 +6281,7 @@ const mm = ln(function({
   timeGridData: s,
   isLastColumn: a
 }) {
-  const { rows: l } = s, u = se(ee((E) => E.week.timeGrid.borderRight, [])), c = se(fm), [, f] = Bo(), p = f(), h = pm(x({ today: p, columnDate: t }, c)), m = {
+  const { rows: l } = s, u = se(ee((E) => E.week.timeGrid.borderRight, [])), c = se(dm), [, f] = Go(), p = f(), h = fm(x({ today: p, columnDate: t }, c)), m = {
     width: n,
     backgroundColor: h,
     borderRight: a ? "none" : u
@@ -6304,29 +6290,29 @@ const mm = ln(function({
     className: Ic.column,
     style: m,
     "data-testid": `timegrid-column-${t.getDay()}`
-  }, /* @__PURE__ */ d(dm, {
+  }, /* @__PURE__ */ d(um, {
     eventUIModels: _,
     minEventHeight: y
-  }), /* @__PURE__ */ d(um, {
+  }), /* @__PURE__ */ d(lm, {
     gridPositionFinder: i,
     totalUIModels: r,
     columnIndex: o,
     timeGridData: s
-  }), /* @__PURE__ */ d(cm, {
+  }), /* @__PURE__ */ d(am, {
     columnIndex: o,
     timeGridRows: l
   }));
 });
-function hm(e) {
+function mm(e) {
   return {
     halfHourLineBorder: e.week.timeGridHalfHourLine.borderBottom,
     hourLineBorder: e.week.timeGridHourLine.borderBottom
   };
 }
-const gm = ln(function({
+const hm = ln(function({
   timeGridRows: t
 }) {
-  const { halfHourLineBorder: n, hourLineBorder: o } = se(hm);
+  const { halfHourLineBorder: n, hourLineBorder: o } = se(mm);
   return /* @__PURE__ */ d("div", {
     className: v("gridlines")
   }, t.map((r, i) => {
@@ -6342,12 +6328,12 @@ const gm = ln(function({
       "data-testid": `gridline-${r.startTime}-${r.endTime}`
     });
   }));
-}), vm = 30;
+}), gm = 30;
 function Vs(e, t) {
   const n = e.getHours() - t, o = e.getMinutes();
-  return n * 2 + Math.floor(o / vm);
+  return n * 2 + Math.floor(o / gm);
 }
-function _m({
+function vm({
   draggingEvent: e,
   columnDiff: t,
   rowDiff: n,
@@ -6357,12 +6343,12 @@ function _m({
   const i = o[0].height, s = i * o.length, a = n * ka + t * at, l = Number(o[0].startTime.split(":")[0]), { goingDuration: u = 0, comingDuration: c = 0 } = e.model, f = Ae(e.getStarts(), -u), p = Ae(e.getEnds(), c), h = Do(f, a), m = Do(p, a), _ = Math.max(Vs(h, l), 0), y = Math.min(Vs(m, l), o.length - 1), E = h.getFullYear() < r.getFullYear() || h.getMonth() < r.getMonth() || h.getDate() < r.getDate(), w = m.getFullYear() > r.getFullYear() || m.getMonth() > r.getMonth() || m.getDate() > r.getDate(), S = y - (E ? 0 : _), k = E ? 0 : o[_].top, T = w ? s : Math.max(S, 1) * i;
   return { top: k, height: T };
 }
-const ym = (e) => e.dnd.initX, wm = (e) => e.dnd.initY;
-function Em({
+const _m = (e) => e.dnd.initX, ym = (e) => e.dnd.initY;
+function wm({
   gridPositionFinder: e,
   timeGridData: t
 }) {
-  const n = W(ym), o = W(wm), r = Ne(), { isDraggingEnd: i, isDraggingCanceled: s, draggingEvent: a, clearDraggingEvent: l } = fn(
+  const n = W(_m), o = W(ym), r = Ne(), { isDraggingEnd: i, isDraggingCanceled: s, draggingEvent: a, clearDraggingEvent: l } = fn(
     "timeGrid",
     "move"
   ), [u, c] = dn(e), f = ne(null);
@@ -6383,7 +6369,7 @@ function Em({
   ), [p, h]), y = z(() => {
     if (U(a) || U(u) || U(p))
       return null;
-    const E = a.clone(), { top: w, height: S } = _m({
+    const E = a.clone(), { top: w, height: S } = vm({
       draggingEvent: E,
       columnDiff: p.columnDiff,
       rowDiff: p.rowDiff,
@@ -6414,11 +6400,11 @@ function Em({
     nextStartTime: _
   };
 }
-function Dm({
+function Em({
   gridPositionFinder: e,
   timeGridData: t
 }) {
-  const { movingEvent: n, nextStartTime: o } = Em({
+  const { movingEvent: n, nextStartTime: o } = wm({
     gridPositionFinder: e,
     timeGridData: t
   });
@@ -6437,7 +6423,7 @@ const Mc = {
   today: v(Se("now-indicator-today")),
   right: v(Se("now-indicator-right"))
 };
-function Sm(e) {
+function Dm(e) {
   return {
     pastBorder: e.week.nowIndicatorPast.border,
     todayBorder: e.week.nowIndicatorToday.border,
@@ -6445,8 +6431,8 @@ function Sm(e) {
     bulletBackgroundColor: e.week.nowIndicatorBullet.backgroundColor
   };
 }
-function Tm({ top: e, columnWidth: t, columnCount: n, columnIndex: o }) {
-  const { pastBorder: r, todayBorder: i, futureBorder: s, bulletBackgroundColor: a } = se(Sm), l = xt(), u = Ne(), c = ne(null), f = {
+function Sm({ top: e, columnWidth: t, columnCount: n, columnIndex: o }) {
+  const { pastBorder: r, todayBorder: i, futureBorder: s, bulletBackgroundColor: a } = se(Dm), l = xt(), u = Ne(), c = ne(null), f = {
     left: K(t * o),
     width: K(t * o)
   }, p = {
@@ -6495,11 +6481,11 @@ const js = {
   now: Se("current-time"),
   dayDifference: Se("day-difference")
 };
-function bm({ unit: e, top: t, now: n, zonedNow: o }) {
+function Tm({ unit: e, top: t, now: n, zonedNow: o }) {
   const r = se(ee((a) => a.week.nowIndicatorLabel.color, [])), i = z(() => ai(o, n), [o, n]), s = {
     unit: e,
     time: o,
-    format: nm[e]
+    format: tm[e]
   };
   return /* @__PURE__ */ d("div", {
     className: v(js.now),
@@ -6513,10 +6499,10 @@ function bm({ unit: e, top: t, now: n, zonedNow: o }) {
     as: "span"
   }));
 }
-const Cm = (e) => {
+const bm = (e) => {
   var t;
   return (t = e.options.month.visibleEventCount) != null ? t : 6;
-}, Ac = (e) => e.options.week.showNowIndicator, km = (e) => {
+}, Ac = (e) => e.options.week.showNowIndicator, Cm = (e) => {
   var t;
   return (t = e.options.week.showTimezoneCollapseButton) != null ? t : !1;
 }, xc = (e) => {
@@ -6531,13 +6517,13 @@ const Cm = (e) => {
   last: Se("time-last"),
   hidden: Se("time-hidden")
 };
-function Nm(e) {
+function km(e) {
   return {
     primaryTimezoneBackgroundColor: e.week.timeGridLeft.backgroundColor,
     subTimezoneBackgroundColor: e.week.timeGridLeftAdditionalTimezone.backgroundColor
   };
 }
-function Im(e) {
+function Nm(e) {
   return {
     pastTimeColor: e.week.pastTime.color,
     futureTimeColor: e.week.futureTime.color
@@ -6545,7 +6531,7 @@ function Im(e) {
 }
 function Xs({ rowsInfo: e, isPrimary: t, borderRight: n, width: o, nowIndicatorState: r }) {
   var p;
-  const i = W(Ac), { primaryTimezoneBackgroundColor: s, subTimezoneBackgroundColor: a } = se(Nm), { pastTimeColor: l, futureTimeColor: u } = se(Im), c = L(r) ? Ae(r.now, (p = e[0].diffFromPrimaryTimezone) != null ? p : 0) : null, f = t ? s : a;
+  const i = W(Ac), { primaryTimezoneBackgroundColor: s, subTimezoneBackgroundColor: a } = se(km), { pastTimeColor: l, futureTimeColor: u } = se(Nm), c = L(r) ? Ae(r.now, (p = e[0].diffFromPrimaryTimezone) != null ? p : 0) : null, f = t ? s : a;
   return /* @__PURE__ */ d("div", {
     role: "rowgroup",
     className: v(Wt.hourRows),
@@ -6565,14 +6551,14 @@ function Xs({ rowsInfo: e, isPrimary: t, borderRight: n, width: o, nowIndicatorS
       param: { time: h },
       as: "span"
     }));
-  }), i && L(r) && L(c) && /* @__PURE__ */ d(bm, {
+  }), i && L(r) && L(c) && /* @__PURE__ */ d(Tm, {
     unit: "hour",
     top: r.top,
     now: r.now,
     zonedNow: c
   }));
 }
-const Mm = ln(function({ timeGridRows: t, nowIndicatorState: n }) {
+const Im = ln(function({ timeGridRows: t, nowIndicatorState: n }) {
   const o = W(Va), r = W(xc), i = $o(), { width: s, borderRight: a } = se(li), l = z(
     () => t.filter((_, y) => y % 2 === 0 || y === t.length - 1),
     [t]
@@ -6619,25 +6605,25 @@ const Mm = ln(function({ timeGridRows: t, nowIndicatorState: n }) {
     nowIndicatorState: n
   }));
 });
-function Gr(e, t, n) {
+function Br(e, t, n) {
   const o = t.getTime(), r = n.getTime(), i = Or(e.getTime(), [o], [r]) - o, s = r - o, a = nc(s, 100, i);
   return Or(a, [0], [100]);
 }
 function Fr(e, t, n, o) {
-  const r = Gr(e, n, o), s = Gr(t, n, o) - r;
+  const r = Br(e, n, o), s = Br(t, n, o) - r;
   return {
     top: r,
     height: s
   };
 }
-const Am = 1;
+const Mm = 1;
 function Rc(e, t) {
   return (n) => {
     const { goingDuration: o = 0, comingDuration: r = 0 } = n.model, i = Ae(n.getStarts(), -o);
     return !(Ae(n.getEnds(), r) <= e || i >= t);
   };
 }
-function xm(e, t) {
+function Am(e, t) {
   const { renderStart: n, renderEnd: o, modelStart: r, modelEnd: i } = t, { goingDuration: s = 0, comingDuration: a = 0 } = e.model;
   let l = 100;
   if (s > 0) {
@@ -6660,11 +6646,11 @@ function xm(e, t) {
   }
   e.modelDurationHeight = l;
 }
-function Rm(e, t) {
+function xm(e, t) {
   const { goingStart: n, comingEnd: o, startColumnTime: r, endColumnTime: i } = t;
   n < r && (e.croppedStart = !0), o > i && (e.croppedEnd = !0);
 }
-function Om(e, t) {
+function Rm(e, t) {
   const { duplicateEvents: n, duplicateEventIndex: o } = e, r = n[o - 1];
   let i = t;
   if (r) {
@@ -6674,13 +6660,13 @@ function Om(e, t) {
     i = K(i);
   return i;
 }
-function Pm(e, t) {
+function Om(e, t) {
   const { collapse: n } = e;
   return n ? `${Es}px` : `calc(${K(t)} - ${Eo(
     (Es + wo) * (e.duplicateEvents.length - 1) + wo
   )})`;
 }
-function Lm(e, t) {
+function Pm(e, t) {
   const { startColumnTime: n, endColumnTime: o, baseWidth: r, columnIndex: i, renderStart: s, renderEnd: a } = t, { duplicateEvents: l } = e, { top: u, height: c } = Fr(
     s,
     a,
@@ -6690,13 +6676,13 @@ function Lm(e, t) {
     top: u,
     left: r * i,
     width: r,
-    height: Math.max(Am, c),
+    height: Math.max(Mm, c),
     duplicateLeft: "",
     duplicateWidth: ""
   };
-  l.length > 0 && (f.duplicateLeft = Om(e, f.left), f.duplicateWidth = Pm(e, f.width)), e.setUIProps(f);
+  l.length > 0 && (f.duplicateLeft = Rm(e, f.left), f.duplicateWidth = Om(e, f.width)), e.setUIProps(f);
 }
-function Hm(e, t, n, o, r) {
+function Lm(e, t, n, o, r) {
   const { goingDuration: i = 0, comingDuration: s = 0 } = e.model, a = e.getStarts(), l = e.getEnds(), u = Ae(a, -i), c = Ae(l, s), f = oi(u, o), p = Na(c, r);
   return {
     baseWidth: n,
@@ -6733,16 +6719,16 @@ function Oc({
     });
     return;
   }
-  const s = Hm(
+  const s = Lm(
     e,
     t,
     n,
     o,
     r
   );
-  Lm(e, s), xm(e, s), Rm(e, s);
+  Pm(e, s), Am(e, s), xm(e, s);
 }
-function $m(e, t, n) {
+function Hm(e, t, n) {
   const { getDuplicateEvents: o, getMainEvent: r } = t, i = e.map((s) => s.model.toEventObject());
   return e.forEach((s) => {
     if (s.collapse || s.duplicateEvents.length > 0)
@@ -6772,10 +6758,10 @@ function $m(e, t, n) {
     });
   }), e;
 }
-function Bm(e, t, n, o, r) {
+function $m(e, t, n, o, r) {
   const i = e.filter(Zu).filter(Rc(t, n)).sort(kt.compare.event.asc);
-  r && $m(i, r, o);
-  const s = i.filter((f) => !f.collapse), a = Qt(...s), l = !0, u = Go(s, l);
+  r && Hm(i, r, o);
+  const s = i.filter((f) => !f.collapse), a = Qt(...s), l = !0, u = Bo(s, l);
   return Fo(a, u, l).forEach((f) => {
     const p = Math.max(...f.map((m) => m.length)), h = Math.round(100 / p);
     f.forEach((m) => {
@@ -6797,7 +6783,7 @@ function Gm(e, t) {
     }
   }, [t]);
 }
-function Fm() {
+function Bm() {
   const e = ne(!0);
   return re(() => () => {
     e.current = !1;
@@ -6814,11 +6800,11 @@ function Pc({ timeGridData: e, events: t }) {
     onClickTimeGrid: s
   } = W(je), a = W(Ac), l = W(
     (I) => I.weekViewLayout.selectedDuplicateEventCid
-  ), [, u] = Bo(), c = Fm(), { width: f } = se(li), [p, h] = ae(null), { columns: m, rows: _ } = e, y = m.length - 1, E = z(
+  ), [, u] = Go(), c = Bm(), { width: f } = se(li), [p, h] = ae(null), { columns: m, rows: _ } = e, y = m.length - 1, E = z(
     () => m.map(
       ({ date: I }) => t.filter(Rc(he(I), Re(I))).map(($) => $.clone())
     ).map(
-      (I, $) => Bm(
+      (I, $) => $m(
         I,
         qe(m[$].date, Mr(_).startTime),
         qe(m[$].date, it(_).endTime),
@@ -6843,7 +6829,7 @@ function Pc({ timeGridData: e, events: t }) {
       endTime: q,
       currentDateIndex: $
     };
-  }, [m, u, e.rows]), [S, k] = Ge(), T = z(
+  }, [m, u, e.rows]), [S, k] = Be(), T = z(
     () => hi({
       rowsCount: _.length,
       columnsCount: m.length,
@@ -6862,7 +6848,7 @@ function Pc({ timeGridData: e, events: t }) {
     if (L(w)) {
       const { startTime: I, endTime: $ } = w, R = u();
       I <= R && R <= $ && h({
-        top: Gr(R, I, $),
+        top: Br(R, I, $),
         now: R
       });
     }
@@ -6885,7 +6871,7 @@ function Pc({ timeGridData: e, events: t }) {
     className: Ks.timegrid
   }, /* @__PURE__ */ d("div", {
     className: Ks.scrollArea
-  }, /* @__PURE__ */ d(Mm, {
+  }, /* @__PURE__ */ d(Im, {
     timeGridRows: _,
     nowIndicatorState: p
   }), /* @__PURE__ */ d("div", {
@@ -6894,12 +6880,12 @@ function Pc({ timeGridData: e, events: t }) {
     style: { left: f },
     ref: k,
     onMouseDown: wi(!n, N)
-  }, /* @__PURE__ */ d(gm, {
+  }, /* @__PURE__ */ d(hm, {
     timeGridRows: _
-  }), /* @__PURE__ */ d(Dm, {
+  }), /* @__PURE__ */ d(Em, {
     gridPositionFinder: T,
     timeGridData: e
-  }), m.map((I, $) => /* @__PURE__ */ d(mm, {
+  }), m.map((I, $) => /* @__PURE__ */ d(pm, {
     key: I.date.toString(),
     timeGridData: e,
     columnDate: I.date,
@@ -6908,14 +6894,14 @@ function Pc({ timeGridData: e, events: t }) {
     totalUIModels: E,
     gridPositionFinder: T,
     isLastColumn: $ === y
-  })), a && L(w) && L(p) ? /* @__PURE__ */ d(Tm, {
+  })), a && L(w) && L(p) ? /* @__PURE__ */ d(Sm, {
     top: p.top,
     columnWidth: m[0].width,
     columnCount: m.length,
     columnIndex: w.currentDateIndex
   }) : null)));
 }
-function Um({ isCollapsed: e }) {
+function Fm({ isCollapsed: e }) {
   const t = Ne(), n = v("icon", {
     "ic-arrow-right": e,
     "ic-arrow-left": !e
@@ -6945,18 +6931,18 @@ function qs({ label: e, offset: t, tooltip: n, width: o = 100, left: r }) {
     as: "span"
   }));
 }
-function zm() {
-  const e = W(km), t = W(xc);
+function Um() {
+  const e = W(Cm), t = W(xc);
   return z(() => ({
     showTimezoneCollapseButton: e,
     timezonesCollapsed: t
   }), [e, t]);
 }
 function Lc({ top: e }) {
-  const t = W(Va), { width: n } = se(li), o = $o(), { showTimezoneCollapseButton: r, timezonesCollapsed: i } = zm();
+  const t = W(Va), { width: n } = se(li), o = $o(), { showTimezoneCollapseButton: r, timezonesCollapsed: i } = Um();
   if (t.length <= 1)
     return null;
-  const s = t.map(({ displayLabel: p, timezoneName: h, tooltip: m }) => Be(p) ? {
+  const s = t.map(({ displayLabel: p, timezoneName: h, tooltip: m }) => Ge(p) ? {
     label: null,
     offset: o(h).getTimezoneOffset(),
     tooltip: m != null ? m : h
@@ -6975,23 +6961,23 @@ function Lc({ top: e }) {
       width: f,
       left: f * h
     }, p));
-  }), r && /* @__PURE__ */ d(Um, {
+  }), r && /* @__PURE__ */ d(Fm, {
     isCollapsed: i
   }), /* @__PURE__ */ d(qs, x({
     width: f,
     left: f * u.length
   }, a)));
 }
-const Wm = {
+const zm = {
   MONTH: "month",
   WEEK: "week",
   DAY: "day"
-}, Ym = ["milestone", "task"], Vm = ["allday", "time"];
+}, Wm = ["milestone", "task"], Ym = ["allday", "time"];
 function Hc(e, t) {
   const n = [];
-  return e === !0 ? n.push(...Ym) : Array.isArray(e) && n.push(...e), t === !0 ? n.push(...Vm) : Array.isArray(t) && n.push(...t), n;
+  return e === !0 ? n.push(...Wm) : Array.isArray(e) && n.push(...e), t === !0 ? n.push(...Ym) : Array.isArray(t) && n.push(...t), n;
 }
-function jm(e) {
+function Vm(e) {
   const t = W(Ho), n = $o();
   return z(() => {
     if (t === "Local")
@@ -7013,7 +6999,7 @@ function bi(e, ...t) {
   const n = z(
     () => e.events.filter(Je.and(...t)),
     [e.events, t]
-  ), o = jm(n);
+  ), o = Vm(n);
   return z(
     () => ce(x({}, e), {
       events: o
@@ -7021,12 +7007,12 @@ function bi(e, ...t) {
     [e, o]
   );
 }
-function Xm(e) {
+function jm(e) {
   return /^(event|gridSelection)\/timeGrid/.test(e != null ? e : "");
 }
 function $c(e, t) {
   _t(At, ({ y: n, draggingItemType: o, draggingState: r }) => {
-    if (L(e) && Xm(o) && r === Ve.DRAGGING && L(n)) {
+    if (L(e) && jm(o) && r === Ve.DRAGGING && L(n)) {
       const { offsetTop: i, offsetHeight: s, scrollHeight: a } = e, l = Math.floor(a / t), u = i + s;
       if (n < i + l) {
         const c = n - (i + l);
@@ -7038,17 +7024,17 @@ function $c(e, t) {
     }
   });
 }
-function Km(e) {
+function Xm(e) {
   var t, n, o;
   return (o = (n = (t = e.weekViewLayout) == null ? void 0 : t.dayGridRows) == null ? void 0 : n.time) == null ? void 0 : o.height;
 }
-function Bc(e) {
-  const t = W(Km), [n, o] = ae(null);
+function Gc(e) {
+  const t = W(Xm), [n, o] = ae(null);
   return ht(() => {
     L(t) && e && o(e.offsetTop);
   }, [t, e]), n;
 }
-function qm() {
+function Km() {
   const e = W(Lo), t = W(je), { dayGridRows: n, lastPanelType: o } = W(za), { renderDate: r } = W(cn);
   return z(
     () => ({
@@ -7061,9 +7047,9 @@ function qm() {
     [e, t, n, o, r]
   );
 }
-function Gc() {
+function Bc() {
   var q, te;
-  const { calendar: e, options: t, gridRowLayout: n, lastPanelType: o, renderDate: r } = qm(), i = W(Ho), s = se(ee((b) => b.week.dayGridLeft.width, [])), [a, l] = Ge(), u = t.week, {
+  const { calendar: e, options: t, gridRowLayout: n, lastPanelType: o, renderDate: r } = Km(), i = W(Ho), s = se(ee((b) => b.week.dayGridLeft.width, [])), [a, l] = Be(), u = t.week, {
     narrowWeekend: c,
     startDayOfWeek: f,
     workweek: p,
@@ -7120,7 +7106,7 @@ function Gc() {
     }));
   });
   $c(a, X.rows.length);
-  const R = Bc(a);
+  const R = Gc(a);
   return /* @__PURE__ */ d(Si, {
     className: v("day-view"),
     autoAdjustPanels: !0
@@ -7143,7 +7129,7 @@ function Gc() {
     top: R
   })) : null);
 }
-function Zm({ rowIndex: e, weekDates: t, narrowWeekend: n }) {
+function qm({ rowIndex: e, weekDates: t, narrowWeekend: n }) {
   const o = W(
     ee(
       (r) => r.gridSelection.accumulated.dayGridMonth.map(
@@ -7163,14 +7149,14 @@ function Zm({ rowIndex: e, weekDates: t, narrowWeekend: n }) {
     }) : null
   ));
 }
-function Jm({ type: e, param: t }) {
+function Zm({ type: e, param: t }) {
   const n = `monthGrid${e === Rn.header ? "Header" : "Footer"}Exceed`;
   return /* @__PURE__ */ d(oe, {
     template: n,
     param: t
   });
 }
-function Qm({
+function Jm({
   date: e,
   theme: t,
   renderDate: n,
@@ -7182,12 +7168,12 @@ function Qm({
   } = t;
   return o ? u.color : ri(r) ? s ? a.color : p.color : ii(r) ? s ? l.color : f.color : s ? c.color : f.color;
 }
-function eh() {
+function Qm() {
   const e = Jd(), t = qa();
   return z(() => ({ common: e, month: t }), [e, t]);
 }
 function Zs({ type: e = Rn.header, exceedCount: t = 0, date: n }) {
-  const { renderDate: o } = W(cn), [, r] = Bo(), i = eh(), s = i.month.gridCell[`${e}Height`], a = me(n, "YYYYMMDD"), l = me(r(), "YYYYMMDD"), u = a === l, c = {
+  const { renderDate: o } = W(cn), [, r] = Go(), i = Qm(), s = i.month.gridCell[`${e}Height`], a = me(n, "YYYYMMDD"), l = me(r(), "YYYYMMDD"), u = a === l, c = {
     date: me(n, "YYYY-MM-DD"),
     day: n.getDay(),
     hiddenEventCount: t,
@@ -7195,7 +7181,7 @@ function Zs({ type: e = Rn.header, exceedCount: t = 0, date: n }) {
     isToday: a === l,
     month: n.getMonth(),
     ymd: a
-  }, f = { color: Qm({ date: n, theme: i, isToday: u, renderDate: o }) }, p = `monthGrid${Oo(e)}`;
+  }, f = { color: Jm({ date: n, theme: i, isToday: u, renderDate: o }) }, p = `monthGrid${Oo(e)}`;
   return U(s) ? null : /* @__PURE__ */ d("div", {
     className: v(`grid-cell-${e}`),
     style: { height: s }
@@ -7205,19 +7191,19 @@ function Zs({ type: e = Rn.header, exceedCount: t = 0, date: n }) {
   }, /* @__PURE__ */ d(oe, {
     template: p,
     param: c
-  })), t ? /* @__PURE__ */ d(Jm, {
+  })), t ? /* @__PURE__ */ d(Zm, {
     param: c,
     type: e,
     className: v("grid-cell-more-events")
   }) : null);
 }
-function th({
+function eh({
   grid: e,
   offsetWidth: t,
   eventLength: n,
   layerSize: o
 }) {
-  const r = Ba(e).height + fr * 2;
+  const r = Ga(e).height + fr * 2;
   let i = t + fr * 2;
   const { width: s, height: a } = o, l = 10;
   i = Math.max(i, eu);
@@ -7225,7 +7211,7 @@ function th({
   const c = Zt + Mo;
   return n <= l ? u += c * n : u += c * l, s && (i = s), a && (u = a), (isNaN(u) || u < r) && (u = r), { width: i, height: u };
 }
-function nh(e, t, n) {
+function th(e, t, n) {
   const {
     width: o,
     height: r,
@@ -7236,19 +7222,19 @@ function nh(e, t, n) {
   const h = f < i, m = f + a > u, _ = p < s, y = p + l > c;
   return h && (f = i), m && (f = u - a), _ && (p = s), y && (p = c - l), { top: p + window.scrollY, left: f + window.scrollX };
 }
-function oh({
+function nh({
   layoutContainer: e,
   cell: t,
   popupSize: n
 }) {
-  const o = e.getBoundingClientRect(), r = t.getBoundingClientRect(), i = nh(n, o, r);
+  const o = e.getBoundingClientRect(), r = t.getBoundingClientRect(), i = th(n, o, r);
   return x(x({}, n), i);
 }
-function rh(e, t, n) {
-  const { width: o, height: r } = se(Fd), [i, s] = Ge(), [a, l] = ae(null);
+function oh(e, t, n) {
+  const { width: o, height: r } = se(Fd), [i, s] = Be(), [a, l] = ae(null);
   return re(() => {
     if (n && t && i) {
-      const u = th({
+      const u = eh({
         grid: t,
         offsetWidth: i.offsetWidth,
         eventLength: e,
@@ -7256,7 +7242,7 @@ function rh(e, t, n) {
           width: o,
           height: r
         }
-      }), c = oh({
+      }), c = nh({
         cell: i,
         layoutContainer: n,
         popupSize: u
@@ -7265,11 +7251,11 @@ function rh(e, t, n) {
     }
   }, [n, i, e, t, o, r]), { popupPosition: a, containerRefCallback: s };
 }
-function ih(e) {
+function rh(e) {
   return e.month.weekend.backgroundColor;
 }
-function sh({ date: e, events: t = [], style: n, parentContainer: o, contentAreaHeight: r }) {
-  const i = xt(), { showSeeMorePopup: s } = Te("popup"), a = se(ih), { popupPosition: l, containerRefCallback: u } = rh(
+function ih({ date: e, events: t = [], style: n, parentContainer: o, contentAreaHeight: r }) {
+  const i = xt(), { showSeeMorePopup: s } = Te("popup"), a = se(rh), { popupPosition: l, containerRefCallback: u } = oh(
     t.length,
     o,
     i
@@ -7300,20 +7286,20 @@ function sh({ date: e, events: t = [], style: n, parentContainer: o, contentArea
     onClickExceedCount: c
   }));
 }
-const ah = ln(function({
+const sh = ln(function({
   week: t,
   rowInfo: n,
   gridDateEventModelMap: o = {},
   contentAreaHeight: r
 }) {
-  const [i, s] = Ge(), a = se(ee((l) => l.common.border, []));
+  const [i, s] = Be(), a = se(ee((l) => l.common.border, []));
   return /* @__PURE__ */ d("div", {
     className: v("weekday-grid"),
     style: { borderTop: a },
     ref: s
   }, t.map((l, u) => {
     const c = l.getDay(), { width: f, left: p } = n[u], h = me(he(l), "YYYYMMDD");
-    return /* @__PURE__ */ d(sh, {
+    return /* @__PURE__ */ d(ih, {
       key: `daygrid-cell-${c}`,
       date: l,
       style: {
@@ -7326,7 +7312,7 @@ const ah = ln(function({
     });
   }));
 });
-function ch({ weekDates: e, narrowWeekend: t, rowIndex: n }) {
+function ah({ weekDates: e, narrowWeekend: t, rowIndex: n }) {
   const o = W(
     ee(
       (r) => ko.calculateSelection(
@@ -7344,7 +7330,7 @@ function ch({ weekDates: e, narrowWeekend: t, rowIndex: n }) {
     narrowWeekend: t
   });
 }
-const lh = ln(function({
+const ch = ln(function({
   contentAreaHeight: t,
   eventHeight: n = Qe,
   events: o,
@@ -7361,7 +7347,7 @@ const lh = ln(function({
     className: i
   }, a);
 });
-function uh({
+function lh({
   dateMatrix: e,
   rowInfo: t,
   gridPositionFinder: n,
@@ -7391,8 +7377,8 @@ function uh({
     l(), c();
   }, i), f;
 }
-function dh({ dateMatrix: e, gridPositionFinder: t, rowInfo: n, rowIndex: o }) {
-  const r = uh({
+function uh({ dateMatrix: e, gridPositionFinder: t, rowInfo: n, rowIndex: o }) {
+  const r = lh({
     dateMatrix: e,
     rowInfo: n,
     gridPositionFinder: t,
@@ -7412,7 +7398,7 @@ function Js(e, t) {
     endColumnIndex: o
   };
 }
-function fh({
+function dh({
   dateMatrix: e,
   gridPositionFinder: t,
   renderedUIModels: n,
@@ -7489,14 +7475,14 @@ function fh({
     m();
   }, s), p;
 }
-function ph({
+function fh({
   dateMatrix: e,
   cellWidthMap: t,
   gridPositionFinder: n,
   renderedUIModels: o,
   rowIndex: r
 }) {
-  const i = fh({
+  const i = dh({
     dateMatrix: e,
     gridPositionFinder: n,
     cellWidthMap: t,
@@ -7516,18 +7502,18 @@ function ph({
     resizingWidth: a
   }));
 }
-const mh = 100;
-function hh(e) {
-  const t = W(Cm), { headerHeight: n, footerHeight: o } = se(Ka), r = ne(null), [i, s] = ae(0);
+const ph = 100;
+function mh(e) {
+  const t = W(bm), { headerHeight: n, footerHeight: o } = se(Ka), r = ne(null), [i, s] = ae(0);
   return re(() => {
     if (r.current) {
-      const a = Ba(r.current).height, l = Qr + (n != null ? n : Ao), u = o != null ? o : 0, c = a - l - u, f = t * (e + Mo);
+      const a = Ga(r.current).height, l = Qr + (n != null ? n : Ao), u = o != null ? o : 0, c = a - l - u, f = t * (e + Mo);
       s(Math.min(c, f));
     }
   }, [o, n, e, t]), { ref: r, cellContentAreaHeight: i };
 }
-function gh({ dateMatrix: e = [], rowInfo: t = [], cellWidthMap: n = [] }) {
-  const [o, r] = Ge(), i = W(Lo), { ref: s, cellContentAreaHeight: a } = hh(Zt), { eventFilter: l, month: u, isReadOnly: c } = W(je), { narrowWeekend: f, startDayOfWeek: p } = u, h = mh / e.length, m = z(
+function hh({ dateMatrix: e = [], rowInfo: t = [], cellWidthMap: n = [] }) {
+  const [o, r] = Be(), i = W(Lo), { ref: s, cellContentAreaHeight: a } = mh(Zt), { eventFilter: l, month: u, isReadOnly: c } = W(je), { narrowWeekend: f, startDayOfWeek: p } = u, h = ph / e.length, m = z(
     () => hi({
       container: o,
       rowsCount: e.length,
@@ -7559,32 +7545,32 @@ function gh({ dateMatrix: e = [], rowInfo: t = [], cellWidthMap: n = [] }) {
       ref: s
     }, /* @__PURE__ */ d("div", {
       className: v("weekday")
-    }, /* @__PURE__ */ d(ah, {
+    }, /* @__PURE__ */ d(sh, {
       gridDateEventModelMap: T,
       week: w,
       rowInfo: t,
       contentAreaHeight: a
-    }), /* @__PURE__ */ d(lh, {
+    }), /* @__PURE__ */ d(ch, {
       name: "month",
       events: k,
       contentAreaHeight: a,
       eventHeight: Zt,
       className: v("weekday-events")
-    }), /* @__PURE__ */ d(ch, {
+    }), /* @__PURE__ */ d(ah, {
       weekDates: w,
       narrowWeekend: f,
       rowIndex: S
-    }), /* @__PURE__ */ d(Zm, {
+    }), /* @__PURE__ */ d(qm, {
       rowIndex: S,
       weekDates: w,
       narrowWeekend: f
-    })), /* @__PURE__ */ d(ph, {
+    })), /* @__PURE__ */ d(fh, {
       dateMatrix: e,
       gridPositionFinder: m,
       rowIndex: S,
       cellWidthMap: n,
       renderedUIModels: y
-    }), /* @__PURE__ */ d(dh, {
+    }), /* @__PURE__ */ d(uh, {
       dateMatrix: e,
       gridPositionFinder: m,
       rowIndex: S,
@@ -7592,7 +7578,7 @@ function gh({ dateMatrix: e = [], rowInfo: t = [], cellWidthMap: n = [] }) {
     }));
   }));
 }
-function vh(e) {
+function gh(e) {
   const { dayNames: t, startDayOfWeek: n, workweek: o } = e.month;
   return [...Array(7)].map((s, a) => (n + a) % 7).map((s) => ({
     day: s,
@@ -7600,7 +7586,7 @@ function vh(e) {
   })).filter((s) => o ? !Fe(s.day) : !0);
 }
 function Fc() {
-  const e = W(je), { renderDate: t } = W(cn), n = vh(e), o = e.month, { narrowWeekend: r, startDayOfWeek: i, workweek: s } = o, a = z(
+  const e = W(je), { renderDate: t } = W(cn), n = gh(e), o = e.month, { narrowWeekend: r, startDayOfWeek: i, workweek: s } = o, a = z(
     () => lc(t, o),
     [o, t]
   ), { rowStyleInfo: l, cellWidthMap: u } = z(
@@ -7616,13 +7602,13 @@ function Fc() {
     dayNames: n,
     options: o,
     rowStyleInfo: l
-  }), /* @__PURE__ */ d(gh, {
+  }), /* @__PURE__ */ d(hh, {
     dateMatrix: a,
     rowInfo: c,
     cellWidthMap: u
   }));
 }
-function _h() {
+function vh() {
   const e = W(je), t = W(Lo), { dayGridRows: n, lastPanelType: o } = W(za), { renderDate: r } = W(cn);
   return z(
     () => ({
@@ -7637,7 +7623,7 @@ function _h() {
 }
 function Uc() {
   var te, b;
-  const { options: e, calendar: t, gridRowLayout: n, lastPanelType: o, renderDate: r } = _h(), i = se(ee((D) => D.week.dayGridLeft.width, [])), s = W(Ho), [a, l] = Ge(), u = e.week, {
+  const { options: e, calendar: t, gridRowLayout: n, lastPanelType: o, renderDate: r } = vh(), i = se(ee((D) => D.week.dayGridLeft.width, [])), s = W(Ho), [a, l] = Be(), u = e.week, {
     narrowWeekend: c,
     startDayOfWeek: f,
     workweek: p,
@@ -7694,7 +7680,7 @@ function Uc() {
     }));
   }), R = z(() => I.includes("time"), [I]);
   $c(a, X.rows.length);
-  const q = Bc(a);
+  const q = Gc(a);
   return /* @__PURE__ */ d(Si, {
     className: v("week-view"),
     autoAdjustPanels: !0
@@ -7718,19 +7704,19 @@ function Uc() {
     top: q
   })) : null);
 }
-const yh = {
+const _h = {
   month: Fc,
   week: Uc,
-  day: Gc
+  day: Bc
 };
-function wh() {
-  const { currentView: e } = W(cn), t = z(() => yh[e] || (() => null), [e]);
+function yh() {
+  const { currentView: e } = W(cn), t = z(() => _h[e] || (() => null), [e]);
   return /* @__PURE__ */ d(t, null);
 }
-var Eh = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|^--/i, Dh = /[&<>"]/;
+var wh = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|^--/i, Eh = /[&<>"]/;
 function Qs(e) {
   var t = String(e);
-  return Dh.test(t) ? t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;") : t;
+  return Eh.test(t) ? t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;") : t;
 }
 var ea = function(e, t) {
   return String(e).replace(/(\n+)/g, "$1" + (t || "	"));
@@ -7738,11 +7724,11 @@ var ea = function(e, t) {
   return String(e).length > (t || 40) || !n && String(e).indexOf(`
 `) !== -1 || String(e).indexOf("<") !== -1;
 }, na = {};
-function Sh(e) {
+function Dh(e) {
   var t = "";
   for (var n in e) {
     var o = e[n];
-    o != null && o !== "" && (t && (t += " "), t += n[0] == "-" ? n : na[n] || (na[n] = n.replace(/([A-Z])/g, "-$1").toLowerCase()), t += ": ", t += o, typeof o == "number" && Eh.test(n) === !1 && (t += "px"), t += ";");
+    o != null && o !== "" && (t && (t += " "), t += n[0] == "-" ? n : na[n] || (na[n] = n.replace(/([A-Z])/g, "-$1").toLowerCase()), t += ": ", t += o, typeof o == "number" && wh.test(n) === !1 && (t += "px"), t += ";");
   }
   return t || void 0;
 }
@@ -7754,13 +7740,13 @@ function io(e, t) {
 function Ur(e, t) {
   return Array.isArray(t) ? t.reduce(Ur, e) : t != null && t !== !1 && e.push(t), e;
 }
-var Th = { shallow: !0 }, wr = [], bh = /^(area|base|br|col|embed|hr|img|input|link|meta|param|source|track|wbr)$/, oa = /[\s\n\\/='"\0<>]/;
+var Sh = { shallow: !0 }, wr = [], Th = /^(area|base|br|col|embed|hr|img|input|link|meta|param|source|track|wbr)$/, oa = /[\s\n\\/='"\0<>]/;
 function ra() {
   this.__d = !0;
 }
 Pn.render = Pn;
-var Ch = function(e, t) {
-  return Pn(e, t, Th);
+var bh = function(e, t) {
+  return Pn(e, t, Sh);
 }, ia = [];
 function Pn(e, t, n) {
   t = t || {}, n = n || {};
@@ -7837,7 +7823,7 @@ function Sn(e, t, n, o, r, i) {
               continue;
             b = "for";
           }
-          b === "style" && D && typeof D == "object" && (D = Sh(D)), b[0] === "a" && b[1] === "r" && typeof D == "boolean" && (D = String(D));
+          b === "style" && D && typeof D == "object" && (D = Dh(D)), b[0] === "a" && b[1] === "r" && typeof D == "boolean" && (D = String(D));
           var V = n.attributeHook && n.attributeHook(b, D, t, n, h);
           if (V || V === "")
             R += V;
@@ -7873,7 +7859,7 @@ function Sn(e, t, n, o, r, i) {
   }
   if (R += ">", oa.test(f))
     throw new Error(f + " is not a valid HTML tag name in " + R);
-  var ge, j = bh.test(f) || n.voidElements && n.voidElements.test(f), de = [];
+  var ge, j = Th.test(f) || n.voidElements && n.voidElements.test(f), de = [];
   if ($)
     s && ta($) && ($ = `
 ` + a + ea($, a)), R += $;
@@ -7904,30 +7890,30 @@ function Sn(e, t, n, o, r, i) {
 `) && (R += `
 `), R = R + "</" + f + ">") : R = R.replace(/>$/, " />"), R;
 }
-Pn.shallowRender = Ch;
-function kh(e, t, n) {
+Pn.shallowRender = bh;
+function Ch(e, t, n) {
   var o;
   n = n || null;
   for (o in e)
     if (e.hasOwnProperty(o) && t.call(n, e[o], o, e) === !1)
       break;
 }
-var zc = kh, Nh = zc;
-function Ih(e, t) {
+var zc = Ch, kh = zc;
+function Nh(e, t) {
   var n = document.createElement("img"), o = "";
-  return Nh(t, function(r, i) {
+  return kh(t, function(r, i) {
     o += "&" + i + "=" + r;
   }), o = o.substring(1), n.src = e + "?" + o, n.style.display = "none", document.body.appendChild(n), document.body.removeChild(n), n;
 }
-var Mh = Ih, Ah = Be, xh = Mh, Rh = 7 * 24 * 60 * 60 * 1e3;
-function Oh(e) {
+var Ih = Nh, Mh = Ge, Ah = Ih, xh = 7 * 24 * 60 * 60 * 1e3;
+function Rh(e) {
   var t = new Date().getTime();
-  return t - e > Rh;
+  return t - e > xh;
 }
-function Ph(e, t) {
+function Oh(e, t) {
   var n = "https://www.google-analytics.com/collect", o = location.hostname, r = "event", i = "use", s = "TOAST UI " + e + " for " + o + ": Statistics", a = window.localStorage.getItem(s);
-  !Ah(window.tui) && window.tui.usageStatistics === !1 || a && !Oh(a) || (window.localStorage.setItem(s, new Date().getTime()), setTimeout(function() {
-    (document.readyState === "interactive" || document.readyState === "complete") && xh(n, {
+  !Mh(window.tui) && window.tui.usageStatistics === !1 || a && !Rh(a) || (window.localStorage.setItem(s, new Date().getTime()), setTimeout(function() {
+    (document.readyState === "interactive" || document.readyState === "complete") && Ah(n, {
       v: 1,
       t: r,
       tid: t,
@@ -7939,7 +7925,7 @@ function Ph(e, t) {
     });
   }, 1e3));
 }
-var Lh = Ph;
+var Ph = Oh;
 function sa({ theme: e, store: t, eventBus: n, children: o }) {
   return /* @__PURE__ */ d(Od, {
     value: n
@@ -7947,10 +7933,10 @@ function sa({ theme: e, store: t, eventBus: n, children: o }) {
     store: e
   }, /* @__PURE__ */ d(Md, {
     store: t
-  }, /* @__PURE__ */ d(bp, null, o))));
+  }, /* @__PURE__ */ d(Tp, null, o))));
 }
-const Hh = "UA-129951699-1";
-function $h(e, t) {
+const Lh = "UA-129951699-1";
+function Hh(e, t) {
   var n = Object.prototype.hasOwnProperty, o, r, i, s;
   for (i = 1, s = arguments.length; i < s; i += 1) {
     o = arguments[i];
@@ -7959,38 +7945,38 @@ function $h(e, t) {
   }
   return e;
 }
-var Bh = $h;
+var $h = Hh;
 function Gh(e) {
   return e === null;
 }
-var Fh = Gh, Uh = Be, zh = Fh;
-function Wh(e) {
-  return !Uh(e) && !zh(e);
+var Bh = Gh, Fh = Ge, Uh = Bh;
+function zh(e) {
+  return !Fh(e) && !Uh(e);
 }
-var Yh = Wh;
-function Vh(e) {
+var Wh = zh;
+function Yh(e) {
   return e instanceof Array;
 }
-var Wc = Vh;
-function jh(e) {
+var Wc = Yh;
+function Vh(e) {
   return e instanceof Function;
 }
-var Xh = jh;
-function Kh(e, t, n) {
+var jh = Vh;
+function Xh(e, t, n) {
   var o = 0, r = e.length;
   for (n = n || null; o < r && t.call(n, e[o], o, e) !== !1; o += 1)
     ;
 }
-var qh = Kh, Zh = Wc, Jh = qh, Qh = zc;
-function eg(e, t, n) {
-  Zh(e) ? Jh(e, t, n) : Qh(e, t, n);
+var Kh = Xh, qh = Wc, Zh = Kh, Jh = zc;
+function Qh(e, t, n) {
+  qh(e) ? Zh(e, t, n) : Jh(e, t, n);
 }
-var tg = eg, ng = Bh, Yc = Yh, Ci = Ce, ki = uo, og = Wc, Ni = Xh, st = tg, Vc = /\s+/g;
+var eg = Qh, tg = $h, Yc = Wh, Ci = Ce, ki = uo, ng = Wc, Ni = jh, st = eg, Vc = /\s+/g;
 function le() {
   this.events = null, this.contexts = null;
 }
 le.mixin = function(e) {
-  ng(e.prototype, le.prototype);
+  tg(e.prototype, le.prototype);
 };
 le.prototype._getHandlerItem = function(e, t) {
   var n = { handler: e };
@@ -8047,7 +8033,7 @@ le.prototype.once = function(e, t, n) {
 };
 le.prototype._spliceMatches = function(e, t) {
   var n = 0, o;
-  if (!!og(e))
+  if (!!ng(e))
     for (o = e.length; n < o; n += 1)
       t(e[n]) === !0 && (e.splice(n, 1), o -= 1, n -= 1);
 };
@@ -8121,8 +8107,8 @@ le.prototype.getListenerLength = function(e) {
   var t = this._safeEvent(e);
   return t.length;
 };
-var rg = le;
-class ig extends rg {
+var og = le;
+class rg extends og {
   on(t, n) {
     return super.on(t, n), this;
   }
@@ -8138,13 +8124,13 @@ class ig extends rg {
 }
 class Uo {
   constructor(t, n = {}) {
-    B(this, "container");
-    B(this, "renderRange");
-    B(this, "eventBus");
-    B(this, "theme");
-    B(this, "store");
+    G(this, "container");
+    G(this, "renderRange");
+    G(this, "eventBus");
+    G(this, "theme");
+    G(this, "store");
     var o;
-    this.container = Ce(t) ? (o = document == null ? void 0 : document.querySelector(t)) != null ? o : null : t, this.theme = qd(n.theme), this.eventBus = new ig(), this.store = Id(n), this.renderRange = this.calculateRenderRange(he()), Ad(), this.getStoreState().options.usageStatistics === !0 && Lh("calendar", Hh);
+    this.container = Ce(t) ? (o = document == null ? void 0 : document.querySelector(t)) != null ? o : null : t, this.theme = qd(n.theme), this.eventBus = new rg(), this.store = Id(n), this.renderRange = this.calculateRenderRange(he()), Ad(), this.getStoreState().options.usageStatistics === !0 && Ph("calendar", Lh);
   }
   getStoreState(t) {
     const n = this.store.getState();
@@ -8372,30 +8358,30 @@ class Uo {
     return this.eventBus.once(t, n), this;
   }
 }
-function sg(e) {
-  return !!Object.values(Wm).find((t) => t === e);
+function ig(e) {
+  return !!Object.values(zm).find((t) => t === e);
 }
-class dg extends Uo {
+class ug extends Uo {
   constructor(t, n = {}) {
     super(t, n);
     const { defaultView: o = "week" } = n;
-    if (!sg(o))
+    if (!ig(o))
       throw new wu(o);
     this.render();
   }
   getComponent() {
-    return /* @__PURE__ */ d(wh, null);
+    return /* @__PURE__ */ d(yh, null);
   }
 }
-class fg extends Uo {
+class dg extends Uo {
   constructor(t, n = {}) {
     super(t, n), this.render();
   }
   getComponent() {
-    return /* @__PURE__ */ d(Gc, null);
+    return /* @__PURE__ */ d(Bc, null);
   }
 }
-class pg extends Uo {
+class fg extends Uo {
   constructor(t, n = {}) {
     super(t, n), this.render();
   }
@@ -8407,7 +8393,7 @@ class pg extends Uo {
     t();
   }
 }
-class mg extends Uo {
+class pg extends Uo {
   constructor(t, n = {}) {
     super(t, n), this.render();
   }
@@ -8416,9 +8402,9 @@ class mg extends Uo {
   }
 }
 export {
-  fg as Day,
-  pg as Month,
+  dg as Day,
+  fg as Month,
   O as TZDate,
-  mg as Week,
-  dg as default
+  pg as Week,
+  ug as default
 };
