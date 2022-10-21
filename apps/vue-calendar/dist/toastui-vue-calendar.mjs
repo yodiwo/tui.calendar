@@ -1334,10 +1334,10 @@ var tuiTimePicker = { exports: {} };
       },
       function(module2, exports2, __webpack_require__) {
         function createObject(obj) {
-          function F2() {
+          function F() {
           }
-          F2.prototype = obj;
-          return new F2();
+          F.prototype = obj;
+          return new F();
         }
         module2.exports = createObject;
       },
@@ -4085,10 +4085,10 @@ var tuiTimePicker = { exports: {} };
       },
       function(module2, exports2, __webpack_require__) {
         function createObject(obj) {
-          function F2() {
+          function F() {
           }
-          F2.prototype = obj;
-          return new F2();
+          F.prototype = obj;
+          return new F();
         }
         module2.exports = createObject;
       },
@@ -5070,7 +5070,7 @@ var jn = (e, t) => {
 var B = (e, t, n) => (sr(e, typeof t != "symbol" ? t + "" : t, n), n);
 /*!
  * TOAST UI Calendar 2nd Edition
- * @version 2.1.3 | Thu Oct 20 2022
+ * @version 2.1.3 | Fri Oct 21 2022
  * @author NHN Cloud FE Development Lab <dl_javascript@nhn.com>
  * @license MIT
  */
@@ -5135,23 +5135,23 @@ function mo() {
     });
 }
 function fa(e, t, n, o, r, i, s, a, l, u) {
-  var c, f, p, h, m, _, y, w = o && o.__k || la, E = w.length;
+  var c, f, p, h, m, _, y, E = o && o.__k || la, w = E.length;
   for (n.__k = [], c = 0; c < t.length; c++)
     if ((h = n.__k[c] = (h = t[c]) == null || typeof h == "boolean" ? null : typeof h == "string" || typeof h == "number" || typeof h == "bigint" ? bn(null, h, null, null, h) : Array.isArray(h) ? bn(xe, { children: h }, null, null, null) : h.__b > 0 ? bn(h.type, h.props, h.key, null, h.__v) : h) != null) {
-      if (h.__ = n, h.__b = n.__b + 1, (p = w[c]) === null || p && h.key == p.key && h.type === p.type)
-        w[c] = void 0;
+      if (h.__ = n, h.__b = n.__b + 1, (p = E[c]) === null || p && h.key == p.key && h.type === p.type)
+        E[c] = void 0;
       else
-        for (f = 0; f < E; f++) {
-          if ((p = w[f]) && h.key == p.key && h.type === p.type) {
-            w[f] = void 0;
+        for (f = 0; f < w; f++) {
+          if ((p = E[f]) && h.key == p.key && h.type === p.type) {
+            E[f] = void 0;
             break;
           }
           p = null;
         }
-      zr(e, h, p = p || po, r, i, s, a, l, u), m = h.__e, (f = h.ref) && p.ref != f && (y || (y = []), p.ref && y.push(p.ref, null, h), y.push(f, h.__c || m, h)), m != null ? (_ == null && (_ = m), typeof h.type == "function" && h.__k === p.__k ? h.__d = l = pa(h, l, e) : l = ma(e, h, p, w, m, l), typeof n.type == "function" && (n.__d = l)) : l && p.__e == l && l.parentNode != e && (l = Xt(p));
+      zr(e, h, p = p || po, r, i, s, a, l, u), m = h.__e, (f = h.ref) && p.ref != f && (y || (y = []), p.ref && y.push(p.ref, null, h), y.push(f, h.__c || m, h)), m != null ? (_ == null && (_ = m), typeof h.type == "function" && h.__k === p.__k ? h.__d = l = pa(h, l, e) : l = ma(e, h, p, E, m, l), typeof n.type == "function" && (n.__d = l)) : l && p.__e == l && l.parentNode != e && (l = Xt(p));
     }
-  for (n.__e = _, c = E; c--; )
-    w[c] != null && (typeof n.type == "function" && w[c].__e != null && w[c].__e == n.__d && (n.__d = Xt(o, c + 1)), va(w[c], w[c]));
+  for (n.__e = _, c = w; c--; )
+    E[c] != null && (typeof n.type == "function" && E[c].__e != null && E[c].__e == n.__d && (n.__d = Xt(o, c + 1)), va(E[c], E[c]));
   if (y)
     for (c = 0; c < y.length; c++)
       ga(y[c], y[++c], y[++c]);
@@ -5227,38 +5227,38 @@ function rs(e) {
   this.l[e.type + true](H.event ? H.event(e) : e);
 }
 function zr(e, t, n, o, r, i, s, a, l) {
-  var u, c, f, p, h, m, _, y, w, E, T, k, S, N = t.type;
+  var u, c, f, p, h, m, _, y, E, w, S, k, T, N = t.type;
   if (t.constructor !== void 0)
     return null;
   n.__h != null && (l = n.__h, a = t.__e = n.__e, t.__h = null, i = [a]), (u = H.__b) && u(t);
   try {
     e:
       if (typeof N == "function") {
-        if (y = t.props, w = (u = N.contextType) && o[u.__c], E = u ? w ? w.props.value : u.__ : o, n.__c ? _ = (c = t.__c = n.__c).__ = c.__E : ("prototype" in N && N.prototype.render ? t.__c = c = new N(y, E) : (t.__c = c = new rt(y, E), c.constructor = N, c.render = Rl), w && w.sub(c), c.props = y, c.state || (c.state = {}), c.context = E, c.__n = o, f = c.__d = true, c.__h = []), c.__s == null && (c.__s = c.state), N.getDerivedStateFromProps != null && (c.__s == c.state && (c.__s = ot({}, c.__s)), ot(c.__s, N.getDerivedStateFromProps(y, c.__s))), p = c.props, h = c.state, f)
+        if (y = t.props, E = (u = N.contextType) && o[u.__c], w = u ? E ? E.props.value : u.__ : o, n.__c ? _ = (c = t.__c = n.__c).__ = c.__E : ("prototype" in N && N.prototype.render ? t.__c = c = new N(y, w) : (t.__c = c = new rt(y, w), c.constructor = N, c.render = Rl), E && E.sub(c), c.props = y, c.state || (c.state = {}), c.context = w, c.__n = o, f = c.__d = true, c.__h = []), c.__s == null && (c.__s = c.state), N.getDerivedStateFromProps != null && (c.__s == c.state && (c.__s = ot({}, c.__s)), ot(c.__s, N.getDerivedStateFromProps(y, c.__s))), p = c.props, h = c.state, f)
           N.getDerivedStateFromProps == null && c.componentWillMount != null && c.componentWillMount(), c.componentDidMount != null && c.__h.push(c.componentDidMount);
         else {
-          if (N.getDerivedStateFromProps == null && y !== p && c.componentWillReceiveProps != null && c.componentWillReceiveProps(y, E), !c.__e && c.shouldComponentUpdate != null && c.shouldComponentUpdate(y, c.__s, E) === false || t.__v === n.__v) {
-            c.props = y, c.state = c.__s, t.__v !== n.__v && (c.__d = false), c.__v = t, t.__e = n.__e, t.__k = n.__k, t.__k.forEach(function(W) {
-              W && (W.__ = t);
+          if (N.getDerivedStateFromProps == null && y !== p && c.componentWillReceiveProps != null && c.componentWillReceiveProps(y, w), !c.__e && c.shouldComponentUpdate != null && c.shouldComponentUpdate(y, c.__s, w) === false || t.__v === n.__v) {
+            c.props = y, c.state = c.__s, t.__v !== n.__v && (c.__d = false), c.__v = t, t.__e = n.__e, t.__k = n.__k, t.__k.forEach(function(F) {
+              F && (F.__ = t);
             }), c.__h.length && s.push(c);
             break e;
           }
-          c.componentWillUpdate != null && c.componentWillUpdate(y, c.__s, E), c.componentDidUpdate != null && c.__h.push(function() {
+          c.componentWillUpdate != null && c.componentWillUpdate(y, c.__s, w), c.componentDidUpdate != null && c.__h.push(function() {
             c.componentDidUpdate(p, h, m);
           });
         }
-        if (c.context = E, c.props = y, c.__v = t, c.__P = e, T = H.__r, k = 0, "prototype" in N && N.prototype.render)
-          c.state = c.__s, c.__d = false, T && T(t), u = c.render(c.props, c.state, c.context);
+        if (c.context = w, c.props = y, c.__v = t, c.__P = e, S = H.__r, k = 0, "prototype" in N && N.prototype.render)
+          c.state = c.__s, c.__d = false, S && S(t), u = c.render(c.props, c.state, c.context);
         else
           do
-            c.__d = false, T && T(t), u = c.render(c.props, c.state, c.context), c.state = c.__s;
+            c.__d = false, S && S(t), u = c.render(c.props, c.state, c.context), c.state = c.__s;
           while (c.__d && ++k < 25);
-        c.state = c.__s, c.getChildContext != null && (o = ot(ot({}, o), c.getChildContext())), f || c.getSnapshotBeforeUpdate == null || (m = c.getSnapshotBeforeUpdate(p, h)), S = u != null && u.type === xe && u.key == null ? u.props.children : u, fa(e, Array.isArray(S) ? S : [S], t, n, o, r, i, s, a, l), c.base = t.__e, t.__h = null, c.__h.length && s.push(c), _ && (c.__E = c.__ = null), c.__e = false;
+        c.state = c.__s, c.getChildContext != null && (o = ot(ot({}, o), c.getChildContext())), f || c.getSnapshotBeforeUpdate == null || (m = c.getSnapshotBeforeUpdate(p, h)), T = u != null && u.type === xe && u.key == null ? u.props.children : u, fa(e, Array.isArray(T) ? T : [T], t, n, o, r, i, s, a, l), c.base = t.__e, t.__h = null, c.__h.length && s.push(c), _ && (c.__E = c.__ = null), c.__e = false;
       } else
         i == null && t.__v === n.__v ? (t.__k = n.__k, t.__e = n.__e) : t.__e = xl(n.__e, t, n, o, r, i, s, l);
     (u = H.diffed) && u(t);
-  } catch (W) {
-    t.__v = null, (l || i != null) && (t.__e = a, t.__h = !!l, i[i.indexOf(a)] = null), H.__e(W, t, n);
+  } catch (F) {
+    t.__v = null, (l || i != null) && (t.__e = a, t.__h = !!l, i[i.indexOf(a)] = null), H.__e(F, t, n);
   }
 }
 function ha(e, t) {
@@ -5375,10 +5375,10 @@ Ln = la.slice, H = { __e: function(e, t, n, o) {
 }, rt.prototype.forceUpdate = function(e) {
   this.__v && (this.__e = true, e && this.__h.push(e), Er(this));
 }, rt.prototype.render = xe, Tn = [], mo.__r = 0, ca = 0;
-var tn, _e, ar, is, In = 0, _a = [], so = [], ss = H.__b, as = H.__r, cs = H.diffed, ls = H.__c, us = H.unmount;
+var tn, ye, ar, is, In = 0, _a = [], so = [], ss = H.__b, as = H.__r, cs = H.diffed, ls = H.__c, us = H.unmount;
 function Hn(e, t) {
-  H.__h && H.__h(_e, e, In || t), In = 0;
-  var n = _e.__H || (_e.__H = { __: [], __h: [] });
+  H.__h && H.__h(ye, e, In || t), In = 0;
+  var n = ye.__H || (ye.__H = { __: [], __h: [] });
   return e >= n.__.length && n.__.push({ __V: so }), n.__[e];
 }
 function ae(e) {
@@ -5389,33 +5389,33 @@ function Wr(e, t, n) {
   return o.t = e, o.__c || (o.__ = [n ? n(t) : ya(void 0, t), function(r) {
     var i = o.t(o.__[0], r);
     o.__[0] !== i && (o.__ = [i, o.__[1]], o.__c.setState({}));
-  }], o.__c = _e), o.__;
+  }], o.__c = ye), o.__;
 }
 function re(e, t) {
   var n = Hn(tn++, 3);
-  !H.__s && Yr(n.__H, t) && (n.__ = e, n.u = t, _e.__H.__h.push(n));
+  !H.__s && Yr(n.__H, t) && (n.__ = e, n.u = t, ye.__H.__h.push(n));
 }
 function ht(e, t) {
   var n = Hn(tn++, 4);
-  !H.__s && Yr(n.__H, t) && (n.__ = e, n.u = t, _e.__h.push(n));
+  !H.__s && Yr(n.__H, t) && (n.__ = e, n.u = t, ye.__h.push(n));
 }
-function te(e) {
-  return In = 5, U(function() {
+function ne(e) {
+  return In = 5, z(function() {
     return { current: e };
   }, []);
 }
-function U(e, t) {
+function z(e, t) {
   var n = Hn(tn++, 7);
   return Yr(n.__H, t) ? (n.__V = e(), n.u = t, n.__h = e, n.__V) : n.__;
 }
 function ee(e, t) {
-  return In = 8, U(function() {
+  return In = 8, z(function() {
     return e;
   }, t);
 }
 function Mn(e) {
-  var t = _e.context[e.__c], n = Hn(tn++, 9);
-  return n.c = e, t ? (n.__ == null && (n.__ = true, t.sub(_e)), t.props.value) : e.__;
+  var t = ye.context[e.__c], n = Hn(tn++, 9);
+  return n.c = e, t ? (n.__ == null && (n.__ = true, t.sub(ye)), t.props.value) : e.__;
 }
 function Pl() {
   for (var e; e = _a.shift(); )
@@ -5427,13 +5427,13 @@ function Pl() {
       }
 }
 H.__b = function(e) {
-  _e = null, ss && ss(e);
+  ye = null, ss && ss(e);
 }, H.__r = function(e) {
   as && as(e), tn = 0;
-  var t = (_e = e.__c).__H;
-  t && (ar === _e ? (t.__h = [], _e.__h = [], t.__.forEach(function(n) {
+  var t = (ye = e.__c).__H;
+  t && (ar === ye ? (t.__h = [], ye.__h = [], t.__.forEach(function(n) {
     n.__V = so, n.u = void 0;
-  })) : (t.__h.forEach(ao), t.__h.forEach(Dr), t.__h = [])), ar = _e;
+  })) : (t.__h.forEach(ao), t.__h.forEach(Dr), t.__h = [])), ar = ye;
 }, H.diffed = function(e) {
   cs && cs(e);
   var t = e.__c;
@@ -5444,7 +5444,7 @@ H.__b = function(e) {
     ds && (o = requestAnimationFrame(r));
   })(Pl)), t.__H.__.forEach(function(n) {
     n.u && (n.__H = n.u), n.__V !== so && (n.__ = n.__V), n.u = void 0, n.__V = so;
-  })), ar = _e = null;
+  })), ar = ye = null;
 }, H.__c = function(e, t) {
   t.some(function(n) {
     try {
@@ -5470,12 +5470,12 @@ H.__b = function(e) {
 };
 var ds = typeof requestAnimationFrame == "function";
 function ao(e) {
-  var t = _e, n = e.__c;
-  typeof n == "function" && (e.__c = void 0, n()), _e = t;
+  var t = ye, n = e.__c;
+  typeof n == "function" && (e.__c = void 0, n()), ye = t;
 }
 function Dr(e) {
-  var t = _e;
-  e.__c = e.__(), _e = t;
+  var t = ye;
+  e.__c = e.__(), ye = t;
 }
 function Yr(e, t) {
   return !e || e.length !== t.length || t.some(function(n, o) {
@@ -5485,7 +5485,7 @@ function Yr(e, t) {
 function ya(e, t) {
   return typeof t == "function" ? t(e) : t;
 }
-function Ee(e) {
+function De(e) {
   for (var t = arguments.length, n = Array(t > 1 ? t - 1 : 0), o = 1; o < t; o++)
     n[o - 1] = arguments[o];
   {
@@ -5557,17 +5557,17 @@ function Kr(e, t) {
   }, true)), e;
 }
 function $l() {
-  Ee(2);
+  De(2);
 }
 function qr(e) {
   return e == null || typeof e != "object" || Object.isFrozen(e);
 }
 function Ze(e) {
   var t = Vl[e];
-  return t || Ee(18, e), t;
+  return t || De(18, e), t;
 }
 function fs() {
-  return qt || Ee(0), qt;
+  return qt || De(0), qt;
 }
 function cr(e, t) {
   t && (Ze("Patches"), e.u = [], e.s = [], e.v = t);
@@ -5588,7 +5588,7 @@ function Bl(e) {
 function lr(e, t) {
   t._ = t.p.length;
   var n = t.p[0], o = e !== void 0 && e !== n;
-  return t.h.g || Ze("ES5").S(t, e, o), o ? (n[He].P && (vo(t), Ee(4)), bt(e) && (e = _o(t, e), t.l || yo(t, e)), t.u && Ze("Patches").M(n[He].t, e, t.u, t.s)) : e = _o(t, n, []), vo(t), t.u && t.v(t.u, t.s), e !== Ea ? e : void 0;
+  return t.h.g || Ze("ES5").S(t, e, o), o ? (n[He].P && (vo(t), De(4)), bt(e) && (e = _o(t, e), t.l || yo(t, e)), t.u && Ze("Patches").M(n[He].t, e, t.u, t.s)) : e = _o(t, n, []), vo(t), t.u && t.v(t.u, t.s), e !== Ea ? e : void 0;
 }
 function _o(e, t, n) {
   if (qr(t))
@@ -5612,7 +5612,7 @@ function _o(e, t, n) {
   return o.o;
 }
 function ms(e, t, n, o, r, i) {
-  if (r === n && Ee(5), Kt(r)) {
+  if (r === n && De(5), Kt(r)) {
     var s = _o(e, r, i && t && t.i !== 3 && !Sr(t.D, o) ? i.concat(o) : void 0);
     if (wa(n, o, s), !Kt(s))
       return;
@@ -5656,7 +5656,7 @@ function Cr(e, t, n) {
   return (n ? n.A : fs()).p.push(o), o;
 }
 function Gl(e) {
-  return Kt(e) || Ee(22, e), function t(n) {
+  return Kt(e) || De(22, e), function t(n) {
     if (!bt(n))
       return n;
     var o, r = n[He], i = nn(n);
@@ -5735,20 +5735,20 @@ var vs, qt, Zr = typeof Symbol != "undefined" && typeof Symbol("x") == "symbol",
   var n = Tt(e), o = Reflect.getOwnPropertyDescriptor(n, t);
   return o && { writable: true, configurable: e.i !== 1 || t !== "length", enumerable: o.enumerable, value: n[t] };
 }, defineProperty: function() {
-  Ee(11);
+  De(11);
 }, getPrototypeOf: function(e) {
   return Object.getPrototypeOf(e.t);
 }, setPrototypeOf: function() {
-  Ee(12);
+  De(12);
 } }, Dn = {};
 An(kr, function(e, t) {
   Dn[e] = function() {
     return arguments[0] = arguments[0][0], t.apply(this, arguments);
   };
 }), Dn.deleteProperty = function(e, t) {
-  return isNaN(parseInt(t)) && Ee(13), Dn.set.call(this, e, t, void 0);
+  return isNaN(parseInt(t)) && De(13), Dn.set.call(this, e, t, void 0);
 }, Dn.set = function(e, t, n) {
-  return t !== "length" && isNaN(parseInt(t)) && Ee(14), kr.set.call(this, e[0], t, n, e[0]);
+  return t !== "length" && isNaN(parseInt(t)) && De(14), kr.set.call(this, e[0], t, n, e[0]);
 };
 var jl = function() {
   function e(n) {
@@ -5761,16 +5761,16 @@ var jl = function() {
         return function(_) {
           var y = this;
           _ === void 0 && (_ = a);
-          for (var w = arguments.length, E = Array(w > 1 ? w - 1 : 0), T = 1; T < w; T++)
-            E[T - 1] = arguments[T];
+          for (var E = arguments.length, w = Array(E > 1 ? E - 1 : 0), S = 1; S < E; S++)
+            w[S - 1] = arguments[S];
           return l.produce(_, function(k) {
-            var S;
-            return (S = i).call.apply(S, [y, k].concat(E));
+            var T;
+            return (T = i).call.apply(T, [y, k].concat(w));
           });
         };
       }
       var u;
-      if (typeof i != "function" && Ee(6), s !== void 0 && typeof s != "function" && Ee(7), bt(r)) {
+      if (typeof i != "function" && De(6), s !== void 0 && typeof s != "function" && De(7), bt(r)) {
         var c = ps(o), f = Cr(o, r, void 0), p = true;
         try {
           u = i(f), p = false;
@@ -5790,7 +5790,7 @@ var jl = function() {
         }
         return u;
       }
-      Ee(21, r);
+      De(21, r);
     }, this.produceWithPatches = function(r, i) {
       if (typeof r == "function")
         return function(u) {
@@ -5810,18 +5810,18 @@ var jl = function() {
   }
   var t = e.prototype;
   return t.createDraft = function(n) {
-    bt(n) || Ee(8), Kt(n) && (n = Gl(n));
+    bt(n) || De(8), Kt(n) && (n = Gl(n));
     var o = ps(this), r = Cr(this, n, void 0);
     return r[He].C = true, Tr(o), r;
   }, t.finishDraft = function(n, o) {
     var r = n && n[He];
-    r && r.C || Ee(9), r.I && Ee(10);
+    r && r.C || De(9), r.I && De(10);
     var i = r.A;
     return cr(i, o), lr(void 0, i);
   }, t.setAutoFreeze = function(n) {
     this.F = n;
   }, t.setUseProxies = function(n) {
-    n && !_s && Ee(20), this.g = n;
+    n && !_s && De(20), this.g = n;
   }, t.applyPatches = function(n, o) {
     var r;
     for (r = o.length - 1; r >= 0; r--) {
@@ -5878,12 +5878,12 @@ var uo = iu;
 function su(e) {
   return typeof e == "string" || e instanceof String;
 }
-var be = su;
-function F(e) {
+var Ce = su;
+function U(e) {
   return Be(e) || e === null;
 }
 function L(e) {
-  return !F(e);
+  return !U(e);
 }
 function Cn(e) {
   return typeof e == "function";
@@ -5892,12 +5892,12 @@ const au = "toastui-calendar-";
 function v(...e) {
   const t = [];
   return e.forEach((n) => {
-    !n || (be(n) ? t.push(n) : Object.keys(n).forEach((o) => {
+    !n || (Ce(n) ? t.push(n) : Object.keys(n).forEach((o) => {
       n[o] && t.push(o);
     }));
   }), t.map((n) => `${au}${n}`).join(" ");
 }
-function X(e) {
+function K(e) {
   return `${e}%`;
 }
 function Eo(e) {
@@ -5950,7 +5950,7 @@ function uu(e) {
 class on {
   constructor(...t) {
     const [n] = t;
-    n instanceof Date ? this.d = new Date(n.getTime()) : be(n) && t.length === 1 && (this.d = uu(n)), this.d || (this.d = new Date(...t));
+    n instanceof Date ? this.d = new Date(n.getTime()) : Ce(n) && t.length === 1 && (this.d = uu(n)), this.d || (this.d = new Date(...t));
   }
   setTimezoneOffset() {
     Ds();
@@ -6229,12 +6229,12 @@ class O {
   tz(t) {
     if (t === "Local")
       return new O(this.getTime());
-    const n = be(t) ? kn(t, this) : t, o = new O(this.getTime() - mr(n));
+    const n = Ce(t) ? kn(t, this) : t, o = new O(this.getTime() - mr(n));
     return o.tzOffset = n, o;
   }
   local(t) {
     if (L(t)) {
-      const n = be(t) ? kn(t, this) : t;
+      const n = Ce(t) ? kn(t, this) : t;
       return new O(this.getTime() + mr(n));
     }
     return new O(this.getTime() + (L(this.tzOffset) ? mr(this.tzOffset) : 0));
@@ -6571,7 +6571,7 @@ function si(e, t, n, o) {
         f[m][_] += p;
   }), f[0][c - 1] = 100, {
     rowStyleInfo: u,
-    cellWidthMap: f.map((p) => p.map(X))
+    cellWidthMap: f.map((p) => p.map(K))
   };
 }
 function Do(e, t) {
@@ -6692,22 +6692,22 @@ class ci {
     recurrenceRule: m = "",
     state: _ = "Busy",
     isVisible: y = true,
-    isPending: w = false,
-    isFocused: E = false,
-    isReadOnly: T = false,
+    isPending: E = false,
+    isFocused: w = false,
+    isReadOnly: S = false,
     isPrivate: k = false,
-    color: S,
+    color: T,
     backgroundColor: N,
-    dragBackgroundColor: W,
-    borderColor: V,
+    dragBackgroundColor: F,
+    borderColor: X,
     customStyle: I = {},
     raw: $ = null
   } = {}) {
-    this.id = t, this.calendarId = n, this.title = o, this.body = r, this.isAllday = p === "allday" ? true : i, this.goingDuration = l, this.comingDuration = u, this.location = c, this.attendees = f, this.category = p, this.dueDateClass = h, this.recurrenceRule = m, this.state = _, this.isVisible = y, this.isPending = w, this.isFocused = E, this.isReadOnly = T, this.isPrivate = k, this.color = S, this.backgroundColor = N, this.dragBackgroundColor = W, this.borderColor = V, this.customStyle = I, this.raw = $, this.isAllday ? this.setAlldayPeriod(s, a) : this.setTimePeriod(s, a), (p === "milestone" || p === "task") && (this.start = new O(this.end));
+    this.id = t, this.calendarId = n, this.title = o, this.body = r, this.isAllday = p === "allday" ? true : i, this.goingDuration = l, this.comingDuration = u, this.location = c, this.attendees = f, this.category = p, this.dueDateClass = h, this.recurrenceRule = m, this.state = _, this.isVisible = y, this.isPending = E, this.isFocused = w, this.isReadOnly = S, this.isPrivate = k, this.color = T, this.backgroundColor = N, this.dragBackgroundColor = F, this.borderColor = X, this.customStyle = I, this.raw = $, this.isAllday ? this.setAlldayPeriod(s, a) : this.setTimePeriod(s, a), (p === "milestone" || p === "task") && (this.start = new O(this.end));
   }
   setAlldayPeriod(t, n) {
     let o, r;
-    be(t) ? o = ks(t.substring(0, 10)) : o = new O(t || Date.now()), be(n) ? r = ks(n.substring(0, 10)) : r = new O(n || this.start), this.start = o, this.start.setHours(0, 0, 0), this.end = r || new O(this.start), this.end.setHours(23, 59, 59);
+    Ce(t) ? o = ks(t.substring(0, 10)) : o = new O(t || Date.now()), Ce(n) ? r = ks(n.substring(0, 10)) : r = new O(n || this.start), this.start = o, this.start.setHours(0, 0, 0), this.end = r || new O(this.start), this.end.setHours(23, 59, 59);
   }
   setTimePeriod(t, n) {
     this.start = new O(t || Date.now()), this.end = new O(n || this.start), n || this.end.setMinutes(this.end.getMinutes() + 30), this.hasMultiDates = this.end.getTime() - this.start.getTime() > at;
@@ -6832,22 +6832,22 @@ class Je {
   remove(...t) {
     const n = [];
     return t.forEach((o) => {
-      const r = be(o) || lo(o) ? o : this.getItemID(o);
+      const r = Ce(o) || lo(o) ? o : this.getItemID(o);
       !this.internalMap.has(r) || (n.push(this.internalMap.get(r)), this.internalMap.delete(r));
     }), n.length === 1 ? n[0] : n;
   }
   has(t) {
-    const n = be(t) || lo(t) ? t : this.getItemID(t);
+    const n = Ce(t) || lo(t) ? t : this.getItemID(t);
     return this.internalMap.has(n);
   }
   get(t) {
     var o;
-    const n = be(t) || lo(t) ? t : this.getItemID(t);
+    const n = Ce(t) || lo(t) ? t : this.getItemID(t);
     return (o = this.internalMap.get(n)) != null ? o : null;
   }
   doWhenHas(t, n) {
     const o = this.internalMap.get(t);
-    F(o) || n(o);
+    U(o) || n(o);
   }
   filter(t) {
     const n = new Je();
@@ -7247,7 +7247,7 @@ function Is(e, t) {
   return n === "auto" ? null : n;
 }
 function Ms(e) {
-  return be(e) ? wd.test(e) : e === null;
+  return Ce(e) ? wd.test(e) : e === null;
 }
 function Ba(e) {
   const t = Is(e, "width"), n = Is(e, "height");
@@ -7362,7 +7362,7 @@ const zt = 60, Dd = {
     });
   },
   timezoneDisplayLabel({ displayLabel: e, timezoneOffset: t }) {
-    if (F(e) && L(t)) {
+    if (U(e) && L(t)) {
       const n = t < 0 ? "-" : "+", o = Math.abs(t / zt), r = Math.abs(t % zt);
       return `GMT${n}${Me(o, 2)}:${Me(r, 2)}`;
     }
@@ -7480,32 +7480,32 @@ function Ga() {
     StoreProvider: t,
     useStore: (r, i = Object.is) => {
       const s = Mn(e);
-      if (F(s))
+      if (U(s))
         throw new Error("StoreProvider is not found");
-      const [, a] = Wr((E) => E + 1, 0), l = s.getState(), u = te(l), c = te(r), f = te(i), p = te(false), h = te();
+      const [, a] = Wr((w) => w + 1, 0), l = s.getState(), u = ne(l), c = ne(r), f = ne(i), p = ne(false), h = ne();
       Be(h.current) && (h.current = r(l));
       let m, _ = false;
       (u.current !== l || c.current !== r || f.current !== i || p.current) && (m = r(l), _ = !i(h.current, m)), As(() => {
         _ && (h.current = m), u.current = l, c.current = r, f.current = i, p.current = false;
       });
-      const w = te(l);
+      const E = ne(l);
       return As(() => {
-        const E = () => {
+        const w = () => {
           try {
-            const k = s.getState(), S = c.current(k);
-            !f.current(h.current, S) && (u.current = k, h.current = m, a());
+            const k = s.getState(), T = c.current(k);
+            !f.current(h.current, T) && (u.current = k, h.current = m, a());
           } catch (k) {
             console.error("[toastui-calendar] failed to update state", k == null ? void 0 : k.message), p.current = true, a();
           }
-        }, T = s.subscribe(E);
-        return s.getState() !== w.current && E(), T;
+        }, S = s.subscribe(w);
+        return s.getState() !== E.current && w(), S;
       }, []), _ ? m : h.current;
     },
     useInternalStore: () => {
       const r = Mn(e);
-      if (F(r))
+      if (U(r))
         throw new Error("StoreProvider is not found");
-      return U(() => r, [r]);
+      return z(() => r, [r]);
     }
   };
 }
@@ -7545,9 +7545,9 @@ const Nd = (e) => (t) => ce(x(x(x(x(x(x(x(x({}, gd(e)), Sd(e.template)), _d()), 
     gridSelection: ld(t),
     template: Td(t)
   }
-}), Id = (e = {}) => Fa(Nd(e)), { StoreProvider: Md, useStore: z, useInternalStore: Ua } = Ga();
-function Se(e) {
-  return z(ee((t) => e ? t.dispatch[e] : t.dispatch, [e]));
+}), Id = (e = {}) => Fa(Nd(e)), { StoreProvider: Md, useStore: W, useInternalStore: Ua } = Ga();
+function Te(e) {
+  return W(ee((t) => e ? t.dispatch[e] : t.dispatch, [e]));
 }
 function yt(e) {
   return (t) => t[e];
@@ -7569,8 +7569,8 @@ function Rs() {
         }, n(M);
       }
       function o(M, A) {
-        return o = Object.setPrototypeOf || function(J, fe) {
-          return J.__proto__ = fe, J;
+        return o = Object.setPrototypeOf || function(Z, fe) {
+          return Z.__proto__ = fe, Z;
         }, o(M, A);
       }
       function r() {
@@ -7617,55 +7617,55 @@ function Rs() {
       }
       function c(M, A) {
         (A == null || A > M.length) && (A = M.length);
-        for (var Y = 0, J = new Array(A); Y < A; Y++)
-          J[Y] = M[Y];
-        return J;
+        for (var Y = 0, Z = new Array(A); Y < A; Y++)
+          Z[Y] = M[Y];
+        return Z;
       }
       function f() {
         throw new TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
       }
-      var p = Object.hasOwnProperty, h = Object.setPrototypeOf, m = Object.isFrozen, _ = Object.getPrototypeOf, y = Object.getOwnPropertyDescriptor, w = Object.freeze, E = Object.seal, T = Object.create, k = typeof Reflect != "undefined" && Reflect, S = k.apply, N = k.construct;
-      S || (S = function(A, Y, J) {
-        return A.apply(Y, J);
-      }), w || (w = function(A) {
-        return A;
+      var p = Object.hasOwnProperty, h = Object.setPrototypeOf, m = Object.isFrozen, _ = Object.getPrototypeOf, y = Object.getOwnPropertyDescriptor, E = Object.freeze, w = Object.seal, S = Object.create, k = typeof Reflect != "undefined" && Reflect, T = k.apply, N = k.construct;
+      T || (T = function(A, Y, Z) {
+        return A.apply(Y, Z);
       }), E || (E = function(A) {
+        return A;
+      }), w || (w = function(A) {
         return A;
       }), N || (N = function(A, Y) {
         return i(A, s(Y));
       });
-      var W = oe(Array.prototype.forEach), V = oe(Array.prototype.pop), I = oe(Array.prototype.push), $ = oe(String.prototype.toLowerCase), R = oe(String.prototype.match), K = oe(String.prototype.replace), q = oe(String.prototype.indexOf), D = oe(String.prototype.trim), b = oe(RegExp.prototype.test), Z = Ce(TypeError);
-      function oe(M) {
+      var F = J(Array.prototype.forEach), X = J(Array.prototype.pop), I = J(Array.prototype.push), $ = J(String.prototype.toLowerCase), R = J(String.prototype.match), q = J(String.prototype.replace), te = J(String.prototype.indexOf), b = J(String.prototype.trim), D = J(RegExp.prototype.test), V = ge(TypeError);
+      function J(M) {
         return function(A) {
-          for (var Y = arguments.length, J = new Array(Y > 1 ? Y - 1 : 0), fe = 1; fe < Y; fe++)
-            J[fe - 1] = arguments[fe];
-          return S(M, A, J);
+          for (var Y = arguments.length, Z = new Array(Y > 1 ? Y - 1 : 0), fe = 1; fe < Y; fe++)
+            Z[fe - 1] = arguments[fe];
+          return T(M, A, Z);
         };
       }
-      function Ce(M) {
+      function ge(M) {
         return function() {
-          for (var A = arguments.length, Y = new Array(A), J = 0; J < A; J++)
-            Y[J] = arguments[J];
+          for (var A = arguments.length, Y = new Array(A), Z = 0; Z < A; Z++)
+            Y[Z] = arguments[Z];
           return N(M, Y);
         };
       }
       function j(M, A) {
         h && h(M, null);
         for (var Y = A.length; Y--; ) {
-          var J = A[Y];
-          if (typeof J == "string") {
-            var fe = $(J);
-            fe !== J && (m(A) || (A[Y] = fe), J = fe);
+          var Z = A[Y];
+          if (typeof Z == "string") {
+            var fe = $(Z);
+            fe !== Z && (m(A) || (A[Y] = fe), Z = fe);
           }
-          M[J] = true;
+          M[Z] = true;
         }
         return M;
       }
       function de(M) {
-        var A = T(null), Y;
+        var A = S(null), Y;
         for (Y in M)
-          S(p, M, [Y]) && (A[Y] = M[Y]);
+          T(p, M, [Y]) && (A[Y] = M[Y]);
         return A;
       }
       function Oe(M, A) {
@@ -7673,25 +7673,25 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
           var Y = y(M, A);
           if (Y) {
             if (Y.get)
-              return oe(Y.get);
+              return J(Y.get);
             if (typeof Y.value == "function")
-              return oe(Y.value);
+              return J(Y.value);
           }
           M = _(M);
         }
-        function J(fe) {
+        function Z(fe) {
           return console.warn("fallback value for", fe), null;
         }
-        return J;
+        return Z;
       }
-      var Et = w(["a", "abbr", "acronym", "address", "area", "article", "aside", "audio", "b", "bdi", "bdo", "big", "blink", "blockquote", "body", "br", "button", "canvas", "caption", "center", "cite", "code", "col", "colgroup", "content", "data", "datalist", "dd", "decorator", "del", "details", "dfn", "dialog", "dir", "div", "dl", "dt", "element", "em", "fieldset", "figcaption", "figure", "font", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6", "head", "header", "hgroup", "hr", "html", "i", "img", "input", "ins", "kbd", "label", "legend", "li", "main", "map", "mark", "marquee", "menu", "menuitem", "meter", "nav", "nobr", "ol", "optgroup", "option", "output", "p", "picture", "pre", "progress", "q", "rp", "rt", "ruby", "s", "samp", "section", "select", "shadow", "small", "source", "spacer", "span", "strike", "strong", "style", "sub", "summary", "sup", "table", "tbody", "td", "template", "textarea", "tfoot", "th", "thead", "time", "tr", "track", "tt", "u", "ul", "var", "video", "wbr"]), ue = w(["svg", "a", "altglyph", "altglyphdef", "altglyphitem", "animatecolor", "animatemotion", "animatetransform", "circle", "clippath", "defs", "desc", "ellipse", "filter", "font", "g", "glyph", "glyphref", "hkern", "image", "line", "lineargradient", "marker", "mask", "metadata", "mpath", "path", "pattern", "polygon", "polyline", "radialgradient", "rect", "stop", "style", "switch", "symbol", "text", "textpath", "title", "tref", "tspan", "view", "vkern"]), Ue = w(["feBlend", "feColorMatrix", "feComponentTransfer", "feComposite", "feConvolveMatrix", "feDiffuseLighting", "feDisplacementMap", "feDistantLight", "feFlood", "feFuncA", "feFuncB", "feFuncG", "feFuncR", "feGaussianBlur", "feImage", "feMerge", "feMergeNode", "feMorphology", "feOffset", "fePointLight", "feSpecularLighting", "feSpotLight", "feTile", "feTurbulence"]), Pe = w(["animate", "color-profile", "cursor", "discard", "fedropshadow", "font-face", "font-face-format", "font-face-name", "font-face-src", "font-face-uri", "foreignobject", "hatch", "hatchpath", "mesh", "meshgradient", "meshpatch", "meshrow", "missing-glyph", "script", "set", "solidcolor", "unknown", "use"]), lt = w(["math", "menclose", "merror", "mfenced", "mfrac", "mglyph", "mi", "mlabeledtr", "mmultiscripts", "mn", "mo", "mover", "mpadded", "mphantom", "mroot", "mrow", "ms", "mspace", "msqrt", "mstyle", "msub", "msup", "msubsup", "mtable", "mtd", "mtext", "mtr", "munder", "munderover"]), pn = w(["maction", "maligngroup", "malignmark", "mlongdiv", "mscarries", "mscarry", "msgroup", "mstack", "msline", "msrow", "semantics", "annotation", "annotation-xml", "mprescripts", "none"]), Rt = w(["#text"]), Ot = w(["accept", "action", "align", "alt", "autocapitalize", "autocomplete", "autopictureinpicture", "autoplay", "background", "bgcolor", "border", "capture", "cellpadding", "cellspacing", "checked", "cite", "class", "clear", "color", "cols", "colspan", "controls", "controlslist", "coords", "crossorigin", "datetime", "decoding", "default", "dir", "disabled", "disablepictureinpicture", "disableremoteplayback", "download", "draggable", "enctype", "enterkeyhint", "face", "for", "headers", "height", "hidden", "high", "href", "hreflang", "id", "inputmode", "integrity", "ismap", "kind", "label", "lang", "list", "loading", "loop", "low", "max", "maxlength", "media", "method", "min", "minlength", "multiple", "muted", "name", "nonce", "noshade", "novalidate", "nowrap", "open", "optimum", "pattern", "placeholder", "playsinline", "poster", "preload", "pubdate", "radiogroup", "readonly", "rel", "required", "rev", "reversed", "role", "rows", "rowspan", "spellcheck", "scope", "selected", "shape", "size", "sizes", "span", "srclang", "start", "src", "srcset", "step", "style", "summary", "tabindex", "title", "translate", "type", "usemap", "valign", "value", "width", "xmlns", "slot"]), ut = w(["accent-height", "accumulate", "additive", "alignment-baseline", "ascent", "attributename", "attributetype", "azimuth", "basefrequency", "baseline-shift", "begin", "bias", "by", "class", "clip", "clippathunits", "clip-path", "clip-rule", "color", "color-interpolation", "color-interpolation-filters", "color-profile", "color-rendering", "cx", "cy", "d", "dx", "dy", "diffuseconstant", "direction", "display", "divisor", "dur", "edgemode", "elevation", "end", "fill", "fill-opacity", "fill-rule", "filter", "filterunits", "flood-color", "flood-opacity", "font-family", "font-size", "font-size-adjust", "font-stretch", "font-style", "font-variant", "font-weight", "fx", "fy", "g1", "g2", "glyph-name", "glyphref", "gradientunits", "gradienttransform", "height", "href", "id", "image-rendering", "in", "in2", "k", "k1", "k2", "k3", "k4", "kerning", "keypoints", "keysplines", "keytimes", "lang", "lengthadjust", "letter-spacing", "kernelmatrix", "kernelunitlength", "lighting-color", "local", "marker-end", "marker-mid", "marker-start", "markerheight", "markerunits", "markerwidth", "maskcontentunits", "maskunits", "max", "mask", "media", "method", "mode", "min", "name", "numoctaves", "offset", "operator", "opacity", "order", "orient", "orientation", "origin", "overflow", "paint-order", "path", "pathlength", "patterncontentunits", "patterntransform", "patternunits", "points", "preservealpha", "preserveaspectratio", "primitiveunits", "r", "rx", "ry", "radius", "refx", "refy", "repeatcount", "repeatdur", "restart", "result", "rotate", "scale", "seed", "shape-rendering", "specularconstant", "specularexponent", "spreadmethod", "startoffset", "stddeviation", "stitchtiles", "stop-color", "stop-opacity", "stroke-dasharray", "stroke-dashoffset", "stroke-linecap", "stroke-linejoin", "stroke-miterlimit", "stroke-opacity", "stroke", "stroke-width", "style", "surfacescale", "systemlanguage", "tabindex", "targetx", "targety", "transform", "transform-origin", "text-anchor", "text-decoration", "text-rendering", "textlength", "type", "u1", "u2", "unicode", "values", "viewbox", "visibility", "version", "vert-adv-y", "vert-origin-x", "vert-origin-y", "width", "word-spacing", "wrap", "writing-mode", "xchannelselector", "ychannelselector", "x", "x1", "x2", "xmlns", "y", "y1", "y2", "z", "zoomandpan"]), Pt = w(["accent", "accentunder", "align", "bevelled", "close", "columnsalign", "columnlines", "columnspan", "denomalign", "depth", "dir", "display", "displaystyle", "encoding", "fence", "frame", "height", "href", "id", "largeop", "length", "linethickness", "lspace", "lquote", "mathbackground", "mathcolor", "mathsize", "mathvariant", "maxsize", "minsize", "movablelimits", "notation", "numalign", "open", "rowalign", "rowlines", "rowspacing", "rowspan", "rspace", "rquote", "scriptlevel", "scriptminsize", "scriptsizemultiplier", "selection", "separator", "separators", "stretchy", "subscriptshift", "supscriptshift", "symmetric", "voffset", "width", "xmlns"]), $n = w(["xlink:href", "xml:id", "xlink:title", "xml:space", "xmlns:xlink"]), jc = E(/\{\{[\w\W]*|[\w\W]*\}\}/gm), Xc = E(/<%[\w\W]*|[\w\W]*%>/gm), Kc = E(/^data-[\-\w.\u00B7-\uFFFF]/), qc = E(/^aria-[\-\w]+$/), Zc = E(/^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|xmpp):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i), Jc = E(/^(?:\w+script|data):/i), Qc = E(/[\u0000-\u0020\u00A0\u1680\u180E\u2000-\u2029\u205F\u3000]/g), el = E(/^html$/i), tl = function() {
+      var Et = E(["a", "abbr", "acronym", "address", "area", "article", "aside", "audio", "b", "bdi", "bdo", "big", "blink", "blockquote", "body", "br", "button", "canvas", "caption", "center", "cite", "code", "col", "colgroup", "content", "data", "datalist", "dd", "decorator", "del", "details", "dfn", "dialog", "dir", "div", "dl", "dt", "element", "em", "fieldset", "figcaption", "figure", "font", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6", "head", "header", "hgroup", "hr", "html", "i", "img", "input", "ins", "kbd", "label", "legend", "li", "main", "map", "mark", "marquee", "menu", "menuitem", "meter", "nav", "nobr", "ol", "optgroup", "option", "output", "p", "picture", "pre", "progress", "q", "rp", "rt", "ruby", "s", "samp", "section", "select", "shadow", "small", "source", "spacer", "span", "strike", "strong", "style", "sub", "summary", "sup", "table", "tbody", "td", "template", "textarea", "tfoot", "th", "thead", "time", "tr", "track", "tt", "u", "ul", "var", "video", "wbr"]), ue = E(["svg", "a", "altglyph", "altglyphdef", "altglyphitem", "animatecolor", "animatemotion", "animatetransform", "circle", "clippath", "defs", "desc", "ellipse", "filter", "font", "g", "glyph", "glyphref", "hkern", "image", "line", "lineargradient", "marker", "mask", "metadata", "mpath", "path", "pattern", "polygon", "polyline", "radialgradient", "rect", "stop", "style", "switch", "symbol", "text", "textpath", "title", "tref", "tspan", "view", "vkern"]), Ue = E(["feBlend", "feColorMatrix", "feComponentTransfer", "feComposite", "feConvolveMatrix", "feDiffuseLighting", "feDisplacementMap", "feDistantLight", "feFlood", "feFuncA", "feFuncB", "feFuncG", "feFuncR", "feGaussianBlur", "feImage", "feMerge", "feMergeNode", "feMorphology", "feOffset", "fePointLight", "feSpecularLighting", "feSpotLight", "feTile", "feTurbulence"]), Pe = E(["animate", "color-profile", "cursor", "discard", "fedropshadow", "font-face", "font-face-format", "font-face-name", "font-face-src", "font-face-uri", "foreignobject", "hatch", "hatchpath", "mesh", "meshgradient", "meshpatch", "meshrow", "missing-glyph", "script", "set", "solidcolor", "unknown", "use"]), lt = E(["math", "menclose", "merror", "mfenced", "mfrac", "mglyph", "mi", "mlabeledtr", "mmultiscripts", "mn", "mo", "mover", "mpadded", "mphantom", "mroot", "mrow", "ms", "mspace", "msqrt", "mstyle", "msub", "msup", "msubsup", "mtable", "mtd", "mtext", "mtr", "munder", "munderover"]), pn = E(["maction", "maligngroup", "malignmark", "mlongdiv", "mscarries", "mscarry", "msgroup", "mstack", "msline", "msrow", "semantics", "annotation", "annotation-xml", "mprescripts", "none"]), Rt = E(["#text"]), Ot = E(["accept", "action", "align", "alt", "autocapitalize", "autocomplete", "autopictureinpicture", "autoplay", "background", "bgcolor", "border", "capture", "cellpadding", "cellspacing", "checked", "cite", "class", "clear", "color", "cols", "colspan", "controls", "controlslist", "coords", "crossorigin", "datetime", "decoding", "default", "dir", "disabled", "disablepictureinpicture", "disableremoteplayback", "download", "draggable", "enctype", "enterkeyhint", "face", "for", "headers", "height", "hidden", "high", "href", "hreflang", "id", "inputmode", "integrity", "ismap", "kind", "label", "lang", "list", "loading", "loop", "low", "max", "maxlength", "media", "method", "min", "minlength", "multiple", "muted", "name", "nonce", "noshade", "novalidate", "nowrap", "open", "optimum", "pattern", "placeholder", "playsinline", "poster", "preload", "pubdate", "radiogroup", "readonly", "rel", "required", "rev", "reversed", "role", "rows", "rowspan", "spellcheck", "scope", "selected", "shape", "size", "sizes", "span", "srclang", "start", "src", "srcset", "step", "style", "summary", "tabindex", "title", "translate", "type", "usemap", "valign", "value", "width", "xmlns", "slot"]), ut = E(["accent-height", "accumulate", "additive", "alignment-baseline", "ascent", "attributename", "attributetype", "azimuth", "basefrequency", "baseline-shift", "begin", "bias", "by", "class", "clip", "clippathunits", "clip-path", "clip-rule", "color", "color-interpolation", "color-interpolation-filters", "color-profile", "color-rendering", "cx", "cy", "d", "dx", "dy", "diffuseconstant", "direction", "display", "divisor", "dur", "edgemode", "elevation", "end", "fill", "fill-opacity", "fill-rule", "filter", "filterunits", "flood-color", "flood-opacity", "font-family", "font-size", "font-size-adjust", "font-stretch", "font-style", "font-variant", "font-weight", "fx", "fy", "g1", "g2", "glyph-name", "glyphref", "gradientunits", "gradienttransform", "height", "href", "id", "image-rendering", "in", "in2", "k", "k1", "k2", "k3", "k4", "kerning", "keypoints", "keysplines", "keytimes", "lang", "lengthadjust", "letter-spacing", "kernelmatrix", "kernelunitlength", "lighting-color", "local", "marker-end", "marker-mid", "marker-start", "markerheight", "markerunits", "markerwidth", "maskcontentunits", "maskunits", "max", "mask", "media", "method", "mode", "min", "name", "numoctaves", "offset", "operator", "opacity", "order", "orient", "orientation", "origin", "overflow", "paint-order", "path", "pathlength", "patterncontentunits", "patterntransform", "patternunits", "points", "preservealpha", "preserveaspectratio", "primitiveunits", "r", "rx", "ry", "radius", "refx", "refy", "repeatcount", "repeatdur", "restart", "result", "rotate", "scale", "seed", "shape-rendering", "specularconstant", "specularexponent", "spreadmethod", "startoffset", "stddeviation", "stitchtiles", "stop-color", "stop-opacity", "stroke-dasharray", "stroke-dashoffset", "stroke-linecap", "stroke-linejoin", "stroke-miterlimit", "stroke-opacity", "stroke", "stroke-width", "style", "surfacescale", "systemlanguage", "tabindex", "targetx", "targety", "transform", "transform-origin", "text-anchor", "text-decoration", "text-rendering", "textlength", "type", "u1", "u2", "unicode", "values", "viewbox", "visibility", "version", "vert-adv-y", "vert-origin-x", "vert-origin-y", "width", "word-spacing", "wrap", "writing-mode", "xchannelselector", "ychannelselector", "x", "x1", "x2", "xmlns", "y", "y1", "y2", "z", "zoomandpan"]), Pt = E(["accent", "accentunder", "align", "bevelled", "close", "columnsalign", "columnlines", "columnspan", "denomalign", "depth", "dir", "display", "displaystyle", "encoding", "fence", "frame", "height", "href", "id", "largeop", "length", "linethickness", "lspace", "lquote", "mathbackground", "mathcolor", "mathsize", "mathvariant", "maxsize", "minsize", "movablelimits", "notation", "numalign", "open", "rowalign", "rowlines", "rowspacing", "rowspan", "rspace", "rquote", "scriptlevel", "scriptminsize", "scriptsizemultiplier", "selection", "separator", "separators", "stretchy", "subscriptshift", "supscriptshift", "symmetric", "voffset", "width", "xmlns"]), $n = E(["xlink:href", "xml:id", "xlink:title", "xml:space", "xmlns:xlink"]), jc = w(/\{\{[\w\W]*|[\w\W]*\}\}/gm), Xc = w(/<%[\w\W]*|[\w\W]*%>/gm), Kc = w(/^data-[\-\w.\u00B7-\uFFFF]/), qc = w(/^aria-[\-\w]+$/), Zc = w(/^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|xmpp):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i), Jc = w(/^(?:\w+script|data):/i), Qc = w(/[\u0000-\u0020\u00A0\u1680\u180E\u2000-\u2029\u205F\u3000]/g), el = w(/^html$/i), tl = function() {
         return typeof window == "undefined" ? null : window;
       }, nl = function(A, Y) {
         if (n(A) !== "object" || typeof A.createPolicy != "function")
           return null;
-        var J = null, fe = "data-tt-policy-suffix";
-        Y.currentScript && Y.currentScript.hasAttribute(fe) && (J = Y.currentScript.getAttribute(fe));
-        var Lt = "dompurify" + (J ? "#" + J : "");
+        var Z = null, fe = "data-tt-policy-suffix";
+        Y.currentScript && Y.currentScript.hasAttribute(fe) && (Z = Y.currentScript.getAttribute(fe));
+        var Lt = "dompurify" + (Z ? "#" + Z : "");
         try {
           return A.createPolicy(Lt, {
             createHTML: function(ft) {
@@ -7708,19 +7708,19 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         };
         if (A.version = "2.3.8", A.removed = [], !M || !M.document || M.document.nodeType !== 9)
           return A.isSupported = false, A;
-        var Y = M.document, J = M.document, fe = M.DocumentFragment, Lt = M.HTMLTemplateElement, dt = M.Node, ft = M.Element, mn = M.NodeFilter, hn = M.NamedNodeMap, rl = hn === void 0 ? M.NamedNodeMap || M.MozNamedAttrMap : hn, il = M.HTMLFormElement, sl = M.DOMParser, al = M.trustedTypes, Bn = ft.prototype, cl = Oe(Bn, "cloneNode"), ll = Oe(Bn, "nextSibling"), ul = Oe(Bn, "childNodes"), zo = Oe(Bn, "parentNode");
+        var Y = M.document, Z = M.document, fe = M.DocumentFragment, Lt = M.HTMLTemplateElement, dt = M.Node, ft = M.Element, mn = M.NodeFilter, hn = M.NamedNodeMap, rl = hn === void 0 ? M.NamedNodeMap || M.MozNamedAttrMap : hn, il = M.HTMLFormElement, sl = M.DOMParser, al = M.trustedTypes, Bn = ft.prototype, cl = Oe(Bn, "cloneNode"), ll = Oe(Bn, "nextSibling"), ul = Oe(Bn, "childNodes"), zo = Oe(Bn, "parentNode");
         if (typeof Lt == "function") {
-          var Wo = J.createElement("template");
-          Wo.content && Wo.content.ownerDocument && (J = Wo.content.ownerDocument);
+          var Wo = Z.createElement("template");
+          Wo.content && Wo.content.ownerDocument && (Z = Wo.content.ownerDocument);
         }
-        var pt = nl(al, Y), Mi = pt ? pt.createHTML("") : "", Gn = J, Yo = Gn.implementation, dl = Gn.createNodeIterator, fl = Gn.createDocumentFragment, pl = Gn.getElementsByTagName, ml = Y.importNode, Ai = {};
+        var pt = nl(al, Y), Mi = pt ? pt.createHTML("") : "", Gn = Z, Yo = Gn.implementation, dl = Gn.createNodeIterator, fl = Gn.createDocumentFragment, pl = Gn.getElementsByTagName, ml = Y.importNode, Ai = {};
         try {
-          Ai = de(J).documentMode ? J.documentMode : {};
+          Ai = de(Z).documentMode ? Z.documentMode : {};
         } catch (G) {
         }
         var Xe = {};
         A.isSupported = typeof zo == "function" && Yo && typeof Yo.createHTMLDocument != "undefined" && Ai !== 9;
-        var Vo = jc, jo = Xc, hl = Kc, gl = qc, vl = Jc, xi = Qc, Xo = Zc, ge = null, Ri = j({}, [].concat(s(Et), s(ue), s(Ue), s(lt), s(Rt))), ye = null, Oi = j({}, [].concat(s(Ot), s(ut), s(Pt), s($n))), pe = Object.seal(Object.create(null, {
+        var Vo = jc, jo = Xc, hl = Kc, gl = qc, vl = Jc, xi = Qc, Xo = Zc, ve = null, Ri = j({}, [].concat(s(Et), s(ue), s(Ue), s(lt), s(Rt))), we = null, Oi = j({}, [].concat(s(Ot), s(ut), s(Pt), s($n))), pe = Object.seal(Object.create(null, {
           tagNameCheck: {
             writable: true,
             configurable: false,
@@ -7739,12 +7739,12 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             enumerable: true,
             value: false
           }
-        })), gn = null, Ko = null, Pi = true, qo = true, Li = false, Ht = false, Dt = false, Zo = false, Jo = false, $t = false, Fn = false, Un = false, Hi = true, Qo = true, vn = false, Bt = {}, Gt = null, $i = j({}, ["annotation-xml", "audio", "colgroup", "desc", "foreignobject", "head", "iframe", "math", "mi", "mn", "mo", "ms", "mtext", "noembed", "noframes", "noscript", "plaintext", "script", "style", "svg", "template", "thead", "title", "video", "xmp"]), Bi = null, Gi = j({}, ["audio", "video", "img", "source", "image", "track"]), er = null, Fi = j({}, ["alt", "class", "for", "id", "label", "name", "pattern", "placeholder", "role", "summary", "title", "value", "style", "xmlns"]), tr = "http://www.w3.org/1998/Math/MathML", nr = "http://www.w3.org/2000/svg", mt = "http://www.w3.org/1999/xhtml", zn = mt, or = false, Ft, _l = ["application/xhtml+xml", "text/html"], yl = "text/html", St, Ut = null, wl = J.createElement("form"), Ui = function(g) {
+        })), gn = null, Ko = null, Pi = true, qo = true, Li = false, Ht = false, Dt = false, Zo = false, Jo = false, $t = false, Fn = false, Un = false, Hi = true, Qo = true, vn = false, Bt = {}, Gt = null, $i = j({}, ["annotation-xml", "audio", "colgroup", "desc", "foreignobject", "head", "iframe", "math", "mi", "mn", "mo", "ms", "mtext", "noembed", "noframes", "noscript", "plaintext", "script", "style", "svg", "template", "thead", "title", "video", "xmp"]), Bi = null, Gi = j({}, ["audio", "video", "img", "source", "image", "track"]), er = null, Fi = j({}, ["alt", "class", "for", "id", "label", "name", "pattern", "placeholder", "role", "summary", "title", "value", "style", "xmlns"]), tr = "http://www.w3.org/1998/Math/MathML", nr = "http://www.w3.org/2000/svg", mt = "http://www.w3.org/1999/xhtml", zn = mt, or = false, Ft, _l = ["application/xhtml+xml", "text/html"], yl = "text/html", St, Ut = null, wl = Z.createElement("form"), Ui = function(g) {
           return g instanceof RegExp || g instanceof Function;
         }, rr = function(g) {
-          Ut && Ut === g || ((!g || n(g) !== "object") && (g = {}), g = de(g), ge = "ALLOWED_TAGS" in g ? j({}, g.ALLOWED_TAGS) : Ri, ye = "ALLOWED_ATTR" in g ? j({}, g.ALLOWED_ATTR) : Oi, er = "ADD_URI_SAFE_ATTR" in g ? j(de(Fi), g.ADD_URI_SAFE_ATTR) : Fi, Bi = "ADD_DATA_URI_TAGS" in g ? j(de(Gi), g.ADD_DATA_URI_TAGS) : Gi, Gt = "FORBID_CONTENTS" in g ? j({}, g.FORBID_CONTENTS) : $i, gn = "FORBID_TAGS" in g ? j({}, g.FORBID_TAGS) : {}, Ko = "FORBID_ATTR" in g ? j({}, g.FORBID_ATTR) : {}, Bt = "USE_PROFILES" in g ? g.USE_PROFILES : false, Pi = g.ALLOW_ARIA_ATTR !== false, qo = g.ALLOW_DATA_ATTR !== false, Li = g.ALLOW_UNKNOWN_PROTOCOLS || false, Ht = g.SAFE_FOR_TEMPLATES || false, Dt = g.WHOLE_DOCUMENT || false, $t = g.RETURN_DOM || false, Fn = g.RETURN_DOM_FRAGMENT || false, Un = g.RETURN_TRUSTED_TYPE || false, Jo = g.FORCE_BODY || false, Hi = g.SANITIZE_DOM !== false, Qo = g.KEEP_CONTENT !== false, vn = g.IN_PLACE || false, Xo = g.ALLOWED_URI_REGEXP || Xo, zn = g.NAMESPACE || mt, g.CUSTOM_ELEMENT_HANDLING && Ui(g.CUSTOM_ELEMENT_HANDLING.tagNameCheck) && (pe.tagNameCheck = g.CUSTOM_ELEMENT_HANDLING.tagNameCheck), g.CUSTOM_ELEMENT_HANDLING && Ui(g.CUSTOM_ELEMENT_HANDLING.attributeNameCheck) && (pe.attributeNameCheck = g.CUSTOM_ELEMENT_HANDLING.attributeNameCheck), g.CUSTOM_ELEMENT_HANDLING && typeof g.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements == "boolean" && (pe.allowCustomizedBuiltInElements = g.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements), Ft = _l.indexOf(g.PARSER_MEDIA_TYPE) === -1 ? Ft = yl : Ft = g.PARSER_MEDIA_TYPE, St = Ft === "application/xhtml+xml" ? function(C) {
+          Ut && Ut === g || ((!g || n(g) !== "object") && (g = {}), g = de(g), ve = "ALLOWED_TAGS" in g ? j({}, g.ALLOWED_TAGS) : Ri, we = "ALLOWED_ATTR" in g ? j({}, g.ALLOWED_ATTR) : Oi, er = "ADD_URI_SAFE_ATTR" in g ? j(de(Fi), g.ADD_URI_SAFE_ATTR) : Fi, Bi = "ADD_DATA_URI_TAGS" in g ? j(de(Gi), g.ADD_DATA_URI_TAGS) : Gi, Gt = "FORBID_CONTENTS" in g ? j({}, g.FORBID_CONTENTS) : $i, gn = "FORBID_TAGS" in g ? j({}, g.FORBID_TAGS) : {}, Ko = "FORBID_ATTR" in g ? j({}, g.FORBID_ATTR) : {}, Bt = "USE_PROFILES" in g ? g.USE_PROFILES : false, Pi = g.ALLOW_ARIA_ATTR !== false, qo = g.ALLOW_DATA_ATTR !== false, Li = g.ALLOW_UNKNOWN_PROTOCOLS || false, Ht = g.SAFE_FOR_TEMPLATES || false, Dt = g.WHOLE_DOCUMENT || false, $t = g.RETURN_DOM || false, Fn = g.RETURN_DOM_FRAGMENT || false, Un = g.RETURN_TRUSTED_TYPE || false, Jo = g.FORCE_BODY || false, Hi = g.SANITIZE_DOM !== false, Qo = g.KEEP_CONTENT !== false, vn = g.IN_PLACE || false, Xo = g.ALLOWED_URI_REGEXP || Xo, zn = g.NAMESPACE || mt, g.CUSTOM_ELEMENT_HANDLING && Ui(g.CUSTOM_ELEMENT_HANDLING.tagNameCheck) && (pe.tagNameCheck = g.CUSTOM_ELEMENT_HANDLING.tagNameCheck), g.CUSTOM_ELEMENT_HANDLING && Ui(g.CUSTOM_ELEMENT_HANDLING.attributeNameCheck) && (pe.attributeNameCheck = g.CUSTOM_ELEMENT_HANDLING.attributeNameCheck), g.CUSTOM_ELEMENT_HANDLING && typeof g.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements == "boolean" && (pe.allowCustomizedBuiltInElements = g.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements), Ft = _l.indexOf(g.PARSER_MEDIA_TYPE) === -1 ? Ft = yl : Ft = g.PARSER_MEDIA_TYPE, St = Ft === "application/xhtml+xml" ? function(C) {
             return C;
-          } : $, Ht && (qo = false), Fn && ($t = true), Bt && (ge = j({}, s(Rt)), ye = [], Bt.html === true && (j(ge, Et), j(ye, Ot)), Bt.svg === true && (j(ge, ue), j(ye, ut), j(ye, $n)), Bt.svgFilters === true && (j(ge, Ue), j(ye, ut), j(ye, $n)), Bt.mathMl === true && (j(ge, lt), j(ye, Pt), j(ye, $n))), g.ADD_TAGS && (ge === Ri && (ge = de(ge)), j(ge, g.ADD_TAGS)), g.ADD_ATTR && (ye === Oi && (ye = de(ye)), j(ye, g.ADD_ATTR)), g.ADD_URI_SAFE_ATTR && j(er, g.ADD_URI_SAFE_ATTR), g.FORBID_CONTENTS && (Gt === $i && (Gt = de(Gt)), j(Gt, g.FORBID_CONTENTS)), Qo && (ge["#text"] = true), Dt && j(ge, ["html", "head", "body"]), ge.table && (j(ge, ["tbody"]), delete gn.tbody), w && w(g), Ut = g);
+          } : $, Ht && (qo = false), Fn && ($t = true), Bt && (ve = j({}, s(Rt)), we = [], Bt.html === true && (j(ve, Et), j(we, Ot)), Bt.svg === true && (j(ve, ue), j(we, ut), j(we, $n)), Bt.svgFilters === true && (j(ve, Ue), j(we, ut), j(we, $n)), Bt.mathMl === true && (j(ve, lt), j(we, Pt), j(we, $n))), g.ADD_TAGS && (ve === Ri && (ve = de(ve)), j(ve, g.ADD_TAGS)), g.ADD_ATTR && (we === Oi && (we = de(we)), j(we, g.ADD_ATTR)), g.ADD_URI_SAFE_ATTR && j(er, g.ADD_URI_SAFE_ATTR), g.FORBID_CONTENTS && (Gt === $i && (Gt = de(Gt)), j(Gt, g.FORBID_CONTENTS)), Qo && (ve["#text"] = true), Dt && j(ve, ["html", "head", "body"]), ve.table && (j(ve, ["tbody"]), delete gn.tbody), E && E(g), Ut = g);
         }, zi = j({}, ["mi", "mo", "mn", "ms", "mtext"]), Wi = j({}, ["foreignobject", "desc", "title", "annotation-xml"]), El = j({}, ["title", "style", "font", "a", "script"]), Wn = j({}, ue);
         j(Wn, Ue), j(Wn, Pe);
         var ir = j({}, lt);
@@ -7782,7 +7782,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
               from: C
             });
           }
-          if (C.removeAttribute(g), g === "is" && !ye[g])
+          if (C.removeAttribute(g), g === "is" && !we[g])
             if ($t || Fn)
               try {
                 et(C);
@@ -7806,17 +7806,17 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
           if (zn === mt)
             try {
               C = new sl().parseFromString(Ie, Ft);
-            } catch (we) {
+            } catch (Ee) {
             }
           if (!C || !C.documentElement) {
             C = Yo.createDocument(zn, "template", null);
             try {
               C.documentElement.innerHTML = or ? "" : Ie;
-            } catch (we) {
+            } catch (Ee) {
             }
           }
-          var Te = C.body || C.documentElement;
-          return g && P && Te.insertBefore(J.createTextNode(P), Te.childNodes[0] || null), zn === mt ? pl.call(C, Dt ? "html" : "body")[0] : Dt ? C.documentElement : Te;
+          var be = C.body || C.documentElement;
+          return g && P && be.insertBefore(Z.createTextNode(P), be.childNodes[0] || null), zn === mt ? pl.call(C, Dt ? "html" : "body")[0] : Dt ? C.documentElement : be;
         }, ji = function(g) {
           return dl.call(g.ownerDocument || g, g, mn.SHOW_ELEMENT | mn.SHOW_COMMENT | mn.SHOW_TEXT, null, false);
         }, Sl = function(g) {
@@ -7824,45 +7824,45 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }, _n = function(g) {
           return n(dt) === "object" ? g instanceof dt : g && n(g) === "object" && typeof g.nodeType == "number" && typeof g.nodeName == "string";
         }, tt = function(g, C, P) {
-          !Xe[g] || W(Xe[g], function(ie) {
+          !Xe[g] || F(Xe[g], function(ie) {
             ie.call(A, C, P, Ut);
           });
         }, Xi = function(g) {
           var C;
-          if (tt("beforeSanitizeElements", g, null), Sl(g) || b(/[\u0080-\uFFFF]/, g.nodeName))
+          if (tt("beforeSanitizeElements", g, null), Sl(g) || D(/[\u0080-\uFFFF]/, g.nodeName))
             return et(g), true;
           var P = St(g.nodeName);
           if (tt("uponSanitizeElement", g, {
             tagName: P,
-            allowedTags: ge
-          }), g.hasChildNodes() && !_n(g.firstElementChild) && (!_n(g.content) || !_n(g.content.firstElementChild)) && b(/<[/\w]/g, g.innerHTML) && b(/<[/\w]/g, g.textContent) || P === "select" && b(/<template/i, g.innerHTML))
+            allowedTags: ve
+          }), g.hasChildNodes() && !_n(g.firstElementChild) && (!_n(g.content) || !_n(g.content.firstElementChild)) && D(/<[/\w]/g, g.innerHTML) && D(/<[/\w]/g, g.textContent) || P === "select" && D(/<template/i, g.innerHTML))
             return et(g), true;
-          if (!ge[P] || gn[P]) {
-            if (!gn[P] && qi(P) && (pe.tagNameCheck instanceof RegExp && b(pe.tagNameCheck, P) || pe.tagNameCheck instanceof Function && pe.tagNameCheck(P)))
+          if (!ve[P] || gn[P]) {
+            if (!gn[P] && qi(P) && (pe.tagNameCheck instanceof RegExp && D(pe.tagNameCheck, P) || pe.tagNameCheck instanceof Function && pe.tagNameCheck(P)))
               return false;
             if (Qo && !Gt[P]) {
               var ie = zo(g) || g.parentNode, Ie = ul(g) || g.childNodes;
               if (Ie && ie)
-                for (var Te = Ie.length, we = Te - 1; we >= 0; --we)
-                  ie.insertBefore(cl(Ie[we], true), ll(g));
+                for (var be = Ie.length, Ee = be - 1; Ee >= 0; --Ee)
+                  ie.insertBefore(cl(Ie[Ee], true), ll(g));
             }
             return et(g), true;
           }
-          return g instanceof ft && !Dl(g) || (P === "noscript" || P === "noembed") && b(/<\/no(script|embed)/i, g.innerHTML) ? (et(g), true) : (Ht && g.nodeType === 3 && (C = g.textContent, C = K(C, Vo, " "), C = K(C, jo, " "), g.textContent !== C && (I(A.removed, {
+          return g instanceof ft && !Dl(g) || (P === "noscript" || P === "noembed") && D(/<\/no(script|embed)/i, g.innerHTML) ? (et(g), true) : (Ht && g.nodeType === 3 && (C = g.textContent, C = q(C, Vo, " "), C = q(C, jo, " "), g.textContent !== C && (I(A.removed, {
             element: g.cloneNode()
           }), g.textContent = C)), tt("afterSanitizeElements", g, null), false);
         }, Ki = function(g, C, P) {
-          if (Hi && (C === "id" || C === "name") && (P in J || P in wl))
+          if (Hi && (C === "id" || C === "name") && (P in Z || P in wl))
             return false;
-          if (!(qo && !Ko[C] && b(hl, C))) {
-            if (!(Pi && b(gl, C))) {
-              if (!ye[C] || Ko[C]) {
-                if (!(qi(g) && (pe.tagNameCheck instanceof RegExp && b(pe.tagNameCheck, g) || pe.tagNameCheck instanceof Function && pe.tagNameCheck(g)) && (pe.attributeNameCheck instanceof RegExp && b(pe.attributeNameCheck, C) || pe.attributeNameCheck instanceof Function && pe.attributeNameCheck(C)) || C === "is" && pe.allowCustomizedBuiltInElements && (pe.tagNameCheck instanceof RegExp && b(pe.tagNameCheck, P) || pe.tagNameCheck instanceof Function && pe.tagNameCheck(P))))
+          if (!(qo && !Ko[C] && D(hl, C))) {
+            if (!(Pi && D(gl, C))) {
+              if (!we[C] || Ko[C]) {
+                if (!(qi(g) && (pe.tagNameCheck instanceof RegExp && D(pe.tagNameCheck, g) || pe.tagNameCheck instanceof Function && pe.tagNameCheck(g)) && (pe.attributeNameCheck instanceof RegExp && D(pe.attributeNameCheck, C) || pe.attributeNameCheck instanceof Function && pe.attributeNameCheck(C)) || C === "is" && pe.allowCustomizedBuiltInElements && (pe.tagNameCheck instanceof RegExp && D(pe.tagNameCheck, P) || pe.tagNameCheck instanceof Function && pe.tagNameCheck(P))))
                   return false;
               } else if (!er[C]) {
-                if (!b(Xo, K(P, xi, ""))) {
-                  if (!((C === "src" || C === "xlink:href" || C === "href") && g !== "script" && q(P, "data:") === 0 && Bi[g])) {
-                    if (!(Li && !b(vl, K(P, xi, "")))) {
+                if (!D(Xo, q(P, xi, ""))) {
+                  if (!((C === "src" || C === "xlink:href" || C === "href") && g !== "script" && te(P, "data:") === 0 && Bi[g])) {
+                    if (!(Li && !D(vl, q(P, xi, "")))) {
                       if (P)
                         return false;
                     }
@@ -7877,27 +7877,27 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         }, Zi = function(g) {
           var C, P, ie, Ie;
           tt("beforeSanitizeAttributes", g, null);
-          var Te = g.attributes;
-          if (!!Te) {
-            var we = {
+          var be = g.attributes;
+          if (!!be) {
+            var Ee = {
               attrName: "",
               attrValue: "",
               keepAttr: true,
-              allowedAttributes: ye
+              allowedAttributes: we
             };
-            for (Ie = Te.length; Ie--; ) {
-              C = Te[Ie];
+            for (Ie = be.length; Ie--; ) {
+              C = be[Ie];
               var Yn = C, ke = Yn.name, Ji = Yn.namespaceURI;
-              if (P = ke === "value" ? C.value : D(C.value), ie = St(ke), we.attrName = ie, we.attrValue = P, we.keepAttr = true, we.forceKeepAttr = void 0, tt("uponSanitizeAttribute", g, we), P = we.attrValue, !we.forceKeepAttr && (Yi(ke, g), !!we.keepAttr)) {
-                if (b(/\/>/i, P)) {
+              if (P = ke === "value" ? C.value : b(C.value), ie = St(ke), Ee.attrName = ie, Ee.attrValue = P, Ee.keepAttr = true, Ee.forceKeepAttr = void 0, tt("uponSanitizeAttribute", g, Ee), P = Ee.attrValue, !Ee.forceKeepAttr && (Yi(ke, g), !!Ee.keepAttr)) {
+                if (D(/\/>/i, P)) {
                   Yi(ke, g);
                   continue;
                 }
-                Ht && (P = K(P, Vo, " "), P = K(P, jo, " "));
+                Ht && (P = q(P, Vo, " "), P = q(P, jo, " "));
                 var bl = St(g.nodeName);
                 if (!!Ki(bl, ie, P))
                   try {
-                    Ji ? g.setAttributeNS(Ji, ke, P) : g.setAttribute(ke, P), V(A.removed);
+                    Ji ? g.setAttributeNS(Ji, ke, P) : g.setAttribute(ke, P), X(A.removed);
                   } catch (ag) {
                   }
               }
@@ -7911,12 +7911,12 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
           tt("afterSanitizeShadowDOM", g, null);
         };
         return A.sanitize = function(G, g) {
-          var C, P, ie, Ie, Te;
+          var C, P, ie, Ie, be;
           if (or = !G, or && (G = "<!-->"), typeof G != "string" && !_n(G)) {
             if (typeof G.toString != "function")
-              throw Z("toString is not a function");
+              throw V("toString is not a function");
             if (G = G.toString(), typeof G != "string")
-              throw Z("dirty is not a string, aborting");
+              throw V("dirty is not a string, aborting");
           }
           if (!A.isSupported) {
             if (n(M.toStaticHTML) === "object" || typeof M.toStaticHTML == "function") {
@@ -7929,9 +7929,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
           }
           if (Zo || rr(g), A.removed = [], typeof G == "string" && (vn = false), vn) {
             if (G.nodeName) {
-              var we = St(G.nodeName);
-              if (!ge[we] || gn[we])
-                throw Z("root node is forbidden and cannot be sanitized in-place");
+              var Ee = St(G.nodeName);
+              if (!ve[Ee] || gn[Ee])
+                throw V("root node is forbidden and cannot be sanitized in-place");
             }
           } else if (G instanceof dt)
             C = Vi("<!---->"), P = C.ownerDocument.importNode(G, true), P.nodeType === 1 && P.nodeName === "BODY" || P.nodeName === "HTML" ? C = P : C.appendChild(P);
@@ -7948,15 +7948,15 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             return G;
           if ($t) {
             if (Fn)
-              for (Te = fl.call(C.ownerDocument); C.firstChild; )
-                Te.appendChild(C.firstChild);
+              for (be = fl.call(C.ownerDocument); C.firstChild; )
+                be.appendChild(C.firstChild);
             else
-              Te = C;
-            return ye.shadowroot && (Te = ml.call(Y, Te, true)), Te;
+              be = C;
+            return we.shadowroot && (be = ml.call(Y, be, true)), be;
           }
           var ke = Dt ? C.outerHTML : C.innerHTML;
-          return Dt && ge["!doctype"] && C.ownerDocument && C.ownerDocument.doctype && C.ownerDocument.doctype.name && b(el, C.ownerDocument.doctype.name) && (ke = "<!DOCTYPE " + C.ownerDocument.doctype.name + `>
-` + ke), Ht && (ke = K(ke, Vo, " "), ke = K(ke, jo, " ")), pt && Un ? pt.createHTML(ke) : ke;
+          return Dt && ve["!doctype"] && C.ownerDocument && C.ownerDocument.doctype && C.ownerDocument.doctype.name && D(el, C.ownerDocument.doctype.name) && (ke = "<!DOCTYPE " + C.ownerDocument.doctype.name + `>
+` + ke), Ht && (ke = q(ke, Vo, " "), ke = q(ke, jo, " ")), pt && Un ? pt.createHTML(ke) : ke;
         }, A.setConfig = function(G) {
           rr(G), Zo = true;
         }, A.clearConfig = function() {
@@ -7969,7 +7969,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
           typeof g == "function" && (Xe[G] = Xe[G] || [], I(Xe[G], g));
         }, A.removeHook = function(G) {
           if (Xe[G])
-            return V(Xe[G]);
+            return X(Xe[G]);
         }, A.removeHooks = function(G) {
           Xe[G] && (Xe[G] = []);
         }, A.removeAllHooks = function() {
@@ -7999,13 +7999,13 @@ function xd() {
 function Rd(e) {
   return To.sanitize(e);
 }
-function ne({ template: e, param: t, as: n = "div" }) {
+function oe({ template: e, param: t, as: n = "div" }) {
   var s;
-  const r = z(Wa)[e];
-  if (F(r))
+  const r = W(Wa)[e];
+  if (U(r))
     return null;
   const i = r(t);
-  return be(i) ? d(n, {
+  return Ce(i) ? d(n, {
     className: v(`template-${e}`),
     dangerouslySetInnerHTML: {
       __html: Rd(i)
@@ -8030,11 +8030,11 @@ const Ya = Io(null), Od = Ya.Provider, Ne = () => {
   return (t = e.options.timezone.zones) != null ? t : [];
 };
 function $o() {
-  const e = z(Pd), t = L(e);
+  const e = W(Pd), t = L(e);
   return ee((n, o = new O()) => o.tz(t ? e(n, o.getTime()) : n), [e, t]);
 }
 function Bo() {
-  const e = z(Ho), t = $o(), n = ee(() => t(e), [e, t]);
+  const e = W(Ho), t = $o(), n = ee(() => t(e), [e, t]);
   return [e, n];
 }
 function Ld(e, t) {
@@ -8068,7 +8068,7 @@ function Bd({ dayName: e, style: t, type: n, theme: o }) {
     style: { color: l },
     onClick: c,
     "data-testid": `dayName-${n}-${So(a)}`
-  }, /* @__PURE__ */ d(ne, {
+  }, /* @__PURE__ */ d(oe, {
     template: u,
     param: e
   })));
@@ -8295,8 +8295,8 @@ function ui({
     key: `dayNames-${h.day}`,
     dayName: h,
     style: {
-      width: m === 0 ? `calc(${X(n[m].width)} + 1px)` : X(n[m].width),
-      left: m === 0 ? `calc(${X(n[m].left)} - 1px)` : X(n[m].left),
+      width: m === 0 ? `calc(${K(n[m].width)} + 1px)` : K(n[m].width),
+      left: m === 0 ? `calc(${K(n[m].left)} - 1px)` : K(n[m].left),
       borderLeft: s
     },
     theme: r
@@ -8465,13 +8465,13 @@ function gf(e, t, n) {
 function vf(e, t) {
   var m, _;
   const { start: n, end: o, panels: r, andFilters: i = [], options: s } = t, { events: a, idsOfDay: l } = e, u = (m = s == null ? void 0 : s.hourStart) != null ? m : 0, c = (_ = s == null ? void 0 : s.hourEnd) != null ? _ : 24, f = Je.and(...[Za(n, o)].concat(i)), h = ec(a.filter(f)).groupBy(Qu);
-  return r.reduce((y, w) => {
-    const { name: E, type: T } = w;
-    return F(h[E]) ? y : ce(x({}, y), {
-      [E]: T === "daygrid" ? gf(n, o, h[E]) : mf(l, {
+  return r.reduce((y, E) => {
+    const { name: w, type: S } = E;
+    return U(h[w]) ? y : ce(x({}, y), {
+      [w]: S === "daygrid" ? gf(n, o, h[w]) : mf(l, {
         start: n,
         end: o,
-        uiModelTimeColl: h[E],
+        uiModelTimeColl: h[w],
         hourStart: u,
         hourEnd: c
       })
@@ -8637,10 +8637,10 @@ function lc(e, {
   const i = new O(e), s = n > 0, a = s ? i : Ia(i), l = Yu(a, a.getDay() - o + (a.getDay() < o ? Ke : 0)), u = l.getDay(), c = Wu(i).getDate(), f = ai(l, a), p = c + Math.abs(f);
   let h = tf;
   return s ? h = n : r === false && (h = Math.ceil(p / Ke)), gt(0, h).map((m) => gt(0, Ke).reduce((_, y) => {
-    const w = m * Ke + y, E = (w + u) % Ke;
-    if (!t || t && !Fe(E)) {
-      const T = It(l, w);
-      _.push(T);
+    const E = m * Ke + y, w = (E + u) % Ke;
+    if (!t || t && !Fe(w)) {
+      const S = It(l, E);
+      _.push(S);
     }
     return _;
   }, []));
@@ -8697,7 +8697,7 @@ function hi({
   narrowWeekend: o = false,
   startDayOfWeek: r = rn.SUN
 }) {
-  if (F(n))
+  if (U(n))
     return () => null;
   const i = gt(r, r + t).map((a) => a % Ke), s = o ? i.filter((a) => Fe(a)).length : 0;
   return function(l) {
@@ -8714,11 +8714,11 @@ function hi({
     });
     if (h < 0 || m < 0 || h > f || m > p)
       return null;
-    const _ = o ? f / (t - s + 1) : f / t, y = i.map((T) => o && Fe(T) ? _ / 2 : _), w = [];
-    return y.forEach((T, k) => {
-      k === 0 ? w.push(0) : w.push(w[k - 1] + y[k - 1]);
+    const _ = o ? f / (t - s + 1) : f / t, y = i.map((S) => o && Fe(S) ? _ / 2 : _), E = [];
+    return y.forEach((S, k) => {
+      k === 0 ? E.push(0) : E.push(E[k - 1] + y[k - 1]);
     }), {
-      columnIndex: ti(w, (T) => h >= T),
+      columnIndex: ti(E, (S) => h >= S),
       rowIndex: If(e, p, m)
     };
   };
@@ -8728,9 +8728,9 @@ function Mf(e) {
 }
 function gi({ type: e, gridSelectionData: t, weekDates: n, narrowWeekend: o }) {
   const { backgroundColor: r, border: i } = se(Mf), { startCellIndex: s, endCellIndex: a } = t, { left: l, width: u } = Ef(Math.min(s, a), Math.max(s, a), n, o), c = {
-    left: X(l),
-    width: X(u),
-    height: X(100),
+    left: K(l),
+    width: K(u),
+    height: K(100),
     backgroundColor: r,
     border: i
   };
@@ -8748,7 +8748,7 @@ function vi(e, t, n) {
   };
 }
 function Af(e, t, n) {
-  if (F(e))
+  if (U(e))
     return null;
   const { startColumnIndex: o, endColumnIndex: r, endRowIndex: i, startRowIndex: s } = e;
   if (!oc(t, o, r))
@@ -8816,8 +8816,8 @@ function Of(e) {
   return Lr.calculateSelection(e.gridSelection.dayGridWeek);
 }
 function Pf({ weekDates: e, narrowWeekend: t }) {
-  const n = z(Of);
-  return F(n) ? null : /* @__PURE__ */ d(gi, {
+  const n = W(Of);
+  return U(n) ? null : /* @__PURE__ */ d(gi, {
     type: "allday",
     gridSelectionData: n,
     weekDates: e,
@@ -9037,7 +9037,7 @@ function Xf({ index: e, exceedCount: t, isClicked: n, onClickExceedCount: o }) {
     className: v("weekday-exceed-in-week"),
     onClick: r,
     style: i
-  }, /* @__PURE__ */ d(ne, {
+  }, /* @__PURE__ */ d(oe, {
     template: "weekGridFooterExceed",
     param: t
   })) : null;
@@ -9046,7 +9046,7 @@ function Kf({ isClicked: e, isClickedIndex: t, onClickCollapseButton: n }) {
   return e && t ? /* @__PURE__ */ d("span", {
     className: v("weekday-exceed-in-week"),
     onClick: n
-  }, /* @__PURE__ */ d(ne, {
+  }, /* @__PURE__ */ d(oe, {
     template: "collapseBtnTitle"
   })) : null;
 }
@@ -9093,16 +9093,16 @@ const hc = ln(function({
 }) {
   const { widthList: c, leftList: f } = mi(n, o, fi), p = n.length - 1;
   return /* @__PURE__ */ d(xe, null, n.map((h, m) => {
-    const _ = X(c[m]), y = X(f[m]), w = t.filter(wf(h)), E = ic(w, r, Qe + 2), T = m === i, k = m === p;
+    const _ = K(c[m]), y = K(f[m]), E = t.filter(wf(h)), w = ic(E, r, Qe + 2), S = m === i, k = m === p;
     return /* @__PURE__ */ d(qf, {
       key: `panel-grid-${h.getDate()}`,
       width: _,
       left: y,
       index: m,
-      exceedCount: E,
+      exceedCount: w,
       isClicked: s,
       onClickExceedCount: a,
-      isClickedIndex: T,
+      isClickedIndex: S,
       onClickCollapseButton: l,
       isLastCell: k
     });
@@ -9130,12 +9130,12 @@ const gc = Io(null), Jf = gc.Provider, xt = () => {
   gridSelection: (e) => `gridSelection/${e}`
 };
 function vc(e) {
-  return z(ee((t) => t.calendar.calendars.find((n) => n.id === e), [e]));
+  return W(ee((t) => t.calendar.calendars.find((n) => n.id === e), [e]));
 }
 function yi(e) {
   var n;
   const t = vc((n = e == null ? void 0 : e.calendarId) != null ? n : null);
-  return U(() => ({
+  return z(() => ({
     color: t == null ? void 0 : t.color,
     borderColor: t == null ? void 0 : t.borderColor,
     backgroundColor: t == null ? void 0 : t.backgroundColor,
@@ -9147,7 +9147,7 @@ const ep = {
   Escape: 27
 }, zs = 3;
 function _t(e, t) {
-  const n = Ua(), o = te(e), r = te(t);
+  const n = Ua(), o = ne(e), r = ne(t);
   re(() => {
     o.current = e, r.current = t;
   }, [e, t]), re(() => n.subscribe((i) => r.current(i), (i) => o.current(i)), [e, n]);
@@ -9162,58 +9162,58 @@ function op(e, t, n, o) {
   return Math.abs(e - n) >= zs || Math.abs(t - o) >= zs;
 }
 function en(e, { onInit: t, onDragStart: n, onDrag: o, onMouseUp: r, onPressESCKey: i } = {}) {
-  const { initDrag: s, setDragging: a, cancelDrag: l, reset: u } = Se("dnd"), c = Ua(), f = te(c.getState().dnd);
-  _t(At, (S) => {
-    f.current = S;
+  const { initDrag: s, setDragging: a, cancelDrag: l, reset: u } = Te("dnd"), c = Ua(), f = ne(c.getState().dnd);
+  _t(At, (T) => {
+    f.current = T;
   });
-  const [p, h] = ae(false), m = te(null), _ = te(null), y = te(null), w = ee((S) => {
-    !np(S.button) || (S.currentTarget && (S.currentTarget.ondragstart = function() {
+  const [p, h] = ae(false), m = ne(null), _ = ne(null), y = ne(null), E = ee((T) => {
+    !np(T.button) || (T.currentTarget && (T.currentTarget.ondragstart = function() {
       return false;
-    }), S.preventDefault(), h(true), s({
+    }), T.preventDefault(), h(true), s({
       draggingItemType: e,
-      initX: S.clientX,
-      initY: S.clientY
-    }), t == null || t(S, f.current));
-  }, [t, e, s]), E = ee((S) => {
+      initX: T.clientX,
+      initY: T.clientY
+    }), t == null || t(T, f.current));
+  }, [t, e, s]), w = ee((T) => {
     const {
       initX: N,
-      initY: W,
-      draggingState: V,
+      initY: F,
+      draggingState: X,
       draggingItemType: I
     } = f.current;
     if (I !== e) {
       h(false), u();
       return;
     }
-    if (!(L(N) && L(W) && !op(N, W, S.clientX, S.clientY))) {
-      if (V <= Ve.INIT) {
-        a({ x: S.clientX, y: S.clientY }), n == null || n(S, f.current);
+    if (!(L(N) && L(F) && !op(N, F, T.clientX, T.clientY))) {
+      if (X <= Ve.INIT) {
+        a({ x: T.clientX, y: T.clientY }), n == null || n(T, f.current);
         return;
       }
-      a({ x: S.clientX, y: S.clientY }), o == null || o(S, f.current);
+      a({ x: T.clientX, y: T.clientY }), o == null || o(T, f.current);
     }
-  }, [e, o, n, a, u]), T = ee((S) => {
-    S.stopPropagation(), p && (r == null || r(S, f.current), h(false), u());
-  }, [p, r, u]), k = ee((S) => {
-    tp(S, _c.ESCAPE) && (h(false), l(), i == null || i(S, f.current));
+  }, [e, o, n, a, u]), S = ee((T) => {
+    T.stopPropagation(), p && (r == null || r(T, f.current), h(false), u());
+  }, [p, r, u]), k = ee((T) => {
+    tp(T, _c.ESCAPE) && (h(false), l(), i == null || i(T, f.current));
   }, [i, l]);
   return re(() => {
-    m.current = E, _.current = T, y.current = k;
-  }, [k, E, T]), re(() => {
-    const S = (V) => {
+    m.current = w, _.current = S, y.current = k;
+  }, [k, w, S]), re(() => {
+    const T = (X) => {
       var I;
-      return (I = m.current) == null ? void 0 : I.call(m, V);
-    }, N = (V) => {
+      return (I = m.current) == null ? void 0 : I.call(m, X);
+    }, N = (X) => {
       var I;
-      return (I = _.current) == null ? void 0 : I.call(_, V);
-    }, W = (V) => {
+      return (I = _.current) == null ? void 0 : I.call(_, X);
+    }, F = (X) => {
       var I;
-      return (I = y.current) == null ? void 0 : I.call(y, V);
+      return (I = y.current) == null ? void 0 : I.call(y, X);
     };
-    return p ? (document.addEventListener("mousemove", S), document.addEventListener("mouseup", N), document.addEventListener("keydown", W), () => {
-      document.removeEventListener("mousemove", S), document.removeEventListener("mouseup", N), document.removeEventListener("keydown", W);
+    return p ? (document.addEventListener("mousemove", T), document.addEventListener("mouseup", N), document.addEventListener("keydown", F), () => {
+      document.removeEventListener("mousemove", T), document.removeEventListener("mouseup", N), document.removeEventListener("keydown", F);
     }) : an;
-  }, [p, u]), w;
+  }, [p, u]), E;
 }
 function wi(e, t) {
   return e ? t : void 0;
@@ -9261,8 +9261,8 @@ function sp({
   headerHeight: i
 }) {
   const { top: s, left: a, width: l, model: u } = t, c = yc(e), f = e ? {} : {
-    width: n || X(l),
-    left: X(o != null ? o : a),
+    width: n || K(l),
+    left: K(o != null ? o : a),
     top: (s - 1) * (r + c.vertical) + i,
     position: "absolute"
   };
@@ -9287,45 +9287,45 @@ function wt({
   resizingWidth: r = null,
   movingLeft: i = null
 }) {
-  const { currentView: s } = z(cn), { useDetailPopup: a, isReadOnly: l } = z(je), { setDraggingEventUIModel: u } = Se("dnd"), { showDetailPopup: c } = Se("popup"), f = xt(), p = Ne(), h = yi(t.model), [m, _] = ae(false), y = te(null), { isReadOnly: w, id: E, calendarId: T } = t.model, k = !l && !w && F(r) && F(i), S = (b) => {
-    u(t), f == null || f.classList.add(b);
-  }, N = (b) => {
-    _(false), f == null || f.classList.remove(b);
+  const { currentView: s } = W(cn), { useDetailPopup: a, isReadOnly: l } = W(je), { setDraggingEventUIModel: u } = Te("dnd"), { showDetailPopup: c } = Te("popup"), f = xt(), p = Ne(), h = yi(t.model), [m, _] = ae(false), y = ne(null), { isReadOnly: E, id: w, calendarId: S } = t.model, k = !l && !E && U(r) && U(i), T = (D) => {
+    u(t), f == null || f.classList.add(D);
+  }, N = (D) => {
+    _(false), f == null || f.classList.remove(D);
   };
-  _t(At, ({ draggingEventUIModel: b, draggingState: Z }) => {
-    Z === Ve.DRAGGING && (b == null ? void 0 : b.cid()) === t.cid() && F(r) && F(i) ? _(true) : _(false);
+  _t(At, ({ draggingEventUIModel: D, draggingState: V }) => {
+    V === Ve.DRAGGING && (D == null ? void 0 : D.cid()) === t.cid() && U(r) && U(i) ? _(true) : _(false);
   }), re(() => {
     k && p.fire("afterRenderEvent", t.model.toEventObject());
   }, []);
-  const W = en(On.resizeEvent("dayGrid", `${t.cid()}`), {
-    onDragStart: () => S(nt.resizeEvent),
+  const F = en(On.resizeEvent("dayGrid", `${t.cid()}`), {
+    onDragStart: () => T(nt.resizeEvent),
     onMouseUp: () => N(nt.resizeEvent),
     onPressESCKey: () => N(nt.resizeEvent)
-  }), V = en(On.moveEvent("dayGrid", `${t.cid()}`), {
+  }), X = en(On.moveEvent("dayGrid", `${t.cid()}`), {
     onDragStart: () => {
-      k && S(nt.moveEvent);
+      k && T(nt.moveEvent);
     },
-    onMouseUp: (b, { draggingState: Z }) => {
+    onMouseUp: (D, { draggingState: V }) => {
       N(nt.moveEvent);
-      const oe = Z <= Ve.INIT;
-      oe && a && y.current && c({
+      const J = V <= Ve.INIT;
+      J && a && y.current && c({
         event: t.model,
         eventRect: y.current.getBoundingClientRect()
-      }, e), oe && p.fire("clickEvent", { event: t.model.toEventObject(), nativeEvent: b });
+      }, e), J && p.fire("clickEvent", { event: t.model.toEventObject(), nativeEvent: D });
     },
     onPressESCKey: () => N(nt.moveEvent)
-  }), I = (b) => {
-    b.stopPropagation(), k && W(b);
-  }, $ = (b) => {
-    b.stopPropagation(), V(b);
-  }, R = !m && s === "month" && t.model.category === "time" && Nt(t.model.start, t.model.end), K = !k || e || m || t.exceedRight, q = sp({
+  }), I = (D) => {
+    D.stopPropagation(), k && F(D);
+  }, $ = (D) => {
+    D.stopPropagation(), X(D);
+  }, R = !m && s === "month" && t.model.category === "time" && Nt(t.model.start, t.model.end), q = !k || e || m || t.exceedRight, te = sp({
     uiModel: t,
     eventHeight: n,
     headerHeight: o,
     flat: e,
     movingLeft: i,
     resizingWidth: r
-  }), D = ip({
+  }), b = ip({
     uiModel: t,
     flat: e,
     eventHeight: n,
@@ -9337,32 +9337,32 @@ function wt({
       "weekday-exceed-left": t.exceedLeft,
       "weekday-exceed-right": t.exceedRight
     }),
-    style: q,
+    style: te,
     "data-testid": wi(k, ap(t)),
-    "data-calendar-id": T,
-    "data-event-id": E,
+    "data-calendar-id": S,
+    "data-event-id": w,
     ref: y
   }, /* @__PURE__ */ d("div", {
     className: nt.eventBody,
-    style: ce(x({}, D), {
-      backgroundColor: R ? null : D.backgroundColor,
-      borderLeft: R ? null : D.borderLeft
+    style: ce(x({}, b), {
+      backgroundColor: R ? null : b.backgroundColor,
+      borderLeft: R ? null : b.borderLeft
     }),
     onMouseDown: $
   }, R ? /* @__PURE__ */ d("span", {
     className: nt.eventDot,
-    style: { backgroundColor: D.backgroundColor }
+    style: { backgroundColor: b.backgroundColor }
   }) : null, /* @__PURE__ */ d("span", {
     className: nt.eventTitle
-  }, /* @__PURE__ */ d(ne, {
+  }, /* @__PURE__ */ d(oe, {
     template: t.model.category,
     param: t.model
-  })), K ? null : /* @__PURE__ */ d(Zf, {
+  })), q ? null : /* @__PURE__ */ d(Zf, {
     onMouseDown: I
   })));
 }
 function un(e, t) {
-  const n = te(e);
+  const n = ne(e);
   re(() => {
     n.current = e;
   }, [e]), re(() => {
@@ -9387,13 +9387,13 @@ const cp = (e, t, n) => {
   function o(r) {
     return new RegExp(`^event/${t}/${n}/\\d+$`).test(r);
   }
-  return F(e) ? null : o(e) ? it(e.split("/")) : null;
+  return U(e) ? null : o(e) ? it(e.split("/")) : null;
 };
 function fn(e, t) {
   const [n, o] = ae(false), [r, i] = ae(false), [s, a] = ae(null);
   return _t(At, ({ draggingItemType: u, draggingEventUIModel: c, draggingState: f }) => {
     const p = cp(u, e, t), h = Number(p) === (c == null ? void 0 : c.cid()), m = f === Ve.IDLE, _ = f === Ve.CANCELED;
-    F(s) && h && a(c), L(s) && (m || _) && (o(true), i(_));
+    U(s) && h && a(c), L(s) && (m || _) && (o(true), i(_));
   }), {
     isDraggingEnd: n,
     isDraggingCanceled: r,
@@ -9409,14 +9409,14 @@ function lp({ rowStyleInfo: e, gridPositionFinder: t }) {
     isDraggingCanceled: r,
     draggingEvent: i,
     clearDraggingEvent: s
-  } = fn("dayGrid", "move"), a = te(null), [l, u] = dn(t), { columnIndex: c } = l != null ? l : {}, f = U(() => F(i) ? null : e.findIndex(({ left: h }) => h === i.left), [e, i]), p = U(() => {
-    if (F(c) || F(a.current) || F(f))
+  } = fn("dayGrid", "move"), a = ne(null), [l, u] = dn(t), { columnIndex: c } = l != null ? l : {}, f = z(() => U(i) ? null : e.findIndex(({ left: h }) => h === i.left), [e, i]), p = z(() => {
+    if (U(c) || U(a.current) || U(f))
       return null;
     const h = f + c - a.current;
     return h < 0 ? -e[-h].left : e[h].left;
   }, [c, e, f]);
   return re(() => {
-    F(a.current) && L(c) && (a.current = c);
+    U(a.current) && L(c) && (a.current = c);
   }, [c]), un(() => {
     if (!r && L(i) && L(c) && L(p) && c !== a.current && L(a.current)) {
       const m = c - a.current, _ = new O(i.model.getStarts()), y = new O(i.model.getEnds());
@@ -9429,7 +9429,7 @@ function lp({ rowStyleInfo: e, gridPositionFinder: t }) {
       });
     }
     s(), u(), a.current = null;
-  }, o), U(() => ({
+  }, o), z(() => ({
     movingEvent: i,
     movingLeft: p
   }), [p, i]);
@@ -9442,7 +9442,7 @@ function up({
     rowStyleInfo: e,
     gridPositionFinder: t
   });
-  return F(n) ? null : /* @__PURE__ */ d(wt, {
+  return U(n) ? null : /* @__PURE__ */ d(wt, {
     uiModel: n,
     eventHeight: Qe,
     headerHeight: 0,
@@ -9463,7 +9463,7 @@ function fp({
     isDraggingCanceled: i,
     draggingEvent: s,
     clearDraggingEvent: a
-  } = fn("dayGrid", "resize"), [l, u] = dn(n), { columnIndex: c } = l != null ? l : {}, f = U(() => s ? dp(s, e) : { start: -1, end: -1 }, [e, s]), p = U(() => f.start > -1 && L(c) ? t[f.start][c] : null, [c, t, f.start]);
+  } = fn("dayGrid", "resize"), [l, u] = dn(n), { columnIndex: c } = l != null ? l : {}, f = z(() => s ? dp(s, e) : { start: -1, end: -1 }, [e, s]), p = z(() => f.start > -1 && L(c) ? t[f.start][c] : null, [c, t, f.start]);
   return un(() => {
     if (!i && L(s) && L(c) && f.start <= c && f.end !== c) {
       const m = e[c];
@@ -9473,7 +9473,7 @@ function fp({
       });
     }
     u(), a();
-  }, r), U(() => ({
+  }, r), z(() => ({
     resizingEvent: s,
     resizingWidth: p
   }), [p, s]);
@@ -9484,7 +9484,7 @@ function pp({ weekDates: e, gridColWidthMap: t, gridPositionFinder: n }) {
     gridColWidthMap: t,
     gridPositionFinder: n
   });
-  return F(o) ? null : /* @__PURE__ */ d(wt, {
+  return U(o) ? null : /* @__PURE__ */ d(wt, {
     uiModel: o,
     eventHeight: Qe,
     headerHeight: 0,
@@ -9498,7 +9498,7 @@ function Ge() {
   return [e, n];
 }
 function wc(e, t) {
-  const [n, o] = ae(0), [r, i] = ae(false), { updateDayGridRowHeight: s } = Se("weekViewLayout"), a = ee((u) => {
+  const [n, o] = ae(0), [r, i] = ae(false), { updateDayGridRowHeight: s } = Te("weekViewLayout"), a = ee((u) => {
     i(true), o(u), s({
       rowName: t,
       height: (e + 1) * Qe
@@ -9533,7 +9533,7 @@ function hp({
   onDblClick: t,
   delay: n = 300
 }) {
-  const o = te(an), r = (l) => {
+  const o = ne(an), r = (l) => {
     o.current = l;
   }, i = () => {
     o.current();
@@ -9559,87 +9559,87 @@ function Ei({
   dateCollection: o,
   gridPositionFinder: r
 }) {
-  const { useFormPopup: i, gridSelection: s } = z(je), { enableDblClick: a, enableClick: l } = s, { setGridSelection: u, addGridSelection: c, clearAll: f } = Se("gridSelection"), { hideAllPopup: p, showFormPopup: h } = Se("popup"), m = Ne(), _ = xt(), [y, w] = ae(null), [E, T] = ae(null), k = te(false), S = te(null);
-  _t(ee((D) => D.gridSelection[e], [e]), (D) => {
-    S.current = D;
-  }), _t(At, ({ draggingState: D, draggingItemType: b }) => {
-    k.current = b === N && D >= Ve.INIT;
+  const { useFormPopup: i, gridSelection: s } = W(je), { enableDblClick: a, enableClick: l } = s, { setGridSelection: u, addGridSelection: c, clearAll: f } = Te("gridSelection"), { hideAllPopup: p, showFormPopup: h } = Te("popup"), m = Ne(), _ = xt(), [y, E] = ae(null), [w, S] = ae(null), k = ne(false), T = ne(null);
+  _t(ee((b) => b.gridSelection[e], [e]), (b) => {
+    T.current = b;
+  }), _t(At, ({ draggingState: b, draggingItemType: D }) => {
+    k.current = D === N && b >= Ve.INIT;
   });
-  const N = On.gridSelection(e), W = (D) => {
-    const b = r(D);
-    L(E) && L(b) && u(e, t(E, b));
-  }, [V, I] = hp({
-    onClick: (D) => {
-      l && R(D, true);
+  const N = On.gridSelection(e), F = (b) => {
+    const D = r(b);
+    L(w) && L(D) && u(e, t(w, D));
+  }, [X, I] = hp({
+    onClick: (b) => {
+      l && R(b, true);
     },
-    onDblClick: (D) => {
-      a && R(D, true);
+    onDblClick: (b) => {
+      a && R(b, true);
     },
     delay: 250
-  }), $ = (D) => {
-    const b = D.detail <= 1;
-    if (!(!l && (!a || b))) {
+  }), $ = (b) => {
+    const D = b.detail <= 1;
+    if (!(!l && (!a || D))) {
       if (l) {
-        b ? V(D) : I(D);
+        D ? X(b) : I(b);
         return;
       }
-      R(D, true);
+      R(b, true);
     }
-  }, R = (D, b) => {
-    var Z;
-    if (b && W(D), L(S.current)) {
-      const [oe, Ce] = vp(...n(o, S.current));
+  }, R = (b, D) => {
+    var V;
+    if (D && F(b), L(T.current)) {
+      const [J, ge] = vp(...n(o, T.current));
       if (i && L(y)) {
         const Oe = {
-          top: (D.clientY + y.y) / 2,
-          left: (D.clientX + y.x) / 2
+          top: (b.clientY + y.y) / 2,
+          left: (b.clientX + y.x) / 2
         };
         h({
           isCreationPopup: true,
           title: "",
           location: "",
-          start: oe,
-          end: Ce,
+          start: J,
+          end: ge,
           isAllday: e !== "timeGrid",
           isPrivate: false,
           popupArrowPointPosition: Oe,
           close: f
         });
       }
-      const j = `.${v(gp[e])}.${v("grid-selection")}`, de = Array.from((Z = _ == null ? void 0 : _.querySelectorAll(j)) != null ? Z : []);
+      const j = `.${v(gp[e])}.${v("grid-selection")}`, de = Array.from((V = _ == null ? void 0 : _.querySelectorAll(j)) != null ? V : []);
       m.fire("selectDateTime", {
-        start: oe.toDate(),
-        end: Ce.toDate(),
+        start: J.toDate(),
+        end: ge.toDate(),
         isAllday: e !== "timeGrid",
-        nativeEvent: D,
+        nativeEvent: b,
         gridSelectionElements: de
       });
     }
-  }, K = ee(() => {
-    w(null), T(null), u(e, null);
-  }, [u, e]), q = en(N, {
-    onInit: (D) => {
-      i && (w({
-        x: D.clientX,
-        y: D.clientY
+  }, q = ee(() => {
+    E(null), S(null), u(e, null);
+  }, [u, e]), te = en(N, {
+    onInit: (b) => {
+      i && (E({
+        x: b.clientX,
+        y: b.clientY
       }), p());
-      const b = r(D);
-      L(b) && T(b), i || c(e, S.current);
+      const D = r(b);
+      L(D) && S(D), i || c(e, T.current);
     },
-    onDragStart: (D) => {
-      W(D);
+    onDragStart: (b) => {
+      F(b);
     },
-    onDrag: (D) => {
-      k.current && W(D);
+    onDrag: (b) => {
+      k.current && F(b);
     },
-    onMouseUp: (D, { draggingState: b }) => {
-      D.stopPropagation();
-      const Z = b <= Ve.INIT;
-      Z ? $(D) : R(D, Z);
+    onMouseUp: (b, { draggingState: D }) => {
+      b.stopPropagation();
+      const V = D <= Ve.INIT;
+      V ? $(b) : R(b, V);
     },
-    onPressESCKey: K
+    onPressESCKey: q
   });
-  return re(() => K, [K]), q;
+  return re(() => q, [q]), te;
 }
 const _p = "alldayTitle";
 function Ec({
@@ -9648,62 +9648,63 @@ function Ec({
   height: n = Jt,
   options: o = {},
   rowStyleInfo: r,
-  gridColWidthMap: i
+  gridColWidthMap: i,
+  overrideAllDayExceed: s
 }) {
-  const { isReadOnly: s } = z(je), a = se(Xa), [l, u] = Ge(), { narrowWeekend: c = false, startDayOfWeek: f = rn.SUN } = o, p = U(() => Math.max(0, ...e.map(({ top: S }) => S)), [e]), h = U(() => hi({
-    container: l,
+  const { isReadOnly: a } = W(je), l = se(Xa), [u, c] = Ge(), { narrowWeekend: f = false, startDayOfWeek: p = rn.SUN } = o, h = z(() => Math.max(0, ...e.map(({ top: N }) => N)), [e]), m = z(() => hi({
+    container: u,
     rowsCount: 1,
     columnsCount: t.length,
-    narrowWeekend: c,
-    startDayOfWeek: f
-  }), [l, t.length, c, f]), { clickedIndex: m, isClickedCount: _, onClickExceedCount: y, onClickCollapseButton: w } = wc(p, "allday"), E = U(() => e.filter(pi(n, Qe + Ta)).map((S) => /* @__PURE__ */ d(wt, {
-    key: `allday-DayEvent-${S.cid()}`,
-    uiModel: S,
+    narrowWeekend: f,
+    startDayOfWeek: p
+  }), [u, t.length, f, p]), { clickedIndex: _, isClickedCount: y, onClickCollapseButton: E, onClickExceedCount: w } = wc(h, "allday"), S = z(() => e.filter(pi(n, Qe + Ta)).map((N) => /* @__PURE__ */ d(wt, {
+    key: `allday-DayEvent-${N.cid()}`,
+    uiModel: N,
     eventHeight: Qe,
     headerHeight: 0
-  })), [e, n]), T = Ei({
+  })), [e, n]), k = Ei({
     type: "dayGridWeek",
-    gridPositionFinder: h,
+    gridPositionFinder: m,
     dateCollection: t,
     selectionSorter: Lr.sortSelection,
     dateGetter: Lr.getDateFromCollection
-  }), k = (S) => {
-    const N = S.target;
-    s || !N.classList.contains(v("panel-grid")) || T(S);
+  }), T = (N) => {
+    const F = N.target;
+    a || !F.classList.contains(v("panel-grid")) || k(N);
   };
   return /* @__PURE__ */ d(xe, null, /* @__PURE__ */ d("div", {
     className: v("panel-title"),
-    style: a
-  }, /* @__PURE__ */ d(ne, {
+    style: l
+  }, /* @__PURE__ */ d(oe, {
     template: _p,
     param: "alldayTitle"
   })), /* @__PURE__ */ d("div", {
     className: v("allday-panel"),
-    ref: u,
-    onMouseDown: k
+    ref: c,
+    onMouseDown: T
   }, /* @__PURE__ */ d("div", {
     className: v("panel-grid-wrapper")
   }, /* @__PURE__ */ d(hc, {
     uiModels: e,
     weekDates: t,
-    narrowWeekend: c,
+    narrowWeekend: f,
     height: n,
-    clickedIndex: m,
-    isClickedCount: _,
-    onClickExceedCount: y,
-    onClickCollapseButton: w
+    clickedIndex: _,
+    isClickedCount: y,
+    onClickExceedCount: s || w,
+    onClickCollapseButton: E
   })), /* @__PURE__ */ d("div", {
     className: v("panel-allday-events")
-  }, E), /* @__PURE__ */ d(pp, {
+  }, S), /* @__PURE__ */ d(pp, {
     weekDates: t,
-    gridPositionFinder: h,
+    gridPositionFinder: m,
     gridColWidthMap: i
   }), /* @__PURE__ */ d(up, {
     rowStyleInfo: r,
-    gridPositionFinder: h
+    gridPositionFinder: m
   }), /* @__PURE__ */ d(Pf, {
     weekDates: t,
-    narrowWeekend: c
+    narrowWeekend: f
   })));
 }
 function Dc({
@@ -9713,7 +9714,7 @@ function Dc({
   height: o = Jt,
   options: r = {}
 }) {
-  const i = se(Xa), s = U(() => Math.max(0, ...e.map(({ top: m }) => m)), [e]), { narrowWeekend: a = false } = r, l = `${n}Title`, { clickedIndex: u, isClickedCount: c, onClickExceedCount: f, onClickCollapseButton: p } = wc(s, n), h = U(() => e.filter(pi(o, Qe + Ta)).map((m) => /* @__PURE__ */ d(wt, {
+  const i = se(Xa), s = z(() => Math.max(0, ...e.map(({ top: m }) => m)), [e]), { narrowWeekend: a = false } = r, l = `${n}Title`, { clickedIndex: u, isClickedCount: c, onClickExceedCount: f, onClickCollapseButton: p } = wc(s, n), h = z(() => e.filter(pi(o, Qe + Ta)).map((m) => /* @__PURE__ */ d(wt, {
     key: `${n}-DayEvent-${m.cid()}`,
     uiModel: m,
     eventHeight: Qe,
@@ -9722,7 +9723,7 @@ function Dc({
   return /* @__PURE__ */ d(xe, null, /* @__PURE__ */ d("div", {
     className: v("panel-title"),
     style: i
-  }, /* @__PURE__ */ d(ne, {
+  }, /* @__PURE__ */ d(oe, {
     template: l,
     param: n
   })), /* @__PURE__ */ d("div", {
@@ -9742,7 +9743,7 @@ function Dc({
     className: v(`panel-${n}-events`)
   }, h)));
 }
-const ve = {
+const _e = {
   detailItem: v("detail-item"),
   detailItemIndent: v("detail-item", "detail-item-indent"),
   detailItemSeparate: v("detail-item", "detail-item-separate"),
@@ -9758,61 +9759,61 @@ function yp({ event: e }) {
   var l, u;
   const { location: t, recurrenceRule: n, attendees: o, state: r, calendarId: i, body: s } = e, a = vc(i);
   return /* @__PURE__ */ d("div", {
-    className: ve.sectionDetail
+    className: _e.sectionDetail
   }, t && /* @__PURE__ */ d("div", {
-    className: ve.detailItem
+    className: _e.detailItem
   }, /* @__PURE__ */ d("span", {
-    className: ve.locationIcon
+    className: _e.locationIcon
   }), /* @__PURE__ */ d("span", {
-    className: ve.content
-  }, /* @__PURE__ */ d(ne, {
+    className: _e.content
+  }, /* @__PURE__ */ d(oe, {
     template: "popupDetailLocation",
     param: e,
     as: "span"
   }))), n && /* @__PURE__ */ d("div", {
-    className: ve.detailItem
+    className: _e.detailItem
   }, /* @__PURE__ */ d("span", {
-    className: ve.repeatIcon
+    className: _e.repeatIcon
   }), /* @__PURE__ */ d("span", {
-    className: ve.content
-  }, /* @__PURE__ */ d(ne, {
+    className: _e.content
+  }, /* @__PURE__ */ d(oe, {
     template: "popupDetailRecurrenceRule",
     param: e,
     as: "span"
   }))), o && /* @__PURE__ */ d("div", {
-    className: ve.detailItemIndent
+    className: _e.detailItemIndent
   }, /* @__PURE__ */ d("span", {
-    className: ve.userIcon
+    className: _e.userIcon
   }), /* @__PURE__ */ d("span", {
-    className: ve.content
-  }, /* @__PURE__ */ d(ne, {
+    className: _e.content
+  }, /* @__PURE__ */ d(oe, {
     template: "popupDetailAttendees",
     param: e,
     as: "span"
   }))), r && /* @__PURE__ */ d("div", {
-    className: ve.detailItem
+    className: _e.detailItem
   }, /* @__PURE__ */ d("span", {
-    className: ve.stateIcon
+    className: _e.stateIcon
   }), /* @__PURE__ */ d("span", {
-    className: ve.content
-  }, /* @__PURE__ */ d(ne, {
+    className: _e.content
+  }, /* @__PURE__ */ d(oe, {
     template: "popupDetailState",
     param: e,
     as: "span"
   }))), a && /* @__PURE__ */ d("div", {
-    className: ve.detailItem
+    className: _e.detailItem
   }, /* @__PURE__ */ d("span", {
-    className: ve.calendarDotIcon,
+    className: _e.calendarDotIcon,
     style: {
       backgroundColor: (l = a == null ? void 0 : a.backgroundColor) != null ? l : ""
     }
   }), /* @__PURE__ */ d("span", {
-    className: ve.content
+    className: _e.content
   }, (u = a == null ? void 0 : a.name) != null ? u : "")), s && /* @__PURE__ */ d("div", {
-    className: ve.detailItemSeparate
+    className: _e.detailItemSeparate
   }, /* @__PURE__ */ d("span", {
-    className: ve.content
-  }, /* @__PURE__ */ d(ne, {
+    className: _e.content
+  }, /* @__PURE__ */ d(oe, {
     template: "popupDetailBody",
     param: e,
     as: "span"
@@ -9828,13 +9829,13 @@ function wp({ event: e }) {
     className: _r.sectionHeader
   }, /* @__PURE__ */ d("div", {
     className: _r.eventTitle
-  }, /* @__PURE__ */ d(ne, {
+  }, /* @__PURE__ */ d(oe, {
     template: "popupDetailTitle",
     param: e,
     as: "span"
   })), /* @__PURE__ */ d("div", {
     className: _r.content
-  }, /* @__PURE__ */ d(ne, {
+  }, /* @__PURE__ */ d(oe, {
     template: "popupDetailDate",
     param: e,
     as: "span"
@@ -9912,25 +9913,25 @@ function Mp(e, t, n) {
   return { top: o, direction: s };
 }
 function Ap() {
-  const { useFormPopup: e } = z(je), t = z(kp), { event: n, eventRect: o } = t != null ? t : {}, { showFormPopup: r, hideDetailPopup: i } = Se("popup"), s = yi(n), a = xt(), l = Di("detailPopupSlot"), u = Ne(), c = te(null), [f, p] = ae({}), [h, m] = ae(0), [_, y] = ae(Yt.left), w = U(() => {
-    const q = _ === Yt.right, D = _ === Yt.left;
-    return v("popup-arrow", { right: q, left: D });
+  const { useFormPopup: e } = W(je), t = W(kp), { event: n, eventRect: o } = t != null ? t : {}, { showFormPopup: r, hideDetailPopup: i } = Te("popup"), s = yi(n), a = xt(), l = Di("detailPopupSlot"), u = Ne(), c = ne(null), [f, p] = ae({}), [h, m] = ae(0), [_, y] = ae(Yt.left), E = z(() => {
+    const te = _ === Yt.right, b = _ === Yt.left;
+    return v("popup-arrow", { right: te, left: b });
   }, [_]);
   if (ht(() => {
     if (c.current && o && a) {
-      const q = a.getBoundingClientRect(), D = c.current.getBoundingClientRect(), [b, Z] = Ip(o, q, D), { top: oe, direction: Ce } = Mp(o, q, D);
-      p({ top: b, left: Z }), m(oe - b - $r), y(Ce);
+      const te = a.getBoundingClientRect(), b = c.current.getBoundingClientRect(), [D, V] = Ip(o, te, b), { top: J, direction: ge } = Mp(o, te, b);
+      p({ top: D, left: V }), m(J - D - $r), y(ge);
     }
-  }, [o, a]), F(n) || F(o) || F(l))
+  }, [o, a]), U(n) || U(o) || U(l))
     return null;
   const {
-    title: E = "",
-    isAllday: T = false,
+    title: w = "",
+    isAllday: S = false,
     start: k = new O(),
-    end: S = new O(),
+    end: T = new O(),
     location: N,
-    state: W,
-    isReadOnly: V,
+    state: F,
+    isReadOnly: X,
     isPrivate: I
   } = n, $ = {
     top: o.top + o.height / 2,
@@ -9939,16 +9940,16 @@ function Ap() {
     e ? r({
       isCreationPopup: false,
       event: n,
-      title: E,
+      title: w,
       location: N,
       start: k,
-      end: S,
-      isAllday: T,
+      end: T,
+      isAllday: S,
       isPrivate: I,
-      eventState: W,
+      eventState: F,
       popupArrowPointPosition: $
     }) : u.fire("beforeUpdateEvent", { event: n.toEventObject(), changes: {} });
-  }, K = () => {
+  }, q = () => {
     u.fire("beforeDeleteEvent", n.toEventObject()), i();
   };
   return _i(/* @__PURE__ */ d("div", {
@@ -9962,7 +9963,7 @@ function Ap() {
     event: n
   }), /* @__PURE__ */ d(yp, {
     event: n
-  }), !V && /* @__PURE__ */ d("div", {
+  }), !X && /* @__PURE__ */ d("div", {
     className: Le.sectionButton
   }, /* @__PURE__ */ d("button", {
     type: "button",
@@ -9972,7 +9973,7 @@ function Ap() {
     className: Le.editIcon
   }), /* @__PURE__ */ d("span", {
     className: Le.content
-  }, /* @__PURE__ */ d(ne, {
+  }, /* @__PURE__ */ d(oe, {
     template: "popupEdit",
     as: "span"
   }))), /* @__PURE__ */ d("div", {
@@ -9980,19 +9981,19 @@ function Ap() {
   }), /* @__PURE__ */ d("button", {
     type: "button",
     className: Le.deleteButton,
-    onClick: K
+    onClick: q
   }, /* @__PURE__ */ d("span", {
     className: Le.deleteIcon
   }), /* @__PURE__ */ d("span", {
     className: Le.content
-  }, /* @__PURE__ */ d(ne, {
+  }, /* @__PURE__ */ d(oe, {
     template: "popupDelete",
     as: "span"
   }))))), /* @__PURE__ */ d("div", {
     className: Le.topLine,
     style: { backgroundColor: s.backgroundColor }
   }), /* @__PURE__ */ d("div", {
-    className: w
+    className: E
   }, /* @__PURE__ */ d("div", {
     className: Le.border,
     style: { top: h }
@@ -10110,14 +10111,14 @@ const Ws = {
   closeIcon: v("icon", "ic-close")
 };
 function kc({ type: e, close: t }) {
-  const { hideAllPopup: n } = Se("popup"), o = () => {
+  const { hideAllPopup: n } = Te("popup"), o = () => {
     n(), Cn(t) && t();
   };
   return /* @__PURE__ */ d("button", {
     type: "button",
     className: Ws.closeButton,
     onClick: o
-  }, e === "moreEvents" ? /* @__PURE__ */ d(ne, {
+  }, e === "moreEvents" ? /* @__PURE__ */ d(oe, {
     template: "monthMoreClose"
   }) : /* @__PURE__ */ d("i", {
     className: Ws.closeIcon
@@ -10137,11 +10138,11 @@ function No({
   model: t,
   defaultValue: n = ""
 }) {
-  const r = z(Wa)[e];
-  if (F(r))
+  const r = W(Wa)[e];
+  if (U(r))
     return n;
   let i = r(t);
-  return be(i) || (i = n), i;
+  return Ce(i) || (i = n), i;
 }
 const ze = {
   datePickerContainer: v("datepicker-container"),
@@ -10151,7 +10152,7 @@ const ze = {
   dateDash: v("popup-date-dash"),
   content: v("content")
 }, Bp = pc(function({ start: t, end: n, isAllday: o = false, formStateDispatch: r }, i) {
-  const { usageStatistics: s } = z(je), a = te(null), l = te(null), u = te(null), c = te(null), f = No({
+  const { usageStatistics: s } = W(je), a = ne(null), l = ne(null), u = ne(null), c = ne(null), f = No({
     template: "startDatePlaceholder",
     defaultValue: "Start Date"
   }), p = No({
@@ -10216,7 +10217,7 @@ const ze = {
     })
   }), /* @__PURE__ */ d("span", {
     className: ze.content
-  }, /* @__PURE__ */ d(ne, {
+  }, /* @__PURE__ */ d(oe, {
     template: "popupIsAllday"
   })), /* @__PURE__ */ d("input", {
     name: "isAllday",
@@ -10245,9 +10246,9 @@ function Fp({ setOpened: e, setEventState: t }) {
     className: to.icon
   }), /* @__PURE__ */ d("span", {
     className: to.content
-  }, o === "Busy" ? /* @__PURE__ */ d(ne, {
+  }, o === "Busy" ? /* @__PURE__ */ d(oe, {
     template: "popupStateBusy"
-  }) : /* @__PURE__ */ d(ne, {
+  }) : /* @__PURE__ */ d(oe, {
     template: "popupStateFree"
   })))));
 }
@@ -10270,9 +10271,9 @@ function Up({ eventState: e = "Busy", formStateDispatch: t }) {
     className: wn.stateIcon
   }), /* @__PURE__ */ d("span", {
     className: wn.content
-  }, e === "Busy" ? /* @__PURE__ */ d(ne, {
+  }, e === "Busy" ? /* @__PURE__ */ d(oe, {
     template: "popupStateBusy"
-  }) : /* @__PURE__ */ d(ne, {
+  }) : /* @__PURE__ */ d(oe, {
     template: "popupStateFree"
   })), /* @__PURE__ */ d("span", {
     className: wn.arrowIcon
@@ -10367,17 +10368,17 @@ function jp(e, t) {
   }, {});
 }
 function Xp() {
-  var V;
-  const { calendars: e } = z(Lo), { hideAllPopup: t } = Se("popup"), n = z(Cp), { start: o, end: r, popupArrowPointPosition: i, close: s, isCreationPopup: a, event: l } = n != null ? n : {}, u = Ne(), c = Di("formPopupSlot"), [f, p] = Pp((V = e[0]) == null ? void 0 : V.id), h = te(null), m = te(null), [_, y] = ae({}), [w, E] = ae(0), [T, k] = ae(Vt.bottom), S = xt(), N = U(() => {
-    const I = T === Vt.top, $ = T === Vt.bottom;
+  var X;
+  const { calendars: e } = W(Lo), { hideAllPopup: t } = Te("popup"), n = W(Cp), { start: o, end: r, popupArrowPointPosition: i, close: s, isCreationPopup: a, event: l } = n != null ? n : {}, u = Ne(), c = Di("formPopupSlot"), [f, p] = Pp((X = e[0]) == null ? void 0 : X.id), h = ne(null), m = ne(null), [_, y] = ae({}), [E, w] = ae(0), [S, k] = ae(Vt.bottom), T = xt(), N = z(() => {
+    const I = S === Vt.top, $ = S === Vt.bottom;
     return v("popup-arrow", { top: I, bottom: $ });
-  }, [T]);
+  }, [S]);
   if (ht(() => {
-    if (m.current && i && S) {
-      const I = S.getBoundingClientRect(), $ = m.current.getBoundingClientRect(), { top: R, left: K, direction: q } = Yp(i, I, $), D = i.left - K;
-      y({ left: K, top: R }), E(D), k(q);
+    if (m.current && i && T) {
+      const I = T.getBoundingClientRect(), $ = m.current.getBoundingClientRect(), { top: R, left: q, direction: te } = Yp(i, I, $), b = i.left - q;
+      y({ left: q, top: R }), w(b), k(te);
     }
-  }, [S, i]), re(() => {
+  }, [T, i]), re(() => {
     L(n) && L(l) && p({
       type: ct.init,
       event: {
@@ -10390,20 +10391,20 @@ function Xp() {
       }
     });
   }, [e, l, p, n]), re(() => {
-    F(n) && p({ type: ct.reset });
-  }, [p, n]), F(o) || F(r) || F(c))
+    U(n) && p({ type: ct.reset });
+  }, [p, n]), U(o) || U(r) || U(c))
     return null;
-  const W = (I) => {
-    var K, q;
+  const F = (I) => {
+    var q, te;
     I.preventDefault();
     const $ = new FormData(I.target), R = x({}, f);
-    if ($.forEach((D, b) => {
-      R[b] = Vp(b) ? D === "true" : D;
-    }), R.start = new O((K = h.current) == null ? void 0 : K.getStartDate()), R.end = new O((q = h.current) == null ? void 0 : q.getEndDate()), a)
+    if ($.forEach((b, D) => {
+      R[D] = Vp(D) ? b === "true" : b;
+    }), R.start = new O((q = h.current) == null ? void 0 : q.getStartDate()), R.end = new O((te = h.current) == null ? void 0 : te.getEndDate()), a)
       u.fire("beforeCreateEvent", R);
     else if (l) {
-      const D = jp(l, R);
-      u.fire("beforeUpdateEvent", { event: l.toEventObject(), changes: D });
+      const b = jp(l, R);
+      u.fire("beforeUpdateEvent", { event: l.toEventObject(), changes: b });
     }
     t();
   };
@@ -10413,7 +10414,7 @@ function Xp() {
     ref: m,
     style: _
   }, /* @__PURE__ */ d("form", {
-    onSubmit: W
+    onSubmit: F
   }, /* @__PURE__ */ d("div", {
     className: oo.formContainer
   }, e != null && e.length ? /* @__PURE__ */ d(Lp, {
@@ -10439,15 +10440,15 @@ function Xp() {
   }), /* @__PURE__ */ d(kc, {
     type: "form",
     close: s
-  }), /* @__PURE__ */ d(Mt, null, /* @__PURE__ */ d($p, null, a ? /* @__PURE__ */ d(ne, {
+  }), /* @__PURE__ */ d(Mt, null, /* @__PURE__ */ d($p, null, a ? /* @__PURE__ */ d(oe, {
     template: "popupSave"
-  }) : /* @__PURE__ */ d(ne, {
+  }) : /* @__PURE__ */ d(oe, {
     template: "popupUpdate"
   })))), /* @__PURE__ */ d("div", {
     className: N
   }, /* @__PURE__ */ d("div", {
     className: oo.popupArrowBorder,
-    style: { left: w }
+    style: { left: E }
   }, /* @__PURE__ */ d("div", {
     className: oo.popupArrowFill
   }))))), c);
@@ -10456,7 +10457,7 @@ function Kp(e) {
   return Object.values(e.popup).find((t) => L(t));
 }
 function qp() {
-  const e = z(Kp), { hideAllPopup: t } = Se("popup"), n = L(e), o = (r) => {
+  const e = W(Kp), { hideAllPopup: t } = Te("popup"), n = L(e), o = (r) => {
     var i;
     r.stopPropagation(), (i = e == null ? void 0 : e.close) == null || i.call(e), t();
   };
@@ -10473,7 +10474,7 @@ const ro = {
   list: v("month-more-list")
 };
 function Zp() {
-  const e = z(Np), { date: t, events: n = [], popupPosition: o } = e != null ? e : {}, { moreView: r, moreViewTitle: i } = qa(), s = Di("seeMorePopupSlot"), a = Ne(), l = te(null), u = F(t) || F(o) || F(s);
+  const e = W(Np), { date: t, events: n = [], popupPosition: o } = e != null ? e : {}, { moreView: r, moreViewTitle: i } = qa(), s = Di("seeMorePopupSlot"), a = Ne(), l = ne(null), u = U(t) || U(o) || U(s);
   if (re(() => {
     !u && l.current && a.fire("clickMoreEventsBtn", {
       date: t.toDate(),
@@ -10504,7 +10505,7 @@ function Zp() {
   }, /* @__PURE__ */ d("div", {
     className: ro.header,
     style: c
-  }, /* @__PURE__ */ d(ne, {
+  }, /* @__PURE__ */ d(oe, {
     template: "monthMoreTitleDate",
     param: f
   }), /* @__PURE__ */ d(kc, {
@@ -10521,7 +10522,7 @@ function Zp() {
   }))))), s);
 }
 function Jp(e, t) {
-  const n = { height: X(100) };
+  const n = { height: K(100) };
   return e && (n.width = e), t && (n.height = t), n;
 }
 function Si({
@@ -10531,7 +10532,7 @@ function Si({
   className: o = "",
   autoAdjustPanels: r = false
 }) {
-  const { backgroundColor: i } = se(ja), [s, a] = Ge(), { setLastPanelType: l, updateLayoutHeight: u } = Se("weekViewLayout"), c = U(() => `${v("layout")} ${o}`, [o]);
+  const { backgroundColor: i } = se(ja), [s, a] = Ge(), { setLastPanelType: l, updateLayoutHeight: u } = Te("weekViewLayout"), c = z(() => `${v("layout")} ${o}`, [o]);
   return ht(() => {
     if (s) {
       const f = () => u(s.offsetHeight);
@@ -10541,7 +10542,7 @@ function Si({
   }, [s, u]), ht(() => {
     if (s && r) {
       const f = Nn(e), p = f[f.length - 1];
-      !be(p) && !lo(p) && !F(p) && l(p.props.name);
+      !Ce(p) && !lo(p) && !U(p) && l(p.props.name);
     }
   }, [e, l, r, s]), /* @__PURE__ */ d(Jf, {
     value: s
@@ -10565,7 +10566,7 @@ function em({ name: e, height: t }) {
     display: "none",
     border: "none",
     backgroundColor: "#999"
-  }), [i, s] = ae(r), a = te(null), { updateDayGridRowHeightByDiff: l } = Se("weekViewLayout"), u = en(Qf.panelResizer, {
+  }), [i, s] = ae(r), a = ne(null), { updateDayGridRowHeightByDiff: l } = Te("weekViewLayout"), u = en(Qf.panelResizer, {
     onDragStart: (c) => {
       a.current = { left: c.pageX, top: c.pageY };
     },
@@ -10628,16 +10629,16 @@ const jt = pc(function({
   resizable: m,
   children: _
 }, y) {
-  const { updateDayGridRowHeight: w } = Se("weekViewLayout"), { height: E } = z(ee((N) => {
-    var W;
-    return (W = N.weekViewLayout.dayGridRows[t]) != null ? W : {};
-  }, [t])), T = E != null ? E : o;
+  const { updateDayGridRowHeight: E } = Te("weekViewLayout"), { height: w } = W(ee((N) => {
+    var F;
+    return (F = N.weekViewLayout.dayGridRows[t]) != null ? F : {};
+  }, [t])), S = w != null ? w : o;
   ht(() => {
-    w({ rowName: t, height: o });
-  }, [o, t, w]);
+    E({ rowName: t, height: o });
+  }, [o, t, E]);
   const k = tm({
     initialWidth: n,
-    initialHeight: T,
+    initialHeight: S,
     overflowX: r,
     overflowY: i,
     maxExpandableWidth: s,
@@ -10646,17 +10647,17 @@ const jt = pc(function({
     maxHeight: u,
     minWidth: c,
     maxWidth: f
-  }), S = U(() => F(m) || ei(m) ? !!m : m.includes(t), [m, t]);
+  }), T = z(() => U(m) || ei(m) ? !!m : m.includes(t), [m, t]);
   return /* @__PURE__ */ d(xe, null, /* @__PURE__ */ d("div", {
     className: v("panel", t),
     style: k,
     ref: y
-  }, _), S ? /* @__PURE__ */ d(em, {
+  }, _), T ? /* @__PURE__ */ d(em, {
     name: t,
     width: p,
     height: h
   }) : null);
-}), Nc = "timegrid", De = (e) => `${Nc}-${e}`, nm = {
+}), Nc = "timegrid", Se = (e) => `${Nc}-${e}`, nm = {
   second: "HH:mm:ss",
   minute: "HH:mm",
   hour: "HH:mm",
@@ -10676,7 +10677,7 @@ function om(e) {
   return e > 0 || t > 0 || n > 0 ? wo : 0;
 }
 function rm(e, t) {
-  return be(e) ? e : e >= 0 ? `calc(${X(e)} - ${t}px)` : "";
+  return Ce(e) ? e : e >= 0 ? `calc(${K(e)} - ${t}px)` : "";
 }
 function im({
   uiModel: e,
@@ -10697,29 +10698,29 @@ function im({
     comingDurationHeight: h,
     croppedStart: m,
     croppedEnd: _
-  } = e, y = "white", w = 2, E = 2, T = om(s), { color: k, backgroundColor: S, borderColor: N, dragBackgroundColor: W } = ba(e, o), V = {
-    width: rm(c || l, T),
-    height: `calc(${X(Math.max(a, r))} - ${E}px)`,
-    top: X(i),
-    left: u || X(s),
-    borderRadius: w,
+  } = e, y = "white", E = 2, w = 2, S = om(s), { color: k, backgroundColor: T, borderColor: N, dragBackgroundColor: F } = ba(e, o), X = {
+    width: rm(c || l, S),
+    height: `calc(${K(Math.max(a, r))} - ${w}px)`,
+    top: K(i),
+    left: u || K(s),
+    borderRadius: E,
     borderLeft: `3px solid ${N}`,
-    marginLeft: T,
+    marginLeft: S,
     color: k,
-    backgroundColor: t ? W : S,
+    backgroundColor: t ? F : T,
     opacity: t ? 0.5 : 1,
     zIndex: n ? 1 : 0
   }, I = {
-    height: X(f),
+    height: K(f),
     borderBottom: `1px dashed ${y}`
   }, $ = {
-    height: X(p)
+    height: K(p)
   }, R = {
-    height: X(h),
+    height: K(h),
     borderTop: `1px dashed ${y}`
   };
-  return m && (V.borderTopLeftRadius = 0, V.borderTopRightRadius = 0), _ && (V.borderBottomLeftRadius = 0, V.borderBottomRightRadius = 0), {
-    containerStyle: V,
+  return m && (X.borderTopLeftRadius = 0, X.borderTopRightRadius = 0), _ && (X.borderBottomLeftRadius = 0, X.borderBottomRightRadius = 0), {
+    containerStyle: X,
     goingDurationStyle: I,
     modelDurationStyle: $,
     comingDurationStyle: R
@@ -10744,22 +10745,22 @@ function Ti({
     useDetailPopup: r,
     isReadOnly: i,
     week: s
-  } = z(je), a = yi(e.model), { collapseDuplicateEvents: l } = s, u = xt(), { showDetailPopup: c } = Se("popup"), { setDraggingEventUIModel: f } = Se("dnd"), { setSelectedDuplicateEventCid: p } = Se("weekViewLayout"), h = Ne(), m = te(null), [_, y] = ae(false), { model: w, goingDurationHeight: E, modelDurationHeight: T, comingDurationHeight: k, croppedEnd: S } = e, { id: N, calendarId: W, customStyle: V } = w, I = L(t), { containerStyle: $, goingDurationStyle: R, modelDurationStyle: K, comingDurationStyle: q } = im({ uiModel: e, isDraggingTarget: _, hasNextStartTime: I, calendarColor: a, minHeight: o }), D = I || n;
+  } = W(je), a = yi(e.model), { collapseDuplicateEvents: l } = s, u = xt(), { showDetailPopup: c } = Te("popup"), { setDraggingEventUIModel: f } = Te("dnd"), { setSelectedDuplicateEventCid: p } = Te("weekViewLayout"), h = Ne(), m = ne(null), [_, y] = ae(false), { model: E, goingDurationHeight: w, modelDurationHeight: S, comingDurationHeight: k, croppedEnd: T } = e, { id: N, calendarId: F, customStyle: X } = E, I = L(t), { containerStyle: $, goingDurationStyle: R, modelDurationStyle: q, comingDurationStyle: te } = im({ uiModel: e, isDraggingTarget: _, hasNextStartTime: I, calendarColor: a, minHeight: o }), b = I || n;
   _t(At, ({ draggingEventUIModel: ue, draggingState: Ue }) => {
     Ue === Ve.DRAGGING && (ue == null ? void 0 : ue.cid()) === e.cid() && !I && !n ? y(true) : y(false);
   }), re(() => {
     n || h.fire("afterRenderEvent", e.model.toEventObject());
   }, []);
-  const b = (ue) => {
+  const D = (ue) => {
     f(e), u == null || u.classList.add(ue);
-  }, Z = (ue) => {
+  }, V = (ue) => {
     y(false), u == null || u.classList.remove(ue);
-  }, oe = en(On.moveEvent("timeGrid", `${e.cid()}`), {
+  }, J = en(On.moveEvent("timeGrid", `${e.cid()}`), {
     onDragStart: () => {
-      Oe && b(We.moveEvent);
+      Oe && D(We.moveEvent);
     },
     onMouseUp: (ue, { draggingState: Ue }) => {
-      Z(We.moveEvent);
+      V(We.moveEvent);
       const Pe = Ue <= Ve.INIT;
       if (Pe && l) {
         const lt = e.duplicateEvents.length > 0 ? e.cid() : Ro;
@@ -10770,13 +10771,13 @@ function Ti({
         eventRect: m.current.getBoundingClientRect()
       }, false), Pe && h.fire("clickEvent", { event: e.model.toEventObject(), nativeEvent: ue });
     },
-    onPressESCKey: () => Z(We.moveEvent)
-  }), Ce = (ue) => {
-    ue.stopPropagation(), oe(ue);
+    onPressESCKey: () => V(We.moveEvent)
+  }), ge = (ue) => {
+    ue.stopPropagation(), J(ue);
   }, j = en(On.resizeEvent("timeGrid", `${e.cid()}`), {
-    onDragStart: () => b(We.resizeEvent),
-    onMouseUp: () => Z(We.resizeEvent),
-    onPressESCKey: () => Z(We.resizeEvent)
+    onDragStart: () => D(We.resizeEvent),
+    onMouseUp: () => V(We.resizeEvent),
+    onPressESCKey: () => V(We.resizeEvent)
   }), de = (ue) => {
     ue.stopPropagation(), j(ue);
   }, Oe = sm({
@@ -10784,35 +10785,35 @@ function Ti({
     isReadOnlyCalendar: i,
     isDraggingTarget: _,
     hasNextStartTime: I
-  }), Et = Oe && !S;
+  }), Et = Oe && !T;
   return /* @__PURE__ */ d("div", {
-    "data-testid": `${D ? "guide-" : ""}time-event-${w.title}-${e.cid()}`,
-    "data-calendar-id": W,
+    "data-testid": `${b ? "guide-" : ""}time-event-${E.title}-${e.cid()}`,
+    "data-calendar-id": F,
     "data-event-id": N,
     className: We.time,
-    style: x(x({}, $), V),
-    onMouseDown: Ce,
+    style: x(x({}, $), X),
+    onMouseDown: ge,
     ref: m
-  }, E ? /* @__PURE__ */ d("div", {
+  }, w ? /* @__PURE__ */ d("div", {
     className: We.travelTime,
     style: R
-  }, /* @__PURE__ */ d(ne, {
+  }, /* @__PURE__ */ d(oe, {
     template: "goingDuration",
-    param: w
-  })) : null, T ? /* @__PURE__ */ d("div", {
+    param: E
+  })) : null, S ? /* @__PURE__ */ d("div", {
     className: We.content,
-    style: K
-  }, /* @__PURE__ */ d(ne, {
+    style: q
+  }, /* @__PURE__ */ d(oe, {
     template: "time",
-    param: ce(x({}, w.toEventObject()), {
-      start: I ? t : w.start
+    param: ce(x({}, E.toEventObject()), {
+      start: I ? t : E.start
     })
   })) : null, k ? /* @__PURE__ */ d("div", {
     className: We.travelTime,
-    style: q
-  }, /* @__PURE__ */ d(ne, {
+    style: te
+  }, /* @__PURE__ */ d(oe, {
     template: "comingDuration",
-    param: w
+    param: E
   })) : null, Et ? /* @__PURE__ */ d("div", {
     className: We.resizeHandleX,
     onMouseDown: de
@@ -10820,8 +10821,8 @@ function Ti({
 }
 function am({ top: e, height: t, text: n }) {
   const { backgroundColor: o, border: r } = se(ee((a) => a.common.gridSelection, [])), i = se(ee((a) => a.week.gridSelection.color, [])), s = {
-    top: X(e),
-    height: X(t),
+    top: K(e),
+    height: K(t),
     backgroundColor: o,
     border: r
   };
@@ -10835,7 +10836,7 @@ function am({ top: e, height: t, text: n }) {
   }, n) : null);
 }
 function cm({ columnIndex: e, timeGridRows: t }) {
-  const n = z(ee((r) => Pr.calculateSelection(r.gridSelection.timeGrid, e, t.length - 1), [e, t])), o = U(() => {
+  const n = W(ee((r) => Pr.calculateSelection(r.gridSelection.timeGrid, e, t.length - 1), [e, t])), o = z(() => {
     if (!n)
       return null;
     const { startRowIndex: r, endRowIndex: i, isStartingColumn: s, isSelectingMultipleColumns: a } = n, { top: l, startTime: u } = t[r], {
@@ -10850,7 +10851,7 @@ function cm({ columnIndex: e, timeGridRows: t }) {
       text: m
     };
   }, [n, t]);
-  return F(o) ? null : /* @__PURE__ */ d(am, x({}, o));
+  return U(o) ? null : /* @__PURE__ */ d(am, x({}, o));
 }
 function lm({
   gridPositionFinder: e,
@@ -10865,29 +10866,29 @@ function lm({
     clearDraggingEvent: l
   } = fn("timeGrid", "resize"), [u, c] = dn(e), [f, p] = ae(null), h = ee(() => {
     p(null), l(), c();
-  }, [c, l]), m = U(() => {
-    if (F(a))
+  }, [c, l]), m = z(() => {
+    if (U(a))
       return null;
-    const { columns: w, rows: E } = o, T = t.map((b) => b.filter((Z) => Z.cid() === a.cid())), k = (b, Z) => (oe) => {
-      const Ce = qe(w[Z].date, oe.startTime), j = qe(o.columns[Z].date, oe.endTime);
-      return Ce <= b && b < j;
-    }, S = T.findIndex((b) => b.length > 0), N = T[S][0], { goingDuration: W = 0 } = N.model, V = Ae(N.getStarts(), -W), I = Math.max(E.findIndex(k(V, S)), 0), $ = ti(T, (b) => b.length > 0), R = T[$][0], { comingDuration: K = 0 } = R.model, q = Ae(R.getStarts(), K);
-    let D = E.findIndex(k(q, $));
-    return D = D >= 0 ? D : E.length - 1, {
-      eventStartDateColumnIndex: S,
+    const { columns: E, rows: w } = o, S = t.map((D) => D.filter((V) => V.cid() === a.cid())), k = (D, V) => (J) => {
+      const ge = qe(E[V].date, J.startTime), j = qe(o.columns[V].date, J.endTime);
+      return ge <= D && D < j;
+    }, T = S.findIndex((D) => D.length > 0), N = S[T][0], { goingDuration: F = 0 } = N.model, X = Ae(N.getStarts(), -F), I = Math.max(w.findIndex(k(X, T)), 0), $ = ti(S, (D) => D.length > 0), R = S[$][0], { comingDuration: q = 0 } = R.model, te = Ae(R.getStarts(), q);
+    let b = w.findIndex(k(te, $));
+    return b = b >= 0 ? b : w.length - 1, {
+      eventStartDateColumnIndex: T,
       eventStartDateRowIndex: I,
       eventEndDateColumnIndex: $,
-      eventEndDateRowIndex: D,
-      resizeTargetUIModelColumns: T
+      eventEndDateRowIndex: b,
+      resizeTargetUIModelColumns: S
     };
-  }, [a, o, t]), _ = L(m) && L(a) && L(u), y = U(() => m ? o.rows[0].height : 0, [m, o.rows]);
+  }, [a, o, t]), _ = L(m) && L(a) && L(u), y = z(() => m ? o.rows[0].height : 0, [m, o.rows]);
   return re(() => {
     if (_) {
-      const { eventStartDateRowIndex: w, eventStartDateColumnIndex: E, eventEndDateColumnIndex: T } = m;
-      if (n === T && E === T) {
-        const k = a.clone(), { height: S, goingDurationHeight: N, comingDurationHeight: W } = k, V = Math.max(y + N * S / 100 + W * S / 100, o.rows[u.rowIndex].top - o.rows[w].top + y), I = N * S / V, $ = W * S / V;
+      const { eventStartDateRowIndex: E, eventStartDateColumnIndex: w, eventEndDateColumnIndex: S } = m;
+      if (n === S && w === S) {
+        const k = a.clone(), { height: T, goingDurationHeight: N, comingDurationHeight: F } = k, X = Math.max(y + N * T / 100 + F * T / 100, o.rows[u.rowIndex].top - o.rows[E].top + y), I = N * T / X, $ = F * T / X;
         k.setUIProps({
-          height: V,
+          height: X,
           goingDurationHeight: I,
           comingDurationHeight: $,
           modelDurationHeight: 100 - (I + $)
@@ -10904,10 +10905,10 @@ function lm({
     y
   ]), re(() => {
     if (_) {
-      const { resizeTargetUIModelColumns: w, eventStartDateColumnIndex: E, eventEndDateColumnIndex: T } = m;
-      if ((n === E || n === T) && E !== T) {
+      const { resizeTargetUIModelColumns: E, eventStartDateColumnIndex: w, eventEndDateColumnIndex: S } = m;
+      if ((n === w || n === S) && w !== S) {
         let k;
-        n === E ? k = w[n][0].clone() : (k = a.clone(), k.setUIProps({
+        n === w ? k = E[n][0].clone() : (k = a.clone(), k.setUIProps({
           height: o.rows[u.rowIndex].top + y
         })), p(k);
       }
@@ -10922,11 +10923,11 @@ function lm({
     y
   ]), un(() => {
     if (!s && L(m) && L(u) && L(a) && m.eventEndDateColumnIndex === n) {
-      const { comingDuration: E = 0 } = a.model, T = Ae(qe(o.columns[n].date, o.rows[u.rowIndex].endTime), -E), k = Ae(a.getStarts(), 30);
+      const { comingDuration: w = 0 } = a.model, S = Ae(qe(o.columns[n].date, o.rows[u.rowIndex].endTime), -w), k = Ae(a.getStarts(), 30);
       r.fire("beforeUpdateEvent", {
         event: a.model.toEventObject(),
         changes: {
-          end: oi(k, T)
+          end: oi(k, S)
         }
       });
     }
@@ -10945,7 +10946,7 @@ function um({
     columnIndex: n,
     timeGridData: o
   });
-  return F(r) ? null : /* @__PURE__ */ d(Ti, {
+  return U(r) ? null : /* @__PURE__ */ d(Ti, {
     uiModel: r,
     isResizingGuide: true
   });
@@ -10995,7 +10996,7 @@ const mm = ln(function({
   timeGridData: s,
   isLastColumn: a
 }) {
-  const { rows: l } = s, u = se(ee((w) => w.week.timeGrid.borderRight, [])), c = se(fm), [, f] = Bo(), p = f(), h = pm(x({ today: p, columnDate: t }, c)), m = {
+  const { rows: l } = s, u = se(ee((E) => E.week.timeGrid.borderRight, [])), c = se(fm), [, f] = Bo(), p = f(), h = pm(x({ today: p, columnDate: t }, c)), m = {
     width: n,
     backgroundColor: h,
     borderRight: a ? "none" : u
@@ -11035,8 +11036,8 @@ const gm = ln(function({
       key: `gridline-${r.startTime}-${r.endTime}`,
       className: v("gridline-half"),
       style: {
-        top: X(r.top),
-        height: X(r.height),
+        top: K(r.top),
+        height: K(r.height),
         borderBottom: s ? n : o
       },
       "data-testid": `gridline-${r.startTime}-${r.endTime}`
@@ -11054,51 +11055,51 @@ function _m({
   timeGridDataRows: o,
   currentDate: r
 }) {
-  const i = o[0].height, s = i * o.length, a = n * ka + t * at, l = Number(o[0].startTime.split(":")[0]), { goingDuration: u = 0, comingDuration: c = 0 } = e.model, f = Ae(e.getStarts(), -u), p = Ae(e.getEnds(), c), h = Do(f, a), m = Do(p, a), _ = Math.max(Vs(h, l), 0), y = Math.min(Vs(m, l), o.length - 1), w = h.getFullYear() < r.getFullYear() || h.getMonth() < r.getMonth() || h.getDate() < r.getDate(), E = m.getFullYear() > r.getFullYear() || m.getMonth() > r.getMonth() || m.getDate() > r.getDate(), T = y - (w ? 0 : _), k = w ? 0 : o[_].top, S = E ? s : Math.max(T, 1) * i;
-  return { top: k, height: S };
+  const i = o[0].height, s = i * o.length, a = n * ka + t * at, l = Number(o[0].startTime.split(":")[0]), { goingDuration: u = 0, comingDuration: c = 0 } = e.model, f = Ae(e.getStarts(), -u), p = Ae(e.getEnds(), c), h = Do(f, a), m = Do(p, a), _ = Math.max(Vs(h, l), 0), y = Math.min(Vs(m, l), o.length - 1), E = h.getFullYear() < r.getFullYear() || h.getMonth() < r.getMonth() || h.getDate() < r.getDate(), w = m.getFullYear() > r.getFullYear() || m.getMonth() > r.getMonth() || m.getDate() > r.getDate(), S = y - (E ? 0 : _), k = E ? 0 : o[_].top, T = w ? s : Math.max(S, 1) * i;
+  return { top: k, height: T };
 }
 const ym = (e) => e.dnd.initX, wm = (e) => e.dnd.initY;
 function Em({
   gridPositionFinder: e,
   timeGridData: t
 }) {
-  const n = z(ym), o = z(wm), r = Ne(), { isDraggingEnd: i, isDraggingCanceled: s, draggingEvent: a, clearDraggingEvent: l } = fn("timeGrid", "move"), [u, c] = dn(e), f = te(null);
+  const n = W(ym), o = W(wm), r = Ne(), { isDraggingEnd: i, isDraggingCanceled: s, draggingEvent: a, clearDraggingEvent: l } = fn("timeGrid", "move"), [u, c] = dn(e), f = ne(null);
   re(() => {
     L(n) && L(o) && (f.current = e({
       clientX: n,
       clientY: o
     }));
   }, [e, n, o]);
-  const p = U(() => F(f.current) || F(u) ? null : {
+  const p = z(() => U(f.current) || U(u) ? null : {
     columnDiff: u.columnIndex - f.current.columnIndex,
     rowDiff: u.rowIndex - f.current.rowIndex
-  }, [u]), h = U(() => F(a) ? null : a.getStarts(), [a]), m = ee(() => {
+  }, [u]), h = z(() => U(a) ? null : a.getStarts(), [a]), m = ee(() => {
     c(), l(), f.current = null;
-  }, [c, l]), _ = U(() => F(p) || F(h) ? null : Do(h, p.rowDiff * ka + p.columnDiff * at), [p, h]), y = U(() => {
-    if (F(a) || F(u) || F(p))
+  }, [c, l]), _ = z(() => U(p) || U(h) ? null : Do(h, p.rowDiff * ka + p.columnDiff * at), [p, h]), y = z(() => {
+    if (U(a) || U(u) || U(p))
       return null;
-    const w = a.clone(), { top: E, height: T } = _m({
-      draggingEvent: w,
+    const E = a.clone(), { top: w, height: S } = _m({
+      draggingEvent: E,
       columnDiff: p.columnDiff,
       rowDiff: p.rowDiff,
       timeGridDataRows: t.rows,
       currentDate: t.columns[u.columnIndex].date
     });
-    return w.setUIProps({
+    return E.setUIProps({
       left: t.columns[u.columnIndex].left,
       width: t.columns[u.columnIndex].width,
-      top: E,
-      height: T
-    }), w;
+      top: w,
+      height: S
+    }), E;
   }, [u, a, p, t.columns, t.rows]);
   return un(() => {
     if (!s && L(a) && L(u) && L(p) && L(_) && (p.rowDiff !== 0 || p.columnDiff !== 0)) {
-      const E = a.duration(), T = Do(_, E);
+      const w = a.duration(), S = Do(_, w);
       r.fire("beforeUpdateEvent", {
         event: a.model.toEventObject(),
         changes: {
           start: _,
-          end: T
+          end: S
         }
       });
     }
@@ -11116,7 +11117,7 @@ function Dm({
     gridPositionFinder: e,
     timeGridData: t
   });
-  return F(n) ? null : /* @__PURE__ */ d(Ti, {
+  return U(n) ? null : /* @__PURE__ */ d(Ti, {
     uiModel: n,
     nextStartTime: o
   });
@@ -11125,11 +11126,11 @@ const Mc = {
   NOW_INDICATOR: "timegrid-now-indicator",
   NOW_INDICATOR_LABEL: "timegrid-now-indicator-label"
 }, En = {
-  line: v(De("now-indicator")),
-  left: v(De("now-indicator-left")),
-  marker: v(De("now-indicator-marker")),
-  today: v(De("now-indicator-today")),
-  right: v(De("now-indicator-right"))
+  line: v(Se("now-indicator")),
+  left: v(Se("now-indicator-left")),
+  marker: v(Se("now-indicator-marker")),
+  today: v(Se("now-indicator-today")),
+  right: v(Se("now-indicator-right"))
 };
 function Sm(e) {
   return {
@@ -11140,20 +11141,20 @@ function Sm(e) {
   };
 }
 function Tm({ top: e, columnWidth: t, columnCount: n, columnIndex: o }) {
-  const { pastBorder: r, todayBorder: i, futureBorder: s, bulletBackgroundColor: a } = se(Sm), l = xt(), u = Ne(), c = te(null), f = {
-    left: X(t * o),
-    width: X(t * o)
+  const { pastBorder: r, todayBorder: i, futureBorder: s, bulletBackgroundColor: a } = se(Sm), l = xt(), u = Ne(), c = ne(null), f = {
+    left: K(t * o),
+    width: K(t * o)
   }, p = {
-    left: X(t * (o + 1)),
-    width: X(t * (n - o + 1))
+    left: K(t * (o + 1)),
+    width: K(t * (n - o + 1))
   };
   return re(() => {
     const h = (m) => {
       var y;
       const _ = (y = l == null ? void 0 : l.querySelector(`.${v("panel")}.${v("time")}`)) != null ? y : null;
       if (_ && c.current) {
-        const { offsetHeight: w } = _, { offsetTop: E } = c.current, T = E - w / 2;
-        _.scrollTo ? _.scrollTo({ top: T, behavior: m }) : _.scrollTop = T;
+        const { offsetHeight: E } = _, { offsetTop: w } = c.current, S = w - E / 2;
+        _.scrollTo ? _.scrollTo({ top: S, behavior: m }) : _.scrollTop = S;
       }
     };
     return u.on("scrollToNow", h), () => u.off("scrollToNow", h);
@@ -11162,7 +11163,7 @@ function Tm({ top: e, columnWidth: t, columnCount: n, columnIndex: o }) {
   }, [u]), /* @__PURE__ */ d("div", {
     ref: c,
     className: En.line,
-    style: { top: X(e) },
+    style: { top: K(e) },
     "data-testid": Mc.NOW_INDICATOR
   }, /* @__PURE__ */ d("div", {
     className: En.left,
@@ -11174,7 +11175,7 @@ function Tm({ top: e, columnWidth: t, columnCount: n, columnIndex: o }) {
     className: En.today,
     style: {
       left: f.left,
-      width: X(t),
+      width: K(t),
       borderTop: i
     }
   }), /* @__PURE__ */ d("div", {
@@ -11186,22 +11187,22 @@ function Tm({ top: e, columnWidth: t, columnCount: n, columnIndex: o }) {
   }));
 }
 const js = {
-  now: De("current-time"),
-  dayDifference: De("day-difference")
+  now: Se("current-time"),
+  dayDifference: Se("day-difference")
 };
 function bm({ unit: e, top: t, now: n, zonedNow: o }) {
-  const r = se(ee((a) => a.week.nowIndicatorLabel.color, [])), i = U(() => ai(o, n), [o, n]), s = {
+  const r = se(ee((a) => a.week.nowIndicatorLabel.color, [])), i = z(() => ai(o, n), [o, n]), s = {
     unit: e,
     time: o,
     format: nm[e]
   };
   return /* @__PURE__ */ d("div", {
     className: v(js.now),
-    style: { top: X(t), color: r },
+    style: { top: K(t), color: r },
     "data-testid": Mc.NOW_INDICATOR_LABEL
   }, i !== 0 && /* @__PURE__ */ d("span", {
     className: v(js.dayDifference)
-  }, `[${i > 0 ? "+" : "-"}${Math.abs(i)}]`), /* @__PURE__ */ d(ne, {
+  }, `[${i > 0 ? "+" : "-"}${Math.abs(i)}]`), /* @__PURE__ */ d(oe, {
     template: "timegridNowIndicatorLabel",
     param: s,
     as: "span"
@@ -11217,13 +11218,13 @@ const Cm = (e) => {
   var t;
   return (t = e.options.week.timezonesCollapsed) != null ? t : false;
 }, Wt = {
-  timeColumn: De("time-column"),
-  hourRows: De("hour-rows"),
-  time: De("time"),
-  timeLabel: De("time-label"),
-  first: De("time-first"),
-  last: De("time-last"),
-  hidden: De("time-hidden")
+  timeColumn: Se("time-column"),
+  hourRows: Se("hour-rows"),
+  time: Se("time"),
+  timeLabel: Se("time-label"),
+  first: Se("time-first"),
+  last: Se("time-last"),
+  hidden: Se("time-hidden")
 };
 function Nm(e) {
   return {
@@ -11239,22 +11240,22 @@ function Im(e) {
 }
 function Xs({ rowsInfo: e, isPrimary: t, borderRight: n, width: o, nowIndicatorState: r }) {
   var p;
-  const i = z(Ac), { primaryTimezoneBackgroundColor: s, subTimezoneBackgroundColor: a } = se(Nm), { pastTimeColor: l, futureTimeColor: u } = se(Im), c = L(r) ? Ae(r.now, (p = e[0].diffFromPrimaryTimezone) != null ? p : 0) : null, f = t ? s : a;
+  const i = W(Ac), { primaryTimezoneBackgroundColor: s, subTimezoneBackgroundColor: a } = se(Nm), { pastTimeColor: l, futureTimeColor: u } = se(Im), c = L(r) ? Ae(r.now, (p = e[0].diffFromPrimaryTimezone) != null ? p : 0) : null, f = t ? s : a;
   return /* @__PURE__ */ d("div", {
     role: "rowgroup",
     className: v(Wt.hourRows),
-    style: { width: X(o), borderRight: n, backgroundColor: f }
+    style: { width: K(o), borderRight: n, backgroundColor: f }
   }, e.map(({ date: h, top: m, className: _ }) => {
-    const w = L(c) && h < c ? l : u;
+    const E = L(c) && h < c ? l : u;
     return /* @__PURE__ */ d("div", {
       key: h.getTime(),
       className: _,
       style: {
-        top: X(m),
-        color: w
+        top: K(m),
+        color: E
       },
       role: "row"
-    }, /* @__PURE__ */ d(ne, {
+    }, /* @__PURE__ */ d(oe, {
       template: `timegridDisplay${t ? "Primary" : ""}Time`,
       param: { time: h },
       as: "span"
@@ -11267,22 +11268,22 @@ function Xs({ rowsInfo: e, isPrimary: t, borderRight: n, width: o, nowIndicatorS
   }));
 }
 const Mm = ln(function({ timeGridRows: t, nowIndicatorState: n }) {
-  const o = z(Va), r = z(xc), i = $o(), { width: s, borderRight: a } = se(li), l = U(() => t.filter((_, y) => y % 2 === 0 || y === t.length - 1), [t]), u = ee((_, y, w) => {
-    const E = () => false, T = y === 0, k = y === l.length - 1, S = v(Wt.time, {
-      [Wt.first]: T,
+  const o = W(Va), r = W(xc), i = $o(), { width: s, borderRight: a } = se(li), l = z(() => t.filter((_, y) => y % 2 === 0 || y === t.length - 1), [t]), u = ee((_, y, E) => {
+    const w = () => false, S = y === 0, k = y === l.length - 1, T = v(Wt.time, {
+      [Wt.first]: S,
       [Wt.last]: k,
-      [Wt.hidden]: E()
+      [Wt.hidden]: w()
     });
     let N = qe(new O(), k ? _.endTime : _.startTime);
-    return L(w) && (N = Ae(N, w)), {
+    return L(E) && (N = Ae(N, E)), {
       date: N,
       top: _.top,
-      className: S,
-      diffFromPrimaryTimezone: w
+      className: T,
+      diffFromPrimaryTimezone: E
     };
-  }, [l]), [c, ...f] = o, p = f.length > 0 ? 100 / (f.length + 1) : 100, h = l.map((_, y) => u(_, y)), m = U(() => f.length === 0 ? [] : f.reverse().map((_) => {
-    const { timezoneName: y } = _, w = i(c.timezoneName).getTimezoneOffset(), T = i(y).getTimezoneOffset() - w;
-    return l.map((k, S) => u(k, S, T));
+  }, [l]), [c, ...f] = o, p = f.length > 0 ? 100 / (f.length + 1) : 100, h = l.map((_, y) => u(_, y)), m = z(() => f.length === 0 ? [] : f.reverse().map((_) => {
+    const { timezoneName: y } = _, E = i(c.timezoneName).getTimezoneOffset(), S = i(y).getTimezoneOffset() - E;
+    return l.map((k, T) => u(k, T, S));
   }), [u, f, c, l, i]);
   return /* @__PURE__ */ d("div", {
     className: v(Wt.timeColumn),
@@ -11343,14 +11344,14 @@ function Om(e, t) {
   let i = t;
   if (r) {
     const { percent: s, px: a } = Ir(`${r.duplicateLeft}`), { percent: l, px: u } = Ir(`${r.duplicateWidth}`), c = s + l, f = a + u + wo;
-    c !== 0 ? i = `calc(${X(c)} ${f > 0 ? "+" : "-"} ${Eo(Math.abs(f))})` : i = Eo(f);
+    c !== 0 ? i = `calc(${K(c)} ${f > 0 ? "+" : "-"} ${Eo(Math.abs(f))})` : i = Eo(f);
   } else
-    i = X(i);
+    i = K(i);
   return i;
 }
 function Pm(e, t) {
   const { collapse: n } = e;
-  return n ? `${Es}px` : `calc(${X(t)} - ${Eo((Es + wo) * (e.duplicateEvents.length - 1) + wo)})`;
+  return n ? `${Es}px` : `calc(${K(t)} - ${Eo((Es + wo) * (e.duplicateEvents.length - 1) + wo)})`;
 }
 function Lm(e, t) {
   const { startColumnTime: n, endColumnTime: o, baseWidth: r, columnIndex: i, renderStart: s, renderEnd: a } = t, { duplicateEvents: l } = e, { top: u, height: c } = Fr(s, a, n, o), f = {
@@ -11445,7 +11446,7 @@ function Bm(e, t, n, o, r) {
   }), i;
 }
 function Gm(e, t) {
-  const n = te(e);
+  const n = ne(e);
   re(() => {
     n.current = e;
   }, [e]), re(() => {
@@ -11457,62 +11458,62 @@ function Gm(e, t) {
   }, [t]);
 }
 function Fm() {
-  const e = te(true);
+  const e = ne(true);
   return re(() => () => {
     e.current = false;
   }, []), ee(() => e.current, []);
 }
 const Ks = {
   timegrid: v(Nc),
-  scrollArea: v(De("scroll-area"))
+  scrollArea: v(Se("scroll-area"))
 };
 function Pc({ timeGridData: e, events: t }) {
   const {
     isReadOnly: n,
     week: { narrowWeekend: o, startDayOfWeek: r, collapseDuplicateEvents: i },
     onClickTimeGrid: s
-  } = z(je), a = z(Ac), l = z((I) => I.weekViewLayout.selectedDuplicateEventCid), [, u] = Bo(), c = Fm(), { width: f } = se(li), [p, h] = ae(null), { columns: m, rows: _ } = e, y = m.length - 1, w = U(() => m.map(({ date: I }) => t.filter(Rc(he(I), Re(I))).map(($) => $.clone())).map((I, $) => Bm(I, qe(m[$].date, Mr(_).startTime), qe(m[$].date, it(_).endTime), l, i)), [m, _, t, l, i]), E = U(() => {
-    const I = u(), $ = m.findIndex((q) => Nt(q.date, I));
+  } = W(je), a = W(Ac), l = W((I) => I.weekViewLayout.selectedDuplicateEventCid), [, u] = Bo(), c = Fm(), { width: f } = se(li), [p, h] = ae(null), { columns: m, rows: _ } = e, y = m.length - 1, E = z(() => m.map(({ date: I }) => t.filter(Rc(he(I), Re(I))).map(($) => $.clone())).map((I, $) => Bm(I, qe(m[$].date, Mr(_).startTime), qe(m[$].date, it(_).endTime), l, i)), [m, _, t, l, i]), w = z(() => {
+    const I = u(), $ = m.findIndex((te) => Nt(te.date, I));
     if ($ < 0)
       return null;
-    const R = qe(m[$].date, e.rows[0].startTime), K = qe(m[$].date, it(e.rows).endTime);
+    const R = qe(m[$].date, e.rows[0].startTime), q = qe(m[$].date, it(e.rows).endTime);
     return {
       startTime: R,
-      endTime: K,
+      endTime: q,
       currentDateIndex: $
     };
-  }, [m, u, e.rows]), [T, k] = Ge(), S = U(() => hi({
+  }, [m, u, e.rows]), [S, k] = Ge(), T = z(() => hi({
     rowsCount: _.length,
     columnsCount: m.length,
-    container: T,
+    container: S,
     narrowWeekend: o,
     startDayOfWeek: r
-  }), [m.length, T, o, _.length, r]), N = Ei({
+  }), [m.length, S, o, _.length, r]), N = Ei({
     type: "timeGrid",
-    gridPositionFinder: S,
+    gridPositionFinder: T,
     selectionSorter: Pr.sortSelection,
     dateGetter: Pr.getDateFromCollection,
     dateCollection: e
-  }), W = ee(() => {
-    if (L(E)) {
-      const { startTime: I, endTime: $ } = E, R = u();
+  }), F = ee(() => {
+    if (L(w)) {
+      const { startTime: I, endTime: $ } = w, R = u();
       I <= R && R <= $ && h({
         top: Gr(R, I, $),
         now: R
       });
     }
-  }, [E, u]);
+  }, [w, u]);
   ht(() => {
     var I;
-    c() && (((I = E == null ? void 0 : E.currentDateIndex) != null ? I : -1) >= 0 ? W() : h(null));
-  }, [E, c, W]), Gm(W, L(E) ? ni : null);
-  const V = ee((I) => {
-    const $ = S(I);
+    c() && (((I = w == null ? void 0 : w.currentDateIndex) != null ? I : -1) >= 0 ? F() : h(null));
+  }, [w, c, F]), Gm(F, L(w) ? ni : null);
+  const X = ee((I) => {
+    const $ = T(I);
     if ($) {
-      const R = m[$.columnIndex], K = _[$.rowIndex], q = new O(R.date);
-      q.addHours(Number.parseInt(K.startTime.split(":")[0], 10)), s(q);
+      const R = m[$.columnIndex], q = _[$.rowIndex], te = new O(R.date);
+      te.addHours(Number.parseInt(q.startTime.split(":")[0], 10)), s(te);
     }
-  }, [m, S, s, _]);
+  }, [m, T, s, _]);
   return /* @__PURE__ */ d("div", {
     className: Ks.timegrid
   }, /* @__PURE__ */ d("div", {
@@ -11521,7 +11522,7 @@ function Pc({ timeGridData: e, events: t }) {
     timeGridRows: _,
     nowIndicatorState: p
   }), /* @__PURE__ */ d("div", {
-    onClick: V,
+    onClick: X,
     className: v("columns"),
     style: { left: f },
     ref: k,
@@ -11529,22 +11530,22 @@ function Pc({ timeGridData: e, events: t }) {
   }, /* @__PURE__ */ d(gm, {
     timeGridRows: _
   }), /* @__PURE__ */ d(Dm, {
-    gridPositionFinder: S,
+    gridPositionFinder: T,
     timeGridData: e
   }), m.map((I, $) => /* @__PURE__ */ d(mm, {
     key: I.date.toString(),
     timeGridData: e,
     columnDate: I.date,
-    columnWidth: X(I.width),
+    columnWidth: K(I.width),
     columnIndex: $,
-    totalUIModels: w,
-    gridPositionFinder: S,
+    totalUIModels: E,
+    gridPositionFinder: T,
     isLastColumn: $ === y
-  })), a && L(E) && L(p) ? /* @__PURE__ */ d(Tm, {
+  })), a && L(w) && L(p) ? /* @__PURE__ */ d(Tm, {
     top: p.top,
     columnWidth: m[0].width,
     columnCount: m.length,
-    columnIndex: E.currentDateIndex
+    columnIndex: w.currentDateIndex
   }) : null)));
 }
 function Um({ isCollapsed: e }) {
@@ -11553,7 +11554,7 @@ function Um({ isCollapsed: e }) {
     "ic-arrow-left": !e
   });
   return /* @__PURE__ */ d("button", {
-    className: v(De("timezone-collapse-button")),
+    className: v(Se("timezone-collapse-button")),
     "aria-expanded": !e,
     onClick: () => t.fire("clickTimezonesCollapseBtn", e)
   }, /* @__PURE__ */ d("span", {
@@ -11564,28 +11565,28 @@ function Um({ isCollapsed: e }) {
 function qs({ label: e, offset: t, tooltip: n, width: o = 100, left: r }) {
   return /* @__PURE__ */ d("div", {
     title: n,
-    className: v(De("timezone-label")),
+    className: v(Se("timezone-label")),
     style: {
-      width: X(o),
-      height: X(100),
-      left: X(r)
+      width: K(o),
+      height: K(100),
+      left: K(r)
     },
     role: "gridcell"
-  }, /* @__PURE__ */ d(ne, {
+  }, /* @__PURE__ */ d(oe, {
     template: "timezoneDisplayLabel",
     param: { displayLabel: e, timezoneOffset: t },
     as: "span"
   }));
 }
 function zm() {
-  const e = z(km), t = z(xc);
-  return U(() => ({
+  const e = W(km), t = W(xc);
+  return z(() => ({
     showTimezoneCollapseButton: e,
     timezonesCollapsed: t
   }), [e, t]);
 }
 function Lc({ top: e }) {
-  const t = z(Va), { width: n } = se(li), o = $o(), { showTimezoneCollapseButton: r, timezonesCollapsed: i } = zm();
+  const t = W(Va), { width: n } = se(li), o = $o(), { showTimezoneCollapseButton: r, timezonesCollapsed: i } = zm();
   if (t.length <= 1)
     return null;
   const s = t.map(({ displayLabel: p, timezoneName: h, tooltip: m }) => Be(p) ? {
@@ -11624,8 +11625,8 @@ function Hc(e, t) {
   return e === true ? n.push(...Ym) : Array.isArray(e) && n.push(...e), t === true ? n.push(...Vm) : Array.isArray(t) && n.push(...t), n;
 }
 function jm(e) {
-  const t = z(Ho), n = $o();
-  return U(() => {
+  const t = W(Ho), n = $o();
+  return z(() => {
     if (t === "Local")
       return e;
     const o = yn(new O()), {
@@ -11640,8 +11641,8 @@ function jm(e) {
   }, [e, t, n]);
 }
 function bi(e, ...t) {
-  const n = U(() => e.events.filter(Je.and(...t)), [e.events, t]), o = jm(n);
-  return U(() => ce(x({}, e), {
+  const n = z(() => e.events.filter(Je.and(...t)), [e.events, t]), o = jm(n);
+  return z(() => ce(x({}, e), {
     events: o
   }), [e, o]);
 }
@@ -11667,14 +11668,14 @@ function Km(e) {
   return (o = (n = (t = e.weekViewLayout) == null ? void 0 : t.dayGridRows) == null ? void 0 : n.time) == null ? void 0 : o.height;
 }
 function Bc(e) {
-  const t = z(Km), [n, o] = ae(null);
+  const t = W(Km), [n, o] = ae(null);
   return ht(() => {
     L(t) && e && o(e.offsetTop);
   }, [t, e]), n;
 }
 function qm() {
-  const e = z(Lo), t = z(je), { dayGridRows: n, lastPanelType: o } = z(za), { renderDate: r } = z(cn);
-  return U(() => ({
+  const e = W(Lo), t = W(je), { dayGridRows: n, lastPanelType: o } = W(za), { renderDate: r } = W(cn);
+  return z(() => ({
     calendar: e,
     options: t,
     gridRowLayout: n,
@@ -11683,47 +11684,57 @@ function qm() {
   }), [e, t, n, o, r]);
 }
 function Gc() {
-  var R, K;
-  const { calendar: e, options: t, gridRowLayout: n, lastPanelType: o, renderDate: r } = qm(), i = z(Ho), s = se(ee((q) => q.week.dayGridLeft.width, [])), [a, l] = Ge(), u = t.week, { narrowWeekend: c, startDayOfWeek: f, workweek: p, hourStart: h, hourEnd: m, eventView: _, taskView: y } = u, w = U(() => [r], [r]), E = La(w, (K = (R = t.week) == null ? void 0 : R.dayNames) != null ? K : []), { rowStyleInfo: T, cellWidthMap: k } = si(w.length, c, f, p), S = bi(e, t.eventFilter), N = U(() => {
-    const q = () => i === "Local" ? [he(w[0]), Re(w[0])] : [he(It(w[0], -1)), Re(It(w[0], 1))], [D, b] = q();
-    return cc(w, S, {
+  var q, te;
+  const { calendar: e, options: t, gridRowLayout: n, lastPanelType: o, renderDate: r } = qm(), i = W(Ho), s = se(ee((b) => b.week.dayGridLeft.width, [])), [a, l] = Ge(), u = t.week, {
+    narrowWeekend: c,
+    startDayOfWeek: f,
+    workweek: p,
+    hourStart: h,
+    hourEnd: m,
+    eventView: _,
+    taskView: y,
+    overrideAllDayExceed: E
+  } = u, w = z(() => [r], [r]), S = La(w, (te = (q = t.week) == null ? void 0 : q.dayNames) != null ? te : []), { rowStyleInfo: k, cellWidthMap: T } = si(w.length, c, f, p), N = bi(e, t.eventFilter), F = z(() => {
+    const b = () => i === "Local" ? [he(w[0]), Re(w[0])] : [he(It(w[0], -1)), Re(It(w[0], 1))], [D, V] = b();
+    return cc(w, N, {
       narrowWeekend: c,
       hourStart: h,
       hourEnd: m,
       weekStartDate: D,
-      weekEndDate: b
+      weekEndDate: V
     });
-  }, [S, w, m, h, c, i]), W = U(() => dc(w, {
+  }, [N, w, m, h, c, i]), X = z(() => dc(w, {
     hourStart: h,
     hourEnd: m,
     narrowWeekend: c
-  }), [w, m, h, c]), V = Hc(y, _), I = V.map((q) => {
-    var b, Z;
-    if (q === "time")
+  }), [w, m, h, c]), I = Hc(y, _), $ = I.map((b) => {
+    var V, J;
+    if (b === "time")
       return null;
-    const D = q;
+    const D = b;
     return /* @__PURE__ */ d(jt, {
       key: D,
       name: D,
       resizable: D !== o
     }, D === "allday" ? /* @__PURE__ */ d(Ec, {
-      events: N[D],
-      rowStyleInfo: T,
-      gridColWidthMap: k,
+      overrideAllDayExceed: E,
+      events: F[D],
+      rowStyleInfo: k,
+      gridColWidthMap: T,
       weekDates: w,
-      height: (b = n[D]) == null ? void 0 : b.height,
+      height: (V = n[D]) == null ? void 0 : V.height,
       options: u
     }) : /* @__PURE__ */ d(Dc, {
       category: D,
-      events: N[D],
+      events: F[D],
       weekDates: w,
-      height: (Z = n[D]) == null ? void 0 : Z.height,
+      height: (J = n[D]) == null ? void 0 : J.height,
       options: u,
-      gridColWidthMap: k
+      gridColWidthMap: T
     }));
   });
-  $c(a, W.rows.length);
-  const $ = Bc(a);
+  $c(a, X.rows.length);
+  const R = Bc(a);
   return /* @__PURE__ */ d(Si, {
     className: v("day-view"),
     autoAdjustPanels: true
@@ -11732,22 +11743,22 @@ function Gc() {
     initialHeight: Da + Sa
   }, /* @__PURE__ */ d(ui, {
     type: "week",
-    dayNames: E,
+    dayNames: S,
     marginLeft: s,
-    rowStyleInfo: T
-  })), I, V.includes("time") ? /* @__PURE__ */ d(jt, {
+    rowStyleInfo: k
+  })), $, I.includes("time") ? /* @__PURE__ */ d(jt, {
     name: "time",
     autoSize: 1,
     ref: l
   }, /* @__PURE__ */ d(Pc, {
-    events: N.time,
-    timeGridData: W
+    events: F.time,
+    timeGridData: X
   }), /* @__PURE__ */ d(Lc, {
-    top: $
+    top: R
   })) : null);
 }
 function Zm({ rowIndex: e, weekDates: t, narrowWeekend: n }) {
-  const o = z(ee((r) => r.gridSelection.accumulated.dayGridMonth.map((i) => ko.calculateSelection(i, e, t.length)), [e, t]));
+  const o = W(ee((r) => r.gridSelection.accumulated.dayGridMonth.map((i) => ko.calculateSelection(i, e, t.length)), [e, t]));
   return /* @__PURE__ */ d("div", {
     className: v("accumulated-grid-selection")
   }, o.map((r) => r ? /* @__PURE__ */ d(gi, {
@@ -11759,7 +11770,7 @@ function Zm({ rowIndex: e, weekDates: t, narrowWeekend: n }) {
 }
 function Jm({ type: e, param: t }) {
   const n = `monthGrid${e === Rn.header ? "Header" : "Footer"}Exceed`;
-  return /* @__PURE__ */ d(ne, {
+  return /* @__PURE__ */ d(oe, {
     template: n,
     param: t
   });
@@ -11778,10 +11789,10 @@ function Qm({
 }
 function eh() {
   const e = Jd(), t = qa();
-  return U(() => ({ common: e, month: t }), [e, t]);
+  return z(() => ({ common: e, month: t }), [e, t]);
 }
 function Zs({ type: e = Rn.header, exceedCount: t = 0, date: n }) {
-  const { renderDate: o } = z(cn), [, r] = Bo(), i = eh(), s = i.month.gridCell[`${e}Height`], a = me(n, "YYYYMMDD"), l = me(r(), "YYYYMMDD"), u = a === l, c = {
+  const { renderDate: o } = W(cn), [, r] = Bo(), i = eh(), s = i.month.gridCell[`${e}Height`], a = me(n, "YYYYMMDD"), l = me(r(), "YYYYMMDD"), u = a === l, c = {
     date: me(n, "YYYY-MM-DD"),
     day: n.getDay(),
     hiddenEventCount: t,
@@ -11790,13 +11801,13 @@ function Zs({ type: e = Rn.header, exceedCount: t = 0, date: n }) {
     month: n.getMonth(),
     ymd: a
   }, f = { color: Qm({ date: n, theme: i, isToday: u, renderDate: o }) }, p = `monthGrid${Oo(e)}`;
-  return F(s) ? null : /* @__PURE__ */ d("div", {
+  return U(s) ? null : /* @__PURE__ */ d("div", {
     className: v(`grid-cell-${e}`),
     style: { height: s }
   }, /* @__PURE__ */ d("span", {
     className: v("grid-cell-date"),
     style: f
-  }, /* @__PURE__ */ d(ne, {
+  }, /* @__PURE__ */ d(oe, {
     template: p,
     param: c
   })), t ? /* @__PURE__ */ d(Jm, {
@@ -11863,7 +11874,7 @@ function ih(e) {
   return e.month.weekend.backgroundColor;
 }
 function sh({ date: e, events: t = [], style: n, parentContainer: o, contentAreaHeight: r }) {
-  const i = xt(), { showSeeMorePopup: s } = Se("popup"), a = se(ih), { popupPosition: l, containerRefCallback: u } = rh(t.length, o, i), c = ee(() => {
+  const i = xt(), { showSeeMorePopup: s } = Te("popup"), a = se(ih), { popupPosition: l, containerRefCallback: u } = rh(t.length, o, i), c = ee(() => {
     l && s({
       date: e,
       popupPosition: l,
@@ -11903,8 +11914,8 @@ const ah = ln(function({
       key: `daygrid-cell-${c}`,
       date: l,
       style: {
-        width: X(f),
-        left: X(p)
+        width: K(f),
+        left: K(p)
       },
       parentContainer: i,
       events: o[h],
@@ -11913,8 +11924,8 @@ const ah = ln(function({
   }));
 });
 function ch({ weekDates: e, narrowWeekend: t, rowIndex: n }) {
-  const o = z(ee((r) => ko.calculateSelection(r.gridSelection.dayGridMonth, n, e.length), [n, e.length]));
-  return F(o) ? null : /* @__PURE__ */ d(gi, {
+  const o = W(ee((r) => ko.calculateSelection(r.gridSelection.dayGridMonth, n, e.length), [n, e.length]));
+  return U(o) ? null : /* @__PURE__ */ d(gi, {
     type: "month",
     gridSelectionData: o,
     weekDates: e,
@@ -11949,19 +11960,19 @@ function uh({
     isDraggingCanceled: s,
     draggingEvent: a,
     clearDraggingEvent: l
-  } = fn("dayGrid", "move"), [u, c] = dn(n), f = U(() => {
+  } = fn("dayGrid", "move"), [u, c] = dn(n), f = z(() => {
     var h, m;
     let p = null;
     return a && (u == null ? void 0 : u.rowIndex) === o && (p = a, p.left = t[(h = u == null ? void 0 : u.columnIndex) != null ? h : 0].left, p.width = t[(m = u == null ? void 0 : u.columnIndex) != null ? m : 0].width), p;
   }, [a, u == null ? void 0 : u.rowIndex, u == null ? void 0 : u.columnIndex, o, t]);
   return un(() => {
     if (!s && L(f) && L(u)) {
-      const h = f.model.getStarts(), m = f.duration(), _ = e[u.rowIndex][u.columnIndex], y = ai(_, h) * at, w = new O(h.getTime() + y), E = new O(w.getTime() + m);
+      const h = f.model.getStarts(), m = f.duration(), _ = e[u.rowIndex][u.columnIndex], y = ai(_, h) * at, E = new O(h.getTime() + y), w = new O(E.getTime() + m);
       r.fire("beforeUpdateEvent", {
         event: f.model.toEventObject(),
         changes: {
-          start: w,
-          end: E
+          start: E,
+          end: w
         }
       });
     }
@@ -11975,7 +11986,7 @@ function dh({ dateMatrix: e, gridPositionFinder: t, rowInfo: n, rowIndex: o }) {
     gridPositionFinder: t,
     rowIndex: o
   });
-  return F(r) ? null : /* @__PURE__ */ d(wt, {
+  return U(r) ? null : /* @__PURE__ */ d(wt, {
     uiModel: r,
     movingLeft: r.left,
     eventHeight: Qe,
@@ -12003,33 +12014,33 @@ function fh({
     clearDraggingEvent: u
   } = fn("dayGrid", "resize"), [c, f] = dn(t), [p, h] = ae(null), m = ee(() => {
     h(null), f(), u();
-  }, [f, u]), _ = U(() => {
-    if (F(l))
+  }, [f, u]), _ = z(() => {
+    if (U(l))
       return null;
-    const w = n.map(({ uiModels: N }) => N.filter((W) => W.cid() === l.cid())), E = w.findIndex((N) => N.length > 0), T = ti(w, (N) => N.length > 0), k = Js(w[E][0], e[E]), S = Js(w[T][0], e[T]);
+    const E = n.map(({ uiModels: N }) => N.filter((F) => F.cid() === l.cid())), w = E.findIndex((N) => N.length > 0), S = ti(E, (N) => N.length > 0), k = Js(E[w][0], e[w]), T = Js(E[S][0], e[S]);
     return {
       eventStartDateColumnIndex: k.startColumnIndex,
-      eventStartDateRowIndex: E,
-      eventEndDateColumnIndex: S.endColumnIndex,
-      eventEndDateRowIndex: T,
-      resizeTargetUIModelRows: w
+      eventStartDateRowIndex: w,
+      eventEndDateColumnIndex: T.endColumnIndex,
+      eventEndDateRowIndex: S,
+      resizeTargetUIModelRows: E
     };
   }, [e, n, l]), y = L(_) && L(l) && L(c);
   return re(() => {
     if (y && r === _.eventStartDateRowIndex) {
-      const { eventStartDateRowIndex: w, eventStartDateColumnIndex: E } = _, T = _.resizeTargetUIModelRows[w][0].clone();
+      const { eventStartDateRowIndex: E, eventStartDateColumnIndex: w } = _, S = _.resizeTargetUIModelRows[E][0].clone();
       let k;
-      w === c.rowIndex ? k = o[E][Math.max(E, c.columnIndex)] : w > c.rowIndex ? k = o[E][E] : (k = o[E][e[r].length - 1], T.setUIProps({ exceedRight: true })), h([T, k]);
+      E === c.rowIndex ? k = o[w][Math.max(w, c.columnIndex)] : E > c.rowIndex ? k = o[w][w] : (k = o[w][e[r].length - 1], S.setUIProps({ exceedRight: true })), h([S, k]);
     }
   }, [_, y, o, c, e, r]), re(() => {
     if (y && _.eventStartDateRowIndex < r && r < c.rowIndex) {
-      const w = l.clone();
-      w.setUIProps({ left: 0, exceedLeft: true, exceedRight: true }), h([w, "100%"]);
+      const E = l.clone();
+      E.setUIProps({ left: 0, exceedLeft: true, exceedRight: true }), h([E, "100%"]);
     }
   }, [_, y, c, l, r]), re(() => {
     if (y && _.eventStartDateRowIndex < c.rowIndex && r === c.rowIndex) {
-      const w = l.clone();
-      w.setUIProps({ left: 0, exceedLeft: true }), h([w, o[0][c.columnIndex]]);
+      const E = l.clone();
+      E.setUIProps({ left: 0, exceedLeft: true }), h([E, o[0][c.columnIndex]]);
     }
   }, [
     _,
@@ -12042,8 +12053,8 @@ function fh({
     y && r > _.eventStartDateRowIndex && r > c.rowIndex && h(null);
   }, [y, c, _, r]), un(() => {
     if (y) {
-      const { eventStartDateColumnIndex: w, eventStartDateRowIndex: E } = _;
-      if (!a && (c.rowIndex === E && c.columnIndex >= w || c.rowIndex > E)) {
+      const { eventStartDateColumnIndex: E, eventStartDateRowIndex: w } = _;
+      if (!a && (c.rowIndex === w && c.columnIndex >= E || c.rowIndex > w)) {
         const k = e[c.rowIndex][c.columnIndex];
         i.fire("beforeUpdateEvent", {
           event: l.model.toEventObject(),
@@ -12070,7 +12081,7 @@ function ph({
     renderedUIModels: o,
     rowIndex: r
   });
-  if (F(i))
+  if (U(i))
     return null;
   const [s, a] = i;
   return /* @__PURE__ */ d("div", {
@@ -12085,7 +12096,7 @@ function ph({
 }
 const mh = 100;
 function hh(e) {
-  const t = z(Cm), { headerHeight: n, footerHeight: o } = se(Ka), r = te(null), [i, s] = ae(0);
+  const t = W(Cm), { headerHeight: n, footerHeight: o } = se(Ka), r = ne(null), [i, s] = ae(0);
   return re(() => {
     if (r.current) {
       const a = Ba(r.current).height, l = Qr + (n != null ? n : Ao), u = o != null ? o : 0, c = a - l - u, f = t * (e + Mo);
@@ -12094,13 +12105,13 @@ function hh(e) {
   }, [o, n, e, t]), { ref: r, cellContentAreaHeight: i };
 }
 function gh({ dateMatrix: e = [], rowInfo: t = [], cellWidthMap: n = [] }) {
-  const [o, r] = Ge(), i = z(Lo), { ref: s, cellContentAreaHeight: a } = hh(Zt), { eventFilter: l, month: u, isReadOnly: c } = z(je), { narrowWeekend: f, startDayOfWeek: p } = u, h = mh / e.length, m = U(() => hi({
+  const [o, r] = Ge(), i = W(Lo), { ref: s, cellContentAreaHeight: a } = hh(Zt), { eventFilter: l, month: u, isReadOnly: c } = W(je), { narrowWeekend: f, startDayOfWeek: p } = u, h = mh / e.length, m = z(() => hi({
     container: o,
     rowsCount: e.length,
     columnsCount: e[0].length,
     narrowWeekend: f,
     startDayOfWeek: p
-  }), [e, o, f, p]), _ = bi(i, l), y = U(() => e.map((E) => Sf(E, _, f)), [_, e, f]), w = Ei({
+  }), [e, o, f, p]), _ = bi(i, l), y = z(() => e.map((w) => Sf(w, _, f)), [_, e, f]), E = Ei({
     type: "dayGridMonth",
     gridPositionFinder: m,
     dateCollection: e,
@@ -12109,20 +12120,20 @@ function gh({ dateMatrix: e = [], rowInfo: t = [], cellWidthMap: n = [] }) {
   });
   return /* @__PURE__ */ d("div", {
     ref: r,
-    onMouseDown: wi(!c, w),
+    onMouseDown: wi(!c, E),
     className: v("month-daygrid")
-  }, e.map((E, T) => {
-    const { uiModels: k, gridDateEventModelMap: S } = y[T];
+  }, e.map((w, S) => {
+    const { uiModels: k, gridDateEventModelMap: T } = y[S];
     return /* @__PURE__ */ d("div", {
-      key: `dayGrid-events-${T}`,
+      key: `dayGrid-events-${S}`,
       className: v("month-week-item"),
-      style: { height: X(h) },
+      style: { height: K(h) },
       ref: s
     }, /* @__PURE__ */ d("div", {
       className: v("weekday")
     }, /* @__PURE__ */ d(ah, {
-      gridDateEventModelMap: S,
-      week: E,
+      gridDateEventModelMap: T,
+      week: w,
       rowInfo: t,
       contentAreaHeight: a
     }), /* @__PURE__ */ d(lh, {
@@ -12132,23 +12143,23 @@ function gh({ dateMatrix: e = [], rowInfo: t = [], cellWidthMap: n = [] }) {
       eventHeight: Zt,
       className: v("weekday-events")
     }), /* @__PURE__ */ d(ch, {
-      weekDates: E,
+      weekDates: w,
       narrowWeekend: f,
-      rowIndex: T
+      rowIndex: S
     }), /* @__PURE__ */ d(Zm, {
-      rowIndex: T,
-      weekDates: E,
+      rowIndex: S,
+      weekDates: w,
       narrowWeekend: f
     })), /* @__PURE__ */ d(ph, {
       dateMatrix: e,
       gridPositionFinder: m,
-      rowIndex: T,
+      rowIndex: S,
       cellWidthMap: n,
       renderedUIModels: y
     }), /* @__PURE__ */ d(dh, {
       dateMatrix: e,
       gridPositionFinder: m,
-      rowIndex: T,
+      rowIndex: S,
       rowInfo: t
     }));
   }));
@@ -12161,7 +12172,7 @@ function vh(e) {
   })).filter((s) => o ? !Fe(s.day) : true);
 }
 function Fc() {
-  const e = z(je), { renderDate: t } = z(cn), n = vh(e), o = e.month, { narrowWeekend: r, startDayOfWeek: i, workweek: s } = o, a = U(() => lc(t, o), [o, t]), { rowStyleInfo: l, cellWidthMap: u } = U(() => si(n.length, r, i, s), [n.length, r, i, s]), c = l.map((f, p) => ce(x({}, f), {
+  const e = W(je), { renderDate: t } = W(cn), n = vh(e), o = e.month, { narrowWeekend: r, startDayOfWeek: i, workweek: s } = o, a = z(() => lc(t, o), [o, t]), { rowStyleInfo: l, cellWidthMap: u } = z(() => si(n.length, r, i, s), [n.length, r, i, s]), c = l.map((f, p) => ce(x({}, f), {
     date: a[0][p]
   }));
   return /* @__PURE__ */ d(Si, {
@@ -12178,8 +12189,8 @@ function Fc() {
   }));
 }
 function _h() {
-  const e = z(je), t = z(Lo), { dayGridRows: n, lastPanelType: o } = z(za), { renderDate: r } = z(cn);
-  return U(() => ({
+  const e = W(je), t = W(Lo), { dayGridRows: n, lastPanelType: o } = W(za), { renderDate: r } = W(cn);
+  return z(() => ({
     options: e,
     calendar: t,
     gridRowLayout: n,
@@ -12188,47 +12199,57 @@ function _h() {
   }), [t, n, o, e, r]);
 }
 function Uc() {
-  var K, q;
-  const { options: e, calendar: t, gridRowLayout: n, lastPanelType: o, renderDate: r } = _h(), i = se(ee((D) => D.week.dayGridLeft.width, [])), s = z(Ho), [a, l] = Ge(), u = e.week, { narrowWeekend: c, startDayOfWeek: f, workweek: p, hourStart: h, hourEnd: m, eventView: _, taskView: y } = u, w = U(() => uc(r, u), [r, u]), E = La(w, (q = (K = e.week) == null ? void 0 : K.dayNames) != null ? q : []), { rowStyleInfo: T, cellWidthMap: k } = si(w.length, c, f, p), S = bi(t, e.eventFilter), N = U(() => {
-    const D = () => s === "Local" ? [he(Mr(w)), Re(it(w))] : [he(It(Mr(w), -1)), Re(It(it(w), 1))], [b, Z] = D();
-    return cc(w, S, {
+  var te, b;
+  const { options: e, calendar: t, gridRowLayout: n, lastPanelType: o, renderDate: r } = _h(), i = se(ee((D) => D.week.dayGridLeft.width, [])), s = W(Ho), [a, l] = Ge(), u = e.week, {
+    narrowWeekend: c,
+    startDayOfWeek: f,
+    workweek: p,
+    hourStart: h,
+    hourEnd: m,
+    eventView: _,
+    taskView: y,
+    overrideAllDayExceed: E
+  } = u, w = z(() => uc(r, u), [r, u]), S = La(w, (b = (te = e.week) == null ? void 0 : te.dayNames) != null ? b : []), { rowStyleInfo: k, cellWidthMap: T } = si(w.length, c, f, p), N = bi(t, e.eventFilter), F = z(() => {
+    const D = () => s === "Local" ? [he(Mr(w)), Re(it(w))] : [he(It(Mr(w), -1)), Re(It(it(w), 1))], [V, J] = D();
+    return cc(w, N, {
       narrowWeekend: c,
       hourStart: h,
       hourEnd: m,
-      weekStartDate: b,
-      weekEndDate: Z
+      weekStartDate: V,
+      weekEndDate: J
     });
-  }, [S, m, h, c, s, w]), W = U(() => dc(w, {
+  }, [N, m, h, c, s, w]), X = z(() => dc(w, {
     hourStart: h,
     hourEnd: m,
     narrowWeekend: c
-  }), [m, h, c, w]), V = Hc(y, _), I = V.map((D) => {
-    var Z, oe;
+  }), [m, h, c, w]), I = Hc(y, _), $ = I.map((D) => {
+    var J, ge;
     if (D === "time")
       return null;
-    const b = D;
+    const V = D;
     return /* @__PURE__ */ d(jt, {
-      name: b,
-      key: b,
-      resizable: b !== o
-    }, b === "allday" ? /* @__PURE__ */ d(Ec, {
-      events: N[b],
-      rowStyleInfo: T,
-      gridColWidthMap: k,
+      name: V,
+      key: V,
+      resizable: V !== o
+    }, V === "allday" ? /* @__PURE__ */ d(Ec, {
+      overrideAllDayExceed: E,
+      events: F[V],
+      rowStyleInfo: k,
+      gridColWidthMap: T,
       weekDates: w,
-      height: (Z = n[b]) == null ? void 0 : Z.height,
+      height: (J = n[V]) == null ? void 0 : J.height,
       options: u
     }) : /* @__PURE__ */ d(Dc, {
-      category: b,
-      events: N[b],
+      category: V,
+      events: F[V],
       weekDates: w,
-      height: (oe = n[b]) == null ? void 0 : oe.height,
+      height: (ge = n[V]) == null ? void 0 : ge.height,
       options: u,
-      gridColWidthMap: k
+      gridColWidthMap: T
     }));
-  }), $ = U(() => V.includes("time"), [V]);
-  $c(a, W.rows.length);
-  const R = Bc(a);
+  }), R = z(() => I.includes("time"), [I]);
+  $c(a, X.rows.length);
+  const q = Bc(a);
   return /* @__PURE__ */ d(Si, {
     className: v("week-view"),
     autoAdjustPanels: true
@@ -12237,19 +12258,19 @@ function Uc() {
     initialHeight: Da + Sa * 2
   }, /* @__PURE__ */ d(ui, {
     type: "week",
-    dayNames: E,
+    dayNames: S,
     marginLeft: i,
     options: u,
-    rowStyleInfo: T
-  })), I, $ ? /* @__PURE__ */ d(jt, {
+    rowStyleInfo: k
+  })), $, R ? /* @__PURE__ */ d(jt, {
     name: "time",
     autoSize: 1,
     ref: l
   }, /* @__PURE__ */ d(Pc, {
-    events: N.time,
-    timeGridData: W
+    events: F.time,
+    timeGridData: X
   }), /* @__PURE__ */ d(Lc, {
-    top: R
+    top: q
   })) : null);
 }
 const yh = {
@@ -12258,7 +12279,7 @@ const yh = {
   day: Gc
 };
 function wh() {
-  const { currentView: e } = z(cn), t = U(() => yh[e] || (() => null), [e]);
+  const { currentView: e } = W(cn), t = z(() => yh[e] || (() => null), [e]);
   return /* @__PURE__ */ d(t, null);
 }
 var Eh = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|^--/i, Dh = /[&<>"]/;
@@ -12324,13 +12345,13 @@ function Sn(e, t, n, o, r, i) {
       }
       var _, y = e.__c = { __v: e, context: t, props: e.props, setState: ra, forceUpdate: ra, __d: true, __h: [] };
       H.__b && H.__b(e);
-      var w = H.__r;
+      var E = H.__r;
       if (f.prototype && typeof f.prototype.render == "function") {
-        var E = f.contextType, T = E && t[E.__c], k = E != null ? T ? T.props.value : E.__ : t;
-        (y = e.__c = new f(p, k)).__v = e, y._dirty = y.__d = true, y.props = p, y.state == null && (y.state = {}), y._nextState == null && y.__s == null && (y._nextState = y.__s = y.state), y.context = k, f.getDerivedStateFromProps ? y.state = io(io({}, y.state), f.getDerivedStateFromProps(y.props, y.state)) : y.componentWillMount && (y.componentWillMount(), y.state = y._nextState !== y.state ? y._nextState : y.__s !== y.state ? y.__s : y.state), w && w(e), _ = y.render(y.props, y.state, y.context);
+        var w = f.contextType, S = w && t[w.__c], k = w != null ? S ? S.props.value : w.__ : t;
+        (y = e.__c = new f(p, k)).__v = e, y._dirty = y.__d = true, y.props = p, y.state == null && (y.state = {}), y._nextState == null && y.__s == null && (y._nextState = y.__s = y.state), y.context = k, f.getDerivedStateFromProps ? y.state = io(io({}, y.state), f.getDerivedStateFromProps(y.props, y.state)) : y.componentWillMount && (y.componentWillMount(), y.state = y._nextState !== y.state ? y._nextState : y.__s !== y.state ? y.__s : y.state), E && E(e), _ = y.render(y.props, y.state, y.context);
       } else
-        for (var S = f.contextType, N = S && t[S.__c], W = S != null ? N ? N.props.value : S.__ : t, V = 0; y.__d && V++ < 25; )
-          y.__d = false, w && w(e), _ = f.call(e.__c, p, W);
+        for (var T = f.contextType, N = T && t[T.__c], F = T != null ? N ? N.props.value : T.__ : t, X = 0; y.__d && X++ < 25; )
+          y.__d = false, E && E(e), _ = f.call(e.__c, p, F);
       return y.getChildContext && (t = io(io({}, t), y.getChildContext())), H.diffed && H.diffed(e), Sn(_, t, n, n.shallowHighOrder !== false, r, i);
     }
     f = (c = f).displayName || c !== Function && c.name || function(Rt) {
@@ -12348,73 +12369,73 @@ function Sn(e, t, n, o, r, i) {
   }
   var I, $, R = "<" + f;
   if (p) {
-    var K = Object.keys(p);
-    n && n.sortAttributes === true && K.sort();
-    for (var q = 0; q < K.length; q++) {
-      var D = K[q], b = p[D];
-      if (D !== "children") {
-        if (!oa.test(D) && (n && n.allAttributes || D !== "key" && D !== "ref" && D !== "__self" && D !== "__source")) {
-          if (D === "defaultValue")
-            D = "value";
-          else if (D === "defaultChecked")
-            D = "checked";
-          else if (D === "defaultSelected")
-            D = "selected";
-          else if (D === "className") {
+    var q = Object.keys(p);
+    n && n.sortAttributes === true && q.sort();
+    for (var te = 0; te < q.length; te++) {
+      var b = q[te], D = p[b];
+      if (b !== "children") {
+        if (!oa.test(b) && (n && n.allAttributes || b !== "key" && b !== "ref" && b !== "__self" && b !== "__source")) {
+          if (b === "defaultValue")
+            b = "value";
+          else if (b === "defaultChecked")
+            b = "checked";
+          else if (b === "defaultSelected")
+            b = "selected";
+          else if (b === "className") {
             if (p.class !== void 0)
               continue;
-            D = "class";
+            b = "class";
           } else
-            r && /^xlink:?./.test(D) && (D = D.toLowerCase().replace(/^xlink:?/, "xlink:"));
-          if (D === "htmlFor") {
+            r && /^xlink:?./.test(b) && (b = b.toLowerCase().replace(/^xlink:?/, "xlink:"));
+          if (b === "htmlFor") {
             if (p.for)
               continue;
-            D = "for";
+            b = "for";
           }
-          D === "style" && b && typeof b == "object" && (b = Sh(b)), D[0] === "a" && D[1] === "r" && typeof b == "boolean" && (b = String(b));
-          var Z = n.attributeHook && n.attributeHook(D, b, t, n, h);
-          if (Z || Z === "")
-            R += Z;
-          else if (D === "dangerouslySetInnerHTML")
-            $ = b && b.__html;
-          else if (f === "textarea" && D === "value")
-            I = b;
-          else if ((b || b === 0 || b === "") && typeof b != "function") {
-            if (!(b !== true && b !== "" || (b = D, n && n.xml))) {
-              R = R + " " + D;
+          b === "style" && D && typeof D == "object" && (D = Sh(D)), b[0] === "a" && b[1] === "r" && typeof D == "boolean" && (D = String(D));
+          var V = n.attributeHook && n.attributeHook(b, D, t, n, h);
+          if (V || V === "")
+            R += V;
+          else if (b === "dangerouslySetInnerHTML")
+            $ = D && D.__html;
+          else if (f === "textarea" && b === "value")
+            I = D;
+          else if ((D || D === 0 || D === "") && typeof D != "function") {
+            if (!(D !== true && D !== "" || (D = b, n && n.xml))) {
+              R = R + " " + b;
               continue;
             }
-            if (D === "value") {
+            if (b === "value") {
               if (f === "select") {
-                i = b;
+                i = D;
                 continue;
               }
-              f === "option" && i == b && p.selected === void 0 && (R += " selected");
+              f === "option" && i == D && p.selected === void 0 && (R += " selected");
             }
-            R = R + " " + D + '="' + Qs(b) + '"';
+            R = R + " " + b + '="' + Qs(D) + '"';
           }
         }
       } else
-        I = b;
+        I = D;
     }
   }
   if (s) {
-    var oe = R.replace(/\n\s*/, " ");
-    oe === R || ~oe.indexOf(`
+    var J = R.replace(/\n\s*/, " ");
+    J === R || ~J.indexOf(`
 `) ? s && ~R.indexOf(`
 `) && (R += `
-`) : R = oe;
+`) : R = J;
   }
   if (R += ">", oa.test(f))
     throw new Error(f + " is not a valid HTML tag name in " + R);
-  var Ce, j = bh.test(f) || n.voidElements && n.voidElements.test(f), de = [];
+  var ge, j = bh.test(f) || n.voidElements && n.voidElements.test(f), de = [];
   if ($)
     s && ta($) && ($ = `
 ` + a + ea($, a)), R += $;
-  else if (I != null && Ur(Ce = [], I).length) {
+  else if (I != null && Ur(ge = [], I).length) {
     for (var Oe = s && ~R.indexOf(`
-`), Et = false, ue = 0; ue < Ce.length; ue++) {
-      var Ue = Ce[ue];
+`), Et = false, ue = 0; ue < ge.length; ue++) {
+      var Ue = ge[ue];
       if (Ue != null && Ue !== false) {
         var Pe = Sn(Ue, t, n, true, f === "svg" || f !== "foreignObject" && r, i);
         if (s && !Oe && ta(Pe) && (Oe = true), Pe)
@@ -12434,7 +12455,7 @@ function Sn(e, t, n, o, r, i) {
     R += de.join("");
   else if (n && n.xml)
     return R.substring(0, R.length - 1) + " />";
-  return !j || Ce || $ ? (s && ~R.indexOf(`
+  return !j || ge || $ ? (s && ~R.indexOf(`
 `) && (R += `
 `), R = R + "</" + f + ">") : R = R.replace(/>$/, " />"), R;
 }
@@ -12519,7 +12540,7 @@ var qh = Kh, Zh = Wc, Jh = qh, Qh = zc;
 function eg(e, t, n) {
   Zh(e) ? Jh(e, t, n) : Qh(e, t, n);
 }
-var tg = eg, ng = Bh, Yc = Yh, Ci = be, ki = uo, og = Wc, Ni = Xh, st = tg, Vc = /\s+/g;
+var tg = eg, ng = Bh, Yc = Yh, Ci = Ce, ki = uo, og = Wc, Ni = Xh, st = tg, Vc = /\s+/g;
 function le() {
   this.events = null, this.contexts = null;
 }
@@ -12678,7 +12699,7 @@ class Uo {
     B(this, "theme");
     B(this, "store");
     var o;
-    this.container = be(t) ? (o = document == null ? void 0 : document.querySelector(t)) != null ? o : null : t, this.theme = qd(n.theme), this.eventBus = new ig(), this.store = Id(n), this.renderRange = this.calculateRenderRange(he()), Ad(), this.getStoreState().options.usageStatistics === true && Lh("calendar", Hh);
+    this.container = Ce(t) ? (o = document == null ? void 0 : document.querySelector(t)) != null ? o : null : t, this.theme = qd(n.theme), this.eventBus = new ig(), this.store = Id(n), this.renderRange = this.calculateRenderRange(he()), Ad(), this.getStoreState().options.usageStatistics === true && Lh("calendar", Hh);
   }
   getStoreState(t) {
     const n = this.store.getState();
@@ -12730,7 +12751,7 @@ class Uo {
     };
   }
   move(t) {
-    if (F(t))
+    if (U(t))
       return;
     const { currentView: n, renderDate: o } = this.getStoreState().view, { options: r } = this.getStoreState(), { setRenderDate: i } = this.getStoreDispatchers().view, s = new O(o);
     let a = {

@@ -1,6 +1,6 @@
 /*!
  * TOAST UI Calendar 2nd Edition
- * @version 2.1.3 | Thu Oct 20 2022
+ * @version 2.1.3 | Fri Oct 21 2022
  * @author NHN Cloud FE Development Lab <dl_javascript@nhn.com>
  * @license MIT
  */
@@ -13165,7 +13165,8 @@ function AlldayGridRow(_ref) {
     height = DEFAULT_PANEL_HEIGHT,
     options = {},
     rowStyleInfo,
-    gridColWidthMap
+    gridColWidthMap,
+    overrideAllDayExceed
   } = _ref;
   const {
     isReadOnly
@@ -13192,8 +13193,8 @@ function AlldayGridRow(_ref) {
   const {
     clickedIndex,
     isClickedCount,
-    onClickExceedCount,
-    onClickCollapseButton
+    onClickCollapseButton,
+    onClickExceedCount
   } = useGridRowHeightController(maxTop, 'allday');
   const horizontalEvents = F(() => events.filter(isWithinHeight(height, EVENT_HEIGHT + WEEK_EVENT_MARGIN_TOP)).map(uiModel => h(HorizontalEvent, {
     key: "allday-DayEvent-".concat(uiModel.cid()),
@@ -13238,7 +13239,7 @@ function AlldayGridRow(_ref) {
     height: height,
     clickedIndex: clickedIndex,
     isClickedCount: isClickedCount,
-    onClickExceedCount: onClickExceedCount,
+    onClickExceedCount: overrideAllDayExceed ? overrideAllDayExceed : onClickExceedCount,
     onClickCollapseButton: onClickCollapseButton
   })), h("div", {
     className: cls("panel-allday-events")
@@ -17302,7 +17303,8 @@ function day_Day() {
     hourStart,
     hourEnd,
     eventView,
-    taskView
+    taskView,
+    overrideAllDayExceed
   } = weekOptions;
   const days = F(() => [renderDate], [renderDate]);
   const dayNames = getDayNames(days, (_options$week$dayName = (_options$week = options.week) === null || _options$week === void 0 ? void 0 : _options$week.dayNames) !== null && _options$week$dayName !== void 0 ? _options$week$dayName : []);
@@ -17349,6 +17351,7 @@ function day_Day() {
       name: rowType,
       resizable: rowType !== lastPanelType
     }, rowType === 'allday' ? h(AlldayGridRow, {
+      overrideAllDayExceed: overrideAllDayExceed,
       events: dayGridEvents[rowType],
       rowStyleInfo: rowStyleInfo,
       gridColWidthMap: cellWidthMap,
@@ -18398,7 +18401,8 @@ function Week() {
     hourStart,
     hourEnd,
     eventView,
-    taskView
+    taskView,
+    overrideAllDayExceed
   } = weekOptions;
   const weekDates = F(() => getWeekDates(renderDate, weekOptions), [renderDate, weekOptions]);
   const dayNames = getDayNames(weekDates, (_options$week$dayName = (_options$week = options.week) === null || _options$week === void 0 ? void 0 : _options$week.dayNames) !== null && _options$week$dayName !== void 0 ? _options$week$dayName : []);
@@ -18445,6 +18449,7 @@ function Week() {
       key: rowType,
       resizable: rowType !== lastPanelType
     }, rowType === 'allday' ? h(AlldayGridRow, {
+      overrideAllDayExceed: overrideAllDayExceed,
       events: eventByPanel[rowType],
       rowStyleInfo: rowStyleInfo,
       gridColWidthMap: cellWidthMap,

@@ -1,6 +1,6 @@
 /*!
  * TOAST UI Calendar 2nd Edition
- * @version 2.1.3 | Thu Oct 20 2022
+ * @version 2.1.3 | Fri Oct 21 2022
  * @author NHN Cloud FE Development Lab <dl_javascript@nhn.com>
  * @license MIT
  */
@@ -19615,7 +19615,8 @@ function AlldayGridRow(_ref) {
       _ref$options = _ref.options,
       options = _ref$options === void 0 ? {} : _ref$options,
       rowStyleInfo = _ref.rowStyleInfo,
-      gridColWidthMap = _ref.gridColWidthMap;
+      gridColWidthMap = _ref.gridColWidthMap,
+      overrideAllDayExceed = _ref.overrideAllDayExceed;
 
   var _useStore = useStore(optionsSelector),
       isReadOnly = _useStore.isReadOnly;
@@ -19650,8 +19651,8 @@ function AlldayGridRow(_ref) {
   var _useGridRowHeightCont = useGridRowHeightController(maxTop, 'allday'),
       clickedIndex = _useGridRowHeightCont.clickedIndex,
       isClickedCount = _useGridRowHeightCont.isClickedCount,
-      onClickExceedCount = _useGridRowHeightCont.onClickExceedCount,
-      onClickCollapseButton = _useGridRowHeightCont.onClickCollapseButton;
+      onClickCollapseButton = _useGridRowHeightCont.onClickCollapseButton,
+      onClickExceedCount = _useGridRowHeightCont.onClickExceedCount;
 
   var horizontalEvents = F(function () {
     return events.filter(isWithinHeight(height, EVENT_HEIGHT + WEEK_EVENT_MARGIN_TOP)).map(function (uiModel) {
@@ -19700,7 +19701,7 @@ function AlldayGridRow(_ref) {
     height: height,
     clickedIndex: clickedIndex,
     isClickedCount: isClickedCount,
-    onClickExceedCount: onClickExceedCount,
+    onClickExceedCount: overrideAllDayExceed ? overrideAllDayExceed : onClickExceedCount,
     onClickCollapseButton: onClickCollapseButton
   })), h("div", {
     className: cls("panel-allday-events")
@@ -24536,7 +24537,8 @@ function day_Day() {
       hourStart = weekOptions.hourStart,
       hourEnd = weekOptions.hourEnd,
       eventView = weekOptions.eventView,
-      taskView = weekOptions.taskView;
+      taskView = weekOptions.taskView,
+      overrideAllDayExceed = weekOptions.overrideAllDayExceed;
   var days = F(function () {
     return [renderDate];
   }, [renderDate]);
@@ -24591,6 +24593,7 @@ function day_Day() {
       name: rowType,
       resizable: rowType !== lastPanelType
     }, rowType === 'allday' ? h(AlldayGridRow, {
+      overrideAllDayExceed: overrideAllDayExceed,
       events: dayGridEvents[rowType],
       rowStyleInfo: rowStyleInfo,
       gridColWidthMap: cellWidthMap,
@@ -25951,7 +25954,8 @@ function Week() {
       hourStart = weekOptions.hourStart,
       hourEnd = weekOptions.hourEnd,
       eventView = weekOptions.eventView,
-      taskView = weekOptions.taskView;
+      taskView = weekOptions.taskView,
+      overrideAllDayExceed = weekOptions.overrideAllDayExceed;
   var weekDates = F(function () {
     return getWeekDates(renderDate, weekOptions);
   }, [renderDate, weekOptions]);
@@ -26006,6 +26010,7 @@ function Week() {
       key: rowType,
       resizable: rowType !== lastPanelType
     }, rowType === 'allday' ? h(AlldayGridRow, {
+      overrideAllDayExceed: overrideAllDayExceed,
       events: eventByPanel[rowType],
       rowStyleInfo: rowStyleInfo,
       gridColWidthMap: cellWidthMap,

@@ -35,6 +35,7 @@ interface Props {
   shouldRenderDefaultPopup?: boolean;
   rowStyleInfo: CellStyle[];
   gridColWidthMap: string[][];
+  overrideAllDayExceed?: (n: number) => void;
 }
 
 const rowTitleTemplate = `alldayTitle` as const;
@@ -46,6 +47,7 @@ export function AlldayGridRow({
   options = {},
   rowStyleInfo,
   gridColWidthMap,
+  overrideAllDayExceed,
 }: Props) {
   const { isReadOnly } = useStore(optionsSelector);
   const dayGridLeftTheme = useTheme(weekDayGridLeftSelector);
@@ -66,7 +68,7 @@ export function AlldayGridRow({
     [panelContainer, weekDates.length, narrowWeekend, startDayOfWeek]
   );
 
-  const { clickedIndex, isClickedCount, onClickExceedCount, onClickCollapseButton } =
+  const { clickedIndex, isClickedCount, onClickCollapseButton, onClickExceedCount } =
     useGridRowHeightController(maxTop, 'allday');
 
   const horizontalEvents = useMemo(
@@ -116,7 +118,7 @@ export function AlldayGridRow({
             height={height}
             clickedIndex={clickedIndex}
             isClickedCount={isClickedCount}
-            onClickExceedCount={onClickExceedCount}
+            onClickExceedCount={overrideAllDayExceed ? overrideAllDayExceed : onClickExceedCount}
             onClickCollapseButton={onClickCollapseButton}
           />
         </div>

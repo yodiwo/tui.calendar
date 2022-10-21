@@ -58,8 +58,16 @@ export function Day() {
   const [timePanel, setTimePanelRef] = useDOMNode<HTMLDivElement>();
 
   const weekOptions = options.week as Required<WeekOptions>;
-  const { narrowWeekend, startDayOfWeek, workweek, hourStart, hourEnd, eventView, taskView } =
-    weekOptions;
+  const {
+    narrowWeekend,
+    startDayOfWeek,
+    workweek,
+    hourStart,
+    hourEnd,
+    eventView,
+    taskView,
+    overrideAllDayExceed,
+  } = weekOptions;
   const days = useMemo(() => [renderDate], [renderDate]);
   const dayNames = getDayNames(days, options.week?.dayNames ?? []);
   const { rowStyleInfo, cellWidthMap } = getRowStyleInfo(
@@ -110,6 +118,7 @@ export function Day() {
       <Panel key={rowType} name={rowType} resizable={rowType !== lastPanelType}>
         {rowType === 'allday' ? (
           <AlldayGridRow
+            overrideAllDayExceed={overrideAllDayExceed}
             events={dayGridEvents[rowType]}
             rowStyleInfo={rowStyleInfo}
             gridColWidthMap={cellWidthMap}

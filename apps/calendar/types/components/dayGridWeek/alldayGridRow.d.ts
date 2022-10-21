@@ -13,6 +13,7 @@ interface Props {
     shouldRenderDefaultPopup?: boolean;
     rowStyleInfo: CellStyle[];
     gridColWidthMap: string[][];
+    overrideAllDayExceed?: (n: number) => void;
 }
-export declare function AlldayGridRow({ events, weekDates, height, options, rowStyleInfo, gridColWidthMap, }: Props): h.JSX.Element;
+export declare function AlldayGridRow({ events, weekDates, height, options, rowStyleInfo, gridColWidthMap, overrideAllDayExceed, }: Props): h.JSX.Element;
 export {};

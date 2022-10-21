@@ -5070,7 +5070,7 @@
   }
   /*!
    * TOAST UI Calendar 2nd Edition
-   * @version 2.1.3 | Thu Oct 20 2022
+   * @version 2.1.3 | Fri Oct 21 2022
    * @author NHN Cloud FE Development Lab <dl_javascript@nhn.com>
    * @license MIT
    */
@@ -19989,7 +19989,7 @@
           }
           var rowTitleTemplate = "alldayTitle";
           function AlldayGridRow(_ref) {
-            var events = _ref.events, weekDates = _ref.weekDates, _ref$height = _ref.height, height = _ref$height === void 0 ? DEFAULT_PANEL_HEIGHT : _ref$height, _ref$options = _ref.options, options = _ref$options === void 0 ? {} : _ref$options, rowStyleInfo = _ref.rowStyleInfo, gridColWidthMap = _ref.gridColWidthMap;
+            var events = _ref.events, weekDates = _ref.weekDates, _ref$height = _ref.height, height = _ref$height === void 0 ? DEFAULT_PANEL_HEIGHT : _ref$height, _ref$options = _ref.options, options = _ref$options === void 0 ? {} : _ref$options, rowStyleInfo = _ref.rowStyleInfo, gridColWidthMap = _ref.gridColWidthMap, overrideAllDayExceed = _ref.overrideAllDayExceed;
             var _useStore = useStore(optionsSelector), isReadOnly = _useStore.isReadOnly;
             var dayGridLeftTheme = useTheme(weekDayGridLeftSelector);
             var _useDOMNode = useDOMNode(), _useDOMNode2 = alldayGridRow_slicedToArray(_useDOMNode, 2), panelContainer = _useDOMNode2[0], setPanelContainerRef = _useDOMNode2[1];
@@ -20009,7 +20009,7 @@
                 startDayOfWeek
               });
             }, [panelContainer, weekDates.length, narrowWeekend, startDayOfWeek]);
-            var _useGridRowHeightCont = useGridRowHeightController(maxTop, "allday"), clickedIndex = _useGridRowHeightCont.clickedIndex, isClickedCount = _useGridRowHeightCont.isClickedCount, onClickExceedCount = _useGridRowHeightCont.onClickExceedCount, onClickCollapseButton = _useGridRowHeightCont.onClickCollapseButton;
+            var _useGridRowHeightCont = useGridRowHeightController(maxTop, "allday"), clickedIndex = _useGridRowHeightCont.clickedIndex, isClickedCount = _useGridRowHeightCont.isClickedCount, onClickCollapseButton = _useGridRowHeightCont.onClickCollapseButton, onClickExceedCount = _useGridRowHeightCont.onClickExceedCount;
             var horizontalEvents = F(function() {
               return events.filter(isWithinHeight(height, EVENT_HEIGHT + WEEK_EVENT_MARGIN_TOP)).map(function(uiModel) {
                 return h(HorizontalEvent, {
@@ -20053,7 +20053,7 @@
               height,
               clickedIndex,
               isClickedCount,
-              onClickExceedCount,
+              onClickExceedCount: overrideAllDayExceed ? overrideAllDayExceed : onClickExceedCount,
               onClickCollapseButton
             })), h("div", {
               className: cls("panel-allday-events")
@@ -24086,7 +24086,7 @@
             }, []));
             var _useDOMNode = useDOMNode(), _useDOMNode2 = day_slicedToArray(_useDOMNode, 2), timePanel = _useDOMNode2[0], setTimePanelRef = _useDOMNode2[1];
             var weekOptions = options.week;
-            var narrowWeekend = weekOptions.narrowWeekend, startDayOfWeek = weekOptions.startDayOfWeek, workweek = weekOptions.workweek, hourStart = weekOptions.hourStart, hourEnd = weekOptions.hourEnd, eventView = weekOptions.eventView, taskView = weekOptions.taskView;
+            var narrowWeekend = weekOptions.narrowWeekend, startDayOfWeek = weekOptions.startDayOfWeek, workweek = weekOptions.workweek, hourStart = weekOptions.hourStart, hourEnd = weekOptions.hourEnd, eventView = weekOptions.eventView, taskView = weekOptions.taskView, overrideAllDayExceed = weekOptions.overrideAllDayExceed;
             var days = F(function() {
               return [renderDate];
             }, [renderDate]);
@@ -24128,6 +24128,7 @@
                 name: rowType,
                 resizable: rowType !== lastPanelType
               }, rowType === "allday" ? h(AlldayGridRow, {
+                overrideAllDayExceed,
                 events: dayGridEvents[rowType],
                 rowStyleInfo,
                 gridColWidthMap: cellWidthMap,
@@ -25376,7 +25377,7 @@
             var primaryTimezoneName = useStore(primaryTimezoneSelector);
             var _useDOMNode = useDOMNode(), _useDOMNode2 = view_week_slicedToArray(_useDOMNode, 2), timePanel = _useDOMNode2[0], setTimePanelRef = _useDOMNode2[1];
             var weekOptions = options.week;
-            var narrowWeekend = weekOptions.narrowWeekend, startDayOfWeek = weekOptions.startDayOfWeek, workweek = weekOptions.workweek, hourStart = weekOptions.hourStart, hourEnd = weekOptions.hourEnd, eventView = weekOptions.eventView, taskView = weekOptions.taskView;
+            var narrowWeekend = weekOptions.narrowWeekend, startDayOfWeek = weekOptions.startDayOfWeek, workweek = weekOptions.workweek, hourStart = weekOptions.hourStart, hourEnd = weekOptions.hourEnd, eventView = weekOptions.eventView, taskView = weekOptions.taskView, overrideAllDayExceed = weekOptions.overrideAllDayExceed;
             var weekDates = F(function() {
               return getWeekDates(renderDate, weekOptions);
             }, [renderDate, weekOptions]);
@@ -25418,6 +25419,7 @@
                 key: rowType,
                 resizable: rowType !== lastPanelType
               }, rowType === "allday" ? h(AlldayGridRow, {
+                overrideAllDayExceed,
                 events: eventByPanel[rowType],
                 rowStyleInfo,
                 gridColWidthMap: cellWidthMap,

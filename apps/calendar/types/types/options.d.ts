@@ -23,6 +23,7 @@ export interface WeekOptions {
     eventView?: boolean | EventView[];
     taskView?: boolean | TaskView[];
     collapseDuplicateEvents?: boolean | Partial<CollapseDuplicateEventsOptions>;
+    overrideAllDayExceed?: (n: number) => void;
 }
 export interface MonthOptions {
     dayNames?: [string, string, string, string, string, string, string] | [];
