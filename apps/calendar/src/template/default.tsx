@@ -149,9 +149,7 @@ export const templates: Template = {
   },
 
   collapseBtnTitle() {
-    const className = cls('collapse-btn-icon');
-
-    return <span className={className} />;
+    return <span />;
   },
 
   timezoneDisplayLabel({ displayLabel, timezoneOffset }: TemplateTimezone) {

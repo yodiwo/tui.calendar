@@ -5070,7 +5070,7 @@ var jn = (e, t) => {
 var G = (e, t, n) => (sr(e, typeof t != "symbol" ? t + "" : t, n), n);
 /*!
  * TOAST UI Calendar 2nd Edition
- * @version 2.1.3 | Fri Oct 21 2022
+ * @version 2.1.3 | Thu Oct 27 2022
  * @author NHN Cloud FE Development Lab <dl_javascript@nhn.com>
  * @license MIT
  */
@@ -7356,10 +7356,7 @@ const zt = 60, Dd = {
     return `+${e}`;
   },
   collapseBtnTitle() {
-    const e = v("collapse-btn-icon");
-    return /* @__PURE__ */ d("span", {
-      className: e
-    });
+    return /* @__PURE__ */ d("span", null);
   },
   timezoneDisplayLabel({ displayLabel: e, timezoneOffset: t }) {
     if (U(e) && L(t)) {

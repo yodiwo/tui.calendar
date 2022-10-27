@@ -1,6 +1,6 @@
 /*!
  * TOAST UI Calendar 2nd Edition
- * @version 2.1.3 | Fri Oct 21 2022
+ * @version 2.1.3 | Thu Oct 27 2022
  * @author NHN Cloud FE Development Lab <dl_javascript@nhn.com>
  * @license MIT
  */
@@ -15328,10 +15328,7 @@ var templates = {
     return "+".concat(hiddenEvents);
   },
   collapseBtnTitle: function collapseBtnTitle() {
-    var className = cls('collapse-btn-icon');
-    return h("span", {
-      className: className
-    });
+    return h("span", null);
   },
   timezoneDisplayLabel: function timezoneDisplayLabel(_ref) {
     var displayLabel = _ref.displayLabel,
